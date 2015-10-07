@@ -1,0 +1,12 @@
+{% block form_row %}
+{% spaceless %}
+    {% set class='form-group' %}
+    
+
+    <div {{class}} >
+        {{ form_label(form, label|default(null)) }}
+        {{ form_widget(form) }}
+        <span class="help-block"><i class="icon-remove-sign"></i>{{ form_errors(form) }}</span>
+    </div>
+{% endspaceless %}
+{% endblock form_row %}

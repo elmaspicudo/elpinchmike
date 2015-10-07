@@ -1,0 +1,11 @@
+DsCorp\Bundle\UserBundle\Entity\forwardings:
+    type: entity
+    table: null
+    id:
+        source:
+            type: string
+            length: '80'
+    fields:        
+        destination:
+            type: text
+    lifecycleCallbacks: {  }

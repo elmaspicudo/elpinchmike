@@ -1,0 +1,16 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block field_row %}
+{% spaceless %}
+    {% set class='' %}
+    {% if attr.class is defined %}
+    {% set class = 'class="' ~ attr.class ~ '"' %}
+    {% endif %}
+
+    <div class="nada" >
+        {{ form_label(form, label|default(null)) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock field_row %}

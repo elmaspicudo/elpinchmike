@@ -1,3 +1,19 @@
+user_users:
+    resource: "@UserBundle/Resources/config/routing/users.yml"
+    prefix:   /users
+
+user_domains:
+    resource: "@UserBundle/Resources/config/routing/domains.yml"
+    prefix:   /domains
+
+user_forwardings:
+    resource: "@UserBundle/Resources/config/routing/forwardings.yml"
+    prefix:   /forwardings
+
+user_transport:
+    resource: "@UserBundle/Resources/config/routing/transport.yml"
+    prefix:   /transport
+
 user_user:
     resource: "@UserBundle/Resources/config/routing/user.yml"
     prefix:   /user
