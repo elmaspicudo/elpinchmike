@@ -1,0 +1,30 @@
+habitantesdomicilio:
+    path:     /
+    defaults: { _controller: "EstudioBundle:habitantesDomicilio:index" }
+
+habitantesdomicilio_show:
+    path:     /{id}/show
+    defaults: { _controller: "EstudioBundle:habitantesDomicilio:show" }
+
+habitantesdomicilio_new:
+    path:     /new
+    defaults: { _controller: "EstudioBundle:habitantesDomicilio:new" }
+
+habitantesdomicilio_create:
+    path:     /create
+    defaults: { _controller: "EstudioBundle:habitantesDomicilio:create" }
+    methods:  POST
+
+habitantesdomicilio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EstudioBundle:habitantesDomicilio:edit" }
+
+habitantesdomicilio_update:
+    path:     /{id}/update
+    defaults: { _controller: "EstudioBundle:habitantesDomicilio:update" }
+    methods:  [POST, PUT]
+
+habitantesdomicilio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EstudioBundle:habitantesDomicilio:delete" }
+    methods:  [POST, DELETE]

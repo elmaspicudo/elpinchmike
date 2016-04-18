@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>habitantesDomicilio list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Parentesco</th>
+                <th>Estadocivil</th>
+                <th>Escolaridad</th>
+                <th>Ocupacion</th>
+                <th>Salario</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('habitantesdomicilio_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.edad }}</td>
+                <td>{{ entity.parentesco }}</td>
+                <td>{{ entity.estadoCivil }}</td>
+                <td>{{ entity.escolaridad }}</td>
+                <td>{{ entity.ocupacion }}</td>
+                <td>{{ entity.salario }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('habitantesdomicilio_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('habitantesdomicilio_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('habitantesdomicilio_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

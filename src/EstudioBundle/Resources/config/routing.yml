@@ -1,3 +1,15 @@
+estudio_esposahijos:
+    resource: "@EstudioBundle/Resources/config/routing/esposahijos.yml"
+    prefix:   /esposahijos
+
+estudio_habitantesdomicilio:
+    resource: "@EstudioBundle/Resources/config/routing/habitantesdomicilio.yml"
+    prefix:   /habitantesdomicilio
+
+estudio_dependienteseconomicos:
+    resource: "@EstudioBundle/Resources/config/routing/dependienteseconomicos.yml"
+    prefix:   /dependienteseconomicos
+
 estudio_padreshermanos:
     resource: "@EstudioBundle/Resources/config/routing/padreshermanos.yml"
     prefix:   /padreshermanos
