@@ -1,0 +1,3 @@
+EstudioBundle_hoja1:
+        resource: "@EstudioBundle/Resources/config/routing/hoja1.yml"
+        prefix:   /hoja1

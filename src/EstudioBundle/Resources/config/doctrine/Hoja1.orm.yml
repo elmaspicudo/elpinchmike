@@ -1,0 +1,52 @@
+EstudioBundle\Entity\Hoja1:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        empresa:
+            type: string
+            length: '100'
+        puesto:
+            type: string
+            length: '100'
+        nombre:
+            type: string
+            length: '50'
+        apPaterno:
+            type: string
+            length: '50'
+        apMaterno:
+            type: string
+            length: '50'
+        personal:
+            type: string
+            length: '15'
+        escolares:
+            type: string
+            length: '15'
+        entornoFamiliar:
+            type: string
+            length: '15'
+        entornoEconomico:
+            type: string
+            length: '15'
+        documentacion:
+            type: string
+            length: '15'
+        laboral:
+            type: string
+            length: '15'
+        desempeno:
+            type: string
+            length: '15'
+        estabilidadLaboral:
+            type: string
+            length: '15'
+        observaciones:
+            type: blob
+    lifecycleCallbacks: {  }

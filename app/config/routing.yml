@@ -1,0 +1,4 @@
+estudio:
+    resource: "@EstudioBundle/Resources/config/routing.yml"
+    prefix:   /
+
