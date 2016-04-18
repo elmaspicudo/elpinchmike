@@ -1,3 +1,7 @@
+estudio_hoja2:
+    resource: "@EstudioBundle/Resources/config/routing/hoja2.yml"
+    prefix:   /hoja2
+
 EstudioBundle_hoja1:
         resource: "@EstudioBundle/Resources/config/routing/hoja1.yml"
         prefix:   /hoja1

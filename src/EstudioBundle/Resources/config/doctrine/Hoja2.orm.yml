@@ -1,0 +1,148 @@
+EstudioBundle\Entity\Hoja2:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        domicilio:
+            type: string
+            length: 255
+        colonia:
+            type: string
+            length: '50'
+        municipio:
+            type: string
+            length: '50'
+        cp:
+            type: integer
+        entrecalle1:
+            type: string
+            length: '50'
+        entrecalle2:
+            type: string
+            length: '50'
+        ciudad:
+            type: string
+            length: '20'
+        estado:
+            type: string
+            length: '20'
+        antiguedadVivienda:
+            type: integer
+        antiguedadCiudad:
+            type: integer
+        telefonoLocal:
+            type: integer
+        celular:
+            type: integer
+        lugarNacimiento:
+            type: string
+            length: '50'
+        fechaNacimiento:
+            type: datetime
+        nacionalidad:
+            type: string
+            length: '50'
+        edad:
+            type: integer
+        estadoCivil:
+            type: string
+            length: '15'
+        ocupacion:
+            type: string
+            length: '25'
+        actaNacimiento:
+            type: integer
+        curp:
+            type: string
+            length: '25'
+        actaMatrimonio:
+            type: integer
+        cartillaMilitar:
+            type: integer
+        comprobanteEstudios:
+            type: string
+            length: '30'
+        licencia:
+            type: integer
+        comprobanteDomicilio:
+            type: string
+            length: '100'
+        cartaRecomendacion1:
+            type: string
+            length: '100'
+        cartaRecomendacion2:
+            type: string
+            length: '100'
+        cartaRecomendacion3:
+            type: string
+            length: '100'
+        credencialElector:
+            type: integer
+        seguroSocial:
+            type: integer
+        primaria:
+            type: string
+            length: 255
+        de:
+            type: date
+        a:
+            type: date
+        comprobante:
+            type: string
+            length: '20'
+        entidadPrimaria:
+            type: string
+            length: '100'
+        secundaria:
+            type: string
+            length: 255
+        deSecundaria:
+            type: date
+        aSecundaria:
+            type: date
+        comprobanteSecundaria:
+            type: string
+            length: '20'
+        entidadSecundaria:
+            type: string
+            length: '100'
+        preparatoria:
+            type: string
+            length: 255
+        dePreparatoria:
+            type: date
+        aPreparatoria:
+            type: date
+        comprobantePreparatoria:
+            type: string
+            length: '20'
+        entidadPreparatoria:
+            type: string
+            length: '100'
+        profesional:
+            type: string
+            length: 255
+        deProfesional:
+            type: date
+        aProfesional:
+            type: date
+        comprobanteProfesional:
+            type: string
+            length: '20'
+        idiomas:
+            type: string
+            length: 255
+        porcentajeHabla:
+            type: integer
+        porcentajeEscribe:
+            type: integer
+        porcentajeLee:
+            type: integer
+        observaciones:
+            type: blob
+    lifecycleCallbacks: {  }
