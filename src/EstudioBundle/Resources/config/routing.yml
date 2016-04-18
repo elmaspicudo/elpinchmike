@@ -1,3 +1,7 @@
+estudio_padreshermanos:
+    resource: "@EstudioBundle/Resources/config/routing/padreshermanos.yml"
+    prefix:   /padreshermanos
+
 estudio_hoja2:
     resource: "@EstudioBundle/Resources/config/routing/hoja2.yml"
     prefix:   /hoja2

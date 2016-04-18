@@ -1,0 +1,30 @@
+padreshermanos:
+    path:     /
+    defaults: { _controller: "EstudioBundle:PadresHermanos:index" }
+
+padreshermanos_show:
+    path:     /{id}/show
+    defaults: { _controller: "EstudioBundle:PadresHermanos:show" }
+
+padreshermanos_new:
+    path:     /new
+    defaults: { _controller: "EstudioBundle:PadresHermanos:new" }
+
+padreshermanos_create:
+    path:     /create
+    defaults: { _controller: "EstudioBundle:PadresHermanos:create" }
+    methods:  POST
+
+padreshermanos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EstudioBundle:PadresHermanos:edit" }
+
+padreshermanos_update:
+    path:     /{id}/update
+    defaults: { _controller: "EstudioBundle:PadresHermanos:update" }
+    methods:  [POST, PUT]
+
+padreshermanos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EstudioBundle:PadresHermanos:delete" }
+    methods:  [POST, DELETE]
