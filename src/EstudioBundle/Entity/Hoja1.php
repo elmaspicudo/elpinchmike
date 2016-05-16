@@ -426,7 +426,8 @@ class Hoja1
      */
     public function getObservaciones()
     {
+        if ($this->observaciones != '')
             return stream_get_contents($this->observaciones);
-    }
+        return $this->observaciones;    }
 }
 
