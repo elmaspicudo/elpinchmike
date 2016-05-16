@@ -1,0 +1,88 @@
+EstudioBundle\Entity\CreditoH5:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        institucionPersonales:
+            type: string
+            length: '10'
+        montoCreditoInstitucion:
+            type: float
+        pagoMensualInstitucion:
+            type: float
+        fonacot:
+            type: string
+            length: '10'
+        montoCreditoFonacot:
+            type: float
+        pagoMensualFonacot:
+            type: float
+        infonavit:
+            type: string
+            length: '10'
+        montoCreditoInfonavit:
+            type: float
+        pagoMensualInfonavit:
+            type: float
+        otros:
+            type: string
+            length: '10'
+        montoCreditoOtros:
+            type: float
+        pagoMensualOtros:
+            type: float
+        institucioAutomotriz:
+            type: string
+            length: '10'
+        montoCredito:
+            type: float
+        pagoMensual:
+            type: float
+        saldoActual:
+            type: float
+        aseguradora:
+            type: string
+            length: '30'
+        tipoSeguro:
+            type: string
+            length: '50'
+        mensualidad:
+            type: float
+        vigencia:
+            type: time
+        cablemas:
+            type: string
+            length: '100'
+        mastv:
+            type: string
+            length: '100'
+        atenaParabolica:
+            type: string
+            length: '100'
+        sky:
+            type: string
+            length: '100'
+        otrosTv:
+            type: string
+            length: '100'
+        domestico:
+            type: string
+            length: '100'
+        jardinero:
+            type: string
+            length: '100'
+        chofer:
+            type: string
+            length: '100'
+        vigilancia:
+            type: string
+            length: '100'
+        observaciones:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
