@@ -1,0 +1,30 @@
+creditoh5:
+    path:     /
+    defaults: { _controller: "EstudioBundle:CreditoH5:index" }
+
+creditoh5_show:
+    path:     /{id}/show
+    defaults: { _controller: "EstudioBundle:CreditoH5:show" }
+
+creditoh5_new:
+    path:     /new
+    defaults: { _controller: "EstudioBundle:CreditoH5:new" }
+
+creditoh5_create:
+    path:     /create
+    defaults: { _controller: "EstudioBundle:CreditoH5:create" }
+    methods:  POST
+
+creditoh5_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EstudioBundle:CreditoH5:edit" }
+
+creditoh5_update:
+    path:     /{id}/update
+    defaults: { _controller: "EstudioBundle:CreditoH5:update" }
+    methods:  [POST, PUT]
+
+creditoh5_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EstudioBundle:CreditoH5:delete" }
+    methods:  [POST, DELETE]

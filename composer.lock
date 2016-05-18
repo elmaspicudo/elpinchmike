@@ -1174,6 +1174,7 @@
                 "distribution"
             ],
             "time": "2016-02-12 16:21:25"
+
         },
         {
             "name": "sensio/framework-extra-bundle",

@@ -1,0 +1,148 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>CreditoH5</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Institucionpersonales</th>
+                <td>{{ entity.institucionPersonales }}</td>
+            </tr>
+            <tr>
+                <th>Montocreditoinstitucion</th>
+                <td>{{ entity.montoCreditoInstitucion }}</td>
+            </tr>
+            <tr>
+                <th>Pagomensualinstitucion</th>
+                <td>{{ entity.pagoMensualInstitucion }}</td>
+            </tr>
+            <tr>
+                <th>Fonacot</th>
+                <td>{{ entity.fonacot }}</td>
+            </tr>
+            <tr>
+                <th>Montocreditofonacot</th>
+                <td>{{ entity.montoCreditoFonacot }}</td>
+            </tr>
+            <tr>
+                <th>Pagomensualfonacot</th>
+                <td>{{ entity.pagoMensualFonacot }}</td>
+            </tr>
+            <tr>
+                <th>Infonavit</th>
+                <td>{{ entity.infonavit }}</td>
+            </tr>
+            <tr>
+                <th>Montocreditoinfonavit</th>
+                <td>{{ entity.montoCreditoInfonavit }}</td>
+            </tr>
+            <tr>
+                <th>Pagomensualinfonavit</th>
+                <td>{{ entity.pagoMensualInfonavit }}</td>
+            </tr>
+            <tr>
+                <th>Otros</th>
+                <td>{{ entity.otros }}</td>
+            </tr>
+            <tr>
+                <th>Montocreditootros</th>
+                <td>{{ entity.montoCreditoOtros }}</td>
+            </tr>
+            <tr>
+                <th>Pagomensualotros</th>
+                <td>{{ entity.pagoMensualOtros }}</td>
+            </tr>
+            <tr>
+                <th>Institucioautomotriz</th>
+                <td>{{ entity.institucioAutomotriz }}</td>
+            </tr>
+            <tr>
+                <th>Montocredito</th>
+                <td>{{ entity.montoCredito }}</td>
+            </tr>
+            <tr>
+                <th>Pagomensual</th>
+                <td>{{ entity.pagoMensual }}</td>
+            </tr>
+            <tr>
+                <th>Saldoactual</th>
+                <td>{{ entity.saldoActual }}</td>
+            </tr>
+            <tr>
+                <th>Aseguradora</th>
+                <td>{{ entity.aseguradora }}</td>
+            </tr>
+            <tr>
+                <th>Tiposeguro</th>
+                <td>{{ entity.tipoSeguro }}</td>
+            </tr>
+            <tr>
+                <th>Mensualidad</th>
+                <td>{{ entity.mensualidad }}</td>
+            </tr>
+            <tr>
+                <th>Vigencia</th>
+                <td>{{ entity.vigencia }}</td>
+            </tr>
+            <tr>
+                <th>Cablemas</th>
+                <td>{{ entity.cablemas }}</td>
+            </tr>
+            <tr>
+                <th>Mastv</th>
+                <td>{{ entity.mastv }}</td>
+            </tr>
+            <tr>
+                <th>Atenaparabolica</th>
+                <td>{{ entity.atenaParabolica }}</td>
+            </tr>
+            <tr>
+                <th>Sky</th>
+                <td>{{ entity.sky }}</td>
+            </tr>
+            <tr>
+                <th>Otrostv</th>
+                <td>{{ entity.otrosTv }}</td>
+            </tr>
+            <tr>
+                <th>Domestico</th>
+                <td>{{ entity.domestico }}</td>
+            </tr>
+            <tr>
+                <th>Jardinero</th>
+                <td>{{ entity.jardinero }}</td>
+            </tr>
+            <tr>
+                <th>Chofer</th>
+                <td>{{ entity.chofer }}</td>
+            </tr>
+            <tr>
+                <th>Vigilancia</th>
+                <td>{{ entity.vigilancia }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ entity.observaciones }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('creditoh5') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('creditoh5_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

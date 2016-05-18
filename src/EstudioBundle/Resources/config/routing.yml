@@ -1,0 +1,46 @@
+estudio_creditoh5:
+    resource: "@EstudioBundle/Resources/config/routing/creditoh5.yml"
+    prefix:   /creditoh5
+
+estudio_deudasactualesh5:
+    resource: "@EstudioBundle/Resources/config/routing/deudasactualesh5.yml"
+    prefix:   /deudasactualesh5
+
+estudio_referenciapatroimonialautos:
+    resource: "@EstudioBundle/Resources/config/routing/referenciapatroimonialautos.yml"
+    prefix:   /referenciapatroimonialautos
+
+estudio_referenciapatrimonial:
+    resource: "@EstudioBundle/Resources/config/routing/referenciapatrimonial.yml"
+    prefix:   /referenciapatrimonial
+
+estudio_hoja4:
+    resource: "@EstudioBundle/Resources/config/routing/hoja4.yml"
+    prefix:   /hoja4
+
+estudio_esposahijos:
+    resource: "@EstudioBundle/Resources/config/routing/esposahijos.yml"
+    prefix:   /esposahijos
+
+estudio_habitantesdomicilio:
+    resource: "@EstudioBundle/Resources/config/routing/habitantesdomicilio.yml"
+    prefix:   /habitantesdomicilio
+
+estudio_dependienteseconomicos:
+    resource: "@EstudioBundle/Resources/config/routing/dependienteseconomicos.yml"
+    prefix:   /dependienteseconomicos
+
+estudio_padreshermanos:
+    resource: "@EstudioBundle/Resources/config/routing/padreshermanos.yml"
+    prefix:   /padreshermanos
+
+estudio_hoja2:
+    resource: "@EstudioBundle/Resources/config/routing/hoja2.yml"
+    prefix:   /hoja2
+
+EstudioBundle_hoja1:
+        resource: "@EstudioBundle/Resources/config/routing/hoja1.yml"
+        prefix:   /hoja1
+estudio_hoja3:
+    resource: "@EstudioBundle/Resources/config/routing/hoja3.yml"
+    prefix:   /hoja3

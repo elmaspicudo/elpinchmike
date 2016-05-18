@@ -1,0 +1,220 @@
+EstudioBundle\Entity\Hoja4:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        urbana:
+            type: string
+            length: '20'
+        centrica:
+            type: string
+            length: '20'
+        periferia:
+            type: string
+            length: '20'
+        telefonoPublico:
+            type: string
+            length: '10'
+        viasDeAcceso:
+            type: string
+            length: '10'
+        agua:
+            type: string
+            length: '10'
+        alumbrado:
+            type: string
+            length: '10'
+        centrosComerciales:
+            type: string
+            length: '10'
+        drenaje:
+            type: string
+            length: '10'
+        mercados:
+            type: string
+            length: '10'
+        pavimentacion:
+            type: string
+            length: '10'
+        escuelas:
+            type: string
+            length: '10'
+        banqueta:
+            type: string
+            length: '10'
+        areasVerdes:
+            type: string
+            length: '10'
+        transporte:
+            type: string
+            length: '10'
+        deportivos:
+            type: string
+            length: '10'
+        casa:
+            type: string
+            length: '10'
+        departamento:
+            type: string
+            length: '10'
+        condominio:
+            type: string
+            length: '10'
+        unidadHabitacional:
+            type: string
+            length: '10'
+        viviendaPopular:
+            type: string
+            length: '10'
+        propia:
+            type: string
+            length: '10'
+        familiares:
+            type: string
+            length: '10'
+        hipotecada:
+            type: string
+            length: '10'
+        prestada:
+            type: string
+            length: '10'
+        rentada:
+            type: string
+            length: '10'
+        compartida:
+            type: string
+            length: '10'
+        buena:
+            type: string
+            length: '10'
+        regular:
+            type: string
+            length: '10'
+        mala:
+            type: string
+            length: '10'
+        valorDeCasa:
+            type: integer
+        sala:
+            type: string
+            length: '10'
+        comedor:
+            type: string
+            length: '10'
+        cocina:
+            type: string
+            length: '10'
+        recamaras:
+            type: string
+            length: '10'
+        banos:
+            type: string
+            length: '10'
+        cuartoServicio:
+            type: string
+            length: '10'
+        estudio:
+            type: string
+            length: '10'
+        biblioteca:
+            type: string
+            length: '10'
+        garaje:
+            type: string
+            length: '10'
+        jardin:
+            type: string
+            length: '10'
+        mobiliario:
+            type: string
+            length: '20'
+        imagen:
+            type: string
+            length: '20'
+        aspecto:
+            type: string
+            length: '20'
+        orden:
+            type: string
+            length: '20'
+        teatroEnCasa:
+            type: string
+            length: '10'
+        televisionColor:
+            type: string
+            length: '10'
+        dvd:
+            type: string
+            length: '10'
+        estereo:
+            type: string
+            length: '10'
+        radio:
+            type: string
+            length: '10'
+        computadora:
+            type: string
+            length: '10'
+        impresora:
+            type: string
+            length: '10'
+        otros:
+            type: string
+            length: '100'
+        refrigerador:
+            type: string
+            length: '10'
+        lavaVajilla:
+            type: string
+            length: '10'
+        lavadora:
+            type: string
+            length: '10'
+        secadora:
+            type: string
+            length: '10'
+        licuadora:
+            type: string
+            length: '10'
+        freidora:
+            type: string
+            length: '10'
+        horneador:
+            type: string
+            length: '10'
+        hornoMicroondas:
+            type: string
+            length: '10'
+        aspiradora:
+            type: string
+            length: '10'
+        estufa:
+            type: string
+            length: '10'
+        pulidora:
+            type: string
+            length: '10'
+        batidora:
+            type: string
+            length: '10'
+        waflera:
+            type: string
+            length: '10'
+        tostador:
+            type: string
+            length: '10'
+        sandwichera:
+            type: string
+            length: '10'
+        extractorJugo:
+            type: string
+            length: '10'
+        observaciones:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,46 @@
+<?php
+
+namespace EstudioBundle\Form;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
+class Hoja3Type extends AbstractType
+{
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+
+            ->add('dependiente', new DependientesEconomicosType())
+            ->add('esposa', new EsposaHijosType())
+            ->add('padres', new PadresHermanosType())
+            ->add('habitantes', new habitantesDomicilioType())
+            
+        ;
+    }
+    
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'EstudioBundle\Entity\Hoja3',
+            
+
+        ));
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'estudiobundle_hoja3';
+    }
+}

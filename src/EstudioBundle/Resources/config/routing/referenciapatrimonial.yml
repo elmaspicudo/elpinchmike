@@ -1,0 +1,30 @@
+referenciapatrimonial:
+    path:     /
+    defaults: { _controller: "EstudioBundle:ReferenciaPatrimonial:index" }
+
+referenciapatrimonial_show:
+    path:     /{id}/show
+    defaults: { _controller: "EstudioBundle:ReferenciaPatrimonial:show" }
+
+referenciapatrimonial_new:
+    path:     /new
+    defaults: { _controller: "EstudioBundle:ReferenciaPatrimonial:new" }
+
+referenciapatrimonial_create:
+    path:     /create
+    defaults: { _controller: "EstudioBundle:ReferenciaPatrimonial:create" }
+    methods:  POST
+
+referenciapatrimonial_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EstudioBundle:ReferenciaPatrimonial:edit" }
+
+referenciapatrimonial_update:
+    path:     /{id}/update
+    defaults: { _controller: "EstudioBundle:ReferenciaPatrimonial:update" }
+    methods:  [POST, PUT]
+
+referenciapatrimonial_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EstudioBundle:ReferenciaPatrimonial:delete" }
+    methods:  [POST, DELETE]

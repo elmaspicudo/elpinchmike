@@ -1,0 +1,49 @@
+EstudioBundle\Entity\Hoja5:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        investigado:
+            type: float
+        conyuge:
+            type: float
+        padres:
+            type: float
+        hermanos:
+            type: float
+        otros:
+            type: float
+        renta:
+            type: float
+        predial:
+            type: float
+        agua:
+            type: float
+        luz:
+            type: float
+        celular:
+            type: float
+        gas:
+            type: float
+        transporte:
+            type: float
+        mantenimientoAuto:
+            type: float
+        alimentacion:
+            type: float
+        educacion:
+            type: float
+        medicos:
+            type: float
+        diversiones:
+            type: float
+        vestido:
+            type: float
+        otrosEgresos:
+            type: float
+    lifecycleCallbacks: {  }

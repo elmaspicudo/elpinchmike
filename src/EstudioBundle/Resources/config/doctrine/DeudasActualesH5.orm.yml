@@ -1,0 +1,20 @@
+EstudioBundle\Entity\DeudasActualesH5:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        banco:
+            type: string
+            length: '150'
+        limiteCredito:
+            type: float
+        antiguedad:
+            type: float
+        pagoMensual:
+            type: float
+    lifecycleCallbacks: {  }

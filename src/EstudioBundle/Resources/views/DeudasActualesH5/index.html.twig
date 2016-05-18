@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>DeudasActualesH5 list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Banco</th>
+                <th>Limitecredito</th>
+                <th>Antiguedad</th>
+                <th>Pagomensual</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('deudasactualesh5_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.banco }}</td>
+                <td>{{ entity.limiteCredito }}</td>
+                <td>{{ entity.antiguedad }}</td>
+                <td>{{ entity.pagoMensual }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('deudasactualesh5_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('deudasactualesh5_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('deudasactualesh5_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -71,6 +71,22 @@ class UserController extends Controller
         ));
     }
 
+     /**
+     * Creates a new User entity.
+     *
+     */
+    public function headerAction()
+    {       
+        $em = $this->getDoctrine()->getManager();        
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        if($user!='anon.'){
+             $usuario= $em->getRepository('UserBundle:User')->find($user->getId());                   
+        }
+        return $this->render('::header.html.twig', array(            
+            'usuario' => $usuario,
+        ));
+    }
+
     /**
      * Creates a form to create a User entity.
      *

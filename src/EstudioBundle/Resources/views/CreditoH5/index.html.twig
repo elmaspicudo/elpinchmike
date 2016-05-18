@@ -1,0 +1,99 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>CreditoH5 list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Institucionpersonales</th>
+                <th>Montocreditoinstitucion</th>
+                <th>Pagomensualinstitucion</th>
+                <th>Fonacot</th>
+                <th>Montocreditofonacot</th>
+                <th>Pagomensualfonacot</th>
+                <th>Infonavit</th>
+                <th>Montocreditoinfonavit</th>
+                <th>Pagomensualinfonavit</th>
+                <th>Otros</th>
+                <th>Montocreditootros</th>
+                <th>Pagomensualotros</th>
+                <th>Institucioautomotriz</th>
+                <th>Montocredito</th>
+                <th>Pagomensual</th>
+                <th>Saldoactual</th>
+                <th>Aseguradora</th>
+                <th>Tiposeguro</th>
+                <th>Mensualidad</th>
+                <th>Vigencia</th>
+                <th>Cablemas</th>
+                <th>Mastv</th>
+                <th>Atenaparabolica</th>
+                <th>Sky</th>
+                <th>Otrostv</th>
+                <th>Domestico</th>
+                <th>Jardinero</th>
+                <th>Chofer</th>
+                <th>Vigilancia</th>
+                <th>Observaciones</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('creditoh5_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.institucionPersonales }}</td>
+                <td>{{ entity.montoCreditoInstitucion }}</td>
+                <td>{{ entity.pagoMensualInstitucion }}</td>
+                <td>{{ entity.fonacot }}</td>
+                <td>{{ entity.montoCreditoFonacot }}</td>
+                <td>{{ entity.pagoMensualFonacot }}</td>
+                <td>{{ entity.infonavit }}</td>
+                <td>{{ entity.montoCreditoInfonavit }}</td>
+                <td>{{ entity.pagoMensualInfonavit }}</td>
+                <td>{{ entity.otros }}</td>
+                <td>{{ entity.montoCreditoOtros }}</td>
+                <td>{{ entity.pagoMensualOtros }}</td>
+                <td>{{ entity.institucioAutomotriz }}</td>
+                <td>{{ entity.montoCredito }}</td>
+                <td>{{ entity.pagoMensual }}</td>
+                <td>{{ entity.saldoActual }}</td>
+                <td>{{ entity.aseguradora }}</td>
+                <td>{{ entity.tipoSeguro }}</td>
+                <td>{{ entity.mensualidad }}</td>
+                <td>{{ entity.vigencia }}</td>
+                <td>{{ entity.cablemas }}</td>
+                <td>{{ entity.mastv }}</td>
+                <td>{{ entity.atenaParabolica }}</td>
+                <td>{{ entity.sky }}</td>
+                <td>{{ entity.otrosTv }}</td>
+                <td>{{ entity.domestico }}</td>
+                <td>{{ entity.jardinero }}</td>
+                <td>{{ entity.chofer }}</td>
+                <td>{{ entity.vigilancia }}</td>
+                <td>{{ entity.observaciones }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('creditoh5_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('creditoh5_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('creditoh5_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

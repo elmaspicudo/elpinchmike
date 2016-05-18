@@ -37,7 +37,7 @@ twig:
         - '::fields.html.twig'
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    
+   
 
 # Assetic Configuration
 assetic:
