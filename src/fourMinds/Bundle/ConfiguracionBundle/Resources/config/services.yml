@@ -1,0 +1,4 @@
+services:
+#    configuracion.example:
+#        class: fourMinds\Bundle\ConfiguracionBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

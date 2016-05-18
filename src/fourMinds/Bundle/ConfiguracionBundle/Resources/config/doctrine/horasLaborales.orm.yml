@@ -1,0 +1,15 @@
+fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        inicio:
+            type: datetime
+        fin:
+            type: time
+    lifecycleCallbacks: {  }

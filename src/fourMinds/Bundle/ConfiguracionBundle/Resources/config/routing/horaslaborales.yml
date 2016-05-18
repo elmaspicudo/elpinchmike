@@ -1,0 +1,30 @@
+horaslaborales:
+    path:     /
+    defaults: { _controller: "ConfiguracionBundle:horasLaborales:index" }
+
+horaslaborales_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConfiguracionBundle:horasLaborales:show" }
+
+horaslaborales_new:
+    path:     /new
+    defaults: { _controller: "ConfiguracionBundle:horasLaborales:new" }
+
+horaslaborales_create:
+    path:     /create
+    defaults: { _controller: "ConfiguracionBundle:horasLaborales:create" }
+    methods:  POST
+
+horaslaborales_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConfiguracionBundle:horasLaborales:edit" }
+
+horaslaborales_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConfiguracionBundle:horasLaborales:update" }
+    methods:  [POST, PUT]
+
+horaslaborales_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConfiguracionBundle:horasLaborales:delete" }
+    methods:  [POST, DELETE]

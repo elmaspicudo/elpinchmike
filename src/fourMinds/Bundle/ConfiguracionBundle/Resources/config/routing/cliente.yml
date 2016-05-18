@@ -1,0 +1,30 @@
+cliente:
+    path:     /
+    defaults: { _controller: "ConfiguracionBundle:Cliente:index" }
+
+cliente_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConfiguracionBundle:Cliente:show" }
+
+cliente_new:
+    path:     /new
+    defaults: { _controller: "ConfiguracionBundle:Cliente:new" }
+
+cliente_create:
+    path:     /create
+    defaults: { _controller: "ConfiguracionBundle:Cliente:create" }
+    methods:  POST
+
+cliente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConfiguracionBundle:Cliente:edit" }
+
+cliente_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConfiguracionBundle:Cliente:update" }
+    methods:  [POST, PUT]
+
+cliente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConfiguracionBundle:Cliente:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,32 @@
+fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        direccion:
+            type: string
+            length: 255
+        telefonos:
+            type: string
+            length: 255
+        puesto:
+            type: string
+            length: '120'
+        formato:
+            type: integer
+        fecha:
+            type: datetime
+    manyToOne:
+        cliente:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Cliente
+        visitador:         
+            targetEntity: fourMinds\Bundle\UserBundle\Entity\User
+    lifecycleCallbacks: {  }

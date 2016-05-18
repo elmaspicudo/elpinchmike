@@ -1,0 +1,30 @@
+tiempoetapa:
+    path:     /
+    defaults: { _controller: "ConfiguracionBundle:tiempoEtapa:index" }
+
+tiempoetapa_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConfiguracionBundle:tiempoEtapa:show" }
+
+tiempoetapa_new:
+    path:     /new
+    defaults: { _controller: "ConfiguracionBundle:tiempoEtapa:new" }
+
+tiempoetapa_create:
+    path:     /create
+    defaults: { _controller: "ConfiguracionBundle:tiempoEtapa:create" }
+    methods:  POST
+
+tiempoetapa_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConfiguracionBundle:tiempoEtapa:edit" }
+
+tiempoetapa_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConfiguracionBundle:tiempoEtapa:update" }
+    methods:  [POST, PUT]
+
+tiempoetapa_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConfiguracionBundle:tiempoEtapa:delete" }
+    methods:  [POST, DELETE]

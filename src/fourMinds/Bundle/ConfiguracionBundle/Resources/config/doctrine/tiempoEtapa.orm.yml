@@ -1,0 +1,17 @@
+fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        etapa:
+            type: string
+            length: '120'
+            column: Etapa
+        tiempo:
+            type: integer
+    lifecycleCallbacks: {  }

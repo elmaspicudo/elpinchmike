@@ -1,6 +1,6 @@
 security:
     encoders:        
-        DsCorp\Bundle\UserBundle\Entity\User:
+        fourMinds\Bundle\UserBundle\Entity\User:
             algorithm: sha512
             encode-as-base64: true
             iterations: 10
@@ -39,7 +39,7 @@ security:
                 path:   /logout
                 target: /login
             #anonymous: ~
-            #http_basic: ssh://root@linx4.dscorp.com.mx:22023/var/www/html/wdstorage
+            #http_basic: ssh://root@linx4.fourMinds.com.mx:22023/var/www/html/wdstorage
             #    realm: "Secured Demo Area"
         main:
             pattern: /.*

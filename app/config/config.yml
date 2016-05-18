@@ -80,6 +80,6 @@ swiftmailer:
     encryption: null
     auth_mode:  null
     port:       26
-    host:       linx4.dscorp.com.mx
-    username:   cosdac-dscorp.com.mx
+    host:       linx4.fourMinds.com.mx
+    username:   cosdac-fourMinds.com.mx
     password:   123456A

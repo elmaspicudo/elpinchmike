@@ -1,0 +1,30 @@
+solicitud:
+    path:     /
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:index" }
+
+solicitud_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:show" }
+
+solicitud_new:
+    path:     /new
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:new" }
+
+solicitud_create:
+    path:     /create
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:create" }
+    methods:  POST
+
+solicitud_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:edit" }
+
+solicitud_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:update" }
+    methods:  [POST, PUT]
+
+solicitud_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:delete" }
+    methods:  [POST, DELETE]

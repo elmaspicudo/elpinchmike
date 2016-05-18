@@ -1,0 +1,19 @@
+configuracion_horaslaborales:
+    resource: "@ConfiguracionBundle/Resources/config/routing/horaslaborales.yml"
+    prefix:   /horaslaborales
+
+configuracion_solicitud:
+    resource: "@ConfiguracionBundle/Resources/config/routing/solicitud.yml"
+    prefix:   /solicitud
+
+configuracion_cliente:
+    resource: "@ConfiguracionBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+
+configuracion_tiempoetapa:
+    resource: "@ConfiguracionBundle/Resources/config/routing/tiempoetapa.yml"
+    prefix:   /tiempoetapa
+
+configuracion_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ConfiguracionBundle:Default:index }
