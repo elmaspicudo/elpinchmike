@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>documentos</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Noseguridadsocial</th>
+                <td>{{ entity.noSeguridadSocial }}</td>
+            </tr>
+            <tr>
+                <th>Curp</th>
+                <td>{{ entity.curp }}</td>
+            </tr>
+            <tr>
+                <th>Compdomiciliario</th>
+                <td>{{ entity.compDomiciliario }}</td>
+            </tr>
+            <tr>
+                <th>Credencialine</th>
+                <td>{{ entity.credencialINE }}</td>
+            </tr>
+            <tr>
+                <th>Rfc</th>
+                <td>{{ entity.rfc }}</td>
+            </tr>
+            <tr>
+                <th>Anonbrede</th>
+                <td>{{ entity.aNonbreDe }}</td>
+            </tr>
+            <tr>
+                <th>Cartaslaborales</th>
+                <td>{{ entity.cartasLaborales }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ entity.observaciones }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('documentos') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('documentos_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

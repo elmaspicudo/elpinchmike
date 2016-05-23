@@ -1,0 +1,30 @@
+datosp:
+    path:     /
+    defaults: { _controller: "datosBundle:datosp:index" }
+
+datosp_show:
+    path:     /{id}/show
+    defaults: { _controller: "datosBundle:datosp:show" }
+
+datosp_new:
+    path:     /new
+    defaults: { _controller: "datosBundle:datosp:new" }
+
+datosp_create:
+    path:     /create
+    defaults: { _controller: "datosBundle:datosp:create" }
+    methods:  POST
+
+datosp_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "datosBundle:datosp:edit" }
+
+datosp_update:
+    path:     /{id}/update
+    defaults: { _controller: "datosBundle:datosp:update" }
+    methods:  [POST, PUT]
+
+datosp_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "datosBundle:datosp:delete" }
+    methods:  [POST, DELETE]

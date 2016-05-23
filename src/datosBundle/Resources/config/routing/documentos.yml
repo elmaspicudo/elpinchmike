@@ -1,0 +1,30 @@
+documentos:
+    path:     /
+    defaults: { _controller: "datosBundle:documentos:index" }
+
+documentos_show:
+    path:     /{id}/show
+    defaults: { _controller: "datosBundle:documentos:show" }
+
+documentos_new:
+    path:     /new
+    defaults: { _controller: "datosBundle:documentos:new" }
+
+documentos_create:
+    path:     /create
+    defaults: { _controller: "datosBundle:documentos:create" }
+    methods:  POST
+
+documentos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "datosBundle:documentos:edit" }
+
+documentos_update:
+    path:     /{id}/update
+    defaults: { _controller: "datosBundle:documentos:update" }
+    methods:  [POST, PUT]
+
+documentos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "datosBundle:documentos:delete" }
+    methods:  [POST, DELETE]

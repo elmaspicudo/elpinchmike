@@ -1,0 +1,4 @@
+datos:
+    resource: "@datosBundle/Resources/config/routing.yml"
+    prefix:   /
+

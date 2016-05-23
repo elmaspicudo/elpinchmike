@@ -1,0 +1,85 @@
+datosBundle\Entity\empleoAnterior:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        empresa:
+            type: string
+            length: '30'
+        sucursal:
+            type: string
+            length: '25'
+        domicilio:
+            type: string
+            length: '50'
+        jefeInmediato:
+            type: string
+            length: '25'
+        fechaDeInicio:
+            type: datetime
+        fechaDeTermino:
+            type: datetime
+        puestoInicial:
+            type: string
+            length: '30'
+        puestoFinal:
+            type: string
+            length: '30'
+        motivoDeSalida:
+            type: string
+            length: '30'
+        datosProporCionadosPor:
+            type: string
+            length: '30'
+        puesto:
+            type: string
+            length: '25'
+        telefono:
+            type: string
+            length: '10'
+        estado:
+            type: string
+            length: '10'
+        puestoo:
+            type: string
+            length: '30'
+        sueldoInicial:
+            type: string
+            length: '10'
+        sueldoFinal:
+            type: string
+            length: '10'
+        exelente:
+            type: boolean
+        muyBueno:
+            type: boolean
+        bueno:
+            type: boolean
+        regular:
+            type: boolean
+        deficiente:
+            type: boolean
+        asistenciaYpuntualidad:
+            type: boolean
+        responsabilidad:
+            type: boolean
+        desempenio:
+            type: boolean
+        relacionConJefesYcom:
+            type: boolean
+        trabajoVajoPresion:
+            type: boolean
+        apegoApoliticas:
+            type: boolean
+        desempenoProporcionado:
+            type: string
+            length: '30'
+        observacionn:
+            type: string
+            length: '100'        
+    lifecycleCallbacks: {  }
