@@ -1,0 +1,30 @@
+empleoanterior:
+    path:     /
+    defaults: { _controller: "datosBundle:empleoAnterior:index" }
+
+empleoanterior_show:
+    path:     /{id}/show
+    defaults: { _controller: "datosBundle:empleoAnterior:show" }
+
+empleoanterior_new:
+    path:     /new
+    defaults: { _controller: "datosBundle:empleoAnterior:new" }
+
+empleoanterior_create:
+    path:     /create
+    defaults: { _controller: "datosBundle:empleoAnterior:create" }
+    methods:  POST
+
+empleoanterior_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "datosBundle:empleoAnterior:edit" }
+
+empleoanterior_update:
+    path:     /{id}/update
+    defaults: { _controller: "datosBundle:empleoAnterior:update" }
+    methods:  [POST, PUT]
+
+empleoanterior_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "datosBundle:empleoAnterior:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,144 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>empleoAnterior</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Empresa</th>
+                <td>{{ entity.empresa }}</td>
+            </tr>
+            <tr>
+                <th>Sucursal</th>
+                <td>{{ entity.sucursal }}</td>
+            </tr>
+            <tr>
+                <th>Domicilio</th>
+                <td>{{ entity.domicilio }}</td>
+            </tr>
+            <tr>
+                <th>Jefeinmediato</th>
+                <td>{{ entity.jefeInmediato }}</td>
+            </tr>
+            <tr>
+                <th>Fechadeinicio</th>
+                <td>{{ entity.fechaDeInicio|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Fechadetermino</th>
+                <td>{{ entity.fechaDeTermino|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Puestoinicial</th>
+                <td>{{ entity.puestoInicial }}</td>
+            </tr>
+            <tr>
+                <th>Puestofinal</th>
+                <td>{{ entity.puestoFinal }}</td>
+            </tr>
+            <tr>
+                <th>Motivodesalida</th>
+                <td>{{ entity.motivoDeSalida }}</td>
+            </tr>
+            <tr>
+                <th>Datosproporcionadospor</th>
+                <td>{{ entity.datosProporCionadosPor }}</td>
+            </tr>
+            <tr>
+                <th>Puesto</th>
+                <td>{{ entity.puesto }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ entity.estado }}</td>
+            </tr>
+            <tr>
+                <th>Puestoo</th>
+                <td>{{ entity.puestoo }}</td>
+            </tr>
+            <tr>
+                <th>Sueldoinicial</th>
+                <td>{{ entity.sueldoInicial }}</td>
+            </tr>
+            <tr>
+                <th>Sueldofinal</th>
+                <td>{{ entity.sueldoFinal }}</td>
+            </tr>
+            <tr>
+                <th>Exelente</th>
+                <td>{{ entity.exelente }}</td>
+            </tr>
+            <tr>
+                <th>Muybueno</th>
+                <td>{{ entity.muyBueno }}</td>
+            </tr>
+            <tr>
+                <th>Bueno</th>
+                <td>{{ entity.bueno }}</td>
+            </tr>
+            <tr>
+                <th>Regular</th>
+                <td>{{ entity.regular }}</td>
+            </tr>
+            <tr>
+                <th>Deficiente</th>
+                <td>{{ entity.deficiente }}</td>
+            </tr>
+            <tr>
+                <th>Asistenciaypuntualidad</th>
+                <td>{{ entity.asistenciaYpuntualidad }}</td>
+            </tr>
+            <tr>
+                <th>Responsabilidad</th>
+                <td>{{ entity.responsabilidad }}</td>
+            </tr>
+            <tr>
+                <th>Desempenio</th>
+                <td>{{ entity.desempenio }}</td>
+            </tr>
+            <tr>
+                <th>Relacionconjefesycom</th>
+                <td>{{ entity.relacionConJefesYcom }}</td>
+            </tr>
+            <tr>
+                <th>Trabajovajopresion</th>
+                <td>{{ entity.trabajoVajoPresion }}</td>
+            </tr>
+            <tr>
+                <th>Apegoapoliticas</th>
+                <td>{{ entity.apegoApoliticas }}</td>
+            </tr>
+            <tr>
+                <th>Desempenoproporcionado</th>
+                <td>{{ entity.desempenoProporcionado }}</td>
+            </tr>
+            <tr>
+                <th>Observacionn</th>
+                <td>{{ entity.observacionn }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('empleoanterior') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('empleoanterior_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,57 @@
+datosBundle\Entity\trayectoriaEsco:
+    type: entity
+    table: null
+    repositoryClass: datosBundle\Entity\trayectoriaEscoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        secundaria:
+            type: string
+            length: '50'
+        preparatoriaOequivalente:
+            type: string
+            length: '30'
+        licenciatura:
+            type: string
+            length: '30'
+        diplomado:
+            type: string
+            length: '30'
+        maestria:
+            type: string
+            length: '30'
+        otros:
+            type: string
+            length: '20'
+        aniosCursado:
+            type: string
+            length: '15'
+        comprobante:
+            type: string
+            length: '12'
+        observacion:
+            type: string
+            length: 255
+        nombre:
+            type: string
+            length: '25'
+        ocupacion:
+            type: string
+            length: '25'
+        telefono:
+            type: string
+            length: '10'
+        tiempoDeConocerlo:
+            type: string
+            length: '6'
+        comentarios:
+            type: string
+            length: '80'
+        observaciones:
+            type: string
+            length: '150'
+    lifecycleCallbacks: {  }

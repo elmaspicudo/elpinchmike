@@ -4,6 +4,7 @@ Symfony Standard Edition
 Welcome to the Symfony Standard Edition - a fully-functional Symfony2
 application that you can use as the skeleton for your new applications.
 
+
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
@@ -61,6 +62,7 @@ released under the MIT or BSD license.
 
 Enjoy!
 
+
 [1]:  https://symfony.com/doc/2.7/book/installation.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
 [7]:  https://symfony.com/doc/2.7/book/doctrine.html
@@ -70,4 +72,3 @@ Enjoy!
 [11]: https://symfony.com/doc/2.7/cookbook/logging/monolog.html
 [12]: https://symfony.com/doc/2.7/cookbook/assetic/asset_management.html
 [13]: https://symfony.com/doc/2.7/bundles/SensioGeneratorBundle/index.html
-

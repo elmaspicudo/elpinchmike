@@ -1,0 +1,27 @@
+datos_trayectorialab:
+    resource: "@datosBundle/Resources/config/routing/trayectorialab.yml"
+    prefix:   /trayectorialab
+
+datos_trayectoriaesco:
+    resource: "@datosBundle/Resources/config/routing/trayectoriaesco.yml"
+    prefix:   /trayectoriaesco
+
+datos_empleoanterior:
+    resource: "@datosBundle/Resources/config/routing/empleoanterior.yml"
+    prefix:   /empleoanterior
+
+datos_datosp:
+    resource: "@datosBundle/Resources/config/routing/datosp.yml"
+    prefix:   /datosp
+
+datos_anteriorempleo:
+    resource: "@datosBundle/Resources/config/routing/anteriorempleo.yml"
+    prefix:   /anteriorempleo
+
+datos_documentos:
+    resource: "@datosBundle/Resources/config/routing/documentos.yml"
+    prefix:   /documentos
+
+datos_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: datosBundle:Default:index }

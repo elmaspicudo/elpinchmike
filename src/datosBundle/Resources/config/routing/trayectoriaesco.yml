@@ -1,0 +1,30 @@
+trayectoriaesco:
+    path:     /
+    defaults: { _controller: "datosBundle:trayectoriaEsco:index" }
+
+trayectoriaesco_show:
+    path:     /{id}/show
+    defaults: { _controller: "datosBundle:trayectoriaEsco:show" }
+
+trayectoriaesco_new:
+    path:     /new
+    defaults: { _controller: "datosBundle:trayectoriaEsco:new" }
+
+trayectoriaesco_create:
+    path:     /create
+    defaults: { _controller: "datosBundle:trayectoriaEsco:create" }
+    methods:  POST
+
+trayectoriaesco_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "datosBundle:trayectoriaEsco:edit" }
+
+trayectoriaesco_update:
+    path:     /{id}/update
+    defaults: { _controller: "datosBundle:trayectoriaEsco:update" }
+    methods:  [POST, PUT]
+
+trayectoriaesco_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "datosBundle:trayectoriaEsco:delete" }
+    methods:  [POST, DELETE]
