@@ -1,0 +1,60 @@
+datosBundle\Entity\datosp:
+    type: entity
+    table: null
+    repositoryClass: datosBundle\Entity\datospRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        empresa:
+            type: string
+            length: '40'
+        nombre:
+            type: string
+            length: '40'
+        puesto:
+            type: string
+            length: '20'
+        fechaDeNacimiento:
+            type: datetime
+        fecha:
+            type: datetime
+        nacionalidad:
+            type: string
+            length: '15'
+        domicilio:
+            type: string
+            length: '30'
+        ciudad:
+            type: string
+            length: '12'
+        telefonoCasa:
+            type: integer
+        celular:
+            type: integer
+        telTrabajo:
+            type: integer
+        edad:
+            type: integer
+        sexo:
+            type: boolean
+        lugarDeNacimiento:
+            type: string
+            length: '13'
+        eCivil:
+            type: boolean
+        colonia:
+            type: string
+            length: '20'
+        pais:
+            type: string
+            length: '13'
+        concluciones:
+            type: string
+            length: 255
+        resultadoDeLaEntrevista:
+            type: boolean            
+    lifecycleCallbacks: {  }

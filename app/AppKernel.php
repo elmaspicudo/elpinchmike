@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new fourMinds\Bundle\UserBundle\UserBundle(),
             new fourMinds\Bundle\ConfiguracionBundle\ConfiguracionBundle(),
             new EstudioBundle\EstudioBundle(),
+            new datosBundle\datosBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -35,6 +36,5 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
-
     }
 }

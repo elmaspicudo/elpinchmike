@@ -1,7 +1,6 @@
 <?php
 
 require_once dirname(__FILE__).'/SymfonyRequirements.php';
-
 $lineSize = 70;
 $symfonyRequirements = new SymfonyRequirements();
 $iniPath = $symfonyRequirements->getPhpIniConfigPath();
@@ -139,4 +138,5 @@ function has_color_support()
     }
 
     return $support;
+
 }

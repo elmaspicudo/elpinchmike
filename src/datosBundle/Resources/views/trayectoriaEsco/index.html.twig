@@ -1,0 +1,69 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>trayectoriaEsco list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Secundaria</th>
+                <th>Preparatoriaoequivalente</th>
+                <th>Licenciatura</th>
+                <th>Diplomado</th>
+                <th>Maestria</th>
+                <th>Otros</th>
+                <th>Anioscursado</th>
+                <th>Comprobante</th>
+                <th>Observacion</th>
+                <th>Nombre</th>
+                <th>Ocupacion</th>
+                <th>Telefono</th>
+                <th>Tiempodeconocerlo</th>
+                <th>Comentarios</th>
+                <th>Observaciones</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('trayectoriaesco_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.secundaria }}</td>
+                <td>{{ entity.preparatoriaOequivalente }}</td>
+                <td>{{ entity.licenciatura }}</td>
+                <td>{{ entity.diplomado }}</td>
+                <td>{{ entity.maestria }}</td>
+                <td>{{ entity.otros }}</td>
+                <td>{{ entity.aniosCursado }}</td>
+                <td>{{ entity.comprobante }}</td>
+                <td>{{ entity.observacion }}</td>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.ocupacion }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.tiempoDeConocerlo }}</td>
+                <td>{{ entity.comentarios }}</td>
+                <td>{{ entity.observaciones }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('trayectoriaesco_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('trayectoriaesco_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('trayectoriaesco_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,35 @@
+datosBundle\Entity\documentos:
+    type: entity
+    table: null
+    repositoryClass: datosBundle\Entity\documentosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        noSeguridadSocial:
+            type: integer
+        curp:
+            type: string
+            length: '20'
+        compDomiciliario:
+            type: string
+            length: '15'
+        credencialINE:
+            type: string
+            length: '15'
+        rfc:
+            type: string
+            length: '13'
+        aNonbreDe:
+            type: string
+            length: '30'
+        cartasLaborales:
+            type: string
+            length: '50'
+        observaciones:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

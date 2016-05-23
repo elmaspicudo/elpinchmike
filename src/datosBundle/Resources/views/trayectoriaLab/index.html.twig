@@ -1,0 +1,97 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>trayectoriaLab list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Empresa</th>
+                <th>Sucursal</th>
+                <th>Domicilio</th>
+                <th>Jefeinmediato</th>
+                <th>Fechadeinicio</th>
+                <th>Fechadetermino</th>
+                <th>Puestoinicial</th>
+                <th>Puestofinal</th>
+                <th>Motivodesalida</th>
+                <th>Datosproporcionadospor</th>
+                <th>Puesto</th>
+                <th>Telefono</th>
+                <th>Estado</th>
+                <th>Puestoo</th>
+                <th>Sueldoinicial</th>
+                <th>Sueldofinal</th>
+                <th>Exelente</th>
+                <th>Muybueno</th>
+                <th>Bueno</th>
+                <th>Regular</th>
+                <th>Deficiente</th>
+                <th>Asistenciaypuntualidad</th>
+                <th>Responsabilidad</th>
+                <th>Desempenio</th>
+                <th>Relacionconjefesycom</th>
+                <th>Trabajovajopresion</th>
+                <th>Apegoapoliticas</th>
+                <th>Desempenoproporcionado</th>
+                <th>Observacionn</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('trayectorialab_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.empresa }}</td>
+                <td>{{ entity.sucursal }}</td>
+                <td>{{ entity.domicilio }}</td>
+                <td>{{ entity.jefeInmediato }}</td>
+                <td>{% if entity.fechaDeInicio %}{{ entity.fechaDeInicio|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fechaDeTermino %}{{ entity.fechaDeTermino|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.puestoInicial }}</td>
+                <td>{{ entity.puestoFinal }}</td>
+                <td>{{ entity.motivoDeSalida }}</td>
+                <td>{{ entity.datosProporCionadosPor }}</td>
+                <td>{{ entity.puesto }}</td>
+                <td>{{ entity.telefono }}</td>
+                <td>{{ entity.estado }}</td>
+                <td>{{ entity.puestoo }}</td>
+                <td>{{ entity.sueldoInicial }}</td>
+                <td>{{ entity.sueldoFinal }}</td>
+                <td>{{ entity.exelente }}</td>
+                <td>{{ entity.muyBueno }}</td>
+                <td>{{ entity.bueno }}</td>
+                <td>{{ entity.regular }}</td>
+                <td>{{ entity.deficiente }}</td>
+                <td>{{ entity.asistenciaYpuntualidad }}</td>
+                <td>{{ entity.responsabilidad }}</td>
+                <td>{{ entity.desempenio }}</td>
+                <td>{{ entity.relacionConJefesYcom }}</td>
+                <td>{{ entity.trabajoVajoPresion }}</td>
+                <td>{{ entity.apegoApoliticas }}</td>
+                <td>{{ entity.desempenoProporcionado }}</td>
+                <td>{{ entity.observacionn }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('trayectorialab_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('trayectorialab_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('trayectorialab_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -14,7 +14,6 @@ security:
                 users:
                     user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                     admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
-
         Usuario:
             entity:
                 class: UserBundle:User
@@ -53,4 +52,5 @@ security:
     #    - { path: ^/Inicio, roles: ROLE_USER } #todos tienen acceso por ser ROLE_USER
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
        # - { path: ^/, roles: [USER,ADMIN] }       
+
 

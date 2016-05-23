@@ -1,0 +1,77 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>datosp list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Empresa</th>
+                <th>Nombre</th>
+                <th>Puesto</th>
+                <th>Fechadenacimiento</th>
+                <th>Fecha</th>
+                <th>Nacionalidad</th>
+                <th>Domicilio</th>
+                <th>Ciudad</th>
+                <th>Telefonocasa</th>
+                <th>Celular</th>
+                <th>Teltrabajo</th>
+                <th>Edad</th>
+                <th>Sexo</th>
+                <th>Lugardenacimiento</th>
+                <th>Ecivil</th>
+                <th>Colonia</th>
+                <th>Pais</th>
+                <th>Concluciones</th>
+                <th>Resultadodelaentrevista</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('datosp_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.empresa }}</td>
+                <td>{{ entity.nombre }}</td>
+                <td>{{ entity.puesto }}</td>
+                <td>{% if entity.fechaDeNacimiento %}{{ entity.fechaDeNacimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.nacionalidad }}</td>
+                <td>{{ entity.domicilio }}</td>
+                <td>{{ entity.ciudad }}</td>
+                <td>{{ entity.telefonoCasa }}</td>
+                <td>{{ entity.celular }}</td>
+                <td>{{ entity.telTrabajo }}</td>
+                <td>{{ entity.edad }}</td>
+                <td>{{ entity.sexo }}</td>
+                <td>{{ entity.lugarDeNacimiento }}</td>
+                <td>{{ entity.eCivil }}</td>
+                <td>{{ entity.colonia }}</td>
+                <td>{{ entity.pais }}</td>
+                <td>{{ entity.concluciones }}</td>
+                <td>{{ entity.resultadoDeLaEntrevista }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('datosp_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('datosp_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('datosp_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

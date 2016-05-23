@@ -1,0 +1,30 @@
+trayectorialab:
+    path:     /
+    defaults: { _controller: "datosBundle:trayectoriaLab:index" }
+
+trayectorialab_show:
+    path:     /{id}/show
+    defaults: { _controller: "datosBundle:trayectoriaLab:show" }
+
+trayectorialab_new:
+    path:     /new
+    defaults: { _controller: "datosBundle:trayectoriaLab:new" }
+
+trayectorialab_create:
+    path:     /create
+    defaults: { _controller: "datosBundle:trayectoriaLab:create" }
+    methods:  POST
+
+trayectorialab_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "datosBundle:trayectoriaLab:edit" }
+
+trayectorialab_update:
+    path:     /{id}/update
+    defaults: { _controller: "datosBundle:trayectoriaLab:update" }
+    methods:  [POST, PUT]
+
+trayectorialab_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "datosBundle:trayectoriaLab:delete" }
+    methods:  [POST, DELETE]

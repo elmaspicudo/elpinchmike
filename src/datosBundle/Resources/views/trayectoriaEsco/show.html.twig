@@ -1,0 +1,88 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>trayectoriaEsco</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Secundaria</th>
+                <td>{{ entity.secundaria }}</td>
+            </tr>
+            <tr>
+                <th>Preparatoriaoequivalente</th>
+                <td>{{ entity.preparatoriaOequivalente }}</td>
+            </tr>
+            <tr>
+                <th>Licenciatura</th>
+                <td>{{ entity.licenciatura }}</td>
+            </tr>
+            <tr>
+                <th>Diplomado</th>
+                <td>{{ entity.diplomado }}</td>
+            </tr>
+            <tr>
+                <th>Maestria</th>
+                <td>{{ entity.maestria }}</td>
+            </tr>
+            <tr>
+                <th>Otros</th>
+                <td>{{ entity.otros }}</td>
+            </tr>
+            <tr>
+                <th>Anioscursado</th>
+                <td>{{ entity.aniosCursado }}</td>
+            </tr>
+            <tr>
+                <th>Comprobante</th>
+                <td>{{ entity.comprobante }}</td>
+            </tr>
+            <tr>
+                <th>Observacion</th>
+                <td>{{ entity.observacion }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Ocupacion</th>
+                <td>{{ entity.ocupacion }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Tiempodeconocerlo</th>
+                <td>{{ entity.tiempoDeConocerlo }}</td>
+            </tr>
+            <tr>
+                <th>Comentarios</th>
+                <td>{{ entity.comentarios }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ entity.observaciones }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('trayectoriaesco') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('trayectoriaesco_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
