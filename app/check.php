@@ -80,7 +80,6 @@ function get_error_message(Requirement $requirement, $lineSize)
         return;
     }
 
-
     $errorMessage = wordwrap($requirement->getTestMessage(), $lineSize - 3, PHP_EOL.'   ').PHP_EOL;
     $errorMessage .= '   > '.wordwrap($requirement->getHelpText(), $lineSize - 5, PHP_EOL.'   > ').PHP_EOL;
 
