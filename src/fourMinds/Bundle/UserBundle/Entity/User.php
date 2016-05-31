@@ -319,4 +319,9 @@ class User implements UserInterface
     {
         return $this->rol_user;
     }
+
+    public function __toString()
+    {
+        return $this->getUserName();
+    }
 }

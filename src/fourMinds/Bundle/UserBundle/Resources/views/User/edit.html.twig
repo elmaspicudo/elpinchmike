@@ -1,6 +1,10 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
     <h1>Editar usuario</h1>
    
 	{{ form_start(edit_form, {'attr': {'class': 'form_transaccion_edit'}}) }}		
@@ -27,5 +31,8 @@
         <button class="btn btn-default" type="reset">Limpiar</button>
         <a class="btn btn-warning" href="{{ path('user') }}">Limpiar</a>
     {{ form_end(edit_form) }}                     
-       
+  </div>
+</div>
+</div>
+</div>      
 {% endblock %}
