@@ -244,9 +244,8 @@ class User implements UserInterface
     public function getRoles()
     {
         $losroles=array();
-        foreach ($this->rol_user as $key) {
-            $losroles[]=$key->getName();
-        }
+        $losroles[]=$this->role;
+        
         return $losroles;
         //return $this->roles;
     }
@@ -279,44 +278,153 @@ class User implements UserInterface
     }
     
     /**
-     * Constructor
+     * @var string
      */
-    public function __construct()
-    {
-        $this->rol_user = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    private $nombre;
 
     /**
-     * Add rolUser
+     * @var string
+     */
+    private $aPaterno;
+
+    /**
+     * @var string
+     */
+    private $aMaterno;
+
+    /**
+     * @var string
+     */
+    private $correo;
+
+    /**
+     * @var string
+     */
+    private $role;
+
+
+    /**
+     * Set nombre
      *
-     * @param \fourMinds\Bundle\UserBundle\Entity\role $rolUser
+     * @param string $nombre
      *
      * @return User
      */
-    public function addRolUser(\fourMinds\Bundle\UserBundle\Entity\role $rolUser)
+    public function setNombre($nombre)
     {
-        $this->rol_user[] = $rolUser;
+        $this->nombre = $nombre;
 
         return $this;
     }
 
     /**
-     * Remove rolUser
+     * Get nombre
      *
-     * @param \fourMinds\Bundle\UserBundle\Entity\role $rolUser
+     * @return string
      */
-    public function removeRolUser(\fourMinds\Bundle\UserBundle\Entity\role $rolUser)
+    public function getNombre()
     {
-        $this->rol_user->removeElement($rolUser);
+        return $this->nombre;
     }
 
     /**
-     * Get rolUser
+     * Set aPaterno
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @param string $aPaterno
+     *
+     * @return User
      */
-    public function getRolUser()
+    public function setAPaterno($aPaterno)
     {
-        return $this->rol_user;
+        $this->aPaterno = $aPaterno;
+
+        return $this;
+    }
+
+    /**
+     * Get aPaterno
+     *
+     * @return string
+     */
+    public function getAPaterno()
+    {
+        return $this->aPaterno;
+    }
+
+    /**
+     * Set aMaterno
+     *
+     * @param string $aMaterno
+     *
+     * @return User
+     */
+    public function setAMaterno($aMaterno)
+    {
+        $this->aMaterno = $aMaterno;
+
+        return $this;
+    }
+
+    /**
+     * Get aMaterno
+     *
+     * @return string
+     */
+    public function getAMaterno()
+    {
+        return $this->aMaterno;
+    }
+
+    /**
+     * Set correo
+     *
+     * @param string $correo
+     *
+     * @return User
+     */
+    public function setCorreo($correo)
+    {
+        $this->correo = $correo;
+
+        return $this;
+    }
+
+    /**
+     * Get correo
+     *
+     * @return string
+     */
+    public function getCorreo()
+    {
+        return $this->correo;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     *
+     * @return User
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function __toString()
+    {
+        return $this->getUserName();
     }
 }

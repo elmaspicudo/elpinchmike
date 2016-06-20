@@ -22,6 +22,8 @@ fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud:
             length: '120'
         formato:
             type: integer
+        estatus:
+            type: integer
         fecha:
             type: datetime
     manyToOne:

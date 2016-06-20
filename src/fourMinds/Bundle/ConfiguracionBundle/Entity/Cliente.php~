@@ -51,5 +51,14 @@ class Cliente
     {
         return $this->razonSocial;
     }
-}
 
+    /**
+     * Get id
+     *
+     * @return string 
+     */
+    public function __toString()
+    {
+        return $this->razonSocial;
+    }
+}

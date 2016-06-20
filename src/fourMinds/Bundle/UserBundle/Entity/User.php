@@ -244,9 +244,8 @@ class User implements UserInterface
     public function getRoles()
     {
         $losroles=array();
-        foreach ($this->rol_user as $key) {
-            $losroles[]=$key->getName();
-        }
+        $losroles[]=$this->role;
+        
         return $losroles;
         //return $this->roles;
     }
@@ -278,6 +277,156 @@ class User implements UserInterface
         return $this->perfil;
     }
     
+    /**
+     * @var string
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     */
+    private $aPaterno;
+
+    /**
+     * @var string
+     */
+    private $aMaterno;
+
+    /**
+     * @var string
+     */
+    private $correo;
+
+    /**
+     * @var string
+     */
+    private $role;
+
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return User
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set aPaterno
+     *
+     * @param string $aPaterno
+     *
+     * @return User
+     */
+    public function setAPaterno($aPaterno)
+    {
+        $this->aPaterno = $aPaterno;
+
+        return $this;
+    }
+
+    /**
+     * Get aPaterno
+     *
+     * @return string
+     */
+    public function getAPaterno()
+    {
+        return $this->aPaterno;
+    }
+
+    /**
+     * Set aMaterno
+     *
+     * @param string $aMaterno
+     *
+     * @return User
+     */
+    public function setAMaterno($aMaterno)
+    {
+        $this->aMaterno = $aMaterno;
+
+        return $this;
+    }
+
+    /**
+     * Get aMaterno
+     *
+     * @return string
+     */
+    public function getAMaterno()
+    {
+        return $this->aMaterno;
+    }
+
+    /**
+     * Set correo
+     *
+     * @param string $correo
+     *
+     * @return User
+     */
+    public function setCorreo($correo)
+    {
+        $this->correo = $correo;
+
+        return $this;
+    }
+
+    /**
+     * Get correo
+     *
+     * @return string
+     */
+    public function getCorreo()
+    {
+        return $this->correo;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     *
+     * @return User
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function __toString()
+    {
+        return $this->getUserName();
+    }
     /**
      * Constructor
      */
@@ -318,10 +467,5 @@ class User implements UserInterface
     public function getRolUser()
     {
         return $this->rol_user;
-    }
-
-    public function __toString()
-    {
-        return $this->getUserName();
     }
 }

@@ -196,5 +196,62 @@ class Solicitud
     {
         return $this->fecha;
     }
-}
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Cliente
+     */
+    private $cliente;
 
+    /**
+     * @var \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    private $visitador;
+
+
+    /**
+     * Set cliente
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\Cliente $cliente
+     *
+     * @return Solicitud
+     */
+    public function setCliente(\fourMinds\Bundle\ConfiguracionBundle\Entity\Cliente $cliente = null)
+    {
+        $this->cliente = $cliente;
+
+        return $this;
+    }
+
+    /**
+     * Get cliente
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\Cliente
+     */
+    public function getCliente()
+    {
+        return $this->cliente;
+    }
+
+    /**
+     * Set visitador
+     *
+     * @param \fourMinds\Bundle\UserBundle\Entity\User $visitador
+     *
+     * @return Solicitud
+     */
+    public function setVisitador(\fourMinds\Bundle\UserBundle\Entity\User $visitador = null)
+    {
+        $this->visitador = $visitador;
+
+        return $this;
+    }
+
+    /**
+     * Get visitador
+     *
+     * @return \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    public function getVisitador()
+    {
+        return $this->visitador;
+    }
+}

@@ -1,6 +1,12 @@
 solicitud:
     path:     /
     defaults: { _controller: "ConfiguracionBundle:Solicitud:index" }
+solicitud_inv:
+    path:     /investigador
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:inv" }
+solicitud_recep:
+    path:     /recepcion
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:recepcion" }
 
 solicitud_show:
     path:     /{id}/show

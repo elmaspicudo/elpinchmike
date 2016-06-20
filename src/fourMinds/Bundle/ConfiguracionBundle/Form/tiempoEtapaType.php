@@ -15,8 +15,16 @@ class tiempoEtapaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('etapa')
-            ->add('tiempo')
+            ->add('etapa', 'choice', array(
+                'choices' => array(
+                    1 => 'Investigador',
+                    3 => 'Telofonista'                    
+                ),
+                'data' => 1
+            ))
+            ->add('tiempoVerde')
+            ->add('tiempoAmarillo')
+            ->add('tiempoRojo')
         ;
     }
     

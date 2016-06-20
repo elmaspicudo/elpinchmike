@@ -16,6 +16,10 @@ class UserType extends AbstractType
     {
         $builder
             ->add('userName')
+            ->add('nombre')
+            ->add('aPaterno')
+            ->add('aMaterno')
+            ->add('correo')
             ->add('password', 'repeated', array(
                     'type' => 'password',
                     'invalid_message' => 'Los paswords no coinciden.',
@@ -23,7 +27,15 @@ class UserType extends AbstractType
                     'required' => true,
                     'first_options'  => array('label' => 'Password'),
                     'second_options' => array('label' => 'Repite password')))
-            ->add('rol_user')
+            ->add('role', 'choice', array(
+                'choices' => array(
+                    'ROLE_ADMIN' => 'Administrador',
+                    'ROLE_USER' => 'Investigador',
+                    'ROLE_TEL' => 'Telofonista',
+                    'ROLE_INV' => 'Invitado'
+                ),
+                'data' => 1
+            ))
         ;
     }
     

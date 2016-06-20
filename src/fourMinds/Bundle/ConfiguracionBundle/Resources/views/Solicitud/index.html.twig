@@ -6,6 +6,7 @@
             <li><a href="#">Home</a></li>
             <li class="active"><span>Solicitudes</span></li>
         </ol>
+        {% if is_granted('ROLE_ADMIN') %}
         <div class="clearfix">
             <h1 class="pull-left">Solicitud</h1>
             <div class="pull-right top-page-ui">
@@ -14,6 +15,7 @@
                 </a>
             </div>
         </div>
+        {% endif %}
     </div>
 </div>
 {% endblock -%}
@@ -28,6 +30,7 @@
             <tr>
                 <th>Id</th>
                 <th>Nombre</th>
+                <th>Cliente</th>
                 <th>Direccion</th>
                 <th>Telefonos</th>
                 <th>Puesto</th>

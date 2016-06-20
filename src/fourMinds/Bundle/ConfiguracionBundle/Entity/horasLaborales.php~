@@ -81,4 +81,3 @@ class horasLaborales
         return $this->fin;
     }
 }
-

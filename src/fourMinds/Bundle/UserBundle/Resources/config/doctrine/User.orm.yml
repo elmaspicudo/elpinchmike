@@ -11,6 +11,21 @@ fourMinds\Bundle\UserBundle\Entity\User:
         userName:
             type: string
             length: '120'
+        nombre:
+            type: string
+            length: '120'
+        aPaterno:
+            type: string
+            length: '120'
+        aMaterno:
+            type: string
+            length: '120'
+        correo:
+            type: string
+            length: '120'
+        role:
+            type: string
+            length: '40'
         password:
             type: string
             length: '125'

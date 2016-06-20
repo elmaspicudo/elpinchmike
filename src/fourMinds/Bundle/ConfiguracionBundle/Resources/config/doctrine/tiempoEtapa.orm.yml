@@ -9,9 +9,11 @@ fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa:
                 strategy: AUTO
     fields:
         etapa:
-            type: string
-            length: '120'
-            column: Etapa
-        tiempo:
+            type: integer
+        tiempoVerde:
+            type: integer
+        tiempoAmarillo:
+            type: integer
+        tiempoRojo:
             type: integer
     lifecycleCallbacks: {  }

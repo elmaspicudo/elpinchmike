@@ -254,4 +254,33 @@ class Solicitud
     {
         return $this->visitador;
     }
+    /**
+     * @var integer
+     */
+    private $estatus;
+
+
+    /**
+     * Set estatus
+     *
+     * @param integer $estatus
+     *
+     * @return Solicitud
+     */
+    public function setEstatus($estatus)
+    {
+        $this->estatus = $estatus;
+
+        return $this;
+    }
+
+    /**
+     * Get estatus
+     *
+     * @return integer
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
 }

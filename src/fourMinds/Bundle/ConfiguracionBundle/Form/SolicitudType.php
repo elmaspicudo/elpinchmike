@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
+use Doctrine\ORM\EntityRepository;
+
 class SolicitudType extends AbstractType
 {
     /**
@@ -20,9 +22,21 @@ class SolicitudType extends AbstractType
             ->add('telefonos')
             ->add('puesto')
             ->add('formato')
-            ->add('fecha')
+            ->add('fecha','date', array(
+                        'widget' => 'single_text'
+                    ))
             ->add('cliente')
-            ->add('visitador')
+            ->add('visitador', 'entity', array(
+                'class' => 'fourMinds\Bundle\UserBundle\Entity\User',
+                'property' => 'line',
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->where('u.role = :id')
+                        ->setParameter('id', '2')
+                        ->orderBy('u.userName', 'ASC');
+                },
+                'choice_label' => 'username',
+            ))
         ;
     }
     

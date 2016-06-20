@@ -29,6 +29,27 @@ class SolicitudController extends Controller
             'entities' => $entities,
         ));
     }
+    public function invAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ConfiguracionBundle:Solicitud')->findBy(array('visitador'=>2,'estatus'=>2));
+
+        return $this->render('ConfiguracionBundle:Solicitud:index.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+    public function recepcionAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ConfiguracionBundle:Solicitud')->findBy(array('estatus'=>3));
+
+        return $this->render('ConfiguracionBundle:Solicitud:index.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
     /**
      * Creates a new Solicitud entity.
      *
@@ -40,6 +61,7 @@ class SolicitudController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $entity->setEstatus(1);
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
@@ -67,7 +89,7 @@ class SolicitudController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        //$form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -147,7 +169,7 @@ class SolicitudController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
@@ -217,7 +239,7 @@ class SolicitudController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('solicitud_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            //->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }

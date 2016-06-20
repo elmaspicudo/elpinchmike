@@ -9,7 +9,7 @@ fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales:
                 strategy: AUTO
     fields:
         inicio:
-            type: datetime
+            type: time
         fin:
             type: time
     lifecycleCallbacks: {  }
