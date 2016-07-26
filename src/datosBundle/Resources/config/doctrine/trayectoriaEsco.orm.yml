@@ -1,7 +1,7 @@
 datosBundle\Entity\trayectoriaEsco:
     type: entity
     table: null
-    repositoryClass: datosBundle\Entity\trayectoriaEscoRepository
+    
     id:
         id:
             type: integer

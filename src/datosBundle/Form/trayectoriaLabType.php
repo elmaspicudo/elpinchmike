@@ -19,8 +19,12 @@ class trayectoriaLabType extends AbstractType
             ->add('sucursal')
             ->add('domicilio')
             ->add('jefeInmediato')
-            ->add('fechaDeInicio')
-            ->add('fechaDeTermino')
+            ->add('fechaDeInicio','date', array(
+                        'widget' => 'single_text'
+                    ))
+            ->add('fechaDeTermino','date', array(
+                        'widget' => 'single_text'
+                    ))
             ->add('puestoInicial')
             ->add('puestoFinal')
             ->add('motivoDeSalida')
