@@ -1,0 +1,57 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Hoja5_7 list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Cablemas</th>
+                <th>Mastv</th>
+                <th>Antenaparabolica</th>
+                <th>Sky</th>
+                <th>Otros</th>
+                <th>Domestico</th>
+                <th>Jardinero</th>
+                <th>Chofer</th>
+                <th>Vigilancia</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('hoja5_7_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.cablemas }}</td>
+                <td>{{ entity.mastv }}</td>
+                <td>{{ entity.antenaParabolica }}</td>
+                <td>{{ entity.sky }}</td>
+                <td>{{ entity.otros }}</td>
+                <td>{{ entity.domestico }}</td>
+                <td>{{ entity.jardinero }}</td>
+                <td>{{ entity.chofer }}</td>
+                <td>{{ entity.vigilancia }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('hoja5_7_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('hoja5_7_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('hoja5_7_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

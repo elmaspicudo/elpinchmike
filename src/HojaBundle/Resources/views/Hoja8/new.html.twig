@@ -1,0 +1,75 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1 class=""><strong>Resumen Ejecutivo</strong> >  Hoja 8</h1>
+
+    {{ form_start(form) }}
+    <h2 class="text-center">
+    <strong>Foto Interior de la Vivienda
+    </h2>
+    <div class="col-lg-6">
+    	<div form-group="">
+    		<div class="input-group">
+    			<span class="input-group-btn">
+
+    				<label class="btn btn-primary required" for="hojabundle_hoja8_hoja8_2_nombre">
+	    			    {{ form_label(form.hoja8_1.nombre) }}
+    				</label>
+    			</span>
+    				{{ form_widget(form.hoja8_1.nombre,{'attr':{'class':'form-control'}}) }}
+    		</div>
+	    		<span class="help-block"><i class="icon-remove-sign"></i></span>
+		</div>
+	</div>
+<style>
+	input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+	
+</style>
+
+	<div class="col-lg-6">
+    	<label class="custom-file-upload">
+    		{{ form_widget(form.hoja8_1.url)}}
+			Subir Foto Interior
+		</label>
+	</div>
+    <h2 class="text-center"><strong>Foto Exterior de la Vivienda</h2>
+        <div class="col-lg-6">
+    	<div form-group="">
+    		<div class="input-group">
+    			<span class="input-group-btn">
+
+    				<label class="btn btn-primary required" for="hojabundle_hoja8_hoja8_2_nombre">
+	    			    {{ form_label(form.hoja8_2.nombre) }}
+    				</label>
+    			</span>
+    				{{ form_widget(form.hoja8_2.nombre,{'attr':{'class':'form-control'}}) }}
+    		</div>
+	    		<span class="help-block"><i class="icon-remove-sign"></i></span>
+		</div>
+	</div>
+    <div class="col-lg-6">
+    	<label class="custom-file-upload">
+    		{{ form_widget(form.hoja8_2.url)}}
+			Subir Foto Exterior
+		</label>
+	</div>
+    {{ form_end(form) }}
+
+    <div class="col-md-12">
+	<a href="{{path('hoja9')}}" class="btn btn-primary pull-right">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
+	</a>
+	<a href="{{path('hoja7')}}" class="btn btn-primary pull-left">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+	</a>
+	</div>
+
+{% endblock %}

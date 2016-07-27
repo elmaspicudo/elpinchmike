@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Hoja7_4 list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Proyectos</th>
+                <th>Interestrabajo</th>
+                <th>Trabajosatisfactorio</th>
+                <th>Tiempolibre</th>
+                <th>Musica</th>
+                <th>Lee</th>
+                <th>Generolectura</th>
+                <th>Autorfavorito</th>
+                <th>Asistenciaeventos</th>
+                <th>Tipoeventos</th>
+                <th>Asistenciareuniones</th>
+                <th>Tiporeuniones</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('hoja7_4_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.proyectos }}</td>
+                <td>{{ entity.interesTrabajo }}</td>
+                <td>{{ entity.trabajoSatisfactorio }}</td>
+                <td>{{ entity.tiempoLibre }}</td>
+                <td>{{ entity.musica }}</td>
+                <td>{{ entity.lee }}</td>
+                <td>{{ entity.generoLectura }}</td>
+                <td>{{ entity.autorFavorito }}</td>
+                <td>{{ entity.asistenciaEventos }}</td>
+                <td>{{ entity.tipoEventos }}</td>
+                <td>{{ entity.asistenciaReuniones }}</td>
+                <td>{{ entity.tipoReuniones }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('hoja7_4_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('hoja7_4_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('hoja7_4_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

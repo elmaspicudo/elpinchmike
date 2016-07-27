@@ -1,0 +1,68 @@
+EstudioBundle\Entity\Hoja7_3:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        estadoSalud:
+            type: string
+            length: '15'
+        hospitalizaciones:
+            type: string
+            length: '10'
+        razon:
+            type: text
+        incapazidadesUltimoEmpleo:
+            type: string
+            length: '15'
+        razonIncapacidad:
+            type: text
+        enfermedadContagiosa:
+            type: string
+            length: '15'
+        cual:
+            type: string
+            length: '50'
+        enfermedadesUltimoAno:
+            type: string
+            length: '100'
+        problemasVision:
+            type: string
+            length: '15'
+        cualProblemaVision:
+            type: text
+        hipertension:
+            type: string
+            length: '10'
+        servicioMedico:
+            type: string
+            length: '20'
+        estadoSaludFamilia:
+            type: string
+            length: '15'
+        consumeDroga:
+            type: string
+            length: '15'
+        frecuenciaDroga:
+            type: string
+            length: '20'
+        consumeCigarros:
+            type: string
+            length: '15'
+        frecuenciaCigarros:
+            type: string
+            length: '20'
+        ejercicio:
+            type: string
+            length: '15'
+        cualEjercicio:
+            type: string
+            length: '50'
+        frecuenciaEjercicio:
+            type: string
+            length: '50'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,28 @@
+
+
+hoja1_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:Hoja1:show" }
+
+hoja1:
+    path:     /
+    defaults: { _controller: "HojaBundle:Hoja1:new" }
+
+hoja1_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:Hoja1:create" }
+    methods:  POST
+
+hoja1_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:Hoja1:edit" }
+
+hoja1_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:Hoja1:update" }
+    methods:  [POST, PUT]
+
+hoja1_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:Hoja1:delete" }
+    methods:  [POST, DELETE]

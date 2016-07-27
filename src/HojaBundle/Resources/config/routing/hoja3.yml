@@ -1,0 +1,27 @@
+
+hoja3_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:Hoja3:show" }
+
+hoja3:
+    path:     /
+    defaults: { _controller: "HojaBundle:Hoja3:new" }
+
+hoja3_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:Hoja3:create" }
+    methods:  POST
+
+hoja3_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:Hoja3:edit" }
+
+hoja3_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:Hoja3:update" }
+    methods:  [POST, PUT]
+
+hoja3_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:Hoja3:delete" }
+    methods:  [POST, DELETE]

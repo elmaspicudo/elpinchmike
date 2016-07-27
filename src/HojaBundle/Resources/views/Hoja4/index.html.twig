@@ -1,0 +1,179 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Hoja4 list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Urbana</th>
+                <th>Centrica</th>
+                <th>Periferia</th>
+                <th>Telefonopublico</th>
+                <th>Viasdeacceso</th>
+                <th>Agua</th>
+                <th>Alumbrado</th>
+                <th>Centroscomerciales</th>
+                <th>Drenaje</th>
+                <th>Mercados</th>
+                <th>Pavimentacion</th>
+                <th>Escuelas</th>
+                <th>Banqueta</th>
+                <th>Areasverdes</th>
+                <th>Transporte</th>
+                <th>Deportivos</th>
+                <th>Casa</th>
+                <th>Departamento</th>
+                <th>Condominio</th>
+                <th>Unidadhabitacional</th>
+                <th>Viviendapopular</th>
+                <th>Propia</th>
+                <th>Familiares</th>
+                <th>Hipotecada</th>
+                <th>Prestada</th>
+                <th>Rentada</th>
+                <th>Compartida</th>
+                <th>Buena</th>
+                <th>Regular</th>
+                <th>Mala</th>
+                <th>Valordecasa</th>
+                <th>Sala</th>
+                <th>Comedor</th>
+                <th>Cocina</th>
+                <th>Recamaras</th>
+                <th>Banos</th>
+                <th>Cuartoservicio</th>
+                <th>Estudio</th>
+                <th>Biblioteca</th>
+                <th>Garaje</th>
+                <th>Jardin</th>
+                <th>Mobiliario</th>
+                <th>Imagen</th>
+                <th>Aspecto</th>
+                <th>Orden</th>
+                <th>Teatroencasa</th>
+                <th>Televisioncolor</th>
+                <th>Dvd</th>
+                <th>Estereo</th>
+                <th>Radio</th>
+                <th>Computadora</th>
+                <th>Impresora</th>
+                <th>Otros</th>
+                <th>Refrigerador</th>
+                <th>Lavavajilla</th>
+                <th>Lavadora</th>
+                <th>Secadora</th>
+                <th>Licuadora</th>
+                <th>Freidora</th>
+                <th>Horneador</th>
+                <th>Hornomicroondas</th>
+                <th>Aspiradora</th>
+                <th>Estufa</th>
+                <th>Pulidora</th>
+                <th>Batidora</th>
+                <th>Waflera</th>
+                <th>Tostador</th>
+                <th>Sandwichera</th>
+                <th>Extractorjugo</th>
+                <th>Observaciones</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('hoja4_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.urbana }}</td>
+                <td>{{ entity.centrica }}</td>
+                <td>{{ entity.periferia }}</td>
+                <td>{{ entity.telefonoPublico }}</td>
+                <td>{{ entity.viasDeAcceso }}</td>
+                <td>{{ entity.agua }}</td>
+                <td>{{ entity.alumbrado }}</td>
+                <td>{{ entity.centrosComerciales }}</td>
+                <td>{{ entity.drenaje }}</td>
+                <td>{{ entity.mercados }}</td>
+                <td>{{ entity.pavimentacion }}</td>
+                <td>{{ entity.escuelas }}</td>
+                <td>{{ entity.banqueta }}</td>
+                <td>{{ entity.areasVerdes }}</td>
+                <td>{{ entity.transporte }}</td>
+                <td>{{ entity.deportivos }}</td>
+                <td>{{ entity.casa }}</td>
+                <td>{{ entity.departamento }}</td>
+                <td>{{ entity.condominio }}</td>
+                <td>{{ entity.unidadHabitacional }}</td>
+                <td>{{ entity.viviendaPopular }}</td>
+                <td>{{ entity.propia }}</td>
+                <td>{{ entity.familiares }}</td>
+                <td>{{ entity.hipotecada }}</td>
+                <td>{{ entity.prestada }}</td>
+                <td>{{ entity.rentada }}</td>
+                <td>{{ entity.compartida }}</td>
+                <td>{{ entity.buena }}</td>
+                <td>{{ entity.regular }}</td>
+                <td>{{ entity.mala }}</td>
+                <td>{{ entity.valorDeCasa }}</td>
+                <td>{{ entity.sala }}</td>
+                <td>{{ entity.comedor }}</td>
+                <td>{{ entity.cocina }}</td>
+                <td>{{ entity.recamaras }}</td>
+                <td>{{ entity.banos }}</td>
+                <td>{{ entity.cuartoServicio }}</td>
+                <td>{{ entity.estudio }}</td>
+                <td>{{ entity.biblioteca }}</td>
+                <td>{{ entity.garaje }}</td>
+                <td>{{ entity.jardin }}</td>
+                <td>{{ entity.mobiliario }}</td>
+                <td>{{ entity.imagen }}</td>
+                <td>{{ entity.aspecto }}</td>
+                <td>{{ entity.orden }}</td>
+                <td>{{ entity.teatroEnCasa }}</td>
+                <td>{{ entity.televisionColor }}</td>
+                <td>{{ entity.dvd }}</td>
+                <td>{{ entity.estereo }}</td>
+                <td>{{ entity.radio }}</td>
+                <td>{{ entity.computadora }}</td>
+                <td>{{ entity.impresora }}</td>
+                <td>{{ entity.otros }}</td>
+                <td>{{ entity.refrigerador }}</td>
+                <td>{{ entity.lavaVajilla }}</td>
+                <td>{{ entity.lavadora }}</td>
+                <td>{{ entity.secadora }}</td>
+                <td>{{ entity.licuadora }}</td>
+                <td>{{ entity.freidora }}</td>
+                <td>{{ entity.horneador }}</td>
+                <td>{{ entity.hornoMicroondas }}</td>
+                <td>{{ entity.aspiradora }}</td>
+                <td>{{ entity.estufa }}</td>
+                <td>{{ entity.pulidora }}</td>
+                <td>{{ entity.batidora }}</td>
+                <td>{{ entity.waflera }}</td>
+                <td>{{ entity.tostador }}</td>
+                <td>{{ entity.sandwichera }}</td>
+                <td>{{ entity.extractorJugo }}</td>
+                <td>{{ entity.observaciones }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('hoja4_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('hoja4_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('hoja4_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
