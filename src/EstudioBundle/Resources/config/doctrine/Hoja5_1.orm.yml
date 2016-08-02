@@ -1,0 +1,21 @@
+EstudioBundle\Entity\Hoja5_1:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        investigado:
+            type: float
+        conyuge:
+            type: float
+        padres:
+            type: float
+        hermanos:
+            type: float
+        otros:
+            type: float
+    lifecycleCallbacks: {  }

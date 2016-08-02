@@ -1,0 +1,20 @@
+EstudioBundle\Entity\Hoja5_5:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        institucion:
+            type: string
+            length: '10'
+        monto:
+            type: float
+        pagoMensual:
+            type: float
+        saldoActual:
+            type: float
+    lifecycleCallbacks: {  }

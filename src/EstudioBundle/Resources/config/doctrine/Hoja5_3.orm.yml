@@ -1,0 +1,20 @@
+EstudioBundle\Entity\Hoja5_3:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        banco:
+            type: string
+            length: '100'
+        limiteCredito:
+            type: float
+        antiguedad:
+            type: date
+        pagoMensual:
+            type: date
+    lifecycleCallbacks: {  }

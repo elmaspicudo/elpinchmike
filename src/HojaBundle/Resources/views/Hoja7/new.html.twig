@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1 class=""><strong>Resumen Ejecutivo</strong> >  Hoja 7</h1>
+
+    {{ form_start(form) }}
+
+    <div class="col-md-12">REFERENCIA FAMILIAR</div>
+    {{ form_widget(form.hoja7_1) }}
+    <div class="col-md-12">REFERENCIA VECINAL</div>
+    {{ form_widget(form.hoja7_2) }}
+    <div class="col-md-12">SALUD E HIGIENE</div>
+    {{ form_widget(form.hoja7_3) }}
+    <div class="col-md-12">DESARROLLO Y PASATIEMPOS</div>
+    {{ form_widget(form.hoja7_4) }}
+
+    {{ form_end(form) }}
+	<div class="col-md-12">
+	<a href="{{path('hoja8')}}" class="btn btn-primary pull-right">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
+	</a>
+	<a href="{{path('hoja6')}}" class="btn btn-primary pull-left">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+	</a>
+	</div>
+{% endblock %}

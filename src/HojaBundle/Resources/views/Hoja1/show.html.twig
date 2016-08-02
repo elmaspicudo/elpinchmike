@@ -1,0 +1,84 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Hoja1</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Empresa</th>
+                <td>{{ entity.empresa }}</td>
+            </tr>
+            <tr>
+                <th>Puesto</th>
+                <td>{{ entity.puesto }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Appaterno</th>
+                <td>{{ entity.apPaterno }}</td>
+            </tr>
+            <tr>
+                <th>Apmaterno</th>
+                <td>{{ entity.apMaterno }}</td>
+            </tr>
+            <tr>
+                <th>Personal</th>
+                <td>{{ entity.personal }}</td>
+            </tr>
+            <tr>
+                <th>Escolares</th>
+                <td>{{ entity.escolares }}</td>
+            </tr>
+            <tr>
+                <th>Entornofamiliar</th>
+                <td>{{ entity.entornoFamiliar }}</td>
+            </tr>
+            <tr>
+                <th>Entornoeconomico</th>
+                <td>{{ entity.entornoEconomico }}</td>
+            </tr>
+            <tr>
+                <th>Documentacion</th>
+                <td>{{ entity.documentacion }}</td>
+            </tr>
+            <tr>
+                <th>Laboral</th>
+                <td>{{ entity.laboral }}</td>
+            </tr>
+            <tr>
+                <th>Desempeño</th>
+                <td>{{ entity.desempeño }}</td>
+            </tr>
+            <tr>
+                <th>Estabilidadlaboral</th>
+                <td>{{ entity.estabilidadLaboral }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ entity.observaciones }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('hoja1') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('hoja1_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

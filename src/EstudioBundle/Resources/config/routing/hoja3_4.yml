@@ -1,0 +1,30 @@
+hoja3_4:
+    path:     /
+    defaults: { _controller: "EstudioBundle:Hoja3_4:index" }
+
+hoja3_4_show:
+    path:     /{id}/show
+    defaults: { _controller: "EstudioBundle:Hoja3_4:show" }
+
+hoja3_4_new:
+    path:     /new
+    defaults: { _controller: "EstudioBundle:Hoja3_4:new" }
+
+hoja3_4_create:
+    path:     /create
+    defaults: { _controller: "EstudioBundle:Hoja3_4:create" }
+    methods:  POST
+
+hoja3_4_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EstudioBundle:Hoja3_4:edit" }
+
+hoja3_4_update:
+    path:     /{id}/update
+    defaults: { _controller: "EstudioBundle:Hoja3_4:update" }
+    methods:  [POST, PUT]
+
+hoja3_4_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EstudioBundle:Hoja3_4:delete" }
+    methods:  [POST, DELETE]

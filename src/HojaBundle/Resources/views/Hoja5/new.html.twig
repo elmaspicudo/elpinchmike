@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1 class=""><strong>Resumen Ejecutivo</strong> >  Hoja 5</h1>
+
+    {{ form_start(form) }}
+    <div class="col-md-12">INGRESOS</div>
+            {{ form_widget(form.hoja5_1) }}
+    <div class="col-md-12">EGRESOS</div>
+           {{ form_widget(form.hoja5_2) }}
+	<div class="col-md-12">TARJETAS DE CREDITO O DEPARTAMENTAL</div>
+	       {{ form_widget(form.hoja5_3) }}
+	<div class="col-md-12">CREDITOS PERSONALES</div>
+	       {{ form_widget(form.hoja5_4) }}
+	<div class="col-md-12">CREDITO AUTOMOTRIZ</div>
+	       {{ form_widget(form.hoja5_5) }}
+	<div class="col-md-12">SEGUROS</div>
+	       {{ form_widget(form.hoja5_6) }}
+	<div class="col-md-12">OTROS SERVICIOS</div>
+	       {{ form_widget(form.hoja5_7) }}
+
+
+    {{ form_end(form) }}
+    <div class="col-md-12">
+	<a href="{{path('hoja6')}}" class="btn btn-primary pull-right">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
+	</a>
+	<a href="{{path('hoja4')}}" class="btn btn-primary pull-left">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+	</a>
+	</div>
+{% endblock %}

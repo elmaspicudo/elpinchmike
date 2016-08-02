@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1 class=""><strong>Resumen Ejecutivo</strong> >  Hoja 3</h1>
+
+    {{ form_start(form) }}
+    <h4 class="col-md-12">ESPOSA (Y/O) HIJOS</h4>    
+    {{ form_widget(form.hoja3_2) }}
+    <h4 class="col-md-12">PERSONAS QUE VIVEN EN EL DOMICILIO</h4>
+    {{ form_widget(form.hoja3_3) }}
+    <h4 class="col-md-12">DEPENDIENTES ECONOMICOS </h4>
+    {{ form_widget(form.hoja3_4) }}
+    <h4 class="col-md-12">PADRES Y HERMANOS </h4>
+    {{ form_widget(form.hoja3_1) }}
+	{{ form_end(form) }}
+	<a href="{{path('hoja4')}}" class="btn btn-primary pull-right">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
+	</a>
+	<a href="{{path('hoja2')}}" class="btn btn-primary pull-left">
+	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+	</a>
+
+{% endblock %}
