@@ -24,7 +24,7 @@ class SolicitudType extends AbstractType
             ->add('formato','choice', array(
                 'choices' => array(
                     '1' => 'Largo',
-                    '2' => 'Corto'                   
+                    '2' => 'WIPRO'                   
                 ),
                 'data' => 1
             ))

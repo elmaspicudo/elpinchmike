@@ -55,7 +55,11 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('datosp_solicitud', { 'solicitud': entity.id }) }}">Capturar</a>
+                        {% if entity.formato > 2 %}
+                            <a href="{{ path('datosp_solicitud', { 'solicitud': entity.id }) }}">Capturar</a>
+                        {% else %}
+                            <a href="{{ path('hoja1') }}">Capturar</a>
+                        {% endif %}
                     </li> 
                     <li>
                         <a href="{{ path('solicitud_edit', { 'id': entity.id }) }}">Finalizar</a>
