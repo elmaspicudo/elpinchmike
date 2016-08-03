@@ -110,6 +110,27 @@ class trayectoriaLabController extends Controller
     }
 
     /**
+     * Finds and displays a trayectoriaLab entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('datosBundle:trayectoriaLab')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new trayectoriaLab();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('trayectorialab_edit',array('id'=>$entity->getId())));
+    }
+
+    /**
      * Displays a form to edit an existing trayectoriaLab entity.
      *
      */
@@ -147,7 +168,7 @@ class trayectoriaLabController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }

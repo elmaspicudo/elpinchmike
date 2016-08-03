@@ -283,4 +283,9 @@ class Solicitud
     {
         return $this->estatus;
     }
+
+    public function __toString()
+    {
+        return (string) $this->getId();
+    }
 }

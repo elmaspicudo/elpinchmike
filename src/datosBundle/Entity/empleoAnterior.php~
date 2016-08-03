@@ -3,9 +3,9 @@
 namespace datosBundle\Entity;
 
 /**
- * anteriorEmpleo
+ * empleoAnterior
  */
-class anteriorEmpleo
+class empleoAnterior
 {
     /**
      * @var integer
@@ -60,7 +60,7 @@ class anteriorEmpleo
     /**
      * @var string
      */
-    private $datosProporcionadosPor;
+    private $datosProporCionadosPor;
 
     /**
      * @var string
@@ -120,12 +120,12 @@ class anteriorEmpleo
     /**
      * @var boolean
      */
-    private $asistencia;
+    private $asistenciaYpuntualidad;
 
     /**
      * @var boolean
      */
-    private $respensabilidad;
+    private $responsabilidad;
 
     /**
      * @var boolean
@@ -135,27 +135,27 @@ class anteriorEmpleo
     /**
      * @var boolean
      */
-    private $relacionJefesCompa;
+    private $relacionConJefesYcom;
 
     /**
      * @var boolean
      */
-    private $trabajoVajoPrecion;
+    private $trabajoVajoPresion;
 
     /**
      * @var boolean
      */
-    private $apegoAPoliticas;
+    private $apegoApoliticas;
 
     /**
      * @var string
      */
-    private $desempenioProporcionado;
+    private $desempenoProporcionado;
 
     /**
      * @var string
      */
-    private $observaciones;
+    private $observacionn;
 
 
     /**
@@ -173,7 +173,7 @@ class anteriorEmpleo
      *
      * @param string $empresa
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setEmpresa($empresa)
     {
@@ -197,7 +197,7 @@ class anteriorEmpleo
      *
      * @param string $sucursal
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setSucursal($sucursal)
     {
@@ -221,7 +221,7 @@ class anteriorEmpleo
      *
      * @param string $domicilio
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setDomicilio($domicilio)
     {
@@ -245,7 +245,7 @@ class anteriorEmpleo
      *
      * @param string $jefeInmediato
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setJefeInmediato($jefeInmediato)
     {
@@ -269,7 +269,7 @@ class anteriorEmpleo
      *
      * @param \DateTime $fechaDeInicio
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setFechaDeInicio($fechaDeInicio)
     {
@@ -293,7 +293,7 @@ class anteriorEmpleo
      *
      * @param \DateTime $fechaDeTermino
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setFechaDeTermino($fechaDeTermino)
     {
@@ -317,7 +317,7 @@ class anteriorEmpleo
      *
      * @param string $puestoInicial
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setPuestoInicial($puestoInicial)
     {
@@ -341,7 +341,7 @@ class anteriorEmpleo
      *
      * @param string $puestoFinal
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setPuestoFinal($puestoFinal)
     {
@@ -365,7 +365,7 @@ class anteriorEmpleo
      *
      * @param string $motivoDeSalida
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setMotivoDeSalida($motivoDeSalida)
     {
@@ -385,27 +385,27 @@ class anteriorEmpleo
     }
 
     /**
-     * Set datosProporcionadosPor
+     * Set datosProporCionadosPor
      *
-     * @param string $datosProporcionadosPor
+     * @param string $datosProporCionadosPor
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setDatosProporcionadosPor($datosProporcionadosPor)
+    public function setDatosProporCionadosPor($datosProporCionadosPor)
     {
-        $this->datosProporcionadosPor = $datosProporcionadosPor;
+        $this->datosProporCionadosPor = $datosProporCionadosPor;
 
         return $this;
     }
 
     /**
-     * Get datosProporcionadosPor
+     * Get datosProporCionadosPor
      *
      * @return string
      */
-    public function getDatosProporcionadosPor()
+    public function getDatosProporCionadosPor()
     {
-        return $this->datosProporcionadosPor;
+        return $this->datosProporCionadosPor;
     }
 
     /**
@@ -413,7 +413,7 @@ class anteriorEmpleo
      *
      * @param string $puesto
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setPuesto($puesto)
     {
@@ -437,7 +437,7 @@ class anteriorEmpleo
      *
      * @param string $telefono
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setTelefono($telefono)
     {
@@ -461,7 +461,7 @@ class anteriorEmpleo
      *
      * @param string $estado
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setEstado($estado)
     {
@@ -485,7 +485,7 @@ class anteriorEmpleo
      *
      * @param string $puestoo
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setPuestoo($puestoo)
     {
@@ -509,7 +509,7 @@ class anteriorEmpleo
      *
      * @param string $sueldoInicial
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setSueldoInicial($sueldoInicial)
     {
@@ -533,7 +533,7 @@ class anteriorEmpleo
      *
      * @param string $sueldoFinal
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setSueldoFinal($sueldoFinal)
     {
@@ -557,7 +557,7 @@ class anteriorEmpleo
      *
      * @param boolean $exelente
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setExelente($exelente)
     {
@@ -581,7 +581,7 @@ class anteriorEmpleo
      *
      * @param boolean $muyBueno
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setMuyBueno($muyBueno)
     {
@@ -605,7 +605,7 @@ class anteriorEmpleo
      *
      * @param boolean $bueno
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setBueno($bueno)
     {
@@ -629,7 +629,7 @@ class anteriorEmpleo
      *
      * @param boolean $regular
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setRegular($regular)
     {
@@ -653,7 +653,7 @@ class anteriorEmpleo
      *
      * @param boolean $deficiente
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setDeficiente($deficiente)
     {
@@ -673,51 +673,51 @@ class anteriorEmpleo
     }
 
     /**
-     * Set asistencia
+     * Set asistenciaYpuntualidad
      *
-     * @param boolean $asistencia
+     * @param boolean $asistenciaYpuntualidad
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setAsistencia($asistencia)
+    public function setAsistenciaYpuntualidad($asistenciaYpuntualidad)
     {
-        $this->asistencia = $asistencia;
+        $this->asistenciaYpuntualidad = $asistenciaYpuntualidad;
 
         return $this;
     }
 
     /**
-     * Get asistencia
+     * Get asistenciaYpuntualidad
      *
      * @return boolean
      */
-    public function getAsistencia()
+    public function getAsistenciaYpuntualidad()
     {
-        return $this->asistencia;
+        return $this->asistenciaYpuntualidad;
     }
 
     /**
-     * Set respensabilidad
+     * Set responsabilidad
      *
-     * @param boolean $respensabilidad
+     * @param boolean $responsabilidad
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setRespensabilidad($respensabilidad)
+    public function setResponsabilidad($responsabilidad)
     {
-        $this->respensabilidad = $respensabilidad;
+        $this->responsabilidad = $responsabilidad;
 
         return $this;
     }
 
     /**
-     * Get respensabilidad
+     * Get responsabilidad
      *
      * @return boolean
      */
-    public function getRespensabilidad()
+    public function getResponsabilidad()
     {
-        return $this->respensabilidad;
+        return $this->responsabilidad;
     }
 
     /**
@@ -725,7 +725,7 @@ class anteriorEmpleo
      *
      * @param boolean $desempenio
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
     public function setDesempenio($desempenio)
     {
@@ -745,122 +745,123 @@ class anteriorEmpleo
     }
 
     /**
-     * Set relacionJefesCompa
+     * Set relacionConJefesYcom
      *
-     * @param boolean $relacionJefesCompa
+     * @param boolean $relacionConJefesYcom
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setRelacionJefesCompa($relacionJefesCompa)
+    public function setRelacionConJefesYcom($relacionConJefesYcom)
     {
-        $this->relacionJefesCompa = $relacionJefesCompa;
+        $this->relacionConJefesYcom = $relacionConJefesYcom;
 
         return $this;
     }
 
     /**
-     * Get relacionJefesCompa
+     * Get relacionConJefesYcom
      *
      * @return boolean
      */
-    public function getRelacionJefesCompa()
+    public function getRelacionConJefesYcom()
     {
-        return $this->relacionJefesCompa;
+        return $this->relacionConJefesYcom;
     }
 
     /**
-     * Set trabajoVajoPrecion
+     * Set trabajoVajoPresion
      *
-     * @param boolean $trabajoVajoPrecion
+     * @param boolean $trabajoVajoPresion
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setTrabajoVajoPrecion($trabajoVajoPrecion)
+    public function setTrabajoVajoPresion($trabajoVajoPresion)
     {
-        $this->trabajoVajoPrecion = $trabajoVajoPrecion;
+        $this->trabajoVajoPresion = $trabajoVajoPresion;
 
         return $this;
     }
 
     /**
-     * Get trabajoVajoPrecion
+     * Get trabajoVajoPresion
      *
      * @return boolean
      */
-    public function getTrabajoVajoPrecion()
+    public function getTrabajoVajoPresion()
     {
-        return $this->trabajoVajoPrecion;
+        return $this->trabajoVajoPresion;
     }
 
     /**
-     * Set apegoAPoliticas
+     * Set apegoApoliticas
      *
-     * @param boolean $apegoAPoliticas
+     * @param boolean $apegoApoliticas
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setApegoAPoliticas($apegoAPoliticas)
+    public function setApegoApoliticas($apegoApoliticas)
     {
-        $this->apegoAPoliticas = $apegoAPoliticas;
+        $this->apegoApoliticas = $apegoApoliticas;
 
         return $this;
     }
 
     /**
-     * Get apegoAPoliticas
+     * Get apegoApoliticas
      *
      * @return boolean
      */
-    public function getApegoAPoliticas()
+    public function getApegoApoliticas()
     {
-        return $this->apegoAPoliticas;
+        return $this->apegoApoliticas;
     }
 
     /**
-     * Set desempenioProporcionado
+     * Set desempenoProporcionado
      *
-     * @param string $desempenioProporcionado
+     * @param string $desempenoProporcionado
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setDesempenioProporcionado($desempenioProporcionado)
+    public function setDesempenoProporcionado($desempenoProporcionado)
     {
-        $this->desempenioProporcionado = $desempenioProporcionado;
+        $this->desempenoProporcionado = $desempenoProporcionado;
 
         return $this;
     }
 
     /**
-     * Get desempenioProporcionado
+     * Get desempenoProporcionado
      *
      * @return string
      */
-    public function getDesempenioProporcionado()
+    public function getDesempenoProporcionado()
     {
-        return $this->desempenioProporcionado;
+        return $this->desempenoProporcionado;
     }
 
     /**
-     * Set observaciones
+     * Set observacionn
      *
-     * @param string $observaciones
+     * @param string $observacionn
      *
-     * @return anteriorEmpleo
+     * @return empleoAnterior
      */
-    public function setObservaciones($observaciones)
+    public function setObservacionn($observacionn)
     {
-        $this->observaciones = $observaciones;
+        $this->observacionn = $observacionn;
 
         return $this;
     }
 
     /**
-     * Get observaciones
+     * Get observacionn
      *
      * @return string
      */
-    public function getObservaciones()
+    public function getObservacionn()
     {
-        return $this->observaciones;
+        return $this->observacionn;
     }
 }
+

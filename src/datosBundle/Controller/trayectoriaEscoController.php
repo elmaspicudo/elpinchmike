@@ -110,6 +110,27 @@ class trayectoriaEscoController extends Controller
     }
 
     /**
+     * Finds and displays a trayectoriaEsco entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('datosBundle:trayectoriaEsco')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new trayectoriaEsco();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('trayectoriaesco_edit',array('id'=>$entity->getId())));
+    }
+
+    /**
      * Displays a form to edit an existing trayectoriaEsco entity.
      *
      */
@@ -147,7 +168,7 @@ class trayectoriaEscoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }

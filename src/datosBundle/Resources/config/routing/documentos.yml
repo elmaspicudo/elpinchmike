@@ -28,3 +28,6 @@ documentos_delete:
     path:     /{id}/delete
     defaults: { _controller: "datosBundle:documentos:delete" }
     methods:  [POST, DELETE]
+documentos_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "datosBundle:documentos:showbysolicitud" }

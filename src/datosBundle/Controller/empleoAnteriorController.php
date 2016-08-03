@@ -109,6 +109,27 @@ class empleoAnteriorController extends Controller
         ));
     }
 
+
+      /**
+     * Finds and displays a anteriorEmpleo entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('datosBundle:empleoAnterior')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new empleoAnterior();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('empleoanterior_edit',array('id'=>$entity->getId())));
+    }
     /**
      * Displays a form to edit an existing empleoAnterior entity.
      *
@@ -147,7 +168,7 @@ class empleoAnteriorController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }

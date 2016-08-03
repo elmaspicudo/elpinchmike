@@ -20,13 +20,6 @@ class UserType extends AbstractType
             ->add('aPaterno')
             ->add('aMaterno')
             ->add('correo')
-            ->add('password', 'repeated', array(
-                    'type' => 'password',
-                    'invalid_message' => 'Los paswords no coinciden.',
-                    'options' => array('attr' => array('class' => 'input-xlarge','minlength'=>8)),
-                    'required' => true,
-                    'first_options'  => array('label' => 'Password'),
-                    'second_options' => array('label' => 'Repite password')))
             ->add('role', 'choice', array(
                 'choices' => array(
                     'ROLE_ADMIN' => 'Administrador',
@@ -36,6 +29,14 @@ class UserType extends AbstractType
                 ),
                 'data' => 1
             ))
+            ->add('password', 'repeated', array(
+                    'type' => 'password',
+                    'invalid_message' => 'Los paswords no coinciden.',
+                    'options' => array('attr' => array('class' => 'input-xlarge','minlength'=>8)),
+                    'required' => true,
+                    'first_options'  => array('label' => 'Password'),
+                    'second_options' => array('label' => 'Repite password')))
+            
         ;
     }
     

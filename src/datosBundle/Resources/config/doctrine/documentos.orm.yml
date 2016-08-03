@@ -11,25 +11,36 @@ datosBundle\Entity\documentos:
     fields:
         noSeguridadSocial:
             type: integer
+            nullable: TRUE
         curp:
             type: string
             length: '20'
+            nullable: TRUE
         compDomiciliario:
             type: string
             length: '15'
+            nullable: TRUE
         credencialINE:
             type: string
             length: '15'
+            nullable: TRUE
         rfc:
             type: string
             length: '13'
+            nullable: TRUE
         aNonbreDe:
             type: string
             length: '30'
+            nullable: TRUE
         cartasLaborales:
             type: string
             length: '50'
+            nullable: TRUE
         observaciones:
             type: string
             length: 255
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
     lifecycleCallbacks: {  }

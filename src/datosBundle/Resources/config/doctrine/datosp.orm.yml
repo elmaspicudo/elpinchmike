@@ -12,49 +12,71 @@ datosBundle\Entity\datosp:
         empresa:
             type: string
             length: '40'
+            nullable: TRUE
         nombre:
             type: string
             length: '40'
+            nullable: TRUE
         puesto:
             type: string
             length: '20'
+            nullable: TRUE
         fechaDeNacimiento:
             type: datetime
+            nullable: TRUE
         fecha:
             type: datetime
+            nullable: TRUE
         nacionalidad:
             type: string
             length: '15'
+            nullable: TRUE
         domicilio:
             type: string
             length: '30'
+            nullable: TRUE
         ciudad:
             type: string
             length: '12'
+            nullable: TRUE
         telefonoCasa:
             type: integer
+            nullable: TRUE
         celular:
             type: integer
+            nullable: TRUE
         telTrabajo:
             type: integer
+            nullable: TRUE
         edad:
             type: integer
+            nullable: TRUE
         sexo:
             type: boolean
+            nullable: TRUE
         lugarDeNacimiento:
             type: string
             length: '13'
+            nullable: TRUE
         eCivil:
             type: boolean
+            nullable: TRUE
         colonia:
             type: string
             length: '20'
+            nullable: TRUE
         pais:
             type: string
             length: '13'
+            nullable: TRUE
         concluciones:
             type: string
             length: 255
+            nullable: TRUE
         resultadoDeLaEntrevista:
-            type: boolean            
+            type: boolean 
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud           
     lifecycleCallbacks: {  }

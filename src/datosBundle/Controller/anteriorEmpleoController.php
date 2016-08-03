@@ -110,6 +110,27 @@ class anteriorEmpleoController extends Controller
     }
 
     /**
+     * Finds and displays a anteriorEmpleo entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('datosBundle:anteriorEmpleo')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new anteriorEmpleo();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('anteriorempleo_edit',array('id'=>$entity->getId())));
+    }
+
+    /**
      * Displays a form to edit an existing anteriorEmpleo entity.
      *
      */
@@ -147,7 +168,7 @@ class anteriorEmpleoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }

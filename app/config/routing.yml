@@ -14,10 +14,10 @@ login_check:
 
 logout:
     pattern:   /logout
-estudio:
-    resource: "@EstudioBundle/Resources/config/routing.yml"
-    prefix:   /
 datos:
     resource: "@datosBundle/Resources/config/routing.yml"
+    prefix:   /wipro
+hoja:
+    resource: "@HojaBundle/Resources/config/routing.yml"
     prefix:   /
 

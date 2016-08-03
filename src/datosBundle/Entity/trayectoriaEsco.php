@@ -457,4 +457,33 @@ class trayectoriaEsco
     {
         return $this->observaciones;
     }
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    private $solicitud;
+
+
+    /**
+     * Set solicitud
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud
+     *
+     * @return trayectoriaEsco
+     */
+    public function setSolicitud(\fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud = null)
+    {
+        $this->solicitud = $solicitud;
+
+        return $this;
+    }
+
+    /**
+     * Get solicitud
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    public function getSolicitud()
+    {
+        return $this->solicitud;
+    }
 }

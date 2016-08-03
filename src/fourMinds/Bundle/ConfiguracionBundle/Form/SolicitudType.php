@@ -21,7 +21,13 @@ class SolicitudType extends AbstractType
             ->add('direccion')
             ->add('telefonos')
             ->add('puesto')
-            ->add('formato')
+            ->add('formato','choice', array(
+                'choices' => array(
+                    '1' => 'Largo',
+                    '2' => 'Corto'                   
+                ),
+                'data' => 1
+            ))
             ->add('fecha','date', array(
                         'widget' => 'single_text'
                     ))
@@ -32,7 +38,7 @@ class SolicitudType extends AbstractType
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')
                         ->where('u.role = :id')
-                        ->setParameter('id', '2')
+                        ->setParameter('id', 'ROLE_USER')
                         ->orderBy('u.userName', 'ASC');
                 },
                 'choice_label' => 'username',

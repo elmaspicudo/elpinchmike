@@ -52,7 +52,7 @@ class UserController extends Controller
                  $user= $em->getRepository('UserBundle:User')->find($user->getId());                   
             }
             
-            $entity->setDateCreate(new \DateTime("now"));
+                $entity->setDateCreate(new \DateTime("now"));
             $entity->setUserCreate($user);
             $this->setSecurePassword($entity);
             $em->persist($entity);

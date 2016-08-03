@@ -1,16 +1,38 @@
 {% extends '::base.html.twig' %}
-
+{% block placeholder -%}
+<div class="row">
+    <div class="col-lg-12">
+        
+        <div class="clearfix">
+            <h1 class="pull-left">WIPRO</h1>
+            <div class="pull-right top-page-ui">
+            	<a href="{{ path('solicitud_inv')}}" class="btn btn-primary pull-right">
+                    <i class="fa fa-plus-circle fa-lg"></i> Mis estudios
+                </a>               
+                <a href="{{ path('documentos_solicitud', { 'solicitud': entity.solicitud }) }}" class="btn btn-success pull-right">
+                    <i class="fa fa-plus-circle fa-lg"></i> Siguiente
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock -%}
 {% block body -%}
-    <h1>datosp edit</h1>
-
-    {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('datosp') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
+{{ form_start(edit_form, {'attr': {'class': 'form_transaccion_edit'}}) }}	
+	<div class="row">
+	    {{ form_rest(edit_form) }}
+	</div>
+	<div class="row">
+	    	<button class="btn btn-success" type="submit">Guardar</button>
+	        <button class="btn btn-default" type="reset">Limpiar</button>	        
+	</div>
+    {{ form_end(edit_form) }}                     
+ </div>
+</div>
+</div>
+     
 {% endblock %}

@@ -32,10 +32,15 @@ class SolicitudController extends Controller
     public function invAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        if($user=='anon.'){
+                 $user=0;          
+        }else{
+                              
+        }
+        $entities = $em->getRepository('ConfiguracionBundle:Solicitud')->findBy(array('visitador'=>$user->getId(),'estatus'=>1));
 
-        $entities = $em->getRepository('ConfiguracionBundle:Solicitud')->findBy(array('visitador'=>2,'estatus'=>2));
-
-        return $this->render('ConfiguracionBundle:Solicitud:index.html.twig', array(
+        return $this->render('ConfiguracionBundle:Solicitud:index_inv.html.twig', array(
             'entities' => $entities,
         ));
     }

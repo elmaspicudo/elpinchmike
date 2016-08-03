@@ -28,3 +28,7 @@ anteriorempleo_delete:
     path:     /{id}/delete
     defaults: { _controller: "datosBundle:anteriorEmpleo:delete" }
     methods:  [POST, DELETE]
+anteriorempleo_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "datosBundle:anteriorEmpleo:showbysolicitud" }
+

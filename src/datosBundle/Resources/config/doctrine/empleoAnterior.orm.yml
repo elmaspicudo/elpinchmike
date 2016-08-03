@@ -11,75 +11,107 @@ datosBundle\Entity\empleoAnterior:
         empresa:
             type: string
             length: '30'
+            nullable: TRUE
         sucursal:
             type: string
             length: '25'
+            nullable: TRUE
         domicilio:
             type: string
             length: '50'
+            nullable: TRUE
         jefeInmediato:
             type: string
             length: '25'
+            nullable: TRUE
         fechaDeInicio:
             type: datetime
+            nullable: TRUE
         fechaDeTermino:
             type: datetime
+            nullable: TRUE
         puestoInicial:
             type: string
             length: '30'
+            nullable: TRUE
         puestoFinal:
             type: string
             length: '30'
+            nullable: TRUE
         motivoDeSalida:
             type: string
             length: '30'
+            nullable: TRUE
         datosProporCionadosPor:
             type: string
             length: '30'
+            nullable: TRUE
         puesto:
             type: string
             length: '25'
+            nullable: TRUE
         telefono:
             type: string
             length: '10'
+            nullable: TRUE
         estado:
             type: string
             length: '10'
+            nullable: TRUE
         puestoo:
             type: string
             length: '30'
+            nullable: TRUE
         sueldoInicial:
             type: string
             length: '10'
+            nullable: TRUE
         sueldoFinal:
             type: string
             length: '10'
+            nullable: TRUE
         exelente:
             type: boolean
+            nullable: TRUE
         muyBueno:
             type: boolean
+            nullable: TRUE
         bueno:
             type: boolean
+            nullable: TRUE
         regular:
             type: boolean
+            nullable: TRUE
         deficiente:
             type: boolean
+            nullable: TRUE
         asistenciaYpuntualidad:
             type: boolean
+            nullable: TRUE
         responsabilidad:
             type: boolean
+            nullable: TRUE
         desempenio:
             type: boolean
+            nullable: TRUE
         relacionConJefesYcom:
             type: boolean
+            nullable: TRUE
         trabajoVajoPresion:
             type: boolean
+            nullable: TRUE
         apegoApoliticas:
             type: boolean
+            nullable: TRUE
         desempenoProporcionado:
             type: string
             length: '30'
+            nullable: TRUE
         observacionn:
             type: string
-            length: '100'        
+            length: '100' 
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud       
     lifecycleCallbacks: {  }

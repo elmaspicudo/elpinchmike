@@ -12,46 +12,64 @@ datosBundle\Entity\trayectoriaEsco:
         secundaria:
             type: string
             length: '50'
+            nullable: TRUE
         preparatoriaOequivalente:
             type: string
             length: '30'
+            nullable: TRUE
         licenciatura:
             type: string
             length: '30'
+            nullable: TRUE
         diplomado:
             type: string
             length: '30'
+            nullable: TRUE
         maestria:
             type: string
             length: '30'
+            nullable: TRUE
         otros:
             type: string
             length: '20'
+            nullable: TRUE
         aniosCursado:
             type: string
             length: '15'
+            nullable: TRUE
         comprobante:
             type: string
             length: '12'
+            nullable: TRUE
         observacion:
             type: string
             length: 255
+            nullable: TRUE
         nombre:
             type: string
             length: '25'
+            nullable: TRUE
         ocupacion:
             type: string
             length: '25'
+            nullable: TRUE
         telefono:
             type: string
             length: '10'
+            nullable: TRUE
         tiempoDeConocerlo:
             type: string
             length: '6'
+            nullable: TRUE
         comentarios:
             type: string
             length: '80'
+            nullable: TRUE
         observaciones:
             type: string
             length: '150'
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
     lifecycleCallbacks: {  }

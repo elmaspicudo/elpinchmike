@@ -28,3 +28,6 @@ trayectorialab_delete:
     path:     /{id}/delete
     defaults: { _controller: "datosBundle:trayectoriaLab:delete" }
     methods:  [POST, DELETE]
+trayectorialab_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "datosBundle:trayectoriaLab:showbysolicitud" }

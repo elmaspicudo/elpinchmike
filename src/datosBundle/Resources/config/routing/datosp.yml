@@ -28,3 +28,6 @@ datosp_delete:
     path:     /{id}/delete
     defaults: { _controller: "datosBundle:datosp:delete" }
     methods:  [POST, DELETE]
+datosp_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "datosBundle:datosp:showbysolicitud" }

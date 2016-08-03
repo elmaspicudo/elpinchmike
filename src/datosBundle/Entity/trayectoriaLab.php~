@@ -864,5 +864,18 @@ class trayectoriaLab
         return $this;
     }
 
-}
 
+    /**
+     * Set desempenoProporcionado
+     *
+     * @param string $desempenoProporcionado
+     *
+     * @return trayectoriaLab
+     */
+    public function setDesempenoProporcionado($desempenoProporcionado)
+    {
+        $this->desempenoProporcionado = $desempenoProporcionado;
+
+        return $this;
+    }
+}

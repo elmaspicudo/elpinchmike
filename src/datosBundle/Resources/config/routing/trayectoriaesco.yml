@@ -28,3 +28,6 @@ trayectoriaesco_delete:
     path:     /{id}/delete
     defaults: { _controller: "datosBundle:trayectoriaEsco:delete" }
     methods:  [POST, DELETE]
+trayectoriaEsco_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "datosBundle:trayectoriaEsco:showbysolicitud" }

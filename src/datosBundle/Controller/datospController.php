@@ -109,6 +109,27 @@ class datospController extends Controller
         ));
     }
 
+
+   /**
+     * Finds and displays a datosp entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('datosBundle:datosp')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new datosp();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('datosp_edit',array('id'=>$entity->getId())));
+    }
     /**
      * Displays a form to edit an existing datosp entity.
      *
@@ -147,7 +168,7 @@ class datospController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        //$form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
