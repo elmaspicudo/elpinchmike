@@ -4,7 +4,7 @@ configuracion_horaslaborales:
 
 configuracion_solicitud:
     resource: "@ConfiguracionBundle/Resources/config/routing/solicitud.yml"
-    prefix:   /solicitud
+    prefix:   /
 
 configuracion_cliente:
     resource: "@ConfiguracionBundle/Resources/config/routing/cliente.yml"

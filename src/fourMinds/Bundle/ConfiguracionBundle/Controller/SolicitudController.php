@@ -24,7 +24,9 @@ class SolicitudController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('ConfiguracionBundle:Solicitud')->findAll();
-
+        if ($this->get('security.context')->isGranted('ROLE_USER')) {
+            return $this->redirect($this->generateUrl('solicitud_inv'));
+        }
         return $this->render('ConfiguracionBundle:Solicitud:index.html.twig', array(
             'entities' => $entities,
         ));
