@@ -15,10 +15,14 @@ class Hoja5_6Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('aseguradora')
+            ->add('aseguradora','choice', array(
+                'choices'=>array(
+                        'si' => 'Si',
+                        'no'  => 'No',
+                        )))
             ->add('tipoSeguro')
             ->add('mensualidad')
-            ->add('vigencia')
+            ->add('vigencia','text')
         ;
     }
     

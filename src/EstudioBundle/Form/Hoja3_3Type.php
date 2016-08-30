@@ -15,12 +15,12 @@ class Hoja3_3Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('edad')
-            ->add('parentesco')
-            ->add('estadoCivil')
-            ->add('escolaridad')
-            ->add('ocupacion')
+            ->add('nombre','text')
+            ->add('edad','text')
+            ->add('parentesco','text')
+            ->add('estadoCivil','text')
+            ->add('escolaridad','text')
+            ->add('ocupacion','text')
         ;
     }
     

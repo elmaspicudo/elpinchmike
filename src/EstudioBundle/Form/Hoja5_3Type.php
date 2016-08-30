@@ -17,8 +17,8 @@ class Hoja5_3Type extends AbstractType
         $builder
             ->add('banco')
             ->add('limiteCredito')
-            ->add('antiguedad')
-            ->add('pagoMensual')
+            ->add('antiguedad','text')
+            ->add('pagoMensual','text')
         ;
     }
     

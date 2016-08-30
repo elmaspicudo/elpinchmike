@@ -1,9 +1,140 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1 class=""><strong>Resumen Ejecutivo</strong> >  Hoja 1</h1>
+<style>
+  .btn-primary{
+    width: 200px!important;
+  }
+</style>
+
+    <h1 class="text-center"><strong>Resumen Ejecutivo</strong> </h1>
 
     {{form_start(form)}}
+    <div class="container-fluid">
+       <div class="row">
+            <div class="col-lg-6 col-md-12">
+            	<div form-group="">
+            		<div class="input-group">
+            			<span class="input-group-btn">
+            				<label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Empresa</label>
+            			</span>
+        	    		{{form_widget(form.empresa,{'attr':{'class':'form-control'}})}}
+            		</div>
+            		<span class="help-block"><i class="icon-remove-sign"></i></span>
+            	</div>
+            	<div form-group="">
+            		<div class="input-group">
+            			<span class="input-group-btn">
+            				<label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Puesto</label>
+            			</span>
+        	    		{{form_widget(form.puesto,{'attr':{'class':'form-control'}})}}
+            		</div>
+            		<span class="help-block"><i class="icon-remove-sign"></i></span>
+            	</div>
+            	<div form-group="">
+            		<div class="input-group">
+            			<span class="input-group-btn">
+            				<label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Nombre </label>
+            			</span>
+        	    		{{form_widget(form.nombreCompleto,{'attr':{'class':'form-control','placeholder':'Ingrese nombre completo'}})}}
+            		</div>
+            		<span class="help-block"><i class="icon-remove-sign"></i></span>
+            	</div>
+            </div>
+            <div style="height:200px; background:#ccc; " class="col-md-6 col-md-12">
+            </div>
+
+            <!-- evaluacion-->
+            <div class="col-md-12 col-lg-12">
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Entorno Familiar </label>
+                    </span>
+                    {{form_widget(form.entornoFamiliar,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                 <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Personal </label>
+                    </span>
+                    {{form_widget(form.personal,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                 <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Escolares </label>
+                    </span>
+                    {{form_widget(form.escolares,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Documentacion </label>
+                    </span>
+                    {{form_widget(form.documentacion,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Entorno  Economico </label>
+                    </span>
+                    {{form_widget(form.entornoEconomico,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Desempeño </label>
+                    </span>
+                    {{form_widget(form.desempeno,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Laboral </label>
+                    </span>
+                    {{form_widget(form.laboral,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Estabilidad Laboral </label>
+                    </span>
+                    {{form_widget(form.estabilidadLaboral,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Observaciones </label>
+                    </span>
+                    {{form_widget(form.observaciones,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+        </div> 
+    </div>
+
+   
+
+ 
 
 
     {{form_end(form)}}

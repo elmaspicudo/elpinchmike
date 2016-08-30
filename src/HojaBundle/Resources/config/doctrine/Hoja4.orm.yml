@@ -89,15 +89,9 @@ HojaBundle\Entity\Hoja4:
         compartida:
             type: string
             length: '10'
-        buena:
+        conservacionCasa:
             type: string
-            length: '10'
-        regular:
-            type: string
-            length: '10'
-        mala:
-            type: string
-            length: '10'
+            length: '20'
         valorDeCasa:
             type: integer
         sala:

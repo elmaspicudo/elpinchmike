@@ -20,24 +20,94 @@ class Hoja6_1Type extends AbstractType
             ->add('telefono')
             ->add('domicilio')
             ->add('ciudad')
-            ->add('fechaIngreso')
-            ->add('fechasalida')
+            ->add('fechaIngreso','text')
+            ->add('fechasalida','text')
             ->add('puestoInicial')
             ->add('puestoFinal')
             ->add('sueldoInicial')
             ->add('sueldoFinal')
             ->add('jefeInmediato')
             ->add('puesto')
-            ->add('asistencia')
-            ->add('responsabilidad')
-            ->add('colaboracion')
-            ->add('calidadTrabajo')
-            ->add('actitudGeneral')
-            ->add('tomaDesiciones')
-            ->add('iniciativa')
-            ->add('honestidad')
-            ->add('relacionJefes')
-            ->add('relacionCompaneros')
+            ->add('asistencia','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('responsabilidad','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('colaboracion','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('calidadTrabajo','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('actitudGeneral','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('tomaDesiciones','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('iniciativa','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('honestidad','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('relacionJefes','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
+            ->add('relacionCompaneros','choice', array(
+                'choices'=>array(
+                        'excelente' => 'Excelente',
+                        'muybuena'  => 'Muy Buena',
+                        'buena'  => 'Buena',
+                        'regular'  => 'Regular',
+                        'mala'  => 'Mala',
+                        )))
             ->add('perteneceSindicato')
             ->add('cual')
             ->add('cargoSindical')
@@ -48,7 +118,7 @@ class Hoja6_1Type extends AbstractType
             ->add('porque')
             ->add('datosProporcionados')
             ->add('puestoEntrevistador')
-            ->add('fechaEntravista')
+            ->add('fechaEntravista','text')
         ;
     }
     

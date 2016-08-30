@@ -15,7 +15,11 @@ class Hoja5_5Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('institucion')
+            ->add('institucion','choice', array(
+                'choices'=>array(
+                        'si' => 'Si',
+                        'no'  => 'No',
+                        )))
             ->add('monto')
             ->add('pagoMensual')
             ->add('saldoActual')
