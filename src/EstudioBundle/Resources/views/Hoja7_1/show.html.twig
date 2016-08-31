@@ -32,17 +32,7 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('hoja7_1') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('hoja7_1_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        <a  href="{{ path('hoja7_1') }}" class="btn btn-warning">Regresar</a>
+        <a href="{{ path('hoja7_1_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
+    {{ form(delete_form) }}
 {% endblock %}

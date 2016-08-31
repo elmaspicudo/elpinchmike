@@ -15,6 +15,7 @@ class horasLaboralesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('descripcion')
             ->add('inicio')
             ->add('fin')
         ;

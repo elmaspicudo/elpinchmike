@@ -67,7 +67,7 @@ class DeudasActualesH5Controller extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        //$form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -217,7 +217,7 @@ class DeudasActualesH5Controller extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('deudasactualesh5_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()
         ;
     }

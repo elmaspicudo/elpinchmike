@@ -33,138 +33,41 @@ class tiempoEtapa
         return $this->id;
     }
 
+    
+    
+    
     /**
-     * Set etapa
+     * @var string
+     */
+    private $descripcion;
+
+
+    /**
+     * Set descripcion
      *
-     * @param string $etapa
+     * @param string $descripcion
      *
      * @return tiempoEtapa
      */
-    public function setEtapa($etapa)
+    public function setDescripcion($descripcion)
     {
-        $this->etapa = $etapa;
+        $this->descripcion = $descripcion;
 
         return $this;
     }
 
     /**
-     * Get etapa
+     * Get descripcion
      *
      * @return string
      */
-    public function getEtapa()
+    public function getDescripcion()
     {
-        return $this->etapa;
+        return $this->descripcion;
     }
 
-    /**
-     * Set tiempo
-     *
-     * @param integer $tiempo
-     *
-     * @return tiempoEtapa
-     */
-    public function setTiempo($tiempo)
+    public function __toString()
     {
-        $this->tiempo = $tiempo;
-
-        return $this;
-    }
-
-    /**
-     * Get tiempo
-     *
-     * @return integer
-     */
-    public function getTiempo()
-    {
-        return $this->tiempo;
-    }
-    /**
-     * @var integer
-     */
-    private $tiempoVerde;
-
-    /**
-     * @var integer
-     */
-    private $tiempoAmarillo;
-
-    /**
-     * @var integer
-     */
-    private $tiempoRojo;
-
-
-    /**
-     * Set tiempoVerde
-     *
-     * @param integer $tiempoVerde
-     *
-     * @return tiempoEtapa
-     */
-    public function setTiempoVerde($tiempoVerde)
-    {
-        $this->tiempoVerde = $tiempoVerde;
-
-        return $this;
-    }
-
-    /**
-     * Get tiempoVerde
-     *
-     * @return integer
-     */
-    public function getTiempoVerde()
-    {
-        return $this->tiempoVerde;
-    }
-
-    /**
-     * Set tiempoAmarillo
-     *
-     * @param integer $tiempoAmarillo
-     *
-     * @return tiempoEtapa
-     */
-    public function setTiempoAmarillo($tiempoAmarillo)
-    {
-        $this->tiempoAmarillo = $tiempoAmarillo;
-
-        return $this;
-    }
-
-    /**
-     * Get tiempoAmarillo
-     *
-     * @return integer
-     */
-    public function getTiempoAmarillo()
-    {
-        return $this->tiempoAmarillo;
-    }
-
-    /**
-     * Set tiempoRojo
-     *
-     * @param integer $tiempoRojo
-     *
-     * @return tiempoEtapa
-     */
-    public function setTiempoRojo($tiempoRojo)
-    {
-        $this->tiempoRojo = $tiempoRojo;
-
-        return $this;
-    }
-
-    /**
-     * Get tiempoRojo
-     *
-     * @return integer
-     */
-    public function getTiempoRojo()
-    {
-        return $this->tiempoRojo;
+        return $this->descripcion;
     }
 }

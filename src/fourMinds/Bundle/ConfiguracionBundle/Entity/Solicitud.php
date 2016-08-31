@@ -288,4 +288,33 @@ class Solicitud
     {
         return (string) $this->getId();
     }
+    /**
+     * @var \DateTime
+     */
+    private $fechaVisitador;
+
+
+    /**
+     * Set fechaVisitador
+     *
+     * @param \DateTime $fechaVisitador
+     *
+     * @return Solicitud
+     */
+    public function setFechaVisitador($fechaVisitador)
+    {
+        $this->fechaVisitador = $fechaVisitador;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaVisitador
+     *
+     * @return \DateTime
+     */
+    public function getFechaVisitador()
+    {
+        return $this->fechaVisitador;
+    }
 }

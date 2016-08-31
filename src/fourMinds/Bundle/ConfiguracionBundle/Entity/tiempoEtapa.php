@@ -33,65 +33,55 @@ class tiempoEtapa
         return $this->id;
     }
 
+    
+    
+    
     /**
-     * Set etapa
+     * @var string
+     */
+    private $descripcion;
+
+
+    /**
+     * Set descripcion
      *
-     * @param string $etapa
+     * @param string $descripcion
      *
      * @return tiempoEtapa
      */
-    public function setEtapa($etapa)
+    public function setDescripcion($descripcion)
     {
-        $this->etapa = $etapa;
+        $this->descripcion = $descripcion;
 
         return $this;
     }
 
     /**
-     * Get etapa
+     * Get descripcion
      *
      * @return string
      */
-    public function getEtapa()
+    public function getDescripcion()
     {
-        return $this->etapa;
+        return $this->descripcion;
     }
 
-    /**
-     * Set tiempo
-     *
-     * @param integer $tiempo
-     *
-     * @return tiempoEtapa
-     */
-    public function setTiempo($tiempo)
+    public function __toString()
     {
-        $this->tiempo = $tiempo;
-
-        return $this;
-    }
-
-    /**
-     * Get tiempo
-     *
-     * @return integer
-     */
-    public function getTiempo()
-    {
-        return $this->tiempo;
+        return $this->descripcion;
     }
     /**
-     * @var integer
+     * @var string
      */
     private $tiempoVerde;
 
     /**
-     * @var integer
+     * @var string
      */
     private $tiempoAmarillo;
 
     /**
-     * @var integer
+     * @var string
      */
     private $tiempoRojo;
 
@@ -99,7 +89,7 @@ class tiempoEtapa
     /**
      * Set tiempoVerde
      *
-     * @param integer $tiempoVerde
+     * @param string $tiempoVerde
      *
      * @return tiempoEtapa
      */
@@ -113,7 +103,7 @@ class tiempoEtapa
     /**
      * Get tiempoVerde
      *
-     * @return integer
+     * @return string
      */
     public function getTiempoVerde()
     {
@@ -123,7 +113,7 @@ class tiempoEtapa
     /**
      * Set tiempoAmarillo
      *
-     * @param integer $tiempoAmarillo
+     * @param string $tiempoAmarillo
      *
      * @return tiempoEtapa
      */
@@ -137,7 +127,7 @@ class tiempoEtapa
     /**
      * Get tiempoAmarillo
      *
-     * @return integer
+     * @return string
      */
     public function getTiempoAmarillo()
     {
@@ -147,7 +137,7 @@ class tiempoEtapa
     /**
      * Set tiempoRojo
      *
-     * @param integer $tiempoRojo
+     * @param string $tiempoRojo
      *
      * @return tiempoEtapa
      */
@@ -161,7 +151,7 @@ class tiempoEtapa
     /**
      * Get tiempoRojo
      *
-     * @return integer
+     * @return string
      */
     public function getTiempoRojo()
     {

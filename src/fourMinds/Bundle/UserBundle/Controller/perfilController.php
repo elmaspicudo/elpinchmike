@@ -21,13 +21,24 @@ class perfilController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+         $user = $this->container->get('security.context')->getToken()->getUser();
+            if($user=='anon.'){
+                 $user=0;          
+            }else{
+                $entity= $user->getPerfil();  
+                if (!$entity) {
+                    $form   = $this->createCreateForm($entity);
 
-        $entities = $em->getRepository('UserBundle:perfil')->findAll();
+                    return $this->render('UserBundle:perfil:new.html.twig', array(
+                        'entity' => $entity,
+                        'form'   => $form->createView(),
+                    ));
+                }else{
+                    return $this->redirect($this->generateUrl('perfil_edit', array('id' => $entity->getId())));
+                }
 
-        return $this->render('UserBundle:perfil:index.html.twig', array(
-            'entities' => $entities,
-        ));
+                
+            }
     }
     /**
      * Creates a new perfil entity.
@@ -47,7 +58,7 @@ class perfilController extends Controller
             
                 if ($form->isValid()) {        
                     
-                    $entity->getFile()->setMetatags(urlencode($entity->getName()));
+                    $entity->getFile()->setMetatags(urlencode($user->getUserName()));
                     $entity->getFile()->upload('perfil');
                     $em->persist($entity);
                     $em->flush();
@@ -79,7 +90,7 @@ class perfilController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        //$form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -90,13 +101,24 @@ class perfilController extends Controller
      */
     public function newAction()
     {
-        $entity = new perfil();
-        $form   = $this->createCreateForm($entity);
+         $user = $this->container->get('security.context')->getToken()->getUser();
+            if($user=='anon.'){
+                 $user=0;          
+            }else{
+                $entity= $user->getPerfil();  
+                if (!$entity) {
+                    $form   = $this->createCreateForm($entity);
 
-        return $this->render('UserBundle:perfil:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView(),
-        ));
+                    return $this->render('UserBundle:perfil:new.html.twig', array(
+                        'entity' => $entity,
+                        'form'   => $form->createView(),
+                    ));
+                }else{
+                    return $this->redirect($this->generateUrl('perfil_edit', array('id' => $entity->getId())));
+                }
+
+                
+            }
     }
 
     /**
@@ -229,7 +251,7 @@ class perfilController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('perfil_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()
         ;
     }

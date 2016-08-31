@@ -15,10 +15,6 @@ class perfilType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('firtsName')
-            ->add('lastName')
-            ->add('email')
             ->add('telephone')
             ->add('file', new fileType(), array(
                 'attr' => array('id' => 'well')

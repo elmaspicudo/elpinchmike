@@ -66,15 +66,19 @@
                 <td>{{ entity.concluciones }}</td>
                 <td>{{ entity.resultadoDeLaEntrevista }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('datosp_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('datosp_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+                <a  href="{{ path('datosp_show', { 'id': entity.id }) }}" class="table-link">
+	<span class="fa-stack">
+	<i class="fa fa-square fa-stack-2x"></i>
+	<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
+                    <a href="{{ path('datosp_edit', { 'id': entity.id }) }}" class="table-link">
+	<span class="fa-stack">
+	<i class="fa fa-square fa-stack-2x"></i>
+	<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
+                    </td>
             </tr>
         {% endfor %}
         </tbody>

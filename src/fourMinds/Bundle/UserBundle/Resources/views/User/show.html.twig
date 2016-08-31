@@ -1,9 +1,30 @@
-{% extends '::base.html.twig' %}
-
+{% extends'::base.html.twig' %}
+{% block placeholder -%}
+<div class="row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active"><span>Usuario</span></li>
+        </ol>        
+        <div class="clearfix">
+            <h1 class="pull-left">Usuario</h1>
+            <div class="pull-right top-page-ui">
+                <a href="{{ path('cliente_new')}}" class="btn btn-primary pull-right">
+                    <i class="fa fa-plus-circle fa-lg"></i> Nuevo Usuario
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock -%}
 {% block body -%}
-    <h1>User</h1>
-
-    <table class="record_properties">
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
+<div class="table-responsive">
+<table class="table user-list table-hover">
         <tbody>
             <tr>
                 <th>Avatar</th>
@@ -12,20 +33,34 @@
             <tr>
                 <th>Username</th>
                 <td>{{ entity.userName }}</td>
-            </tr>            
+            </tr> 
             <tr>
-                <th>Salt</th>
-                <td>{{ entity.salt }}</td>
-            </tr>
+                <th>Nombre</th>
+                <td>{{ entity.nombre }}</td>
+            </tr> 
             <tr>
-                <th>Datecreate</th>
-                <td>{{ entity.dateCreate|date('Y-m-d H:i:s') }}</td>
-            </tr>           
+                <th>Apellido paterno</th>
+                <td>{{ entity.aPaterno }}</td>
+            </tr> 
+            <tr>
+                <th>Apellido materno</th>
+                <td>{{ entity.aMaterno }}</td>
+            </tr> 
+            <tr>
+                <th>Correo</th>
+                <td>{{ entity.correo }}</td>
+            </tr> 
         </tbody>
     </table>
 
             <a class="btn btn-warning" href="{{ path('user') }}">
-            Regresar
-        </a>
+                Regresar
+            </a>
+            <a href="{{ path('user_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
    
-{% endblock %}
+</div>
+</div>
+</div>
+</div>
+  
+    {% endblock %}

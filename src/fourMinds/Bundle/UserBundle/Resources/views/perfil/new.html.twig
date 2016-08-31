@@ -24,6 +24,7 @@
 <div class="main-box-body clearfix">
 {{ form_start(form, {'attr': {'class': 'form_transaccion_edit'}}) }}	
 	<div class="row">
+         {{ form_row(form.file.file, { 'label' : 'Email', 'attr' : { 'class' : 'form-control' }}) }}
 	    {{ form_rest(form) }}
 	</div>
 	<div class="row">

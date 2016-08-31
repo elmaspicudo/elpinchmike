@@ -17,11 +17,43 @@
 <div class="main-box-body clearfix">
 {{ form_start(edit_form, {'attr': {'class': 'form_transaccion_edit'}}) }}	
 	<div class="row">
+		{{ form_row(edit_form.nombre) }}
+        {{ form_row(edit_form.direccion) }}
+        {{ form_row(edit_form.telefonos) }}
+        {{ form_row(edit_form.puesto) }}
+        {{ form_row(edit_form.formato) }}
+        <div class="col-lg-6" >
+            <div class="form-group" >
+                <div class="input-group">
+                    <span class="input-group-btn">                        
+                        <label class="btn btn-primary required" for="fourminds_bundle_configuracionbundle_cliente_razonSocial">Fecha de visita</label>
+                    </span>
+                        <div class="col-lg-12" >
+                            <div class="col-lg-2" >
+                                {{ form_widget(edit_form.fecha.date.year,{'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-lg-2" >                            
+                                {{ form_widget(edit_form.fecha.date.month,{'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-lg-2" > 
+                                {{ form_widget(edit_form.fecha.date.day,{'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-lg-2" > 
+                                {{ form_widget(edit_form.fecha.time.hour,{'attr': {'class': 'form-control'}}) }}
+                            </div>
+                            <div class="col-lg-2" >  
+                                 {{ form_widget(edit_form.fecha.time.minute,{'attr': {'class': 'form-control'}}) }}  
+                            </div>
+                        </div>            
+                </div>
+                <span class="help-block"><i class="icon-remove-sign"></i>{{ form_errors(form) }}</span>
+            </div>
+        </div>
 	    {{ form_rest(edit_form) }}
 	</div>
 	<div class="row">
 	    	<button class="btn btn-success" type="submit">Guardar</button>
-	        <button class="btn btn-default" type="reset">Limpiar</button>	        
+	        <a class="btn btn-warning" href="{{ path('solicitud') }}">Regresar</a>	        
 	</div>
     {{ form_end(edit_form) }}                     
  </div>

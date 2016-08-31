@@ -20,6 +20,7 @@ class UserType extends AbstractType
             ->add('aPaterno')
             ->add('aMaterno')
             ->add('correo')
+
             ->add('role', 'choice', array(
                 'choices' => array(
                     'ROLE_ADMIN' => 'Administrador',
@@ -36,6 +37,8 @@ class UserType extends AbstractType
                     'required' => true,
                     'first_options'  => array('label' => 'Password'),
                     'second_options' => array('label' => 'Repite password')))
+            ->add('horario')
+            ->add('tiempos_entrega')
             
         ;
     }

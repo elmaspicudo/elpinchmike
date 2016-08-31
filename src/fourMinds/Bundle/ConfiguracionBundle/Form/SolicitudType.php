@@ -28,9 +28,10 @@ class SolicitudType extends AbstractType
                 ),
                 'data' => 1
             ))
-            ->add('fecha','date', array(
+            ->add('fecha')
+            /*->add('fecha','date', array(
                         'widget' => 'single_text'
-                    ))
+                    ))*/
             ->add('cliente')
             ->add('visitador', 'entity', array(
                 'class' => 'fourMinds\Bundle\UserBundle\Entity\User',

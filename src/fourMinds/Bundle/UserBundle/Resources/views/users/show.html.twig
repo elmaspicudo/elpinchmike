@@ -1,14 +1,30 @@
-{% extends '::base.html.twig' %}
-
-{% block body -%}
+{% extends'::base.html.twig' %}
+{% block placeholder -%}
 <div class="row">
     <div class="col-lg-12">
-        <div class="main-box">
-            <header class="main-box-header clearfix">
-                <h2>Mostrar usuario</h2>
-            </header>  
-            <div class="main-box-body clearfix">
-                   <table class="record_properties">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active"><span>Clientes</span></li>
+        </ol>        
+        <div class="clearfix">
+            <h1 class="pull-left">Cliente</h1>
+            <div class="pull-right top-page-ui">
+                <a href="{{ path('cliente_new')}}" class="btn btn-primary pull-right">
+                    <i class="fa fa-plus-circle fa-lg"></i> Nuevo Cliente
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock -%}
+{% block body -%}
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
+<div class="table-responsive">
+<table class="table user-list table-hover">
                         <tbody>
                             <tr>
                                 <th>Email</th>
@@ -28,9 +44,10 @@
                         {{ form_end(delete_form) }}
                    </div>
                                            
-            </div>          
-        </div>      
-    </div>  
+            
 </div>
-   
-{% endblock %}
+</div>
+</div>
+</div>
+  
+    {% endblock %}

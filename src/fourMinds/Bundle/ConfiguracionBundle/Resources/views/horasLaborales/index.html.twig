@@ -28,6 +28,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Descripcion</th>
                 <th>Inicio</th>
                 <th>Fin</th>
                 <th>Actions</th>
@@ -37,17 +38,22 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('horaslaborales_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{% if entity.inicio %}{{ entity.inicio|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.descripcion }}</td>
+                <td>{% if entity.inicio %}{{ entity.inicio|date('H:i:s') }}{% endif %}</td>
                 <td>{{ entity.fin | date('H:i:s') }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('horaslaborales_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('horaslaborales_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a  href="{{ path('horaslaborales_show', { 'id': entity.id }) }}" class="table-link">
+                    	<span class="fa-stack">
+                    	<i class="fa fa-square fa-stack-2x"></i>
+                    	<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                    	</span>
+                    </a>
+                    <a href="{{ path('horaslaborales_edit', { 'id': entity.id }) }}" class="table-link">
+                    	<span class="fa-stack">
+                    	<i class="fa fa-square fa-stack-2x"></i>
+                    	<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                    	</span>
+                    </a>
                 </td>
             </tr>
         {% endfor %}

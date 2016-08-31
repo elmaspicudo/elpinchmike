@@ -8,6 +8,9 @@ fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales:
             generator:
                 strategy: AUTO
     fields:
+        descripcion:
+            type: string
+            length: '120'
         inicio:
             type: time
         fin:

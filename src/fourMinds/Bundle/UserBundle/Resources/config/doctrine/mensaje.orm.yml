@@ -1,0 +1,31 @@
+fourMinds\Bundle\UserBundle\Entity\mensaje:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        asunto:
+            type: string
+            length: '100'
+        contenido:
+            type: text
+    manyToOne:
+        from:         
+            targetEntity: fourMinds\Bundle\UserBundle\Entity\User
+            cascade: ["persist"]
+    manyToMany:
+        mensaje_user:
+            targetEntity: fourMinds\Bundle\UserBundle\Entity\User
+            joinTable:
+                name: mensaje_user
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    mensaje_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -8,18 +8,6 @@ fourMinds\Bundle\UserBundle\Entity\perfil:
             generator:
                 strategy: AUTO
     fields:
-        name:
-            type: string
-            length: '60'
-        firtsName:
-            type: string
-            length: '60'
-        lastName:
-            type: string
-            length: '60'
-        email:
-            type: string
-            length: '120'
         telephone:
             type: string
             length: '14'

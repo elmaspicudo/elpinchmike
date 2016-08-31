@@ -468,4 +468,62 @@ class User implements UserInterface
     {
         return $this->rol_user;
     }
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales
+     */
+    private $horario;
+
+
+    /**
+     * Set horario
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales $horario
+     *
+     * @return User
+     */
+    public function setHorario(\fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales $horario = null)
+    {
+        $this->horario = $horario;
+
+        return $this;
+    }
+
+    /**
+     * Get horario
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales
+     */
+    public function getHorario()
+    {
+        return $this->horario;
+    }
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa
+     */
+    private $tiempos_entrega;
+
+
+    /**
+     * Set tiemposEntrega
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa $tiemposEntrega
+     *
+     * @return User
+     */
+    public function setTiemposEntrega(\fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa $tiemposEntrega = null)
+    {
+        $this->tiempos_entrega = $tiemposEntrega;
+
+        return $this;
+    }
+
+    /**
+     * Get tiemposEntrega
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa
+     */
+    public function getTiemposEntrega()
+    {
+        return $this->tiempos_entrega;
+    }
 }

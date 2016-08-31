@@ -70,8 +70,28 @@ class SolicitudController extends Controller
         if ($form->isValid()) {
             $entity->setEstatus(1);
             $em = $this->getDoctrine()->getManager();
+            $fecha=$entity->getFecha();
+            $hora=$entity->getVisitador()->getTiemposEntrega()->getTiempoVerde();
+            $hora+=$entity->getVisitador()->getTiemposEntrega()->getTiempoAmarillo();
+            $hora+=$entity->getVisitador()->getTiemposEntrega()->getTiempoRojo();
+            $fechaEntrada=$entity->getVisitador()->getHorario()->getInicio();
+            $fechaSalida=$entity->getVisitador()->getHorario()->getFin();
+            $horaSolicitud=(($fecha->format('H')*60*60)+($fecha->format('i')*60)+($fecha->format('s')));   
+            $horaEntrada=(($fechaEntrada->format('H')*60*60)+($fechaEntrada->format('i')*60)+($fechaEntrada->format('s')));
+            $horaSalida=(($fechaSalida->format('H')*60*60)+($fechaSalida->format('i')*60)+($fechaSalida->format('s')));      
+            $date = $em->getRepository('ConfiguracionBundle:Solicitud')->tiempoFinal($horaSolicitud,$hora,$horaEntrada,$horaSalida);
+            $cad=$fecha->format('Y-m-d H:i:s');
+            $fechatmp=new \DateTime($cad);
+            //echo $hora.'|resultsdfgsd<br>'; 
+            //echo $fecha->format('Y-m-d H:i:s').'|resultsdfgsd<br>';               
+            $fechatmp->add(new \DateInterval('PT'.$_SESSION['date'].'S'));
+            //echo $_SESSION['date'];
+            //echo $fecha->format('Y-m-d H:i:s').'|result<br>';
+            $entity->setFechaVisitador($fechatmp);
+
             $em->persist($entity);
             $em->flush();
+            $this->sendNotifyAction($entity);
 
             return $this->redirect($this->generateUrl('solicitud_show', array('id' => $entity->getId())));
         }
@@ -96,7 +116,7 @@ class SolicitudController extends Controller
             'method' => 'POST',
         ));
 
-        ////$form->add('submit', 'submit', array('label' => 'Create'));
+        //////$form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -109,7 +129,8 @@ class SolicitudController extends Controller
     {
         $entity = new Solicitud();
         $form   = $this->createCreateForm($entity);
-
+        $fecha = new \DateTime();
+        $entity->setFecha($fecha);
         return $this->render('ConfiguracionBundle:Solicitud:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
@@ -234,6 +255,31 @@ class SolicitudController extends Controller
         return $this->redirect($this->generateUrl('solicitud'));
     }
 
+  /**
+     * Deletes a User entity.
+     *
+     */
+    public function sendNotifyAction($solicitud)
+    {
+       // print_r($request);
+        //$em = $this->getDoctrine()->getManager();
+        //$entity = $em->getRepository('UserBundle:User')->findOneBy( array('salt' =>$form['salt']));
+        
+
+        //$fecha->add(new DateInterval('PT10H30S'));
+        $body=$this->renderView('UserBundle:User:nuevaSolicitud.html.twig',
+                    array('solicitud' => $solicitud));
+        $message = \Swift_Message::newInstance()
+                    ->setContentType('text/html')
+                    ->setSubject('Te asignaron una nueva investigacion')
+                    ->setFrom('soporte@mmh.mx')
+                    ->setTo($solicitud->getVisitador()->getCorreo() )
+                    ->setBody( $body);
+                $this->get('mailer')->send($message);
+       
+    }
+
+
     /**
      * Creates a form to delete a Solicitud entity by id.
      *
@@ -246,7 +292,7 @@ class SolicitudController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('solicitud_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            //->add('submit', 'submit', array('label' => 'Delete'))
+            //->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()
         ;
     }

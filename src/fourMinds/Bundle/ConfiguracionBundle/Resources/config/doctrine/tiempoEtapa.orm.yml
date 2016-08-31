@@ -8,12 +8,13 @@ fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa:
             generator:
                 strategy: AUTO
     fields:
-        etapa:
-            type: integer
+        descripcion:
+            type: string
+            length: '120'       
         tiempoVerde:
-            type: integer
+            type: decimal
         tiempoAmarillo:
-            type: integer
+            type: decimal
         tiempoRojo:
-            type: integer
+            type: decimal
     lifecycleCallbacks: {  }

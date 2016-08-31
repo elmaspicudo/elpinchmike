@@ -1,6 +1,7 @@
 fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud:
     type: entity
     table: null
+    repositoryClass: fourMinds\Bundle\ConfiguracionBundle\Entity\SolicitudRepository
     id:
         id:
             type: integer
@@ -25,6 +26,8 @@ fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud:
         estatus:
             type: integer
         fecha:
+            type: datetime
+        fechaVisitador:
             type: datetime
     manyToOne:
         cliente:         

@@ -98,7 +98,7 @@
                         {% if usuario.perfil %}
                                  <img src="{{ asset(usuario.perfil.file.file)}}" alt="">
                             {% else %}
-                                  <img src="" alt="">   
+                                  <img src="{{asset('uploads/default-user.jpg')}}" alt="">   
                         {% endif %}
                            
                             <span class="hidden-xs">{{usuario.userName}}</span> <b class="caret"></b>

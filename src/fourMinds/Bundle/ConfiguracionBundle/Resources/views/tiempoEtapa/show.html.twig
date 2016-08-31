@@ -31,29 +31,27 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Etapa</th>
-                <td>{{ entity.etapa }}</td>
+                <th>Descripcion</th>
+                <td>{{ entity.descripcion }}</td>
             </tr>
             <tr>
-                <th>Tiempo</th>
-                <td>{{ entity.tiempo }}</td>
+                <th>Verde</th>
+                <td>{{ entity.tiempoVerde }}</td>
+            </tr>
+            <tr>
+                <th>Amarillo</th>
+                <td>{{ entity.tiempoAmarillo }}</td>
+            </tr>
+            <tr>
+                <th>Rojo</th>
+                <td>{{ entity.tiempoRojo }}</td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('tiempoetapa') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('tiempoetapa_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        <a  href="{{ path('tiempoetapa') }}" class="btn btn-warning">Regresar</a>
+        <a href="{{ path('tiempoetapa_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
+    {{ form(delete_form) }}
 </div>
 </div>
 </div>

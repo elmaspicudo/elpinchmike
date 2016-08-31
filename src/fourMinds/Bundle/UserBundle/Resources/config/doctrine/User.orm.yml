@@ -46,6 +46,12 @@ fourMinds\Bundle\UserBundle\Entity\User:
         perfil:         
             targetEntity: fourMinds\Bundle\UserBundle\Entity\perfil
             cascade: ["persist"]
+        horario:
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales
+            cascade: ["persist"]
+        tiempos_entrega:
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa
+            cascade: ["persist"]
     manyToMany:
         rol_user:
             targetEntity: fourMinds\Bundle\UserBundle\Entity\role

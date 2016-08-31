@@ -80,4 +80,37 @@ class horasLaborales
     {
         return $this->fin;
     }
+    /**
+     * @var string
+     */
+    private $descripcion;
+
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     *
+     * @return horasLaborales
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+    public function __toString()
+    {
+        return $this->descripcion;
+    }
 }

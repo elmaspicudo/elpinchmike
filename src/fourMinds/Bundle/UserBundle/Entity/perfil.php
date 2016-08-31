@@ -7,6 +7,7 @@ namespace fourMinds\Bundle\UserBundle\Entity;
  */
 class perfil
 {
+    
     /**
      * @var integer
      */
@@ -15,27 +16,12 @@ class perfil
     /**
      * @var string
      */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $firtsName;
-
-    /**
-     * @var string
-     */
-    private $lastName;
-
-    /**
-     * @var string
-     */
-    private $email;
-
-    /**
-     * @var string
-     */
     private $telephone;
+
+    /**
+     * @var \fourMinds\Bundle\UserBundle\Entity\file
+     */
+    private $file;
 
 
     /**
@@ -46,102 +32,6 @@ class perfil
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return perfil
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set firtsName
-     *
-     * @param string $firtsName
-     *
-     * @return perfil
-     */
-    public function setFirtsName($firtsName)
-    {
-        $this->firtsName = $firtsName;
-
-        return $this;
-    }
-
-    /**
-     * Get firtsName
-     *
-     * @return string
-     */
-    public function getFirtsName()
-    {
-        return $this->firtsName;
-    }
-
-    /**
-     * Set lastName
-     *
-     * @param string $lastName
-     *
-     * @return perfil
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Get lastName
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return perfil
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
     }
 
     /**
@@ -167,11 +57,6 @@ class perfil
     {
         return $this->telephone;
     }
-    /**
-     * @var \fourMinds\Bundle\UserBundle\Entity\file
-     */
-    private $file;
-
 
     /**
      * Set file

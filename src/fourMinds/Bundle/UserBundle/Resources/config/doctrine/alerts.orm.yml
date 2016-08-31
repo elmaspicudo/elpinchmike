@@ -1,0 +1,21 @@
+fourMinds\Bundle\UserBundle\Entity\alerts:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        clase:
+            type: string
+            length: '25'
+        contenido:
+            type: string
+            length: 255
+    manyToOne:
+        user:         
+            targetEntity: fourMinds\Bundle\UserBundle\Entity\User
+            cascade: ["persist"]
+    lifecycleCallbacks: {  }

@@ -75,10 +75,10 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport:  smtp
-    encryption: null
-    auth_mode:  null
-    port:       26
-    host:       linx4.fourMinds.com.mx
-    username:   cosdac-fourMinds.com.mx
-    password:   123456A
+    transport:  smtp    
+    port:       465    
+    encryption: ssl
+    auth_mode: login
+    host:      smtp.gmail.com    
+    username:  protecnomx@gmail.com
+    password:  holaprotecno

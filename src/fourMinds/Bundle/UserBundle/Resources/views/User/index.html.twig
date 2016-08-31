@@ -27,8 +27,11 @@
 <thead>
 <tr>
 <th><span>Usuario</span></th>
-<th><span>Fecha de registro</span></th>
+<th>Nombre</th>
+<th>Apellido paterno</th>
+<th>Apellido materno</th>
 <th><span>Email</span></th>
+<th><span>Fecha de registro</span></th>
 <th>Operaciones</th>
 </tr>
 </thead>
@@ -36,20 +39,28 @@
 {% for entity in entities %}         
             <tr>
                 <td>
-                    <img src="{{ asset(entity.perfil.file.file|default('none.jpg'))}}" alt="">
+                    <img src="{{ asset(entity.perfil.file.file|default('uploads/default-user.jpg'))}}" alt="">
                     <a href="{{ path('user_show', { 'id': entity.id }) }}" class="user-link">{{ entity.userName }}</a>
                    
-                </td>
-                <td>{% if entity.dateCreate %}{{ entity.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{entity.perfil.email|default('')}}</td>
+                </td>                 
+                <td>{{ entity.nombre }}</td>  
+                <td>{{ entity.aPaterno }}</td>            
+                <td>{{ entity.aMaterno }}</td>           
+                <td>{{ entity.correo }}</td> 
+                <td>{% if entity.dateCreate %}{{ entity.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>                            
                 <td style="width: 20%;">
-                <a href="{{ path('user_show', { 'id': entity.id }) }}" class="table-link">
-                <span class="fa-stack">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-                </span>
-                </a>
-                
+                    <a href="{{ path('user_show', { 'id': entity.id }) }}" class="table-link">
+                        <span class="fa-stack">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                    <a href="{{ path('user_edit', { 'id': entity.id }) }}" class="table-link">
+                            <span class="fa-stack">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                            </span>
+                    </a>
                 </td>
             </tr>
         {% endfor %}

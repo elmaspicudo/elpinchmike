@@ -254,4 +254,67 @@ class Solicitud
     {
         return $this->visitador;
     }
+    /**
+     * @var integer
+     */
+    private $estatus;
+
+
+    /**
+     * Set estatus
+     *
+     * @param integer $estatus
+     *
+     * @return Solicitud
+     */
+    public function setEstatus($estatus)
+    {
+        $this->estatus = $estatus;
+
+        return $this;
+    }
+
+    /**
+     * Get estatus
+     *
+     * @return integer
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getId();
+    }
+    /**
+     * @var \DateTime
+     */
+    private $fechaVisitador;
+
+
+    /**
+     * Set fechaVisitador
+     *
+     * @param \DateTime $fechaVisitador
+     *
+     * @return Solicitud
+     */
+    public function setFechaVisitador($fechaVisitador)
+    {
+        $this->fechaVisitador = $fechaVisitador;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaVisitador
+     *
+     * @return \DateTime
+     */
+    public function getFechaVisitador()
+    {
+        return $this->fechaVisitador;
+    }
 }

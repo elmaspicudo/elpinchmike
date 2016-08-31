@@ -427,4 +427,74 @@ class User implements UserInterface
     {
         return $this->getUserName();
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->rol_user = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add rolUser
+     *
+     * @param \fourMinds\Bundle\UserBundle\Entity\role $rolUser
+     *
+     * @return User
+     */
+    public function addRolUser(\fourMinds\Bundle\UserBundle\Entity\role $rolUser)
+    {
+        $this->rol_user[] = $rolUser;
+
+        return $this;
+    }
+
+    /**
+     * Remove rolUser
+     *
+     * @param \fourMinds\Bundle\UserBundle\Entity\role $rolUser
+     */
+    public function removeRolUser(\fourMinds\Bundle\UserBundle\Entity\role $rolUser)
+    {
+        $this->rol_user->removeElement($rolUser);
+    }
+
+    /**
+     * Get rolUser
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRolUser()
+    {
+        return $this->rol_user;
+    }
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales
+     */
+    private $horario;
+
+
+    /**
+     * Set horario
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales $horario
+     *
+     * @return User
+     */
+    public function setHorario(\fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales $horario = null)
+    {
+        $this->horario = $horario;
+
+        return $this;
+    }
+
+    /**
+     * Get horario
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\horasLaborales
+     */
+    public function getHorario()
+    {
+        return $this->horario;
+    }
 }
