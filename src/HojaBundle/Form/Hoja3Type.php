@@ -5,11 +5,10 @@ namespace HojaBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use EstudioBundle\Entity\Hoja3_1Type;
-use EstudioBundle\Entity\Hoja3_2Type;
-use EstudioBundle\Entity\Hoja3_3Type;
-use EstudioBundle\Entity\Hoja3_4Type;
-
+use EstudioBundle\Form\Hoja3_1Type;
+use EstudioBundle\Form\Hoja3_2Type;
+use EstudioBundle\Form\Hoja3_3Type;
+use EstudioBundle\Form\Hoja3_4Type;
 class Hoja3Type extends AbstractType
 {
 

@@ -14,15 +14,9 @@ HojaBundle\Entity\Hoja1:
         puesto:
             type: string
             length: '100'
-        nombre:
+        nombreCompleto:
             type: string
-            length: '50'
-        apPaterno:
-            type: string
-            length: '50'
-        apMaterno:
-            type: string
-            length: '50'
+            length: '150'
         personal:
             type: string
             length: '15'

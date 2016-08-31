@@ -269,6 +269,8 @@ class SolicitudController extends Controller
         //$fecha->add(new DateInterval('PT10H30S'));
         $body=$this->renderView('UserBundle:User:nuevaSolicitud.html.twig',
                     array('solicitud' => $solicitud));
+
+        
         $message = \Swift_Message::newInstance()
                     ->setContentType('text/html')
                     ->setSubject('Te asignaron una nueva investigacion')

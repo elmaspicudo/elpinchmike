@@ -1,7 +1,12 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1 class=""><strong>Resumen Ejecutivo</strong> >  Hoja 3</h1>
+<style>
+  .btn-primary{
+    width: 200px!important;
+  }
+</style>
+    <h1 class="text-center"><strong>Marco Familiar </strong></h1>
 
     {{ form_start(form) }}
     <h4 class="col-md-12">ESPOSA (Y/O) HIJOS</h4>    
@@ -12,12 +17,12 @@
     {{ form_widget(form.hoja3_4) }}
     <h4 class="col-md-12">PADRES Y HERMANOS </h4>
     {{ form_widget(form.hoja3_1) }}
-	{{ form_end(form) }}
-	<a href="{{path('hoja4')}}" class="btn btn-primary pull-right">
-	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
-	</a>
-	<a href="{{path('hoja2')}}" class="btn btn-primary pull-left">
-	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
-	</a>
+    <a href="{{path('hoja4')}}" class="btn btn-primary pull-right">
+        <i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
+    </a>
+      {{ form_end(form) }}
+    <a href="{{path('hoja2')}}" class="btn btn-primary pull-left">
+    <i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+    </a>
 
 {% endblock %}

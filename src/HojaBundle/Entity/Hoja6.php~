@@ -78,4 +78,3 @@ class Hoja6
         return $this->hoja6_1;
     }
 }
-

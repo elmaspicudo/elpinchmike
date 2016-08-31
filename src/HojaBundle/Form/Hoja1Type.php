@@ -17,9 +17,7 @@ class Hoja1Type extends AbstractType
         $builder
             ->add('empresa')
             ->add('puesto')
-            ->add('nombre')
-            ->add('apPaterno','text',array('label' => 'Apellido Paterno'))
-            ->add('apMaterno','text',array('label' => 'Apellido Materno'))
+            ->add('nombreCompleto')
             ->add('personal' ,'choice', array(
                 'choices'=>array(
                         'excelente' => 'Excelente',

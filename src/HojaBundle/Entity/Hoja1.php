@@ -435,4 +435,33 @@ class Hoja1
     {
         return $this->desempeno;
     }
+    /**
+     * @var string
+     */
+    private $nombreCompleto;
+
+
+    /**
+     * Set nombreCompleto
+     *
+     * @param string $nombreCompleto
+     *
+     * @return Hoja1
+     */
+    public function setNombreCompleto($nombreCompleto)
+    {
+        $this->nombreCompleto = $nombreCompleto;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreCompleto
+     *
+     * @return string
+     */
+    public function getNombreCompleto()
+    {
+        return $this->nombreCompleto;
+    }
 }

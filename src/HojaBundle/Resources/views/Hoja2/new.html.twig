@@ -1,14 +1,523 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-<script src="{{asset('js/calendar.js')}}"></script>
-<script src="{{asset('js/calendar-en.js')}}"></script>
+<style>
+  .btn-primary{
+    width: 200px!important;
+  }
+</style>
 
-    <h1 class=""><strong>Resumen Ejecutivo</strong> >  Hoja 2</h1>
+    <h1 class="text-center"><strong>Estudio SocioEconomico</strong> </h1>
 
     {{ form_start(form) }}
-    	
+<div class="container-fluid">
+   <div class="row">
+      <h2 class="">Datos Personales</h2>
+      <div class="col-lg-12 col-md-12">
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <label class="btn btn-primary required" >Domicilio</label>
+            </span>
+            {{form_widget(form.domicilio,{'attr':{'class':'form-control'}})}}
 
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn">
+              <label for="" class="btn btn-primary required">Colonia</label>
+            </span>
+            {{form_widget(form.colonia,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">municipio</label>
+            </span>
+            {{form_widget(form.municipio,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">cp</label>
+            </span>
+            {{form_widget(form.cp,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">entrecalle1</label>
+            </span>
+            {{form_widget(form.entrecalle1,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">entrecalle2</label>
+            </span>
+            {{form_widget(form.entrecalle2,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">ciudad</label>
+            </span>
+            {{form_widget(form.ciudad,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">estado</label>
+            </span>
+            {{form_widget(form.estado,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">antiguedadVivienda</label>
+            </span>
+            {{form_widget(form.antiguedadVivienda,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">antiguedadCiudad</label>
+            </span>
+            {{form_widget(form.antiguedadCiudad,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">telefonoLocal</label>
+            </span>
+            {{form_widget(form.telefonoLocal,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">celular</label>
+            </span>
+            {{form_widget(form.celular,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">lugarNacimiento</label>
+            </span>
+            {{form_widget(form.lugarNacimiento,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">fechaNacimiento</label>
+            </span>
+            {{form_widget(form.fechaNacimiento,{'attr':{'class':'form-control','type':'date'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">nacionalidad</label>
+            </span>
+            {{form_widget(form.nacionalidad,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">edad</label>
+            </span>
+            {{form_widget(form.edad,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">estadoCivil</label>
+            </span>
+            {{form_widget(form.estadoCivil,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div form-group ="" class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">ocupacion</label>
+            </span>
+            {{form_widget(form.ocupacion,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        </div>
+        <!-- FI NDATOS PERSONALES -->
+        <h2>Documentacion de identificacion</h2>
+       <div class="col-md-12">
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">Acta de Nacimiento</label>
+            </span>
+            {{form_widget(form.actaNacimiento,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">curp</label>
+            </span>
+            {{form_widget(form.curp,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">actaMatrimonio</label>
+            </span>
+            {{form_widget(form.actaMatrimonio,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">cartillaMilitar</label>
+            </span>
+            {{form_widget(form.cartillaMilitar,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">comprobanteEstudios</label>
+            </span>
+            {{form_widget(form.comprobanteEstudios,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">licencia</label>
+            </span>
+            {{form_widget(form.licencia,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">comprobanteDomicilio</label>
+            </span>
+            {{form_widget(form.comprobanteDomicilio,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">cartaRecomendacion1</label>
+            </span>
+            {{form_widget(form.cartaRecomendacion1,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">cartaRecomendacion2</label>
+            </span>
+            {{form_widget(form.cartaRecomendacion2,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">cartaRecomendacion3</label>
+            </span>
+            {{form_widget(form.cartaRecomendacion3,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">credencialElector</label>
+            </span>
+            {{form_widget(form.credencialElector,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">seguroSocial</label>
+            </span>
+            {{form_widget(form.seguroSocial,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        </div>
+        <!--FIN DOCUMENTACION IDENTIFICACION-->
+        <h2>Escolaridad</h2>
+        <div class="col-md-12">
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">primaria</label>
+            </span>
+            {{form_widget(form.primaria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">De</label>
+            </span>
+            {{form_widget(form.de,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">A</label>
+            </span>
+            {{form_widget(form.a,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">comprobante</label>
+            </span>
+            {{form_widget(form.comprobante,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">entidadPrimaria</label>
+            </span>
+            {{form_widget(form.entidadPrimaria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">secundaria</label>
+            </span>
+            {{form_widget(form.secundaria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">De</label>
+            </span>
+            {{form_widget(form.deSecundaria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">A</label>
+            </span>
+            {{form_widget(form.aSecundaria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">comprobanteSecundaria</label>
+            </span>
+            {{form_widget(form.comprobanteSecundaria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">entidadSecundaria</label>
+            </span>
+            {{form_widget(form.entidadSecundaria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">preparatoria</label>
+            </span>
+            {{form_widget(form.preparatoria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">De</label>
+            </span>
+            {{form_widget(form.dePreparatoria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">A</label>
+            </span>
+            {{form_widget(form.aPreparatoria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">comprobantePreparatoria</label>
+            </span>
+            {{form_widget(form.comprobantePreparatoria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">entidadPreparatoria</label>
+            </span>
+            {{form_widget(form.entidadPreparatoria,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">profesional</label>
+            </span>
+            {{form_widget(form.profesional,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">De</label>
+            </span>
+            {{form_widget(form.deProfesional,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">A</label>
+            </span>
+            {{form_widget(form.aProfesional,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">comprobanteProfesional</label>
+            </span>
+            {{form_widget(form.comprobanteProfesional,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        </div>
+        <!--fin Educacion-->
+        <h2>Idioma</h2>
+        <div class="col-md-12">
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">idiomas</label>
+            </span>
+            {{form_widget(form.idiomas,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">porcentajeHabla</label>
+            </span>
+            {{form_widget(form.porcentajeHabla,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">porcentajeEscribe</label>
+            </span>
+            {{form_widget(form.porcentajeEscribe,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-6" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">porcentajeLee</label>
+            </span>
+            {{form_widget(form.porcentajeLee,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+        <div class="col-md-12" form-group ="">
+          <div class="input-group">
+            <span class="input-group-btn"><label for="" class="btn btn-primary required">observaciones</label>
+            </span>
+            {{form_widget(form.observaciones,{'attr':{'class':'form-control'}})}}
+
+          </div>
+            <span class="help-block"><i class="icon-remove-sign"></i></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
     {{ form_end(form) }}
     <a href="{{path('hoja3')}}" class="btn btn-primary pull-right">
@@ -17,12 +526,7 @@
 	<a href="{{path('hoja1')}}" class="btn btn-primary pull-left">
 	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
 	</a>
-<script>
-  $(document).ready(function() {
-    $('#hojabundle_hoja2_fechaNacimiento').datepicker({
-      minDate: new Date()
-    })
-  });
-</script>
+
+
 
 {% endblock %}

@@ -74,4 +74,3 @@ class Hoja8
         return $this->id;
     }
 }
-
