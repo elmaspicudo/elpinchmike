@@ -4,25 +4,97 @@
 <style>
   .btn-primary{
     width: 200px!important;
-  }
+}
 </style>
-    <h1 class="text-center"><strong>Marco Familiar </strong></h1>
+<h1 class="text-center"><strong>Marco Familiar </strong></h1>
 
-    {{ form_start(form) }}
+{{ form_start(form) }}
     <h4 class="col-md-12">ESPOSA (Y/O) HIJOS</h4>    
     {{ form_widget(form.hoja3_2) }}
+    <ul  id="hoja3_2" data-prototype="{{ form_widget(form.hoja3_2.vars.prototype) | e }}">
+        {% for hoja32 in form.hoja3_2 %}
+        <div class="col-md-12">
+            {{ form_errors(hoja32) }}
+            {{ form_widget(hoja32) }}
+        </div> 
+        {% endfor %}
+    </ul>    
+
+    <a href="#" class="col-md-2 btn btn-info pull-left" id="add-hoja32">Agregar</a>
+
     <h4 class="col-md-12">PERSONAS QUE VIVEN EN EL DOMICILIO</h4>
     {{ form_widget(form.hoja3_3) }}
     <h4 class="col-md-12">DEPENDIENTES ECONOMICOS </h4>
     {{ form_widget(form.hoja3_4) }}
     <h4 class="col-md-12">PADRES Y HERMANOS </h4>
-    {{ form_widget(form.hoja3_1) }}
-    <a href="{{path('hoja4')}}" class="btn btn-primary pull-right">
-        <i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
-    </a>
-      {{ form_end(form) }}
-    <a href="{{path('hoja2')}}" class="btn btn-primary pull-left">
-    <i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
-    </a>
+    <ul  id="hoja3_1" data-prototype="{{ form_widget(form.hoja3_1.vars.prototype) | e }}">
+        {% for hoja3 in form.hoja3_1 %}
+        <div class="col-md-12">
+            {{ form_errors(hoja3) }}
+            {{ form_widget(hoja3) }}
+        </div> 
+        {% endfor %}
+    </ul>    
 
+    <a href="#" class="col-md-2 btn btn-info pull-left" id="add-hoja3">Agregar</a>
+
+    <div class="col-md-12" form-group ="">
+      <div class="input-group">
+        <span class="input-group-btn"><label for="" class="btn btn-primary required">observaciones</label>
+        </span>
+        {{form_widget(form.observaciones,{'attr':{'class':'form-control'}})}}
+
+    </div>
+    <span class="help-block"><i class="icon-remove-sign"></i></span>
+    </div>
+
+{{ form_end(form) }}
+<!-- BOTONES ANTERIOR, SIGUIENTE -->
+<a href="{{path('hoja4')}}" class="btn btn-primary pull-right">
+    <i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
+</a>
+<a href="{{path('hoja2')}}" class="btn btn-primary pull-left">
+    <i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+</a>
+
+<script type="text/javascript">
+    // realiza un seguimiento de cuántos campos de correo electrónico se han pintado
+    var emailCount = '{{ form.hoja3_1 | length }}';
+    var emailCount2 = '{{ form.hoja3_2 | length }}';
+
+    jQuery(document).ready(function() {
+        jQuery('#add-hoja3').click(function() {
+            var emailList = jQuery('#hoja3_1');
+
+            // graba la plantilla prototipo
+            var newWidget = emailList.attr('data-prototype');
+            // sustituye el "__name__" usado en el id y name del prototipo con un
+            // número que es único en tus correos termina con el
+            // atributo name viéndose como name="contact[emails][2]"
+            newWidget = newWidget.replace(/__name__/g, emailCount);
+            emailCount++;
+            // crea un nuevo elemento lista y lo añade a la lista
+            var newLi = jQuery('<div></div>').html(newWidget);
+            newLi.appendTo(jQuery('#hoja3_1'));
+
+            return false;
+        });
+        jQuery('#add-hoja32').click(function() {
+            var emailList1 = jQuery('#hoja3_2');
+
+            // graba la plantilla prototipo
+            var newWidget = emailList1.attr('data-prototype');
+            // sustituye el "__name__" usado en el id y name del prototipo con un
+            // número que es único en tus correos termina con el
+            // atributo name viéndose como name="contact[emails][2]"
+            newWidget = newWidget.replace(/__name__/g, emailCount2);
+            emailCount2++;
+            // crea un nuevo elemento lista y lo añade a la lista
+            var newLi = jQuery('<div></div>').html(newWidget);
+            newLi.appendTo(jQuery('#hoja3_2'));
+
+            return false;
+        });
+    })
+</script>
 {% endblock %}

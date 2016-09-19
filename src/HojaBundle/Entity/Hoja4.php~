@@ -2104,4 +2104,33 @@ class Hoja4
         return $this->hoja4_2;
     }
 
+    /**
+     * @var string
+     */
+    private $conservacionCasa;
+
+
+    /**
+     * Set conservacionCasa
+     *
+     * @param string $conservacionCasa
+     *
+     * @return Hoja4
+     */
+    public function setConservacionCasa($conservacionCasa)
+    {
+        $this->conservacionCasa = $conservacionCasa;
+
+        return $this;
+    }
+
+    /**
+     * Get conservacionCasa
+     *
+     * @return string
+     */
+    public function getConservacionCasa()
+    {
+        return $this->conservacionCasa;
+    }
 }

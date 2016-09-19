@@ -141,4 +141,33 @@ class Hoja3
     {
         return $this->id;
     }
+    /**
+     * @var string
+     */
+    private $observaciones;
+
+
+    /**
+     * Set observaciones
+     *
+     * @param string $observaciones
+     *
+     * @return Hoja3
+     */
+    public function setObservaciones($observaciones)
+    {
+        $this->observaciones = $observaciones;
+
+        return $this;
+    }
+
+    /**
+     * Get observaciones
+     *
+     * @return string
+     */
+    public function getObservaciones()
+    {
+        return $this->observaciones;
+    }
 }

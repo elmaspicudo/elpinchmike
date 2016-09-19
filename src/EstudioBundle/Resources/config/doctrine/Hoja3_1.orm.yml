@@ -16,6 +16,4 @@ EstudioBundle\Entity\Hoja3_1:
         parentesco:
             type: string
             length: '50'
-        observaciones:
-            type: text
     lifecycleCallbacks: {  }
