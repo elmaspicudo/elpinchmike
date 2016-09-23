@@ -41,32 +41,60 @@ class SolicitudRepository extends EntityRepository
         }   
     }
 
-    public function tiempoActual($horaSolicitud,$horaEntrada,$horaSalida,$tiempoTotal=0)
-    {
-        $tiempoDia=24*60*60;
-        $tiempo=$tiempoDia-$horaSalida;
-        if($horaSolicitud > $horaEntrada && $horaSolicitud < $horaSalida)
-        {            
-            $tiempoTrabajo=$horaSalida-$horaSolicitud;                  
-            if($tiempoTrabajo >$horaProceso )
-            {
-                $tiempoTotal=$tiempoTotal+$horaSolicitud;
-                //echo $tiempoTotal/(60*60).'|tiempoTotal<br>';
-                //$fecha->add(new \DateInterval('PT'.$tiempoTotal.'S'));
-                //session_start();
-                $_SESSION['date']  =$tiempoTotal;
-                //echo $fecha->format('Y-m-d H:i:s').'|result<br>';
-                return $tiempoTotal; 
-            }else{                                
-                                
-                $horaSolicitud=$horaEntrada+60;
-                $tiempoTotal=$tiempoTrabajo+$tiempo;                
-                $this->tiempoFinal($horaSolicitud,$horaEntrada,$horaSalida,$tiempoTotal);
-            }
+   function tiempoActual($horaSolicitud,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$tiempoTotal=0)
+    {      
+      if($timefinal > $timeinicio )
+        {
+            $tiempoDia=24*60*60;
+            $tiempo=$tiempoDia-$horaSalida;
+            if($horaFinal < $horaSalida)
+            {   
+                if($horaFinal > $horaSolicitud)    
+                {
+                      $horatotal=$horaFinal-$horaSolicitud; 
+                      $timeinicio+=$horatotal;
+                      if($timeinicio >= $timefinal){                       
+                          return array('tiempo'=>$horatotal,'action'=>'play','timer'=>$horaSalida);
+                      }else{
+                          $horatotal=$horaSalida-$horaSolicitud; 
+                          $timeinicio+=$horatotal;
+                          $timeinicio+=$tiempo;                          
+                          tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);
+                      }
+                      
+                }else{
+                     if($timefinal > $timeinicio){
+                          $horatotal=$horaSalida-$horaSolicitud; 
+                          $timeinicio+=$horatotal;
+                          $timeinicio+=$tiempo;                          
+                          tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);                          
+                      }else{                          
+                          return array('tiempo'=>0,'action'=>'stop','timer'=>0);                          
+                      }                  
+
+                }
+            }else{    
+                
+                $horatotal=$horaSalida-$horaSolicitud;     echo 'adssfg1';   
+                return array('tiempo'=>$horatotal,'action'=>'stop','timer'=>0);
+            } 
         }else{
-            $horaSolicitud=$horaEntrada+60;
-            $this->tiempoFinal($horaSolicitud,$horaProceso,$horaEntrada,$horaSalida,0);
-        }   
+          $res=array('tiempo'=>$tiempoTotal,'action'=>'stop','timer'=>0);
+          print_r($res);
+            return $res;
+        } 
     }
+
+$fechaSol=new DateTime('2016-09-22T15:03:01.012345Z');
+$fechaActual=new DateTime('2016-09-23T15:03:01.012345Z');
+$horaSolicitud=(($fechaSol->format('H')*60*60)+($fechaSol->format('i')*60)+($fechaSol->format('s')));
+$horaFinal=(($fechaActual->format('H')*60*60)+($fechaActual->format('i')*60)+($fechaActual->format('s'))); 
+$horasalida= 20*60*60;  
+$horaEntrada= 9*60*60;  
+$array=tiempoActual($horaSolicitud,$horaFinal,$horaEntrada,$horasalida,intval($fechaActual->getTimestamp()),intval($fechaSol->getTimestamp()),0);
+echo '<pre>';
+print_r($array);
+echo '</pre>';
+
 
 }
