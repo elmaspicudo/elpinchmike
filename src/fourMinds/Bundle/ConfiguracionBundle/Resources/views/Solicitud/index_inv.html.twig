@@ -55,7 +55,7 @@
                 <td>
                 <ul>
                     <li>
-                        {% if entity.formato > 2 %}
+                        {% if entity.formato > 1 %}
                             <a href="{{ path('datosp_solicitud', { 'solicitud': entity.id }) }}">Capturar</a>
                         {% else %}
                             <a href="{{ path('hoja1') }}">Capturar</a>
@@ -74,3 +74,15 @@
 </div>
   
     {% endblock %}
+{% block js %}
+<script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('js/dataTables.fixedHeader.js') }}"></script>
+<script src="{{ asset('js/dataTables.tableTools.js') }}"></script>
+<script src="{{ asset('js/jquery.dataTables.bootstrap.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+        var table = $('.table').dataTable();       
+       
+    });
+</script>
+{% endblock %}

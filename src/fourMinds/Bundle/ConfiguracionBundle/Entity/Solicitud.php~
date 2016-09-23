@@ -317,4 +317,33 @@ class Solicitud
     {
         return $this->fechaVisitador;
     }
+    /**
+     * @var \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    private $usuario_creo;
+
+
+    /**
+     * Set usuarioCreo
+     *
+     * @param \fourMinds\Bundle\UserBundle\Entity\User $usuarioCreo
+     *
+     * @return Solicitud
+     */
+    public function setUsuarioCreo(\fourMinds\Bundle\UserBundle\Entity\User $usuarioCreo = null)
+    {
+        $this->usuario_creo = $usuarioCreo;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarioCreo
+     *
+     * @return \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    public function getUsuarioCreo()
+    {
+        return $this->usuario_creo;
+    }
 }

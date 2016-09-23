@@ -1,0 +1,58 @@
+{% extends '::base.html.twig' %}
+{% block placeholder -%}
+<div class="row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active"><span>Avisos</span></li>
+        </ol>       
+    </div>
+</div>
+{% endblock -%}
+{% block body -%}
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
+<div class="table-responsive">
+<table class="table user-list table-hover">
+        <thead>
+            <tr>                
+                <th>Contenido</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.contenido }}</td>
+                <td>
+                    <a href="{{ path('alerts_show', { 'id': entity.id }) }}" class="table-link">
+                        <span class="fa-stack">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>                      
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+  
+    {% endblock %}
+{% block js %}
+<script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('js/dataTables.fixedHeader.js') }}"></script>
+<script src="{{ asset('js/dataTables.tableTools.js') }}"></script>
+<script src="{{ asset('js/jquery.dataTables.bootstrap.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+        var table = $('.table').dataTable();       
+       
+    });
+</script>
+{% endblock %}

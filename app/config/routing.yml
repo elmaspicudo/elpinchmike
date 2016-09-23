@@ -4,7 +4,7 @@ configuracion:
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
-    prefix:   /admin/user
+    prefix:   /admin
 login:
     pattern:   /login
     defaults:  { _controller: UserBundle:Security:login }

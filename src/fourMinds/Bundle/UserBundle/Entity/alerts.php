@@ -109,4 +109,91 @@ class alerts
     {
         return $this->user;
     }
+    /**
+     * @var \DateTime
+     */
+    private $dateCreate;
+
+
+    /**
+     * Set dateCreate
+     *
+     * @param \DateTime $dateCreate
+     *
+     * @return alerts
+     */
+    public function setDateCreate($dateCreate)
+    {
+        $this->dateCreate = $dateCreate;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreate
+     *
+     * @return \DateTime
+     */
+    public function getDateCreate()
+    {
+        return $this->dateCreate;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $dateRevision;
+
+    /**
+     * @var integer
+     */
+    private $estatus;
+
+
+    /**
+     * Set dateRevision
+     *
+     * @param \DateTime $dateRevision
+     *
+     * @return alerts
+     */
+    public function setDateRevision($dateRevision)
+    {
+        $this->dateRevision = $dateRevision;
+
+        return $this;
+    }
+
+    /**
+     * Get dateRevision
+     *
+     * @return \DateTime
+     */
+    public function getDateRevision()
+    {
+        return $this->dateRevision;
+    }
+
+    /**
+     * Set estatus
+     *
+     * @param integer $estatus
+     *
+     * @return alerts
+     */
+    public function setEstatus($estatus)
+    {
+        $this->estatus = $estatus;
+
+        return $this;
+    }
+
+    /**
+     * Get estatus
+     *
+     * @return integer
+     */
+    public function getEstatus()
+    {
+        return $this->estatus;
+    }
 }

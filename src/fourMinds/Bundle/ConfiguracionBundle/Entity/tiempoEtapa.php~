@@ -70,4 +70,91 @@ class tiempoEtapa
     {
         return $this->descripcion;
     }
+    /**
+     * @var string
+     */
+    private $tiempoVerde;
+
+    /**
+     * @var string
+     */
+    private $tiempoAmarillo;
+
+    /**
+     * @var string
+     */
+    private $tiempoRojo;
+
+
+    /**
+     * Set tiempoVerde
+     *
+     * @param string $tiempoVerde
+     *
+     * @return tiempoEtapa
+     */
+    public function setTiempoVerde($tiempoVerde)
+    {
+        $this->tiempoVerde = $tiempoVerde;
+
+        return $this;
+    }
+
+    /**
+     * Get tiempoVerde
+     *
+     * @return string
+     */
+    public function getTiempoVerde()
+    {
+        return $this->tiempoVerde;
+    }
+
+    /**
+     * Set tiempoAmarillo
+     *
+     * @param string $tiempoAmarillo
+     *
+     * @return tiempoEtapa
+     */
+    public function setTiempoAmarillo($tiempoAmarillo)
+    {
+        $this->tiempoAmarillo = $tiempoAmarillo;
+
+        return $this;
+    }
+
+    /**
+     * Get tiempoAmarillo
+     *
+     * @return string
+     */
+    public function getTiempoAmarillo()
+    {
+        return $this->tiempoAmarillo;
+    }
+
+    /**
+     * Set tiempoRojo
+     *
+     * @param string $tiempoRojo
+     *
+     * @return tiempoEtapa
+     */
+    public function setTiempoRojo($tiempoRojo)
+    {
+        $this->tiempoRojo = $tiempoRojo;
+
+        return $this;
+    }
+
+    /**
+     * Get tiempoRojo
+     *
+     * @return string
+     */
+    public function getTiempoRojo()
+    {
+        return $this->tiempoRojo;
+    }
 }

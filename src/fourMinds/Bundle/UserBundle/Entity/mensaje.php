@@ -155,4 +155,33 @@ class mensaje
     {
         return $this->mensaje_user;
     }
+    /**
+     * @var \DateTime
+     */
+    private $dateCreate;
+
+
+    /**
+     * Set dateCreate
+     *
+     * @param \DateTime $dateCreate
+     *
+     * @return mensaje
+     */
+    public function setDateCreate($dateCreate)
+    {
+        $this->dateCreate = $dateCreate;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreate
+     *
+     * @return \DateTime
+     */
+    public function getDateCreate()
+    {
+        return $this->dateCreate;
+    }
 }

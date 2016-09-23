@@ -1,6 +1,7 @@
 fourMinds\Bundle\UserBundle\Entity\mensaje:
     type: entity
     table: null
+    repositoryClass: fourMinds\Bundle\UserBundle\Entity\mensajeRepository
     id:
         id:
             type: integer
@@ -13,6 +14,8 @@ fourMinds\Bundle\UserBundle\Entity\mensaje:
             length: '100'
         contenido:
             type: text
+        dateCreate:
+            type: datetime
     manyToOne:
         from:         
             targetEntity: fourMinds\Bundle\UserBundle\Entity\User

@@ -497,4 +497,33 @@ class User implements UserInterface
     {
         return $this->horario;
     }
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa
+     */
+    private $tiempos_entrega;
+
+
+    /**
+     * Set tiemposEntrega
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa $tiemposEntrega
+     *
+     * @return User
+     */
+    public function setTiemposEntrega(\fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa $tiemposEntrega = null)
+    {
+        $this->tiempos_entrega = $tiemposEntrega;
+
+        return $this;
+    }
+
+    /**
+     * Get tiemposEntrega
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\tiempoEtapa
+     */
+    public function getTiemposEntrega()
+    {
+        return $this->tiempos_entrega;
+    }
 }

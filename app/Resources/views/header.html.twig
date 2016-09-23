@@ -20,24 +20,11 @@
                 </ul>
             </div>
             <div class="nav-no-collapse pull-right" id="header-nav">
-                <ul class="nav navbar-nav pull-right">
-                    <li class="mobile-search">
-                            <a class="btn">
-                                <i class="fa fa-search"></i>
-                            </a>
-                            <div class="drowdown-search">
-                                <form role="search">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search...">
-                                        <i class="fa fa-search nav-search-icon"></i>
-                                    </div>
-                                </form>
-                            </div>
-                    </li>
+                <ul class="nav navbar-nav pull-right">                    
                     <li class="dropdown hidden-xs">
                         <a class="btn dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-warning"></i>
-                        <span class="count">0</span>
+                        <span class="count">{{ avisos|length }}</span>
                         </a>
                         <ul class="dropdown-menu notifications-list">
                             <li class="pointer">
@@ -45,25 +32,30 @@
                                     <div class="arrow"></div>
                                 </div>
                             </li>
-                            <li class="item-header">Tienes 0 notificaciones</li>
-                            <!--<li class="item">
-                                <a href="#">
-                                    <i class="fa fa-comment"></i>
-                                    <span class="content">New comment on ‘Awesome P...</span>
-                                    <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                </a>
-                            </li>-->
-                            <li class="item-footer">
-                                <a href="#">
-                                    Ver todas
-                                </a>
-                            </li>
+                            {% if avisos|length > 0 %}                      
+                                {% for entity in avisos %} 
+                                    <li class="item">
+                                        <a href="#">
+                                            <i class="fa fa-comment"></i>
+                                            <span class="content">{{entity.contenido|slice(0, 120)}}</span>
+                                            <span class="time"><i class="fa fa-clock-o"></i>{% if entity.dateCreate %}{{ entity.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                <li class="item-footer">
+                                    <a href="{{path('alerts')}}">
+                                        Ver todas
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="item-header">Tienes 0 notificaciones</li>
+                            {% endif %}
                         </ul>
                     </li>
                     <li class="dropdown hidden-xs">
                         <a class="btn dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-envelope-o"></i>
-                        <span class="count">16</span>
+                        <span class="count">{{mensajes|length }} </span>
                         </a>
                         <ul class="dropdown-menu notifications-list messages-list">
                             <li class="pointer">
@@ -71,26 +63,35 @@
                                     <div class="arrow"></div>
                                 </div>
                             </li>
-                            <!--<li class="item first-item">
-                                <a href="#">
-                                    <img src="img/samples/messages-photo-1.png" alt="">
-                                    <span class="content">
-                                        <span class="content-headline">
-                                            George Clooney
-                                        </span>
-                                        <span class="content-text">
-                                            Look, just because I don't be givin' no man a foot massage don't make it
-                                            right for Marsellus to throw...
-                                        </span>
-                                    </span>
-                                    <span class="time"><i class="fa fa-clock-o"></i>13 min.</span>
-                                </a>
-                            </li>-->
-                            <li class="item-footer">
-                                <a href="#">
-                                    Ver todos
-                                </a>
-                            </li>
+                            {% if mensajes|length > 0 %}  
+                                {% for entity in mensajes %}   
+                                    <li class="item first-item">
+                                        <a href="#">
+                                            {% if entity.file %}
+                                                     <img src="{{ asset(entity.file)}}" alt="" class="profile-img">
+                                                {% else %}
+                                                      <img src="{{asset('uploads/default-user.jpg')}}" alt="" class="profile-img">   
+                                            {% endif %}
+                                            <span class="content">
+                                                <span class="content-headline">
+                                                   {{entity.user_name}}
+                                                </span>
+                                                <span class="content-text">
+                                                    {{entity.contenido|slice(0, 120)}}
+                                                </span>
+                                            </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i>{% if entity.date_create %}{{ entity.date_create|date('Y-m-d H:i:s') }}{% endif %}</span>
+                                        </a>
+                                    </li>
+                                    <li class="item-footer">
+                                        <a href="{{path('mensaje')}}">
+                                            Ver todos
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                <li class="item-header">Tienes 0 mensajes</li>
+                            {% endif %}
                         </ul>
                     </li>
                     <li class="dropdown profile-dropdown">

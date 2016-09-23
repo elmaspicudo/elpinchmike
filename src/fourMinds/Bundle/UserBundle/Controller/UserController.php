@@ -52,7 +52,7 @@ class UserController extends Controller
                  $user= $em->getRepository('UserBundle:User')->find($user->getId());                   
             }
             
-                $entity->setDateCreate(new \DateTime("now"));
+            $entity->setDateCreate(new \DateTime("now"));
             $entity->setUserCreate($user);
             $this->setSecurePassword($entity);
             $em->persist($entity);
@@ -82,8 +82,13 @@ class UserController extends Controller
         if($user!='anon.'){
              $usuario= $em->getRepository('UserBundle:User')->find($user->getId());                   
         }
+
+        $mensajes=$em->getRepository('UserBundle:mensaje')->finByUser($user->getId()); 
+        $avisos= $em->getRepository('UserBundle:alerts')->findBy(array('user'=>$user->getId())); 
         return $this->render('::header.html.twig', array(            
             'usuario' => $usuario,
+            'avisos' => $avisos,
+            'mensajes' => $mensajes,
         ));
     }
 

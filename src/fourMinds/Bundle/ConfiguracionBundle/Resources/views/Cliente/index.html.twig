@@ -61,3 +61,15 @@
 </div>
   
     {% endblock %}
+{% block js %}
+<script src="{{ asset('js/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('js/dataTables.fixedHeader.js') }}"></script>
+<script src="{{ asset('js/dataTables.tableTools.js') }}"></script>
+<script src="{{ asset('js/jquery.dataTables.bootstrap.js') }}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+        var table = $('.table').dataTable();       
+       
+    });
+</script>
+{% endblock %}

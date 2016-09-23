@@ -317,4 +317,91 @@ class Solicitud
     {
         return $this->fechaVisitador;
     }
+    /**
+     * @var \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    private $usuario_creo;
+
+
+    /**
+     * Set usuarioCreo
+     *
+     * @param \fourMinds\Bundle\UserBundle\Entity\User $usuarioCreo
+     *
+     * @return Solicitud
+     */
+    public function setUsuarioCreo(\fourMinds\Bundle\UserBundle\Entity\User $usuarioCreo = null)
+    {
+        $this->usuario_creo = $usuarioCreo;
+
+        return $this;
+    }
+
+    /**
+     * Get usuarioCreo
+     *
+     * @return \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    public function getUsuarioCreo()
+    {
+        return $this->usuario_creo;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $fechaFinal;
+
+    /**
+     * @var \DateTime
+     */
+    private $fechaTermino;
+
+
+    /**
+     * Set fechaFinal
+     *
+     * @param \DateTime $fechaFinal
+     *
+     * @return Solicitud
+     */
+    public function setFechaFinal($fechaFinal)
+    {
+        $this->fechaFinal = $fechaFinal;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaFinal
+     *
+     * @return \DateTime
+     */
+    public function getFechaFinal()
+    {
+        return $this->fechaFinal;
+    }
+
+    /**
+     * Set fechaTermino
+     *
+     * @param \DateTime $fechaTermino
+     *
+     * @return Solicitud
+     */
+    public function setFechaTermino($fechaTermino)
+    {
+        $this->fechaTermino = $fechaTermino;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaTermino
+     *
+     * @return \DateTime
+     */
+    public function getFechaTermino()
+    {
+        return $this->fechaTermino;
+    }
 }

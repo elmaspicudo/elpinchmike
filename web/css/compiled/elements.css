@@ -6,3 +6,24 @@
     background-color: #fff;
     width: 222px;
 }
+.profile-img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    height: 35px;
+    margin-right: 5px;
+    width: 35px;
+}
+#header-navbar .nav>li>a {
+    color: #fff;
+}
+.reloj{
+	float: left;	
+    color: #3498db;
+    margin: 0 0 10px 0;
+    padding-left: 6px;
+    font-size: 2em;
+    font-family: 'Open Sans','Titillium Web',Geneva,sans-serif;
+    font-weight: 300;
+}

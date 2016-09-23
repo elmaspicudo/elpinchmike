@@ -28,7 +28,7 @@ class SolicitudType extends AbstractType
                 ),
                 'data' => 1
             ))
-            ->add('fecha')
+            ->add('fechaVisitador') 
             /*->add('fecha','date', array(
                         'widget' => 'single_text'
                     ))*/

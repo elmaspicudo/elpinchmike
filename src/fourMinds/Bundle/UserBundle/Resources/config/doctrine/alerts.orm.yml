@@ -14,6 +14,13 @@ fourMinds\Bundle\UserBundle\Entity\alerts:
         contenido:
             type: string
             length: 255
+        dateCreate:
+            type: datetime
+        dateRevision:
+            type: datetime
+            nullable: true
+        estatus:
+            type: integer
     manyToOne:
         user:         
             targetEntity: fourMinds\Bundle\UserBundle\Entity\User

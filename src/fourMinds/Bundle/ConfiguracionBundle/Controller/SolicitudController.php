@@ -7,6 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud;
 use fourMinds\Bundle\ConfiguracionBundle\Form\SolicitudType;
+use fourMinds\Bundle\UserBundle\Entity\alerts;
+use fourMinds\Bundle\UserBundle\Entity\mensaje;
+
 
 /**
  * Solicitud controller.
@@ -70,30 +73,41 @@ class SolicitudController extends Controller
         if ($form->isValid()) {
             $entity->setEstatus(1);
             $em = $this->getDoctrine()->getManager();
-            $fecha=$entity->getFecha();
-            $hora=$entity->getVisitador()->getTiemposEntrega()->getTiempoVerde();
-            $hora+=$entity->getVisitador()->getTiemposEntrega()->getTiempoAmarillo();
-            $hora+=$entity->getVisitador()->getTiemposEntrega()->getTiempoRojo();
+            $entity->setFecha(new \DateTime());
+            $fecha=$entity->getFechaVisitador();
+            $hora=$entity->getVisitador()->getTiemposEntrega()->getTiempoVerde()*60*60;
+            $hora+=$entity->getVisitador()->getTiemposEntrega()->getTiempoAmarillo()*60*60;
+            $hora+=$entity->getVisitador()->getTiemposEntrega()->getTiempoRojo()*60*60;
             $fechaEntrada=$entity->getVisitador()->getHorario()->getInicio();
             $fechaSalida=$entity->getVisitador()->getHorario()->getFin();
             $horaSolicitud=(($fecha->format('H')*60*60)+($fecha->format('i')*60)+($fecha->format('s')));   
             $horaEntrada=(($fechaEntrada->format('H')*60*60)+($fechaEntrada->format('i')*60)+($fechaEntrada->format('s')));
-            $horaSalida=(($fechaSalida->format('H')*60*60)+($fechaSalida->format('i')*60)+($fechaSalida->format('s')));      
+            $horaSalida=(($fechaSalida->format('H')*60*60)+($fechaSalida->format('i')*60)+($fechaSalida->format('s'))); 
+
+
             $date = $em->getRepository('ConfiguracionBundle:Solicitud')->tiempoFinal($horaSolicitud,$hora,$horaEntrada,$horaSalida);
             $cad=$fecha->format('Y-m-d H:i:s');
             $fechatmp=new \DateTime($cad);
+            $user = $this->container->get('security.context')->getToken()->getUser();            
+            if($user=='anon.'){
+                 $user=0;          
+            }else{
+                 $user= $em->getRepository('UserBundle:User')->find($user->getId());                   
+            }
+            $entity->setUsuarioCreo($user);
             //echo $hora.'|resultsdfgsd<br>'; 
             //echo $fecha->format('Y-m-d H:i:s').'|resultsdfgsd<br>';               
             $fechatmp->add(new \DateInterval('PT'.$_SESSION['date'].'S'));
             //echo $_SESSION['date'];
             //echo $fecha->format('Y-m-d H:i:s').'|result<br>';
-            $entity->setFechaVisitador($fechatmp);
+            $entity->setFechaFinal($fechatmp);
 
             $em->persist($entity);
             $em->flush();
             $this->sendNotifyAction($entity);
 
             return $this->redirect($this->generateUrl('solicitud_show', array('id' => $entity->getId())));
+            //return $this->render('UserBundle:User:error.html.twig');
         }
 
         return $this->render('ConfiguracionBundle:Solicitud:new.html.twig', array(
@@ -262,11 +276,11 @@ class SolicitudController extends Controller
     public function sendNotifyAction($solicitud)
     {
        // print_r($request);
-        //$em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         //$entity = $em->getRepository('UserBundle:User')->findOneBy( array('salt' =>$form['salt']));
         
 
-        //$fecha->add(new DateInterval('PT10H30S'));
+        //$fecha->add(new DateInterval('PT10H30S'));       
         $body=$this->renderView('UserBundle:User:nuevaSolicitud.html.twig',
                     array('solicitud' => $solicitud));
 
@@ -278,7 +292,22 @@ class SolicitudController extends Controller
                     ->setTo($solicitud->getVisitador()->getCorreo() )
                     ->setBody( $body);
                 $this->get('mailer')->send($message);
-       
+        $alert = new alerts();
+        $alert->setUser($solicitud->getVisitador());
+        $alert->setContenido($body);
+        $alert->setClase('label-success');
+        $alert->setDateCreate(new \DateTime());
+        $alert->setEstatus(0);
+        $em->persist($alert);
+        $em->flush();
+        $mensaje = new mensaje();
+        $mensaje->setAsunto('Nueva Investigacion');
+        $mensaje->setContenido($body);
+        $mensaje->setFrom($solicitud->getUsuarioCreo());
+        $mensaje->addMensajeUser($solicitud->getVisitador());
+        $mensaje->setDateCreate(new \DateTime());
+        $em->persist($mensaje);
+        $em->flush();
     }
 
 

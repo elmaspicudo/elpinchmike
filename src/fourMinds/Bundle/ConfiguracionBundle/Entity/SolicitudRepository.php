@@ -28,12 +28,40 @@ class SolicitudRepository extends EntityRepository
                 //session_start();
                 $_SESSION['date']  =$tiempoTotal;
                 //echo $fecha->format('Y-m-d H:i:s').'|result<br>';
-                return $tiempoTotal;
+                return $tiempoTotal; 
             }else{                                
                 $horaProceso=$horaProceso-$tiempoTrabajo;                
                 $horaSolicitud=$horaEntrada+60;
                 $tiempoTotal=$tiempoTrabajo+$tiempo;                
                 $this->tiempoFinal($horaSolicitud,$horaProceso,$horaEntrada,$horaSalida,$tiempoTotal);
+            }
+        }else{
+            $horaSolicitud=$horaEntrada+60;
+            $this->tiempoFinal($horaSolicitud,$horaProceso,$horaEntrada,$horaSalida,0);
+        }   
+    }
+
+    public function tiempoActual($horaSolicitud,$horaEntrada,$horaSalida,$tiempoTotal=0)
+    {
+        $tiempoDia=24*60*60;
+        $tiempo=$tiempoDia-$horaSalida;
+        if($horaSolicitud > $horaEntrada && $horaSolicitud < $horaSalida)
+        {            
+            $tiempoTrabajo=$horaSalida-$horaSolicitud;                  
+            if($tiempoTrabajo >$horaProceso )
+            {
+                $tiempoTotal=$tiempoTotal+$horaSolicitud;
+                //echo $tiempoTotal/(60*60).'|tiempoTotal<br>';
+                //$fecha->add(new \DateInterval('PT'.$tiempoTotal.'S'));
+                //session_start();
+                $_SESSION['date']  =$tiempoTotal;
+                //echo $fecha->format('Y-m-d H:i:s').'|result<br>';
+                return $tiempoTotal; 
+            }else{                                
+                                
+                $horaSolicitud=$horaEntrada+60;
+                $tiempoTotal=$tiempoTrabajo+$tiempo;                
+                $this->tiempoFinal($horaSolicitud,$horaEntrada,$horaSalida,$tiempoTotal);
             }
         }else{
             $horaSolicitud=$horaEntrada+60;
