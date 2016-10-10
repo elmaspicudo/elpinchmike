@@ -6,6 +6,8 @@
     width: 200px!important;
   }
 </style>
+<div class="div col-md-12 main-box no-header clearfix">
+    
     <h1 class="text-center"><strong>Resumen Ejecutivo </strong></h1>
 
     {{ form_start(form) }}
@@ -14,11 +16,13 @@
     AUTOMOVILES
         {{ form_widget(form.hoja4_2) }}
     {{ form_end(form) }}
+</div>
+
 
 	<a href="{{path('hoja5')}}" class="btn btn-primary pull-right">
 	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
 	</a>
 	<a href="{{path('hoja3')}}" class="btn btn-primary pull-left">
-	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+	<i class="fa fa-arrow-circle-left  fa-lg"></i> Anterior
 	</a>
 {% endblock %}

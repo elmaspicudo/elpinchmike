@@ -11,8 +11,24 @@ class Hoja8Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hoja8_1', new \EstudioBundle\Form\Hoja8_1Type())
-            ->add('hoja8_2', new \EstudioBundle\Form\Hoja8_2Type())
+            ->add('hoja8_1', 'collection',array(
+                    'type' =>  new \EstudioBundle\Form\Hoja8_1Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja8_1')
+                )))
+            ->add('hoja8_2', 'collection',array(
+                    'type' =>  new \EstudioBundle\Form\Hoja8_2Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja8_2')
+                )))
         ;
     }
 

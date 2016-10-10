@@ -15,10 +15,45 @@ class Hoja7Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hoja7_1', new \EstudioBundle\Form\Hoja7_1Type())
-            ->add('hoja7_2', new \EstudioBundle\Form\Hoja7_2Type())
-            ->add('hoja7_3', new \EstudioBundle\Form\Hoja7_3Type())
-            ->add('hoja7_4', new \EstudioBundle\Form\Hoja7_4Type())
+            ->add('hoja7_1','collection',array(
+                    'type' =>  new \EstudioBundle\Form\Hoja7_1Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja7_1')
+                )))
+
+            ->add('hoja7_2','collection',array(
+                    'type' =>  new \EstudioBundle\Form\Hoja7_2Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja7_2')
+                )))
+
+            ->add('hoja7_3','collection',array(
+                    'type' =>  new \EstudioBundle\Form\Hoja7_3Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja7_3')
+                )))
+
+            ->add('hoja7_4','collection',array(
+                    'type' =>  new \EstudioBundle\Form\Hoja7_4Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja7_4')
+                )))
             ->add('observaciones')
         ;
     }

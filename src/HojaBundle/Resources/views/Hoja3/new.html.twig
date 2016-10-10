@@ -9,8 +9,9 @@
 <h1 class="text-center"><strong>Marco Familiar </strong></h1>
 
 {{ form_start(form) }}
+<div class="col-md-12 main-box no-header clearfix">
+
     <h4 class="col-md-12">ESPOSA (Y/O) HIJOS</h4>    
-    {{ form_widget(form.hoja3_2) }}
     <ul  id="hoja3_2" data-prototype="{{ form_widget(form.hoja3_2.vars.prototype) | e }}">
         {% for hoja32 in form.hoja3_2 %}
         <div class="col-md-12">
@@ -19,13 +20,30 @@
         </div> 
         {% endfor %}
     </ul>    
-
-    <a href="#" class="col-md-2 btn btn-info pull-left" id="add-hoja32">Agregar</a>
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja32">Agregar Hijos</a>
 
     <h4 class="col-md-12">PERSONAS QUE VIVEN EN EL DOMICILIO</h4>
-    {{ form_widget(form.hoja3_3) }}
+    <ul  id="hoja3_3" data-prototype="{{ form_widget(form.hoja3_3.vars.prototype) | e }}">
+        {% for hoja33 in form.hoja3_3 %}
+        <div class="col-md-12">
+            {{ form_errors(hoja33) }}
+            {{ form_widget(hoja33) }}
+        </div> 
+        {% endfor %}
+    </ul>    
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja33">Agregar Personas</a>
+
     <h4 class="col-md-12">DEPENDIENTES ECONOMICOS </h4>
-    {{ form_widget(form.hoja3_4) }}
+    <ul  id="hoja3_4" data-prototype="{{ form_widget(form.hoja3_4.vars.prototype) | e }}">
+        {% for hoja34 in form.hoja3_4 %}
+        <div class="col-md-12">
+            {{ form_errors(hoja34) }}
+            {{ form_widget(hoja34) }}
+        </div> 
+        {% endfor %}
+    </ul> 
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja34">Agregar Dependientes</a>
+
     <h4 class="col-md-12">PADRES Y HERMANOS </h4>
     <ul  id="hoja3_1" data-prototype="{{ form_widget(form.hoja3_1.vars.prototype) | e }}">
         {% for hoja3 in form.hoja3_1 %}
@@ -36,7 +54,7 @@
         {% endfor %}
     </ul>    
 
-    <a href="#" class="col-md-2 btn btn-info pull-left" id="add-hoja3">Agregar</a>
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja3">Agregar Padres/Hermanos</a>
 
     <div class="col-md-12" form-group ="">
       <div class="input-group">
@@ -46,7 +64,9 @@
 
     </div>
     <span class="help-block"><i class="icon-remove-sign"></i></span>
-    </div>
+</div>
+</div>
+
 
 {{ form_end(form) }}
 <!-- BOTONES ANTERIOR, SIGUIENTE -->
@@ -58,9 +78,15 @@
 </a>
 
 <script type="text/javascript">
+$('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(2)').hide()
+$('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(3)').hide()
+$('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(4)').hide()
+$('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(5)').hide()
     // realiza un seguimiento de cuántos campos de correo electrónico se han pintado
     var emailCount = '{{ form.hoja3_1 | length }}';
     var emailCount2 = '{{ form.hoja3_2 | length }}';
+    var emailCount3 = '{{ form.hoja3_3 | length }}';
+    var emailCount4 = '{{ form.hoja3_4 | length }}';
 
     jQuery(document).ready(function() {
         jQuery('#add-hoja3').click(function() {
@@ -83,18 +109,56 @@
             var emailList1 = jQuery('#hoja3_2');
 
             // graba la plantilla prototipo
-            var newWidget = emailList1.attr('data-prototype');
+            var newWidget1 = emailList1.attr('data-prototype');
             // sustituye el "__name__" usado en el id y name del prototipo con un
             // número que es único en tus correos termina con el
             // atributo name viéndose como name="contact[emails][2]"
-            newWidget = newWidget.replace(/__name__/g, emailCount2);
+            newWidget1 = newWidget1.replace(/__name__/g, emailCount2);
             emailCount2++;
             // crea un nuevo elemento lista y lo añade a la lista
-            var newLi = jQuery('<div></div>').html(newWidget);
-            newLi.appendTo(jQuery('#hoja3_2'));
+            var newLi1 = jQuery('<div></div>').html(newWidget1);
+            newLi1.appendTo(jQuery('#hoja3_2'));
 
             return false;
         });
+
+
+        jQuery('#add-hoja33').click(function() {
+            var emailList2 = jQuery('#hoja3_3');
+
+            // graba la plantilla prototipo
+            var newWidget2 = emailList2.attr('data-prototype');
+            // sustituye el "__name__" usado en el id y name del prototipo con un
+            // número que es único en tus correos termina con el
+            // atributo name viéndose como name="contact[emails][2]"
+            newWidget2 = newWidget2.replace(/__name__/g, emailCount3);
+            emailCount3++;
+            // crea un nuevo elemento lista y lo añade a la lista
+            var newLi2 = jQuery('<div></div>').html(newWidget2);
+            newLi2.appendTo(jQuery('#hoja3_3'));
+
+            return false;
+        });
+
+        jQuery('#add-hoja34').click(function() {
+            var emailList3 = jQuery('#hoja3_4');
+
+            // graba la plantilla prototipo
+            var newWidget3 = emailList3.attr('data-prototype');
+            // sustituye el "__name__" usado en el id y name del prototipo con un
+            // número que es único en tus correos termina con el
+            // atributo name viéndose como name="contact[emails][2]"
+            newWidget3 = newWidget3.replace(/__name__/g, emailCount4);
+            emailCount4++;
+            // crea un nuevo elemento lista y lo añade a la lista
+            var newLi3 = jQuery('<div></div>').html(newWidget3);
+            newLi3.appendTo(jQuery('#hoja3_4'));
+
+            return false;
+        });
+
+
+
     })
 </script>
 {% endblock %}
