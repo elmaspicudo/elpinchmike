@@ -7,4 +7,7 @@ HojaBundle\Entity\Hoja3:
             id: true
             generator:
                 strategy: AUTO
+    fields:
+        observaciones:
+            type: text
     lifecycleCallbacks: {  }

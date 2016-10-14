@@ -5,29 +5,7 @@
   .btn-primary{
     width: 200px!important;
   }
-</style>
-    <h1 class="text-center"><strong>Fotografias</strong> </h1>
-
-    {{ form_start(form) }}
-    <h2 class="text-center">
-    <strong>Foto Interior de la Vivienda
-    </h2>
-    <div class="col-lg-6">
-    	<div form-group="">
-    		<div class="input-group">
-    			<span class="input-group-btn">
-
-    				<label class="btn btn-primary required" for="hojabundle_hoja8_hoja8_2_nombre">
-	    			    {{ form_label(form.hoja8_1.nombre) }}
-    				</label>
-    			</span>
-    				{{ form_widget(form.hoja8_1.nombre,{'attr':{'class':'form-control'}}) }}
-    		</div>
-	    		<span class="help-block"><i class="icon-remove-sign"></i></span>
-		</div>
-	</div>
-<style>
-	input[type="file"] {
+ input[type="file"] {
     display: none;
 }
 .custom-file-upload {
@@ -36,45 +14,95 @@
     padding: 6px 12px;
     cursor: pointer;
 }
-	
+    
 </style>
+<div class="div col-md-12 main-box no-header clearfix">
 
-	<div class="col-lg-6">
-    	<label class="custom-file-upload">
-    		{{ form_widget(form.hoja8_1.url)}}
-			Subir Foto Interior
-		</label>
-	</div>
-    <h2 class="text-center"><strong>Foto Exterior de la Vivienda</h2>
-        <div class="col-lg-6">
-    	<div form-group="">
-    		<div class="input-group">
-    			<span class="input-group-btn">
+    <h1 class="text-center"><strong>Fotografias</strong> </h1>
 
-    				<label class="btn btn-primary required" for="hojabundle_hoja8_hoja8_2_nombre">
-	    			    {{ form_label(form.hoja8_2.nombre) }}
-    				</label>
-    			</span>
-    				{{ form_widget(form.hoja8_2.nombre,{'attr':{'class':'form-control'}}) }}
-    		</div>
-	    		<span class="help-block"><i class="icon-remove-sign"></i></span>
-		</div>
-	</div>
-    <div class="col-lg-6">
-    	<label class="custom-file-upload">
-    		{{ form_widget(form.hoja8_2.url)}}
-			Subir Foto Exterior
-		</label>
-	</div>
+    {{ form_start(form) }}
+    <h2 class="text-center">
+    <strong>Foto Interior de la Vivienda</strong>
+    </h2>
+    <ul  id="hoja8_1" data-prototype="{{ form_widget(form.hoja8_1.vars.prototype) | e }}">
+        {% for hoja81 in form.hoja8_1 %}
+        <div class="col-md-12">
+            {{ form_errors(hoja81) }}
+            {{ form_widget(hoja81) }}
+        </div> 
+        {% endfor %}
+    </ul>    
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja81">Agregar Foto</a>
+	
+</div>
+
+
+
+<div class="div col-md-12 main-box no-header clearfix">
+
+    <h2 class="text-center"><strong>Foto Exterior de la Vivienda</strong> </h2>
+           <ul  id="hoja8_2" data-prototype="{{ form_widget(form.hoja8_2.vars.prototype) | e }}">
+        {% for hoja82 in form.hoja8_2 %}
+        <div class="col-md-12">
+            {{ form_errors(hoja82) }}
+            {{ form_widget(hoja82) }}
+        </div> 
+        {% endfor %}
+    </ul>    
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja82">Agregar Foto</a>
     {{ form_end(form) }}
+</div>
 
     <div class="col-md-12">
 	<a href="{{path('hoja9')}}" class="btn btn-primary pull-right">
 	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
 	</a>
 	<a href="{{path('hoja7')}}" class="btn btn-primary pull-left">
-	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+	<i class="fa fa-arrow-circle-left  fa-lg"></i> Anterior
 	</a>
 	</div>
+    
+ <script>
 
+     var emailCount = '{{ form.hoja8_1 | length }}';
+     var emailCount1 = '{{ form.hoja8_2 | length }}';
+     $('div.col-lg-6:nth-child(4)').hide()
+     $('div.col-lg-6:nth-child(5)').hide()
+    jQuery(document).ready(function() {
+        jQuery('#add-hoja81').click(function() {
+            var emailList = jQuery('#hoja8_1');
+
+            // graba la plantilla prototipo
+            var newWidget = emailList.attr('data-prototype');
+            // sustituye el "__name__" usado en el id y name del prototipo con un
+            // número que es único en tus correos termina con el
+            // atributo name viéndose como name="contact[emails][2]"
+            newWidget = newWidget.replace(/__name__/g, emailCount);
+            emailCount++;
+            // crea un nuevo elemento lista y lo añade a la lista
+            var newLi = jQuery('<div></div>').html(newWidget);
+            newLi.appendTo(jQuery('#hoja8_1'));
+
+            return false;
+        });
+
+
+        jQuery('#add-hoja82').click(function() {
+            var emailList1 = jQuery('#hoja8_2');
+
+            // graba la plantilla prototipo
+            var newWidget1 = emailList1.attr('data-prototype');
+            // sustituye el "__name__" usado en el id y name del prototipo con un
+            // número que es único en tus correos termina con el
+            // atributo name viéndose como name="contact[emails][2]"
+            newWidget1 = newWidget1.replace(/__name__/g, emailCount1);
+            emailCount1++;
+            // crea un nuevo elemento lista y lo añade a la lista
+            var newLi1 = jQuery('<div></div>').html(newWidget1);
+            newLi1.appendTo(jQuery('#hoja8_2'));
+
+            return false;
+        });
+    });
+</script>
 {% endblock %}

@@ -6,6 +6,8 @@
     width: 200px!important;
   }
 </style>
+<div class="div col-md-12 main-box no-header clearfix">
+
     <h1 class="text-center"><strong>Deudas Actuales</strong>  </h1>
 
     {{ form_start(form) }}
@@ -23,7 +25,7 @@
 	       {{ form_widget(form.hoja5_6) }}
 	<div class="col-md-12">OTROS SERVICIOS</div>
 	       {{ form_widget(form.hoja5_7) }}
-
+</div>
 
     {{ form_end(form) }}
     <div class="col-md-12">
@@ -31,7 +33,7 @@
 	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
 	</a>
 	<a href="{{path('hoja4')}}" class="btn btn-primary pull-left">
-	<i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
+	<i class="fa fa-arrow-circle-left  fa-lg"></i> Anterior
 	</a>
 	</div>
 {% endblock %}

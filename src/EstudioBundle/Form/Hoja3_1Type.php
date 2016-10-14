@@ -18,7 +18,6 @@ class Hoja3_1Type extends AbstractType
             ->add('nombre','text')
             ->add('edad','text')
             ->add('parentesco','text')
-            ->add('observaciones','text')
         ;
     }
     

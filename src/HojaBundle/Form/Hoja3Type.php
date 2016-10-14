@@ -16,10 +16,43 @@ class Hoja3Type extends AbstractType
     {
         $builder
 
-            ->add('hoja3_1', new \EstudioBundle\Form\Hoja3_1Type())
-            ->add('hoja3_2', new \EstudioBundle\Form\Hoja3_2Type())
-            ->add('hoja3_3', new \EstudioBundle\Form\Hoja3_3Type())
-            ->add('hoja3_4', new \EstudioBundle\Form\Hoja3_4Type())
+            ->add('hoja3_1', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\Hoja3_1Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja3_1')
+                )))
+             ->add('hoja3_2', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\Hoja3_2Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja3_2')
+                )))
+             ->add('hoja3_3', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\Hoja3_3Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja3_3')
+                )))
+             ->add('hoja3_4', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\Hoja3_4Type(),
+                    'allow_add' => true,
+                    'prototype' => true,
+                    'by_reference' => false,
+                    'options'  => array(
+                        'required'  => false,
+                        'attr'      => array('class' => 'hoja3_4')
+                )))
+            ->add('observaciones')
             
         ;
     }
