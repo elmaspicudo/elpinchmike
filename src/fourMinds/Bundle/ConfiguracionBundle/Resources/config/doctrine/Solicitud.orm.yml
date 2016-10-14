@@ -29,15 +29,23 @@ fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud:
             type: datetime
         fechaVisitador:
             type: datetime
+        fechaRefencias:
+            type: datetime
+            nullable: true
         fechaFinal:
             type: datetime
         fechaTermino:
+            type: datetime
+            nullable: true
+        fechaRefenciasTermino:
             type: datetime
             nullable: true
     manyToOne:
         cliente:         
             targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Cliente
         visitador:         
+            targetEntity: fourMinds\Bundle\UserBundle\Entity\User
+        capturista:         
             targetEntity: fourMinds\Bundle\UserBundle\Entity\User
         usuario_creo:         
             targetEntity: fourMinds\Bundle\UserBundle\Entity\User

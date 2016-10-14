@@ -46,3 +46,6 @@
 </div>
       
 {% endblock %}
+{% block js %}
+    {{ render(url('solicitud_cron', { 'id': entity.solicitud })) }}
+{% endblock %}

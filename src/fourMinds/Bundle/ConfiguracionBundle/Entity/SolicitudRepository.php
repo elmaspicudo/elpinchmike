@@ -13,6 +13,57 @@ use Doctrine\ORM\EntityRepository;
 class SolicitudRepository extends EntityRepository
 {
 
+    function findSolBy($datos,$order=array('fecha','ASC'),$limit=100,$status=0,$visi=0){
+        $where='Where';
+        $operL='';
+        $oper='=';
+        foreach ($datos as $clave => $valor){
+            if(!empty($valor[2])){
+                $oper=$valor[2];
+            }
+            if(!empty($valor[1])){
+                $operL=$valor[1];
+            }
+
+            $where.=$operL.' '.$clave.' '.$oper.' '.$valor[0].' ';
+            $operL='and';
+            $oper='=';
+        }
+        $inner='';
+        $campos='';
+        if($visi > 0){
+            $campos='`inicio`,`fin`,`tiempo_verde`,`tiempo_amarillo`,`tiempo_rojo`,';
+            $inner="INNER JOIN `horas_laborales` ON user.`horario_id`=horas_laborales.`id`
+                            INNER JOIN `tiempo_etapa` ON user.`tiempos_entrega_id`=tiempo_etapa.`id` ";
+        }else{
+            $campos='`inicio`,`fin`,`tiempo_verde`,`tiempo_amarillo`,`tiempo_rojo`,';
+            $inner="INNER JOIN `horas_laborales` ON v.`horario_id`=horas_laborales.`id`
+                            INNER JOIN `tiempo_etapa` ON v.`tiempos_entrega_id`=tiempo_etapa.`id` ";
+        }
+        $dql = "SELECT solicitud.id,".$campos." solicitud.nombre,`razon_social`, direccion, telefonos, puesto, formato, estatus, fecha_visitador,  fecha_final, fecha_refencias, fecha_refencias_termino,user.`user_name` AS visitador, v.`user_name` AS capturista
+                FROM solicitud
+                INNER JOIN `cliente` ON cliente_id=cliente.`id`
+                INNER JOIN `user` ON visitador_id=user.`id`
+                INNER JOIN `user` AS v ON `capturista_id`=v.id 
+                ".$inner.$where."  order by ".$order[0].' '.$order[1].' limit '.$limit; 
+        $em = $this->getEntityManager();     
+        $connection = $em->getConnection();
+        $statement = $connection->prepare($dql);
+        $statement->execute();
+        $morosos = $statement->fetchAll();
+        if($status > 0){
+            $horaSolicitud=(($fechaSol->format('H')*60*60)+($fechaSol->format('i')*60)+($fechaSol->format('s')));
+            $horaFinal=(($fechaActual->format('H')*60*60)+($fechaActual->format('i')*60)+($fechaActual->format('s'))); 
+            $fechaEntrada=$entity->getVisitador()->getHorario()->getInicio();
+            $fechaSalida=$entity->getVisitador()->getHorario()->getFin();
+            $horaEntrada=(($fechaEntrada->format('H')*60*60)+($fechaEntrada->format('i')*60)+($fechaEntrada->format('s')));
+            $horaSalida=(($fechaSalida->format('H')*60*60)+($fechaSalida->format('i')*60)+($fechaSalida->format('s')));         
+            $date = $em->getRepository('ConfiguracionBundle:Solicitud')->tiempoActual($horaSolicitud,$horaFinal,$horaEntrada,$horaSalida,intval($fechaActual->getTimestamp()),intval($fechaSol->getTimestamp()),0);
+        }else{
+            return $morosos;
+        }
+        
+    }
     public function tiempoFinal($horaSolicitud,$horaProceso,$horaEntrada,$horaSalida,$tiempoTotal=0)
     {
         $tiempoDia=24*60*60;
@@ -51,15 +102,16 @@ class SolicitudRepository extends EntityRepository
             {   
                 if($horaFinal > $horaSolicitud)    
                 {
-                      $horatotal=$horaFinal-$horaSolicitud; 
+                      $horatotal=$horaFinal-$horaSolicitud;                       
                       $timeinicio+=$horatotal;
-                      if($timeinicio >= $timefinal){                       
-                          return array('tiempo'=>$horatotal,'action'=>'play','timer'=>$horaSalida);
+                      if($timeinicio >= $timefinal){  
+                          $_SESSION['cron']  =array('tiempo'=>$horatotal,'action'=>'play1','timer'=>$horaSalida);                    
+                          return ;
                       }else{
                           $horatotal=$horaSalida-$horaSolicitud; 
                           $timeinicio+=$horatotal;
                           $timeinicio+=$tiempo;                          
-                          tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);
+                          $this->tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);
                       }
                       
                 }else{
@@ -67,24 +119,26 @@ class SolicitudRepository extends EntityRepository
                           $horatotal=$horaSalida-$horaSolicitud; 
                           $timeinicio+=$horatotal;
                           $timeinicio+=$tiempo;                          
-                          tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);                          
-                      }else{                          
-                          return array('tiempo'=>0,'action'=>'stop','timer'=>0);                          
+                          $this->tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);                          
+                      }else{          
+                          $_SESSION['cron']  =  array('tiempo'=>0,'action'=>'stop2','timer'=>0);              
+                          return ;                          
                       }                  
 
                 }
             }else{    
                 
-                $horatotal=$horaSalida-$horaSolicitud;     echo 'adssfg1';   
-                return array('tiempo'=>$horatotal,'action'=>'stop','timer'=>0);
+                $horatotal=$horaSalida-$horaSolicitud;  
+                $_SESSION['cron']  =   array('tiempo'=>$horatotal,'action'=>'stop3','timer'=>0);
+                return ;
             } 
         }else{
-          $res=array('tiempo'=>$tiempoTotal,'action'=>'stop','timer'=>0);
-          print_r($res);
-            return $res;
+          //$res=array('tiempo'=>$tiempoTotal,'action'=>'stop','timer'=>0);
+          $_SESSION['cron']  =array('tiempo'=>$tiempoTotal,'action'=>'stop4','timer'=>0);
+            return ;
         } 
     }
-
+/*
 $fechaSol=new DateTime('2016-09-22T15:03:01.012345Z');
 $fechaActual=new DateTime('2016-09-23T15:03:01.012345Z');
 $horaSolicitud=(($fechaSol->format('H')*60*60)+($fechaSol->format('i')*60)+($fechaSol->format('s')));
@@ -95,6 +149,6 @@ $array=tiempoActual($horaSolicitud,$horaFinal,$horaEntrada,$horasalida,intval($f
 echo '<pre>';
 print_r($array);
 echo '</pre>';
-
+*/
 
 }

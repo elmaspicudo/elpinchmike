@@ -38,7 +38,7 @@
                 <th>Fecha de visita</th>
                 <th>Estatus</th>
                 <th>Tipo</th>
-                <th>Actions</th>
+                
             </tr>
         </thead> 
         <tbody>
@@ -56,24 +56,12 @@
                 <td>
                     <li>
                         {% if entity.formato > 1 %}
-                            <a href="{{ path('datosp_solicitud', { 'solicitud': entity.id }) }}">Wipro</a>
+                            Wipro
                         {% else %}
-                            <a href="{{ path('hoja1') }}">Largo</a>
+                            Largo
                         {% endif %}
                     </li>
-                </td>
-                <td>
-                <ul>
-                    <li>
-                        {% if entity.formato > 1 %}
-                            <a href="{{ path('datosp_solicitud', { 'solicitud': entity.id }) }}">Capturar</a>
-                        {% else %}
-                            <a href="{{ path('hoja1') }}">Capturar</a>
-                        {% endif %}
-                    </li> 
-                    <li>
-                        <a href="{{ path('solicitud_edit', { 'id': entity.id }) }}">Finalizar</a>
-                    </td>
+                </td>                
             </tr>
         {% endfor %}
         </tbody>

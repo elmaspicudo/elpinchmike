@@ -4,13 +4,13 @@
     <div class="col-lg-12">
         
         <div class="clearfix">
-            <div class="class="pull-left"">
-        <h1 >Tu tiempo</h1>
-        <div class="reloj" id="Horas">00</div>
-        <div class="reloj" id="Minutos">:00</div>
-        <div class="reloj" id="Segundos">:00</div>
-        <div class="reloj" id="Centesimas">:00</div>
-    </div>
+             <div class="class="pull-left"">
+                <h1 >Tu tiempo</h1>
+                <div class="reloj" id="Horas"></div>
+                <div class="reloj" id="Minutos"></div>
+                <div class="reloj" id="Segundos"></div>
+                <div class="reloj" id="Centesimas">:00</div>            
+            </div>            
             <div class="pull-right top-page-ui">
             	<a href="{{ path('solicitud_inv')}}" class="btn btn-primary pull-right">
                     <i class="fa fa-plus-circle fa-lg"></i> Mis estudios
@@ -41,4 +41,7 @@
 </div>
 </div>
      
+{% endblock %}
+{% block js %}
+    {{ render(url('solicitud_cron', { 'id': entity.solicitud })) }}
 {% endblock %}

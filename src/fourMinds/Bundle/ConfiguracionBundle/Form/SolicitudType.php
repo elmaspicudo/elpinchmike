@@ -44,6 +44,17 @@ class SolicitudType extends AbstractType
                 },
                 'choice_label' => 'username',
             ))
+            ->add('capturista', 'entity', array(
+                'class' => 'fourMinds\Bundle\UserBundle\Entity\User',
+                'property' => 'line',
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->where('u.role = :id')
+                        ->setParameter('id', 'ROLE_TEL')
+                        ->orderBy('u.userName', 'ASC');
+                },
+                'choice_label' => 'username',
+            ))
         ;
     }
     

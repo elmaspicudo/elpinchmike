@@ -4,6 +4,15 @@ solicitud:
 solicitud_inv:
     path:     /investigador
     defaults: { _controller: "ConfiguracionBundle:Solicitud:inv" }
+solicitud_recepcion:
+    path:     /recepcion
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:recepcion" }
+solicitud_inv_his:
+    path:     /investigador/historial
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:historialinv" }
+solicitud_recepcion_his:
+    path:     /recepcion/historial
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:historialrecepcion" }
 solicitud_recep:
     path:     /recepcion
     defaults: { _controller: "ConfiguracionBundle:Solicitud:recepcion" }
@@ -24,6 +33,10 @@ solicitud_create:
 solicitud_edit:
     path:     /{id}/edit
     defaults: { _controller: "ConfiguracionBundle:Solicitud:edit" }
+    
+solicitud_cron:
+    path:     /{id}/cron
+    defaults: { _controller: "ConfiguracionBundle:Solicitud:createcron" }
 
 solicitud_update:
     path:     /{id}/update

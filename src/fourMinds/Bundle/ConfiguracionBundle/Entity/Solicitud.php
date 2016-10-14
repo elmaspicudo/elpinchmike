@@ -404,4 +404,91 @@ class Solicitud
     {
         return $this->fechaTermino;
     }
+    /**
+     * @var \DateTime
+     */
+    private $fechaRefencias;
+
+    /**
+     * @var \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    private $capturista;
+
+
+    /**
+     * Set fechaRefencias
+     *
+     * @param \DateTime $fechaRefencias
+     *
+     * @return Solicitud
+     */
+    public function setFechaRefencias($fechaRefencias)
+    {
+        $this->fechaRefencias = $fechaRefencias;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaRefencias
+     *
+     * @return \DateTime
+     */
+    public function getFechaRefencias()
+    {
+        return $this->fechaRefencias;
+    }
+
+    /**
+     * Set capturista
+     *
+     * @param \fourMinds\Bundle\UserBundle\Entity\User $capturista
+     *
+     * @return Solicitud
+     */
+    public function setCapturista(\fourMinds\Bundle\UserBundle\Entity\User $capturista = null)
+    {
+        $this->capturista = $capturista;
+
+        return $this;
+    }
+
+    /**
+     * Get capturista
+     *
+     * @return \fourMinds\Bundle\UserBundle\Entity\User
+     */
+    public function getCapturista()
+    {
+        return $this->capturista;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $fechaRefenciasTermino;
+
+
+    /**
+     * Set fechaRefenciasTermino
+     *
+     * @param \DateTime $fechaRefenciasTermino
+     *
+     * @return Solicitud
+     */
+    public function setFechaRefenciasTermino($fechaRefenciasTermino)
+    {
+        $this->fechaRefenciasTermino = $fechaRefenciasTermino;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaRefenciasTermino
+     *
+     * @return \DateTime
+     */
+    public function getFechaRefenciasTermino()
+    {
+        return $this->fechaRefenciasTermino;
+    }
 }

@@ -7,8 +7,7 @@
             <li class="active"><span>Solicitudes</span></li>
         </ol>
         {% if is_granted('ROLE_ADMIN') %}
-        <div class="clearfix">
-            <h1 class="pull-left">Solicitud</h1>
+        <div class="clearfix">            
             <div class="pull-right top-page-ui">
                 <a href="{{ path('solicitud_new')}}" class="btn btn-primary pull-right">
                     <i class="fa fa-plus-circle fa-lg"></i> Nueva Solicitud
@@ -21,58 +20,168 @@
 {% endblock -%}
 {% block body -%}
 <div class="row">
-<div class="col-lg-12">
-<div class="main-box no-header clearfix">
-<div class="main-box-body clearfix">
-<div class="table-responsive">
-<table class="table user-list table-hover">
-<thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Cliente</th>
-                <th>Direccion</th>
-                <th>Telefonos</th>
-                <th>Puesto</th>
-                <th>Formato</th>
-                <th>Fecha de visita</th>
-                <th>Estatus</th>
-                <th>Actions</th>
-            </tr>
-        </thead> 
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('solicitud_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nombre }}</td>
-                <td>{{ entity.cliente }}</td>
-                <td>{{ entity.direccion }}</td>
-                <td>{{ entity.telefonos }}</td>
-                <td>{{ entity.puesto }}</td>
-                <td>{{ entity.formato }}</td>
-                <td>{% if entity.fecha %}{{ entity.fecha|date('Y-m-d H:i:s') }}{% endif %}</td>
-                 <td></td>
-                <td>
-                <a  href="{{ path('solicitud_show', { 'id': entity.id }) }}" class="table-link">
-	<span class="fa-stack">
-	<i class="fa fa-square fa-stack-2x"></i>
-	<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
-	</span>
-</a>
-                    <a href="{{ path('solicitud_edit', { 'id': entity.id }) }}" class="table-link">
-	<span class="fa-stack">
-	<i class="fa fa-square fa-stack-2x"></i>
-	<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-	</span>
-</a>
-                    </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="col-lg-12">
+        <div class="main-box clearfix">
+            <header class="main-box-header clearfix">
+                <h2>Solicitudes proximas.</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <div class="table-responsive">
+                        <table class="table user-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nombre</th>
+                                        <th>Cliente</th>
+                                        <th>Direccion</th>
+                                        <th>Telefonos</th>
+                                        <th>Puesto</th>
+                                        <th>Formato</th>
+                                        <th>Fecha de visita</th>
+                                        <th>Estatus</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                {% for entity in entities %}
+                                    <tr>
+                                        <td><a href="{{ path('solicitud_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                        <td>{{ entity.nombre }}</td>
+                                        <td>{{ entity.razon_social }}</td>
+                                        <td>{{ entity.direccion }}</td>
+                                        <td>{{ entity.telefonos }}</td>
+                                        <td>{{ entity.puesto }}</td>
+                                        <td>{{ entity.formato }}</td>
+                                        <td>{% if entity.fecha_visitador %}{{ entity.fecha_visitador|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                         <td></td>
+                                        <td>
+                                        <a  href="{{ path('solicitud_show', { 'id': entity.id }) }}" class="table-link">
+                                            	<span class="fa-stack">
+                                            	<i class="fa fa-square fa-stack-2x"></i>
+                                            	<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                            	</span>
+                                            </a>
+                                                                <a href="{{ path('solicitud_edit', { 'id': entity.id }) }}" class="table-link">
+                                            	<span class="fa-stack">
+                                            	<i class="fa fa-square fa-stack-2x"></i>
+                                            	<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            	</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="main-box clearfix">
+            <header class="main-box-header clearfix">
+                <h2>Solicitudes en referencias.</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <div class="table-responsive">
+                        <table class="table user-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nombre</th>
+                                        <th>Cliente</th>
+                                        <th>Capturista</th>
+                                        <th>Direccion</th>                                        
+                                        <th>Formato</th>
+                                        <th>F. Visita</th>
+                                        <th>Estatus</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                {% for entity in entities %}
+                                    <tr>
+                                        <td><a href="{{ path('solicitud_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                        <td>{{ entity.nombre }}</td>
+                                        <td>{{ entity.razon_social }}</td>
+                                        <td>{{ entity.capturista }}</td>
+                                        <td>{{ entity.direccion }}</td>                                        
+                                        <td>{{ entity.formato }}</td>
+                                        <td>{% if entity.fecha_visitador %}{{ entity.fecha_visitador|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                         <td></td>
+                                        <td>
+                                        <a  href="{{ path('solicitud_show', { 'id': entity.id }) }}" class="table-link">
+                                                <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                                                <a href="{{ path('solicitud_edit', { 'id': entity.id }) }}" class="table-link">
+                                                <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="main-box clearfix">
+            <header class="main-box-header clearfix">
+                <h2>Solicitudes en visita.</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <div class="table-responsive">
+                        <table class="table user-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nombre</th>
+                                        <th>Cliente</th>
+                                        <th>Visitador</th>
+                                        <th>Direccion</th>
+                                        <th>Formato</th>
+                                        <th>F. Visita</th>
+                                        <th>Estatus</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                {% for entity in encaptura %}
+                                    <tr>
+                                        <td><a href="{{ path('solicitud_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                                        <td>{{ entity.nombre }}</td>
+                                        <td>{{ entity.razon_social }}</td>
+                                        <td>{{ entity.visitador }}</td>
+                                        <td>{{ entity.direccion }}</td>
+                                        <td>{{ entity.telefonos }}</td>
+                                        <td>{{ entity.puesto }}</td>
+                                        <td>{{ entity.formato }}</td>
+                                        <td>{% if entity.fecha_visitador %}{{ entity.fecha_visitador|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                         <td></td>
+                                        <td>
+                                            <a  href="{{ path('solicitud_show', { 'id': entity.id }) }}" class="table-link">
+                                                <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                            </a>                                           
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
   
     {% endblock %}
