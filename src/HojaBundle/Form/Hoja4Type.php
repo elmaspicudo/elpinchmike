@@ -358,6 +358,8 @@ class Hoja4Type extends AbstractType
                         'no'  => 'No',
                         )))
             ->add('observaciones')
+            ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))
+            ->add('Siguiente', 'submit', array('label' => 'Siguiente','attr'=>array('class'=>'btn btn-success pull-right')))  
         ;
     }
     

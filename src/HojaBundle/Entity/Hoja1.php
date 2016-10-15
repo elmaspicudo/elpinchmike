@@ -464,4 +464,33 @@ class Hoja1
     {
         return $this->nombreCompleto;
     }
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    private $solicitud;
+
+
+    /**
+     * Set solicitud
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud
+     *
+     * @return Hoja1
+     */
+    public function setSolicitud(\fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud = null)
+    {
+        $this->solicitud = $solicitud;
+
+        return $this;
+    }
+
+    /**
+     * Get solicitud
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    public function getSolicitud()
+    {
+        return $this->solicitud;
+    }
 }

@@ -58,7 +58,7 @@
                         {% if entity.formato > 1 %}
                             <a href="{{ path('datosp_solicitud', { 'solicitud': entity.id }) }}">Wipro</a>
                         {% else %}
-                            <a href="{{ path('hoja1') }}">Largo</a>
+                            <a href="{{ path('hoja1_solicitud', { 'solicitud': entity.id }) }}">Largo</a>
                         {% endif %}
                     </li>
                 </td>
@@ -68,7 +68,7 @@
                         {% if entity.formato > 1 %}
                             <a href="{{ path('datosp_solicitud', { 'solicitud': entity.id }) }}">Capturar</a>
                         {% else %}
-                            <a href="{{ path('hoja1') }}">Capturar</a>
+                            <a href="{{ path('hoja1_solicitud', { 'solicitud': entity.id }) }}">Capturar</a>
                         {% endif %}
                     </li> 
                     <li>

@@ -20,7 +20,9 @@ hoja6_update:
     path:     /{id}/update
     defaults: { _controller: "HojaBundle:Hoja6:update" }
     methods:  [POST, PUT]
-
+hoja6_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "HojaBundle:Hoja6:showbysolicitud" }
 hoja6_delete:
     path:     /{id}/delete
     defaults: { _controller: "HojaBundle:Hoja6:delete" }

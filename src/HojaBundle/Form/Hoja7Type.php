@@ -55,6 +55,8 @@ class Hoja7Type extends AbstractType
                         'attr'      => array('class' => 'hoja7_4')
                 )))
             ->add('observaciones')
+            ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))
+            ->add('Siguiente', 'submit', array('label' => 'Siguiente','attr'=>array('class'=>'btn btn-success pull-right')))  
         ;
     }
     

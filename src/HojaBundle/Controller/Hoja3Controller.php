@@ -29,6 +29,27 @@ class Hoja3Controller extends Controller
             'entities' => $entities,
         ));
     }
+
+    /**
+     * Finds and displays a datosp entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('HojaBundle:Hoja3')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new Hoja3();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('hoja3_edit',array('id'=>$entity->getId())));
+    }
     /**
      * Creates a new Hoja3 entity.
      *
@@ -126,10 +147,9 @@ class Hoja3Controller extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('HojaBundle:Hoja3:edit.html.twig', array(
+        return $this->render('HojaBundle:Hoja3:new.html.twig', array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form'   => $editForm->createView()
         ));
     }
 

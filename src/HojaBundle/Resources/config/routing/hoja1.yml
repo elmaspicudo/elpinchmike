@@ -13,6 +13,9 @@ hoja1_create:
     defaults: { _controller: "HojaBundle:Hoja1:create" }
     methods:  POST
 
+hoja1_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "HojaBundle:Hoja1:showbysolicitud" }
 hoja1_edit:
     path:     /{id}/edit
     defaults: { _controller: "HojaBundle:Hoja1:edit" }

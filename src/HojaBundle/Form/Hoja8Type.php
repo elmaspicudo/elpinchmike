@@ -29,6 +29,8 @@ class Hoja8Type extends AbstractType
                         'required'  => false,
                         'attr'      => array('class' => 'hoja8_2')
                 )))
+            ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))
+            ->add('Siguiente', 'submit', array('label' => 'Siguiente','attr'=>array('class'=>'btn btn-success pull-right')))  
         ;
     }
 

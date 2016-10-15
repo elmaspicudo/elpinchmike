@@ -11,204 +11,275 @@ HojaBundle\Entity\Hoja4:
         urbana:
             type: string
             length: '20'
+            nullable: TRUE
         centrica:
             type: string
             length: '20'
+            nullable: TRUE
         periferia:
             type: string
             length: '20'
+            nullable: TRUE
         telefonoPublico:
             type: string
             length: '10'
+            nullable: TRUE
         viasDeAcceso:
             type: string
             length: '10'
+            nullable: TRUE
         agua:
             type: string
             length: '10'
+            nullable: TRUE
         alumbrado:
             type: string
             length: '10'
+            nullable: TRUE
         centrosComerciales:
             type: string
             length: '10'
+            nullable: TRUE
         drenaje:
             type: string
             length: '10'
+            nullable: TRUE
         mercados:
             type: string
             length: '10'
+            nullable: TRUE
         pavimentacion:
             type: string
             length: '10'
+            nullable: TRUE
         escuelas:
             type: string
             length: '10'
+            nullable: TRUE
         banqueta:
             type: string
             length: '10'
+            nullable: TRUE
         areasVerdes:
             type: string
             length: '10'
+            nullable: TRUE
         transporte:
             type: string
             length: '10'
+            nullable: TRUE
         deportivos:
             type: string
             length: '10'
+            nullable: TRUE
         casa:
             type: string
             length: '10'
+            nullable: TRUE
         departamento:
             type: string
             length: '10'
+            nullable: TRUE
         condominio:
             type: string
             length: '10'
+            nullable: TRUE
         unidadHabitacional:
             type: string
             length: '10'
+            nullable: TRUE
         viviendaPopular:
             type: string
             length: '10'
+            nullable: TRUE
         propia:
             type: string
             length: '10'
+            nullable: TRUE
         familiares:
             type: string
             length: '10'
+            nullable: TRUE
         hipotecada:
             type: string
             length: '10'
+            nullable: TRUE
         prestada:
             type: string
             length: '10'
+            nullable: TRUE
         rentada:
             type: string
             length: '10'
+            nullable: TRUE
         compartida:
             type: string
             length: '10'
+            nullable: TRUE
         conservacionCasa:
             type: string
             length: '20'
+            nullable: TRUE
         valorDeCasa:
             type: integer
+            nullable: TRUE
         sala:
             type: string
             length: '10'
+            nullable: TRUE
         comedor:
             type: string
             length: '10'
+            nullable: TRUE
         cocina:
             type: string
             length: '10'
+            nullable: TRUE
         recamaras:
             type: string
             length: '10'
+            nullable: TRUE
         banos:
             type: string
             length: '10'
+            nullable: TRUE
         cuartoServicio:
             type: string
             length: '10'
+            nullable: TRUE
         estudio:
             type: string
             length: '10'
+            nullable: TRUE
         biblioteca:
             type: string
             length: '10'
+            nullable: TRUE
         garaje:
             type: string
             length: '10'
+            nullable: TRUE
         jardin:
             type: string
             length: '10'
+            nullable: TRUE
         mobiliario:
             type: string
             length: '20'
+            nullable: TRUE
         imagen:
             type: string
             length: '20'
+            nullable: TRUE
         aspecto:
             type: string
             length: '20'
+            nullable: TRUE
         orden:
             type: string
             length: '20'
+            nullable: TRUE
         teatroEnCasa:
             type: string
             length: '10'
+            nullable: TRUE
         televisionColor:
             type: string
             length: '10'
+            nullable: TRUE
         dvd:
             type: string
             length: '10'
+            nullable: TRUE
         estereo:
             type: string
             length: '10'
+            nullable: TRUE
         radio:
             type: string
             length: '10'
+            nullable: TRUE
         computadora:
             type: string
             length: '10'
+            nullable: TRUE
         impresora:
             type: string
             length: '10'
+            nullable: TRUE
         otros:
             type: string
             length: '100'
+            nullable: TRUE
         refrigerador:
             type: string
             length: '10'
+            nullable: TRUE
         lavaVajilla:
             type: string
             length: '10'
+            nullable: TRUE
         lavadora:
             type: string
             length: '10'
+            nullable: TRUE
         secadora:
             type: string
             length: '10'
+            nullable: TRUE
         licuadora:
             type: string
             length: '10'
+            nullable: TRUE
         freidora:
             type: string
             length: '10'
+            nullable: TRUE
         horneador:
             type: string
             length: '10'
+            nullable: TRUE
         hornoMicroondas:
             type: string
             length: '10'
+            nullable: TRUE
         aspiradora:
             type: string
             length: '10'
+            nullable: TRUE
         estufa:
             type: string
             length: '10'
+            nullable: TRUE
         pulidora:
             type: string
             length: '10'
+            nullable: TRUE
         batidora:
             type: string
             length: '10'
+            nullable: TRUE
         waflera:
             type: string
             length: '10'
+            nullable: TRUE
         tostador:
             type: string
             length: '10'
+            nullable: TRUE
         sandwichera:
             type: string
             length: '10'
+            nullable: TRUE
         extractorJugo:
             type: string
             length: '10'
+            nullable: TRUE
         observaciones:
             type: string
             length: 255
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
     lifecycleCallbacks: {  }

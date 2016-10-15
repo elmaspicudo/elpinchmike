@@ -29,6 +29,28 @@ class Hoja1Controller extends Controller
             'entities' => $entities,
         ));
     }
+
+    /**
+     * Finds and displays a datosp entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('HojaBundle:Hoja1')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new Hoja1();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('hoja1_edit',array('id'=>$entity->getId())));
+    }
+
     /**
      * Creates a new Hoja1 entity.
      *
@@ -126,10 +148,9 @@ class Hoja1Controller extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('HojaBundle:Hoja1:edit.html.twig', array(
+        return $this->render('HojaBundle:Hoja1:new.html.twig', array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form'   => $editForm->createView()
         ));
     }
 
@@ -172,13 +193,12 @@ class Hoja1Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja1_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('hoja2_solicitud', array('solicitud' => $id)));
         }
 
-        return $this->render('HojaBundle:Hoja1:edit.html.twig', array(
+        return $this->render('HojaBundle:Hoja1:new.html.twig', array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form'   => $editForm->createView()
         ));
     }
     /**

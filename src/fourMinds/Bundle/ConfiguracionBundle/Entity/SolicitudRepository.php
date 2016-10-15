@@ -34,17 +34,17 @@ class SolicitudRepository extends EntityRepository
         if($visi > 0){
             $campos='`inicio`,`fin`,`tiempo_verde`,`tiempo_amarillo`,`tiempo_rojo`,';
             $inner="INNER JOIN `horas_laborales` ON user.`horario_id`=horas_laborales.`id`
-                            INNER JOIN `tiempo_etapa` ON user.`tiempos_entrega_id`=tiempo_etapa.`id` ";
+                    INNER JOIN `tiempo_etapa` ON user.`tiempos_entrega_id`=tiempo_etapa.`id` ";
         }else{
-            $campos='`inicio`,`fin`,`tiempo_verde`,`tiempo_amarillo`,`tiempo_rojo`,';
-            $inner="INNER JOIN `horas_laborales` ON v.`horario_id`=horas_laborales.`id`
-                            INNER JOIN `tiempo_etapa` ON v.`tiempos_entrega_id`=tiempo_etapa.`id` ";
+            $campos='`inicio`,`fin`,`tiempo_verde`,`tiempo_amarillo`,`tiempo_rojo`,v.`user_name` AS capturista,';
+            $inner="INNER JOIN `user` AS v ON `capturista_id`=v.id
+                    INNER JOIN `horas_laborales` ON v.`horario_id`=horas_laborales.`id`
+                    INNER JOIN `tiempo_etapa` ON v.`tiempos_entrega_id`=tiempo_etapa.`id` ";
         }
-        $dql = "SELECT solicitud.id,".$campos." solicitud.nombre,`razon_social`, direccion, telefonos, puesto, formato, estatus, fecha_visitador,  fecha_final, fecha_refencias, fecha_refencias_termino,user.`user_name` AS visitador, v.`user_name` AS capturista
+        $dql = "SELECT solicitud.id,".$campos." solicitud.nombre,`razon_social`, direccion, telefonos, puesto, formato, estatus, fecha_visitador,  fecha_final, fecha_refencias, fecha_refencias_termino,user.`user_name` AS visitador
                 FROM solicitud
                 INNER JOIN `cliente` ON cliente_id=cliente.`id`
-                INNER JOIN `user` ON visitador_id=user.`id`
-                INNER JOIN `user` AS v ON `capturista_id`=v.id 
+                INNER JOIN `user` ON visitador_id=user.`id`                 
                 ".$inner.$where."  order by ".$order[0].' '.$order[1].' limit '.$limit; 
         $em = $this->getEntityManager();     
         $connection = $em->getConnection();

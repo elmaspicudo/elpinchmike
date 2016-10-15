@@ -11,4 +11,8 @@ HojaBundle\Entity\Hoja9:
         ubicacion:
             type: string
             length: 255
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
     lifecycleCallbacks: {  }

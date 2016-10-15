@@ -7,4 +7,7 @@ HojaBundle\Entity\Hoja8:
             id: true
             generator:
                 strategy: AUTO
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
     lifecycleCallbacks: {  }

@@ -11,36 +11,51 @@ HojaBundle\Entity\Hoja1:
         empresa:
             type: string
             length: '100'
+            nullable: TRUE
         puesto:
             type: string
             length: '100'
+            nullable: TRUE
         nombreCompleto:
-            type: string
+            type: string 
             length: '150'
+            nullable: TRUE
         personal:
             type: string
             length: '15'
+            nullable: TRUE
         escolares:
             type: string
             length: '15'
+            nullable: TRUE
         entornoFamiliar:
             type: string
             length: '15'
+            nullable: TRUE
         entornoEconomico:
             type: string
             length: '15'
+            nullable: TRUE
         documentacion:
             type: string
             length: '15'
+            nullable: TRUE
         laboral:
             type: string
             length: '15'
+            nullable: TRUE
         desempeno:
             type: string
             length: '15'
+            nullable: TRUE
         estabilidadLaboral:
             type: string
             length: '15'
+            nullable: TRUE
         observaciones:
             type: text
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
     lifecycleCallbacks: {  }

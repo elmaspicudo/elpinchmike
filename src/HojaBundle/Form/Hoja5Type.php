@@ -23,6 +23,8 @@ class Hoja5Type extends AbstractType
             ->add('hoja5_6', new \EstudioBundle\Form\Hoja5_6Type())
             ->add('hoja5_7', new \EstudioBundle\Form\Hoja5_7Type())
             ->add('observaciones')
+            ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))
+            ->add('Siguiente', 'submit', array('label' => 'Siguiente','attr'=>array('class'=>'btn btn-success pull-right')))  
         ;
     }
     

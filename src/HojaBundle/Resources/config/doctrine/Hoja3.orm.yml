@@ -10,4 +10,8 @@ HojaBundle\Entity\Hoja3:
     fields:
         observaciones:
             type: text
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
     lifecycleCallbacks: {  }

@@ -77,6 +77,8 @@
     <i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
 </a>
 
+{% endblock %}
+{% block js %}
 <script type="text/javascript">
 $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(2)').hide()
 $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(3)').hide()
@@ -100,7 +102,7 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             newWidget = newWidget.replace(/__name__/g, emailCount);
             emailCount++;
             // crea un nuevo elemento lista y lo añade a la lista
-            var newLi = jQuery('<div></div>').html(newWidget);
+            var newLi = jQuery('<div class="row"></div>').html(newWidget);
             newLi.appendTo(jQuery('#hoja3_1'));
 
             return false;
@@ -116,7 +118,7 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             newWidget1 = newWidget1.replace(/__name__/g, emailCount2);
             emailCount2++;
             // crea un nuevo elemento lista y lo añade a la lista
-            var newLi1 = jQuery('<div></div>').html(newWidget1);
+            var newLi1 = jQuery('<div class="row"></div>').html(newWidget1);
             newLi1.appendTo(jQuery('#hoja3_2'));
 
             return false;
@@ -134,7 +136,7 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             newWidget2 = newWidget2.replace(/__name__/g, emailCount3);
             emailCount3++;
             // crea un nuevo elemento lista y lo añade a la lista
-            var newLi2 = jQuery('<div></div>').html(newWidget2);
+            var newLi2 = jQuery('<div class="row"></div>').html(newWidget2);
             newLi2.appendTo(jQuery('#hoja3_3'));
 
             return false;
@@ -151,7 +153,7 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             newWidget3 = newWidget3.replace(/__name__/g, emailCount4);
             emailCount4++;
             // crea un nuevo elemento lista y lo añade a la lista
-            var newLi3 = jQuery('<div></div>').html(newWidget3);
+            var newLi3 = jQuery('<div class="row"></div>').html(newWidget3);
             newLi3.appendTo(jQuery('#hoja3_4'));
 
             return false;

@@ -50,7 +50,7 @@ class SolicitudController extends Controller
                  $user=0;          
         }
         $date=new \DateTime();
-        $encaptura = $em->getRepository('ConfiguracionBundle:Solicitud')->findSolBy(array('fecha_visitador' =>array("'".$date->format('Y-m-d H:i:s')."'",'','<='),'fecha_termino'=>array('NULL','and','IS'),'visitador_id'=>array($user->getId(),'and','=')),1);
+        $encaptura = $em->getRepository('ConfiguracionBundle:Solicitud')->findSolBy(array('fecha_termino'=>array('NULL','','IS'),'visitador_id'=>array($user->getId(),'and','=')));
 
         return $this->render('ConfiguracionBundle:Solicitud:index_inv.html.twig', array(
             'entities' => $encaptura,
@@ -65,7 +65,7 @@ class SolicitudController extends Controller
                  $user=0;          
         }
         $date=new \DateTime();
-        $enreferencias = $em->getRepository('ConfiguracionBundle:Solicitud')->findSolBy(array('fecha_refencias' =>array('NULL','','IS NOT'),'fecha_refencias_termino'=>array('NULL','and','IS'),'capturista_id'=>array($user->getId(),'and','=')),1);
+        $enreferencias = $em->getRepository('ConfiguracionBundle:Solicitud')->findSolBy(array('fecha_refencias' =>array('NULL','','IS NOT'),'fecha_refencias_termino'=>array('NULL','and','IS'),'capturista_id'=>array($user->getId(),'and','=')),array('fecha','ASC'),1);
 
         return $this->render('ConfiguracionBundle:Solicitud:index_cap.html.twig', array(
             'entities' => $enreferencias,
