@@ -76,7 +76,7 @@ class Hoja1Type extends AbstractType
                         'regular'   => 'Regular',
                         'malo'      => 'Malo')))
             ->add('observaciones')            
-            ->add('Siguiente', 'submit', array('label' => 'Siguiente','attr'=>array('class'=>'btn btn-danger')))
+            ->add('Siguiente', 'submit', array('label' => 'Siguiente','attr'=>array('class'=>'btn btn-success pull-right')))
             //->add('anterior', 'submit', array(
             //  'attr' => array('class' => 'btn btn-primary pull-left')
             //))

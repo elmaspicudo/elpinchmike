@@ -18,7 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new fourMinds\Bundle\UserBundle\UserBundle(),
             new fourMinds\Bundle\ConfiguracionBundle\ConfiguracionBundle(),
-            //new EstudioBundle\EstudioBundle(),
+            new EstudioBundle\EstudioBundle(),
             new HojaBundle\HojaBundle(),
             new datosBundle\datosBundle(),
         );

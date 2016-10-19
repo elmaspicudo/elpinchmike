@@ -199,4 +199,130 @@ class Hoja3
     {
         return $this->solicitud;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $Familiares;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $DependientesEconomicos;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $FamiliaresCercanos;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Familiares = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->DependientesEconomicos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->FamiliaresCercanos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add familiare
+     *
+     * @param \EstudioBundle\Entity\Familiares $familiare
+     *
+     * @return Hoja3
+     */
+    public function addFamiliare(\EstudioBundle\Entity\Familiares $familiare)
+    {
+        $this->Familiares[] = $familiare;
+
+        return $this;
+    }
+
+    /**
+     * Remove familiare
+     *
+     * @param \EstudioBundle\Entity\Familiares $familiare
+     */
+    public function removeFamiliare(\EstudioBundle\Entity\Familiares $familiare)
+    {
+        $this->Familiares->removeElement($familiare);
+    }
+
+    /**
+     * Get familiares
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFamiliares()
+    {
+        return $this->Familiares;
+    }
+
+    /**
+     * Add dependientesEconomico
+     *
+     * @param \EstudioBundle\Entity\DependientesEconomicos $dependientesEconomico
+     *
+     * @return Hoja3
+     */
+    public function addDependientesEconomico(\EstudioBundle\Entity\DependientesEconomicos $dependientesEconomico)
+    {
+        $this->DependientesEconomicos[] = $dependientesEconomico;
+
+        return $this;
+    }
+
+    /**
+     * Remove dependientesEconomico
+     *
+     * @param \EstudioBundle\Entity\DependientesEconomicos $dependientesEconomico
+     */
+    public function removeDependientesEconomico(\EstudioBundle\Entity\DependientesEconomicos $dependientesEconomico)
+    {
+        $this->DependientesEconomicos->removeElement($dependientesEconomico);
+    }
+
+    /**
+     * Get dependientesEconomicos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDependientesEconomicos()
+    {
+        return $this->DependientesEconomicos;
+    }
+
+    /**
+     * Add familiaresCercano
+     *
+     * @param \EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano
+     *
+     * @return Hoja3
+     */
+    public function addFamiliaresCercano(\EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano)
+    {
+        $this->FamiliaresCercanos[] = $familiaresCercano;
+
+        return $this;
+    }
+
+    /**
+     * Remove familiaresCercano
+     *
+     * @param \EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano
+     */
+    public function removeFamiliaresCercano(\EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano)
+    {
+        $this->FamiliaresCercanos->removeElement($familiaresCercano);
+    }
+
+    /**
+     * Get familiaresCercanos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFamiliaresCercanos()
+    {
+        return $this->FamiliaresCercanos;
+    }
 }

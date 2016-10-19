@@ -58,7 +58,7 @@ class Hoja6_1
     private $puestoFinal;
 
     /**
-     * @var string
+     * @var integer
      */
     private $sueldoInicial;
 
@@ -412,7 +412,7 @@ class Hoja6_1
     /**
      * Set sueldoInicial
      *
-     * @param string $sueldoInicial
+     * @param integer $sueldoInicial
      *
      * @return Hoja6_1
      */
@@ -426,7 +426,7 @@ class Hoja6_1
     /**
      * Get sueldoInicial
      *
-     * @return string
+     * @return integer
      */
     public function getSueldoInicial()
     {
@@ -1009,3 +1009,4 @@ class Hoja6_1
         return $this->fechaEntravista;
     }
 }
+

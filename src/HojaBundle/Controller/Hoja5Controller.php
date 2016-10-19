@@ -38,17 +38,17 @@ class Hoja5Controller extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('HojaBundle:Hoja1')->findOneBy(array('solicitud'=>$solicitud));
+        $entity = $em->getRepository('HojaBundle:Hoja5')->findOneBy(array('solicitud'=>$solicitud));
 
         if (!$entity) {
             $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
-            $entity = new Hoja1();
+            $entity = new Hoja5();
             $entity->setSolicitud($EntSolicitud);
             $em->persist($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja1_edit',array('id'=>$entity->getId())));
+        return $this->redirect($this->generateUrl('hoja5_edit',array('id'=>$entity->getId())));
     }
     /**
      * Creates a new Hoja5 entity.
@@ -147,10 +147,9 @@ class Hoja5Controller extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('HojaBundle:Hoja5:edit.html.twig', array(
+        return $this->render('HojaBundle:Hoja5:new.html.twig', array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form'   => $editForm->createView(),            
         ));
     }
 
@@ -193,7 +192,10 @@ class Hoja5Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_edit', array('id' => $id)));
+            if ($editForm->get('Siguiente')->isClicked()) {
+                 return $this->redirect($this->generateUrl('hoja6_solicitud', array('solicitud' => $entity->getSolicitud())));
+            }
+            return $this->redirect($this->generateUrl('hoja4_solicitud', array('solicitud' => $entity->getSolicitud())));
         }
 
         return $this->render('HojaBundle:Hoja5:edit.html.twig', array(

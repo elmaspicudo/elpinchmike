@@ -603,3 +603,4 @@ class Hoja7_3
         return $this->frecuenciaEjercicio;
     }
 }
+

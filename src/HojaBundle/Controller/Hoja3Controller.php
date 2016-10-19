@@ -145,7 +145,6 @@ class Hoja3Controller extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('HojaBundle:Hoja3:new.html.twig', array(
             'entity'      => $entity,
@@ -185,14 +184,15 @@ class Hoja3Controller extends Controller
             throw $this->createNotFoundException('Unable to find Hoja3 entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em->flush();
-
-            return $this->redirect($this->generateUrl('hoja3_edit', array('id' => $id)));
+            if ($editForm->get('Siguiente')->isClicked()) {
+                 return $this->redirect($this->generateUrl('hoja4_solicitud', array('solicitud' => $entity->getSolicitud())));
+            }
+            return $this->redirect($this->generateUrl('hoja2_solicitud', array('solicitud' => $entity->getSolicitud())));
         }
 
         return $this->render('HojaBundle:Hoja3:edit.html.twig', array(

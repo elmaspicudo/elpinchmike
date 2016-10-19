@@ -38,17 +38,17 @@ class Hoja7Controller extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('HojaBundle:Hoja1')->findOneBy(array('solicitud'=>$solicitud));
+        $entity = $em->getRepository('HojaBundle:Hoja7')->findOneBy(array('solicitud'=>$solicitud));
 
         if (!$entity) {
             $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
-            $entity = new Hoja1();
+            $entity = new Hoja7();
             $entity->setSolicitud($EntSolicitud);
             $em->persist($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja1_edit',array('id'=>$entity->getId())));
+        return $this->redirect($this->generateUrl('hoja7_edit',array('id'=>$entity->getId())));
     }
     /**
      * Creates a new Hoja7 entity.
@@ -193,7 +193,10 @@ class Hoja7Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_edit', array('id' => $id)));
+            if ($editForm->get('Siguiente')->isClicked()) {
+                 return $this->redirect($this->generateUrl('hoja8_solicitud', array('solicitud' => $entity->getSolicitud())));
+            }
+            return $this->redirect($this->generateUrl('hoja6_solicitud', array('solicitud' => $entity->getSolicitud())));
         }
 
         return $this->render('HojaBundle:Hoja7:edit.html.twig', array(

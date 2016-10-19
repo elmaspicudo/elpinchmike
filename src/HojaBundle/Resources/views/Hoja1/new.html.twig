@@ -45,16 +45,7 @@
             </div>
 
             <!-- evaluacion-->
-            <div class="col-md-12 col-lg-12">
-                <div form-group="">
-                    <div class="input-group">
-                    <span class="input-group-btn">
-                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Entorno Familiar </label>
-                    </span>
-                    {{form_widget(form.entornoFamiliar,{'attr':{'class':'form-control'}})}}
-                    </div>
-                    <span class="help-block"><i class="icon-remove-sign"></i></span>
-                </div>
+            <div class="col-md-12 col-lg-12">                
                  <div form-group="">
                     <div class="input-group">
                     <span class="input-group-btn">
@@ -64,12 +55,30 @@
                     </div>
                     <span class="help-block"><i class="icon-remove-sign"></i></span>
                 </div>
-                 <div form-group="">
+                <div form-group="">
                     <div class="input-group">
                     <span class="input-group-btn">
                         <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Escolares </label>
                     </span>
                     {{form_widget(form.escolares,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Entorno Familiar </label>
+                    </span>
+                    {{form_widget(form.entornoFamiliar,{'attr':{'class':'form-control'}})}}
+                    </div>
+                    <span class="help-block"><i class="icon-remove-sign"></i></span>
+                </div>               
+                <div form-group="">
+                    <div class="input-group">
+                    <span class="input-group-btn">
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Entorno  Economico </label>
+                    </span>
+                    {{form_widget(form.entornoEconomico,{'attr':{'class':'form-control'}})}}
                     </div>
                     <span class="help-block"><i class="icon-remove-sign"></i></span>
                 </div>
@@ -85,9 +94,9 @@
                 <div form-group="">
                     <div class="input-group">
                     <span class="input-group-btn">
-                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Entorno  Economico </label>
+                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Laboral </label>
                     </span>
-                    {{form_widget(form.entornoEconomico,{'attr':{'class':'form-control'}})}}
+                    {{form_widget(form.laboral,{'attr':{'class':'form-control'}})}}
                     </div>
                     <span class="help-block"><i class="icon-remove-sign"></i></span>
                 </div>
@@ -101,16 +110,7 @@
                     <span class="help-block"><i class="icon-remove-sign"></i></span>
                 </div>
                     <span class="help-block"><i class="icon-remove-sign"></i></span>
-                </div>
-                <div form-group="">
-                    <div class="input-group">
-                    <span class="input-group-btn">
-                        <label class="btn btn-primary required" for="hojabundle_hoja1_puesto">Laboral </label>
-                    </span>
-                    {{form_widget(form.laboral,{'attr':{'class':'form-control'}})}}
-                    </div>
-                    <span class="help-block"><i class="icon-remove-sign"></i></span>
-                </div>
+                </div>                
                 <div form-group="">
                     <div class="input-group">
                     <span class="input-group-btn">

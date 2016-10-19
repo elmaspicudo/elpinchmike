@@ -193,7 +193,7 @@ class Hoja1Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja2_solicitud', array('solicitud' => $id)));
+            return $this->redirect($this->generateUrl('hoja2_solicitud', array('solicitud' => $entity->getSolicitud())));
         }
 
         return $this->render('HojaBundle:Hoja1:new.html.twig', array(

@@ -1,0 +1,30 @@
+marcofamiliar:
+    path:     /
+    defaults: { _controller: "HojaBundle:MarcoFamiliar:index" }
+
+marcofamiliar_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:MarcoFamiliar:show" }
+
+marcofamiliar_new:
+    path:     /new
+    defaults: { _controller: "HojaBundle:MarcoFamiliar:new" }
+
+marcofamiliar_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:MarcoFamiliar:create" }
+    methods:  POST
+
+marcofamiliar_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:MarcoFamiliar:edit" }
+
+marcofamiliar_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:MarcoFamiliar:update" }
+    methods:  [POST, PUT]
+
+marcofamiliar_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:MarcoFamiliar:delete" }
+    methods:  [POST, DELETE]

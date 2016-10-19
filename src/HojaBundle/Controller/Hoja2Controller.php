@@ -185,16 +185,16 @@ class Hoja2Controller extends Controller
             throw $this->createNotFoundException('Unable to find Hoja2 entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+        //$deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em->flush();
             if ($editForm->get('Siguiente')->isClicked()) {
-                 return $this->redirect($this->generateUrl('hoja3_solicitud', array('solicitud' => $id)));
+                 return $this->redirect($this->generateUrl('hoja3_solicitud', array('solicitud' => $entity->getSolicitud())));
             }
-            return $this->redirect($this->generateUrl('hoja3_solicitud', array('solicitud' => $id)));
+            return $this->redirect($this->generateUrl('hoja1_solicitud', array('solicitud' => $entity->getSolicitud())));
         }
 
         return $this->render('HojaBundle:Hoja2:edit.html.twig', array(

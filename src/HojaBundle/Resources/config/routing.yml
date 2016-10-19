@@ -1,3 +1,7 @@
+hoja_marcofamiliar:
+    resource: "@HojaBundle/Resources/config/routing/marcofamiliar.yml"
+    prefix:   /marcofamiliar
+
 hoja_hoja9:
     resource: "@HojaBundle/Resources/config/routing/hoja9.yml"
     prefix:   /hoja9

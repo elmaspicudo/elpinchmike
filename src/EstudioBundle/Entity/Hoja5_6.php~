@@ -139,3 +139,4 @@ class Hoja5_6
         return $this->vigencia;
     }
 }
+

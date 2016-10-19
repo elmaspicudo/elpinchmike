@@ -73,4 +73,33 @@ class Hoja8
     {
         return $this->id;
     }
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    private $solicitud;
+
+
+    /**
+     * Set solicitud
+     *
+     * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud
+     *
+     * @return Hoja8
+     */
+    public function setSolicitud(\fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud = null)
+    {
+        $this->solicitud = $solicitud;
+
+        return $this;
+    }
+
+    /**
+     * Get solicitud
+     *
+     * @return \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    public function getSolicitud()
+    {
+        return $this->solicitud;
+    }
 }

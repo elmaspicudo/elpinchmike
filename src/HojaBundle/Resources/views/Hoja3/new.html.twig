@@ -1,5 +1,4 @@
 {% extends '::base.html.twig' %}
-
 {% block body -%}
 <style>
   .btn-primary{
@@ -80,10 +79,10 @@
 {% endblock %}
 {% block js %}
 <script type="text/javascript">
-$('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(2)').hide()
 $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(3)').hide()
 $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(4)').hide()
 $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(5)').hide()
+$('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(6)').hide()
     // realiza un seguimiento de cuántos campos de correo electrónico se han pintado
     var emailCount = '{{ form.hoja3_1 | length }}';
     var emailCount2 = '{{ form.hoja3_2 | length }}';

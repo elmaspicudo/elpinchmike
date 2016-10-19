@@ -12,16 +12,6 @@ class Hoja4_1
      */
     private $id;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
     /**
      * @var string
      */
@@ -42,6 +32,16 @@ class Hoja4_1
      */
     private $liquidado;
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set tipo
