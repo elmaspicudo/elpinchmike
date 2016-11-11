@@ -325,7 +325,7 @@ class SolicitudController extends Controller
         $body=$this->renderView('UserBundle:User:nuevaSolicitud.html.twig',
                     array('solicitud' => $solicitud));
 
-        
+        /*
         $message = \Swift_Message::newInstance()
                     ->setContentType('text/html')
                     ->setSubject('Te asignaron una nueva investigacion')
@@ -348,7 +348,7 @@ class SolicitudController extends Controller
         $mensaje->addMensajeUser($solicitud->getVisitador());
         $mensaje->setDateCreate(new \DateTime());
         $em->persist($mensaje);
-        $em->flush();
+        $em->flush();*/
     }
 
 
