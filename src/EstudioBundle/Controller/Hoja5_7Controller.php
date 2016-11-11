@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja5_7;
-use EstudioBundle\Form\Hoja5_7Type;
+use EstudioBundle\Entity\otrosServicios;
+use EstudioBundle\Form\otrosServiciosType;
 
 /**
- * Hoja5_7 controller.
+ * otrosServicios controller.
  *
  */
-class Hoja5_7Controller extends Controller
+class otrosServiciosController extends Controller
 {
 
     /**
-     * Lists all Hoja5_7 entities.
+     * Lists all otrosServicios entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja5_7')->findAll();
+        $entities = $em->getRepository('EstudioBundle:otrosServicios')->findAll();
 
-        return $this->render('EstudioBundle:Hoja5_7:index.html.twig', array(
+        return $this->render('EstudioBundle:otrosServicios:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja5_7 entity.
+     * Creates a new otrosServicios entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja5_7();
+        $entity = new otrosServicios();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja5_7Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_7_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('otrosServicios_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja5_7:new.html.twig', array(
+        return $this->render('EstudioBundle:otrosServicios:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja5_7 entity.
+     * Creates a form to create a otrosServicios entity.
      *
-     * @param Hoja5_7 $entity The entity
+     * @param otrosServicios $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja5_7 $entity)
+    private function createCreateForm(otrosServicios $entity)
     {
-        $form = $this->createForm(new Hoja5_7Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_7_create'),
+        $form = $this->createForm(new otrosServiciosType(), $entity, array(
+            'action' => $this->generateUrl('otrosServicios_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja5_7Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja5_7 entity.
+     * Displays a form to create a new otrosServicios entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja5_7();
+        $entity = new otrosServicios();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja5_7:new.html.twig', array(
+        return $this->render('EstudioBundle:otrosServicios:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja5_7 entity.
+     * Finds and displays a otrosServicios entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_7')->find($id);
+        $entity = $em->getRepository('EstudioBundle:otrosServicios')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_7 entity.');
+            throw $this->createNotFoundException('Unable to find otrosServicios entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_7:show.html.twig', array(
+        return $this->render('EstudioBundle:otrosServicios:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja5_7 entity.
+     * Displays a form to edit an existing otrosServicios entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_7')->find($id);
+        $entity = $em->getRepository('EstudioBundle:otrosServicios')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_7 entity.');
+            throw $this->createNotFoundException('Unable to find otrosServicios entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_7:edit.html.twig', array(
+        return $this->render('EstudioBundle:otrosServicios:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja5_7Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja5_7 entity.
+    * Creates a form to edit a otrosServicios entity.
     *
-    * @param Hoja5_7 $entity The entity
+    * @param otrosServicios $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja5_7 $entity)
+    private function createEditForm(otrosServicios $entity)
     {
-        $form = $this->createForm(new Hoja5_7Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_7_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new otrosServiciosType(), $entity, array(
+            'action' => $this->generateUrl('otrosServicios_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja5_7 entity.
+     * Edits an existing otrosServicios entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_7')->find($id);
+        $entity = $em->getRepository('EstudioBundle:otrosServicios')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_7 entity.');
+            throw $this->createNotFoundException('Unable to find otrosServicios entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja5_7Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_7_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('otrosServicios_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja5_7:edit.html.twig', array(
+        return $this->render('EstudioBundle:otrosServicios:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja5_7 entity.
+     * Deletes a otrosServicios entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja5_7Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja5_7')->find($id);
+            $entity = $em->getRepository('EstudioBundle:otrosServicios')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja5_7 entity.');
+                throw $this->createNotFoundException('Unable to find otrosServicios entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja5_7'));
+        return $this->redirect($this->generateUrl('otrosServicios'));
     }
 
     /**
-     * Creates a form to delete a Hoja5_7 entity by id.
+     * Creates a form to delete a otrosServicios entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja5_7Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja5_7_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('otrosServicios_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

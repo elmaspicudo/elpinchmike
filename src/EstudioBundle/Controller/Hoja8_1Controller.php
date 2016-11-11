@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use EstudioBundle\Entity\Hoja8_1;
-use EstudioBundle\Form\Hoja8_1Type;
+use EstudioBundle\Form\imagen;
 
 /**
  * Hoja8_1 controller.
@@ -62,7 +62,7 @@ class Hoja8_1Controller extends Controller
      */
     private function createCreateForm(Hoja8_1 $entity)
     {
-        $form = $this->createForm(new Hoja8_1Type(), $entity, array(
+        $form = $this->createForm(new imagen(), $entity, array(
             'action' => $this->generateUrl('hoja8_1_create'),
             'method' => 'POST',
         ));
@@ -142,12 +142,12 @@ class Hoja8_1Controller extends Controller
     */
     private function createEditForm(Hoja8_1 $entity)
     {
-        $form = $this->createForm(new Hoja8_1Type(), $entity, array(
+        $form = $this->createForm(new imagen(), $entity, array(
             'action' => $this->generateUrl('hoja8_1_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }

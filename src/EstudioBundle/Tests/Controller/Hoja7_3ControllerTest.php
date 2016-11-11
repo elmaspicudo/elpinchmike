@@ -4,7 +4,7 @@ namespace EstudioBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class Hoja7_3ControllerTest extends WebTestCase
+class saludHigieneControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class Hoja7_3ControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/hoja7_3/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /hoja7_3/");
+        $crawler = $client->request('GET', '/saludHigiene/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /saludHigiene/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'estudiobundle_hoja7_3[field_name]'  => 'Test',
+            'estudiobundle_saludHigiene[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class Hoja7_3ControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'estudiobundle_hoja7_3[field_name]'  => 'Foo',
+            'estudiobundle_saludHigiene[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

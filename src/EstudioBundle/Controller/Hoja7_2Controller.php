@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja7_2;
-use EstudioBundle\Form\Hoja7_2Type;
+use EstudioBundle\Entity\referenciaVecinal;
+use EstudioBundle\Form\referenciaVecinalType;
 
 /**
- * Hoja7_2 controller.
+ * referenciaVecinal controller.
  *
  */
-class Hoja7_2Controller extends Controller
+class referenciaVecinalController extends Controller
 {
 
     /**
-     * Lists all Hoja7_2 entities.
+     * Lists all referenciaVecinal entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja7_2')->findAll();
+        $entities = $em->getRepository('EstudioBundle:referenciaVecinal')->findAll();
 
-        return $this->render('EstudioBundle:Hoja7_2:index.html.twig', array(
+        return $this->render('EstudioBundle:referenciaVecinal:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja7_2 entity.
+     * Creates a new referenciaVecinal entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja7_2();
+        $entity = new referenciaVecinal();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja7_2Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_2_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('referenciaVecinal_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja7_2:new.html.twig', array(
+        return $this->render('EstudioBundle:referenciaVecinal:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja7_2 entity.
+     * Creates a form to create a referenciaVecinal entity.
      *
-     * @param Hoja7_2 $entity The entity
+     * @param referenciaVecinal $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja7_2 $entity)
+    private function createCreateForm(referenciaVecinal $entity)
     {
-        $form = $this->createForm(new Hoja7_2Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_2_create'),
+        $form = $this->createForm(new referenciaVecinalType(), $entity, array(
+            'action' => $this->generateUrl('referenciaVecinal_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja7_2Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja7_2 entity.
+     * Displays a form to create a new referenciaVecinal entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja7_2();
+        $entity = new referenciaVecinal();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja7_2:new.html.twig', array(
+        return $this->render('EstudioBundle:referenciaVecinal:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja7_2 entity.
+     * Finds and displays a referenciaVecinal entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_2')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciaVecinal')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_2 entity.');
+            throw $this->createNotFoundException('Unable to find referenciaVecinal entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_2:show.html.twig', array(
+        return $this->render('EstudioBundle:referenciaVecinal:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja7_2 entity.
+     * Displays a form to edit an existing referenciaVecinal entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_2')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciaVecinal')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_2 entity.');
+            throw $this->createNotFoundException('Unable to find referenciaVecinal entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_2:edit.html.twig', array(
+        return $this->render('EstudioBundle:referenciaVecinal:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja7_2Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja7_2 entity.
+    * Creates a form to edit a referenciaVecinal entity.
     *
-    * @param Hoja7_2 $entity The entity
+    * @param referenciaVecinal $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja7_2 $entity)
+    private function createEditForm(referenciaVecinal $entity)
     {
-        $form = $this->createForm(new Hoja7_2Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_2_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new referenciaVecinalType(), $entity, array(
+            'action' => $this->generateUrl('referenciaVecinal_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja7_2 entity.
+     * Edits an existing referenciaVecinal entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_2')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciaVecinal')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_2 entity.');
+            throw $this->createNotFoundException('Unable to find referenciaVecinal entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja7_2Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_2_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('referenciaVecinal_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja7_2:edit.html.twig', array(
+        return $this->render('EstudioBundle:referenciaVecinal:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja7_2 entity.
+     * Deletes a referenciaVecinal entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja7_2Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja7_2')->find($id);
+            $entity = $em->getRepository('EstudioBundle:referenciaVecinal')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja7_2 entity.');
+                throw $this->createNotFoundException('Unable to find referenciaVecinal entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja7_2'));
+        return $this->redirect($this->generateUrl('referenciaVecinal'));
     }
 
     /**
-     * Creates a form to delete a Hoja7_2 entity by id.
+     * Creates a form to delete a referenciaVecinal entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja7_2Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja7_2_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('referenciaVecinal_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

@@ -167,7 +167,7 @@ class Hoja2Controller extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
@@ -192,7 +192,7 @@ class Hoja2Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
             if ($editForm->get('Siguiente')->isClicked()) {
-                 return $this->redirect($this->generateUrl('hoja3_solicitud', array('solicitud' => $entity->getSolicitud())));
+                 return $this->redirect($this->generateUrl('MarcoFamiliar_solicitud', array('solicitud' => $entity->getSolicitud())));
             }
             return $this->redirect($this->generateUrl('hoja1_solicitud', array('solicitud' => $entity->getSolicitud())));
         }

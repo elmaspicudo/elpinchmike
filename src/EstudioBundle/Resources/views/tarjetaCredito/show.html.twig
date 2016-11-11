@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>tarjetaCredito</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Banco</th>
+                <td>{{ entity.banco }}</td>
+            </tr>
+            <tr>
+                <th>Limitecredito</th>
+                <td>{{ entity.limiteCredito }}</td>
+            </tr>
+            <tr>
+                <th>Antiguedad</th>
+                <td>{{ entity.antiguedad|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Pagomensual</th>
+                <td>{{ entity.pagoMensual|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <a  href="{{ path('tarjetaCredito') }}" class="btn btn-warning">Regresar</a>
+        <a href="{{ path('tarjetaCredito_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
+    {{ form(delete_form) }}
+{% endblock %}

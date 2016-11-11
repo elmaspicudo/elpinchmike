@@ -29,6 +29,27 @@ class MarcoFamiliarController extends Controller
             'entities' => $entities,
         ));
     }
+
+    /**
+     * Finds and displays a datosp entity.
+     *
+     */
+    public function showbysolicitudAction($solicitud)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('HojaBundle:MarcoFamiliar')->findOneBy(array('solicitud'=>$solicitud));
+
+        if (!$entity) {
+            $EntSolicitud=$em->getRepository('ConfiguracionBundle:Solicitud')->find($solicitud);
+            $entity = new MarcoFamiliar();
+            $entity->setSolicitud($EntSolicitud);
+            $em->persist($entity);
+            $em->flush();
+        }
+
+        return $this->redirect($this->generateUrl('MarcoFamiliar_edit',array('id'=>$entity->getId())));
+    }
     /**
      * Creates a new MarcoFamiliar entity.
      *
@@ -44,7 +65,7 @@ class MarcoFamiliarController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('marcofamiliar_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('MarcoFamiliar_show', array('id' => $entity->getId())));
         }
 
         return $this->render('HojaBundle:MarcoFamiliar:new.html.twig', array(
@@ -63,11 +84,11 @@ class MarcoFamiliarController extends Controller
     private function createCreateForm(MarcoFamiliar $entity)
     {
         $form = $this->createForm(new MarcoFamiliarType(), $entity, array(
-            'action' => $this->generateUrl('marcofamiliar_create'),
+            'action' => $this->generateUrl('MarcoFamiliar_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        ////$form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -124,12 +145,10 @@ class MarcoFamiliarController extends Controller
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('HojaBundle:MarcoFamiliar:edit.html.twig', array(
+        return $this->render('HojaBundle:MarcoFamiliar:new.html.twig', array(
             'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'form'   => $editForm->createView()
         ));
     }
 
@@ -143,11 +162,11 @@ class MarcoFamiliarController extends Controller
     private function createEditForm(MarcoFamiliar $entity)
     {
         $form = $this->createForm(new MarcoFamiliarType(), $entity, array(
-            'action' => $this->generateUrl('marcofamiliar_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('MarcoFamiliar_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
@@ -165,14 +184,15 @@ class MarcoFamiliarController extends Controller
             throw $this->createNotFoundException('Unable to find MarcoFamiliar entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em->flush();
-
-            return $this->redirect($this->generateUrl('marcofamiliar_edit', array('id' => $id)));
+            if ($editForm->get('Siguiente')->isClicked()) {
+                 return $this->redirect($this->generateUrl('hoja4_solicitud', array('solicitud' => $entity->getSolicitud())));
+            }
+            return $this->redirect($this->generateUrl('hoja2_solicitud', array('solicitud' => $entity->getSolicitud())));
         }
 
         return $this->render('HojaBundle:MarcoFamiliar:edit.html.twig', array(
@@ -202,7 +222,7 @@ class MarcoFamiliarController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('marcofamiliar'));
+        return $this->redirect($this->generateUrl('MarcoFamiliar'));
     }
 
     /**
@@ -215,9 +235,9 @@ class MarcoFamiliarController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('marcofamiliar_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('MarcoFamiliar_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()
         ;
     }

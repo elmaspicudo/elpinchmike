@@ -17,31 +17,31 @@ class MarcoFamiliarType extends AbstractType
         $builder
             ->add('observaciones')
             ->add('Familiares', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\Hoja3_4Type(),
+                    'type' =>new \EstudioBundle\Form\FamiliaresType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja3_4')
+                        'attr'      => array('class' => 'Familiares oculto')
                 )))
             ->add('DependientesEconomicos', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\Hoja3_4Type(),
+                    'type' =>new \EstudioBundle\Form\DependientesEconomicosType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja3_4')
+                        'attr'      => array('class' => 'DependientesEconomicos oculto')
                 )))
             ->add('FamiliaresCercanos', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\Hoja3_4Type(),
+                    'type' =>new \EstudioBundle\Form\FamiliaresCercanosType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja3_4')
+                        'attr'      => array('class' => 'FamiliaresCercanos oculto')
                 )))
         ;
     }

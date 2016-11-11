@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja5_1;
-use EstudioBundle\Form\Hoja5_1Type;
+use EstudioBundle\Entity\ingresos;
+use EstudioBundle\Form\ingresosType;
 
 /**
- * Hoja5_1 controller.
+ * ingresos controller.
  *
  */
-class Hoja5_1Controller extends Controller
+class ingresosController extends Controller
 {
 
     /**
-     * Lists all Hoja5_1 entities.
+     * Lists all ingresos entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja5_1')->findAll();
+        $entities = $em->getRepository('EstudioBundle:ingresos')->findAll();
 
-        return $this->render('EstudioBundle:Hoja5_1:index.html.twig', array(
+        return $this->render('EstudioBundle:ingresos:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja5_1 entity.
+     * Creates a new ingresos entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja5_1();
+        $entity = new ingresos();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja5_1Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_1_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('ingresos_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja5_1:new.html.twig', array(
+        return $this->render('EstudioBundle:ingresos:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja5_1 entity.
+     * Creates a form to create a ingresos entity.
      *
-     * @param Hoja5_1 $entity The entity
+     * @param ingresos $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja5_1 $entity)
+    private function createCreateForm(ingresos $entity)
     {
-        $form = $this->createForm(new Hoja5_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_1_create'),
+        $form = $this->createForm(new ingresosType(), $entity, array(
+            'action' => $this->generateUrl('ingresos_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja5_1Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja5_1 entity.
+     * Displays a form to create a new ingresos entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja5_1();
+        $entity = new ingresos();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja5_1:new.html.twig', array(
+        return $this->render('EstudioBundle:ingresos:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja5_1 entity.
+     * Finds and displays a ingresos entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:ingresos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_1 entity.');
+            throw $this->createNotFoundException('Unable to find ingresos entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_1:show.html.twig', array(
+        return $this->render('EstudioBundle:ingresos:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja5_1 entity.
+     * Displays a form to edit an existing ingresos entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:ingresos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_1 entity.');
+            throw $this->createNotFoundException('Unable to find ingresos entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:ingresos:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja5_1Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja5_1 entity.
+    * Creates a form to edit a ingresos entity.
     *
-    * @param Hoja5_1 $entity The entity
+    * @param ingresos $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja5_1 $entity)
+    private function createEditForm(ingresos $entity)
     {
-        $form = $this->createForm(new Hoja5_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_1_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new ingresosType(), $entity, array(
+            'action' => $this->generateUrl('ingresos_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja5_1 entity.
+     * Edits an existing ingresos entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:ingresos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_1 entity.');
+            throw $this->createNotFoundException('Unable to find ingresos entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja5_1Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_1_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('ingresos_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja5_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:ingresos:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja5_1 entity.
+     * Deletes a ingresos entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja5_1Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja5_1')->find($id);
+            $entity = $em->getRepository('EstudioBundle:ingresos')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja5_1 entity.');
+                throw $this->createNotFoundException('Unable to find ingresos entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja5_1'));
+        return $this->redirect($this->generateUrl('ingresos'));
     }
 
     /**
-     * Creates a form to delete a Hoja5_1 entity by id.
+     * Creates a form to delete a ingresos entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja5_1Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja5_1_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('ingresos_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

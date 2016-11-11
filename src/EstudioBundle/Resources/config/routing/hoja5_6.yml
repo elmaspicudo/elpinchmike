@@ -1,30 +1,30 @@
-hoja5_6:
+seguros:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja5_6:index" }
+    defaults: { _controller: "EstudioBundle:seguros:index" }
 
-hoja5_6_show:
+seguros_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja5_6:show" }
+    defaults: { _controller: "EstudioBundle:seguros:show" }
 
-hoja5_6_new:
+seguros_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja5_6:new" }
+    defaults: { _controller: "EstudioBundle:seguros:new" }
 
-hoja5_6_create:
+seguros_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja5_6:create" }
+    defaults: { _controller: "EstudioBundle:seguros:create" }
     methods:  POST
 
-hoja5_6_edit:
+seguros_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja5_6:edit" }
+    defaults: { _controller: "EstudioBundle:seguros:edit" }
 
-hoja5_6_update:
+seguros_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja5_6:update" }
+    defaults: { _controller: "EstudioBundle:seguros:update" }
     methods:  [POST, PUT]
 
-hoja5_6_delete:
+seguros_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja5_6:delete" }
+    defaults: { _controller: "EstudioBundle:seguros:delete" }
     methods:  [POST, DELETE]

@@ -1,0 +1,107 @@
+EstudioBundle\Entity\referenciasLaborales:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        empresa:
+            type: string
+            length: '100'
+        giro:
+            type: string
+            length: '50'
+        telefono:
+            type: integer
+        domicilio:
+            type: string
+            length: 255
+        ciudad:
+            type: string
+            length: '100'
+        fechaIngreso:
+            type: date
+        fechasalida:
+            type: date
+        puestoInicial:
+            type: string
+            length: '100'
+        puestoFinal:
+            type: string
+            length: '100'
+        sueldoInicial:
+            type: integer
+        sueldoFinal:
+            type: float
+        jefeInmediato:
+            type: string
+            length: '50'
+        puesto:
+            type: string
+            length: '50'
+        asistencia:
+            type: string
+            length: '10'
+        responsabilidad:
+            type: string
+            length: '10'
+        colaboracion:
+            type: string
+            length: '10'
+        calidadTrabajo:
+            type: string
+            length: '10'
+        actitudGeneral:
+            type: string
+            length: '10'
+        tomaDesiciones:
+            type: string
+            length: '10'
+        iniciativa:
+            type: string
+            length: '10'
+        honestidad:
+            type: string
+            length: '10'
+        relacionJefes:
+            type: string
+            length: '10'
+        relacionCompaneros:
+            type: string
+            length: '10'
+        perteneceSindicato:
+            type: string
+            length: '10'
+        cual:
+            type: string
+            length: '50'
+        cargoSindical:
+            type: string
+            length: '10'
+        participacion:
+            type: string
+            length: '50'
+        problemaLaboral:
+            type: string
+            length: '10'
+        motivoSeparacion:
+            type: string
+            length: '100'
+        personaRecomendable:
+            type: string
+            length: '10'
+        porque:
+            type: string
+            length: '100'
+        datosProporcionados:
+            type: string
+            length: '100'
+        puestoEntrevistador:
+            type: string
+            length: '50'
+        fechaEntravista:
+            type: date
+    lifecycleCallbacks: {  }

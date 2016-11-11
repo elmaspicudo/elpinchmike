@@ -1,30 +1,30 @@
-hoja7_4:
+pasatiempos:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja7_4:index" }
+    defaults: { _controller: "EstudioBundle:pasatiempos:index" }
 
-hoja7_4_show:
+pasatiempos_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja7_4:show" }
+    defaults: { _controller: "EstudioBundle:pasatiempos:show" }
 
-hoja7_4_new:
+pasatiempos_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja7_4:new" }
+    defaults: { _controller: "EstudioBundle:pasatiempos:new" }
 
-hoja7_4_create:
+pasatiempos_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja7_4:create" }
+    defaults: { _controller: "EstudioBundle:pasatiempos:create" }
     methods:  POST
 
-hoja7_4_edit:
+pasatiempos_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja7_4:edit" }
+    defaults: { _controller: "EstudioBundle:pasatiempos:edit" }
 
-hoja7_4_update:
+pasatiempos_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja7_4:update" }
+    defaults: { _controller: "EstudioBundle:pasatiempos:update" }
     methods:  [POST, PUT]
 
-hoja7_4_delete:
+pasatiempos_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja7_4:delete" }
+    defaults: { _controller: "EstudioBundle:pasatiempos:delete" }
     methods:  [POST, DELETE]

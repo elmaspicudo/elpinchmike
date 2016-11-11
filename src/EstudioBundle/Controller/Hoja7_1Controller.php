@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja7_1;
-use EstudioBundle\Form\Hoja7_1Type;
+use EstudioBundle\Entity\referenciaFamiliar;
+use EstudioBundle\Form\referenciaFamiliarType;
 
 /**
- * Hoja7_1 controller.
+ * referenciaFamiliar controller.
  *
  */
-class Hoja7_1Controller extends Controller
+class referenciaFamiliarController extends Controller
 {
 
     /**
-     * Lists all Hoja7_1 entities.
+     * Lists all referenciaFamiliar entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja7_1')->findAll();
+        $entities = $em->getRepository('EstudioBundle:referenciaFamiliar')->findAll();
 
-        return $this->render('EstudioBundle:Hoja7_1:index.html.twig', array(
+        return $this->render('EstudioBundle:referenciaFamiliar:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja7_1 entity.
+     * Creates a new referenciaFamiliar entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja7_1();
+        $entity = new referenciaFamiliar();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja7_1Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_1_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('referenciaFamiliar_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja7_1:new.html.twig', array(
+        return $this->render('EstudioBundle:referenciaFamiliar:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja7_1 entity.
+     * Creates a form to create a referenciaFamiliar entity.
      *
-     * @param Hoja7_1 $entity The entity
+     * @param referenciaFamiliar $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja7_1 $entity)
+    private function createCreateForm(referenciaFamiliar $entity)
     {
-        $form = $this->createForm(new Hoja7_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_1_create'),
+        $form = $this->createForm(new referenciaFamiliarType(), $entity, array(
+            'action' => $this->generateUrl('referenciaFamiliar_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja7_1Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja7_1 entity.
+     * Displays a form to create a new referenciaFamiliar entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja7_1();
+        $entity = new referenciaFamiliar();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja7_1:new.html.twig', array(
+        return $this->render('EstudioBundle:referenciaFamiliar:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja7_1 entity.
+     * Finds and displays a referenciaFamiliar entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciaFamiliar')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_1 entity.');
+            throw $this->createNotFoundException('Unable to find referenciaFamiliar entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_1:show.html.twig', array(
+        return $this->render('EstudioBundle:referenciaFamiliar:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja7_1 entity.
+     * Displays a form to edit an existing referenciaFamiliar entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciaFamiliar')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_1 entity.');
+            throw $this->createNotFoundException('Unable to find referenciaFamiliar entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:referenciaFamiliar:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja7_1Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja7_1 entity.
+    * Creates a form to edit a referenciaFamiliar entity.
     *
-    * @param Hoja7_1 $entity The entity
+    * @param referenciaFamiliar $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja7_1 $entity)
+    private function createEditForm(referenciaFamiliar $entity)
     {
-        $form = $this->createForm(new Hoja7_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_1_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new referenciaFamiliarType(), $entity, array(
+            'action' => $this->generateUrl('referenciaFamiliar_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja7_1 entity.
+     * Edits an existing referenciaFamiliar entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciaFamiliar')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_1 entity.');
+            throw $this->createNotFoundException('Unable to find referenciaFamiliar entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja7_1Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_1_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('referenciaFamiliar_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja7_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:referenciaFamiliar:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja7_1 entity.
+     * Deletes a referenciaFamiliar entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja7_1Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja7_1')->find($id);
+            $entity = $em->getRepository('EstudioBundle:referenciaFamiliar')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja7_1 entity.');
+                throw $this->createNotFoundException('Unable to find referenciaFamiliar entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja7_1'));
+        return $this->redirect($this->generateUrl('referenciaFamiliar'));
     }
 
     /**
-     * Creates a form to delete a Hoja7_1 entity by id.
+     * Creates a form to delete a referenciaFamiliar entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja7_1Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja7_1_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('referenciaFamiliar_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

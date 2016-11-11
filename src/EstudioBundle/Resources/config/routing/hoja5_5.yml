@@ -1,30 +1,30 @@
-hoja5_5:
+creditoAutomotriz:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja5_5:index" }
+    defaults: { _controller: "EstudioBundle:creditoAutomotriz:index" }
 
-hoja5_5_show:
+creditoAutomotriz_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja5_5:show" }
+    defaults: { _controller: "EstudioBundle:creditoAutomotriz:show" }
 
-hoja5_5_new:
+creditoAutomotriz_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja5_5:new" }
+    defaults: { _controller: "EstudioBundle:creditoAutomotriz:new" }
 
-hoja5_5_create:
+creditoAutomotriz_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja5_5:create" }
+    defaults: { _controller: "EstudioBundle:creditoAutomotriz:create" }
     methods:  POST
 
-hoja5_5_edit:
+creditoAutomotriz_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja5_5:edit" }
+    defaults: { _controller: "EstudioBundle:creditoAutomotriz:edit" }
 
-hoja5_5_update:
+creditoAutomotriz_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja5_5:update" }
+    defaults: { _controller: "EstudioBundle:creditoAutomotriz:update" }
     methods:  [POST, PUT]
 
-hoja5_5_delete:
+creditoAutomotriz_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja5_5:delete" }
+    defaults: { _controller: "EstudioBundle:creditoAutomotriz:delete" }
     methods:  [POST, DELETE]

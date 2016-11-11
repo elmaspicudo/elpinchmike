@@ -5,18 +5,18 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja3;
-use EstudioBundle\Form\Hoja3Type;
+use EstudioBundle\Entity\MarcoFamiliar;
+use EstudioBundle\Form\MarcoFamiliarType;
 
 /**
- * Hoja3 controller.
+ * MarcoFamiliar controller.
  *
  */
-class Hoja3Controller extends Controller
+class MarcoFamiliarController extends Controller
 {
 
     /**
-     * Lists all Hoja3 entities.
+     * Lists all MarcoFamiliar entities.
      *
      */
     public function indexAction()
@@ -28,7 +28,7 @@ class Hoja3Controller extends Controller
         $entitiesPadresHermanos = $em->getRepository('EstudioBundle:EsposaHijos')->findAll();
         $entitiesHabitantes= $em->getRepository('EstudioBundle:habitantesDomicilio')->findAll();
 
-        return $this->render('EstudioBundle:Hoja3:index.html.twig', array(
+        return $this->render('EstudioBundle:MarcoFamiliar:index.html.twig', array(
             'entities' => $entities,
             'entitiesEsposa' => $entitiesEsposa,
             'entitiesPadres' => $entitiesPadresHermanos,
@@ -36,12 +36,12 @@ class Hoja3Controller extends Controller
         ));
     }
     /**
-     * Creates a new Hoja3 entity.
+     * Creates a new MarcoFamiliar entity.
      *
      */ 
     public function createAction(Request $request)
     {
-        $entity = new Hoja3();
+        $entity = new MarcoFamiliar();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -50,26 +50,26 @@ class Hoja3Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja3_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('MarcoFamiliar_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja3:new.html.twig', array(
+        return $this->render('EstudioBundle:MarcoFamiliar:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja3 entity.
+     * Creates a form to create a MarcoFamiliar entity.
      *
-     * @param Hoja3 $entity The entity
+     * @param MarcoFamiliar $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja3 $entity)
+    private function createCreateForm(MarcoFamiliar $entity)
     {
-        $form = $this->createForm(new Hoja3Type(), $entity, array(
-            'action' => $this->generateUrl('hoja3_create'),
+        $form = $this->createForm(new MarcoFamiliarType(), $entity, array(
+            'action' => $this->generateUrl('MarcoFamiliar_create'),
             'method' => 'POST',
         ));
 
@@ -79,60 +79,60 @@ class Hoja3Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja3 entity.
+     * Displays a form to create a new MarcoFamiliar entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja3();
+        $entity = new MarcoFamiliar();
         $form   = $this->createCreateForm($entity);
         
-        return $this->render('EstudioBundle:Hoja3:new.html.twig', array(
+        return $this->render('EstudioBundle:MarcoFamiliar:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja3 entity.
+     * Finds and displays a MarcoFamiliar entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:MarcoFamiliar')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja3 entity.');
+            throw $this->createNotFoundException('Unable to find MarcoFamiliar entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja3:show.html.twig', array(
+        return $this->render('EstudioBundle:MarcoFamiliar:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja3 entity.
+     * Displays a form to edit an existing MarcoFamiliar entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:MarcoFamiliar')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja3 entity.');
+            throw $this->createNotFoundException('Unable to find MarcoFamiliar entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja3:edit.html.twig', array(
+        return $this->render('EstudioBundle:MarcoFamiliar:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -140,35 +140,35 @@ class Hoja3Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja3 entity.
+    * Creates a form to edit a MarcoFamiliar entity.
     *
-    * @param Hoja3 $entity The entity
+    * @param MarcoFamiliar $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja3 $entity)
+    private function createEditForm(MarcoFamiliar $entity)
     {
-        $form = $this->createForm(new Hoja3Type(), $entity, array(
-            'action' => $this->generateUrl('hoja3_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new MarcoFamiliarType(), $entity, array(
+            'action' => $this->generateUrl('MarcoFamiliar_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja3 entity.
+     * Edits an existing MarcoFamiliar entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:MarcoFamiliar')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja3 entity.');
+            throw $this->createNotFoundException('Unable to find MarcoFamiliar entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -178,17 +178,17 @@ class Hoja3Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja3_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('MarcoFamiliar_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja3:edit.html.twig', array(
+        return $this->render('EstudioBundle:MarcoFamiliar:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja3 entity.
+     * Deletes a MarcoFamiliar entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -198,21 +198,21 @@ class Hoja3Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja3')->find($id);
+            $entity = $em->getRepository('EstudioBundle:MarcoFamiliar')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja3 entity.');
+                throw $this->createNotFoundException('Unable to find MarcoFamiliar entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja3'));
+        return $this->redirect($this->generateUrl('MarcoFamiliar'));
     }
 
     /**
-     * Creates a form to delete a Hoja3 entity by id.
+     * Creates a form to delete a MarcoFamiliar entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -221,7 +221,7 @@ class Hoja3Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja3_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('MarcoFamiliar_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

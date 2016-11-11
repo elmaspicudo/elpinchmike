@@ -1,30 +1,30 @@
-hoja3_2:
+personasDomicilio:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja3_2:index" }
+    defaults: { _controller: "EstudioBundle:personasDomicilio:index" }
 
-hoja3_2_show:
+personasDomicilio_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja3_2:show" }
+    defaults: { _controller: "EstudioBundle:personasDomicilio:show" }
 
-hoja3_2_new:
+personasDomicilio_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja3_2:new" }
+    defaults: { _controller: "EstudioBundle:personasDomicilio:new" }
 
-hoja3_2_create:
+personasDomicilio_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja3_2:create" }
+    defaults: { _controller: "EstudioBundle:personasDomicilio:create" }
     methods:  POST
 
-hoja3_2_edit:
+personasDomicilio_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja3_2:edit" }
+    defaults: { _controller: "EstudioBundle:personasDomicilio:edit" }
 
-hoja3_2_update:
+personasDomicilio_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja3_2:update" }
+    defaults: { _controller: "EstudioBundle:personasDomicilio:update" }
     methods:  [POST, PUT]
 
-hoja3_2_delete:
+personasDomicilio_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja3_2:delete" }
+    defaults: { _controller: "EstudioBundle:personasDomicilio:delete" }
     methods:  [POST, DELETE]

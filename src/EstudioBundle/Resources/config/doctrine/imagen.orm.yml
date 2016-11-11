@@ -1,0 +1,16 @@
+EstudioBundle\Entity\imagen:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+        url:
+            type: text
+    lifecycleCallbacks: {  }

@@ -1,30 +1,30 @@
-hoja5_3:
+tarjetaCredito:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja5_3:index" }
+    defaults: { _controller: "EstudioBundle:tarjetaCredito:index" }
 
-hoja5_3_show:
+tarjetaCredito_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja5_3:show" }
+    defaults: { _controller: "EstudioBundle:tarjetaCredito:show" }
 
-hoja5_3_new:
+tarjetaCredito_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja5_3:new" }
+    defaults: { _controller: "EstudioBundle:tarjetaCredito:new" }
 
-hoja5_3_create:
+tarjetaCredito_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja5_3:create" }
+    defaults: { _controller: "EstudioBundle:tarjetaCredito:create" }
     methods:  POST
 
-hoja5_3_edit:
+tarjetaCredito_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja5_3:edit" }
+    defaults: { _controller: "EstudioBundle:tarjetaCredito:edit" }
 
-hoja5_3_update:
+tarjetaCredito_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja5_3:update" }
+    defaults: { _controller: "EstudioBundle:tarjetaCredito:update" }
     methods:  [POST, PUT]
 
-hoja5_3_delete:
+tarjetaCredito_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja5_3:delete" }
+    defaults: { _controller: "EstudioBundle:tarjetaCredito:delete" }
     methods:  [POST, DELETE]

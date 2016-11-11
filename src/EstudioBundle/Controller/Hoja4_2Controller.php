@@ -147,7 +147,7 @@ class Hoja4_2Controller extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }

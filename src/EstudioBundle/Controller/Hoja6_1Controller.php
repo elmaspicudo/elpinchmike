@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja6_1;
-use EstudioBundle\Form\Hoja6_1Type;
+use EstudioBundle\Entity\referenciasLaborales;
+use EstudioBundle\Form\referenciasLaboralesType;
 
 /**
- * Hoja6_1 controller.
+ * referenciasLaborales controller.
  *
  */
-class Hoja6_1Controller extends Controller
+class referenciasLaboralesController extends Controller
 {
 
     /**
-     * Lists all Hoja6_1 entities.
+     * Lists all referenciasLaborales entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja6_1')->findAll();
+        $entities = $em->getRepository('EstudioBundle:referenciasLaborales')->findAll();
 
-        return $this->render('EstudioBundle:Hoja6_1:index.html.twig', array(
+        return $this->render('EstudioBundle:referenciasLaborales:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja6_1 entity.
+     * Creates a new referenciasLaborales entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja6_1();
+        $entity = new referenciasLaborales();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja6_1Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja6_1_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('referenciasLaborales_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja6_1:new.html.twig', array(
+        return $this->render('EstudioBundle:referenciasLaborales:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja6_1 entity.
+     * Creates a form to create a referenciasLaborales entity.
      *
-     * @param Hoja6_1 $entity The entity
+     * @param referenciasLaborales $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja6_1 $entity)
+    private function createCreateForm(referenciasLaborales $entity)
     {
-        $form = $this->createForm(new Hoja6_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja6_1_create'),
+        $form = $this->createForm(new referenciasLaboralesType(), $entity, array(
+            'action' => $this->generateUrl('referenciasLaborales_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja6_1Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja6_1 entity.
+     * Displays a form to create a new referenciasLaborales entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja6_1();
+        $entity = new referenciasLaborales();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja6_1:new.html.twig', array(
+        return $this->render('EstudioBundle:referenciasLaborales:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja6_1 entity.
+     * Finds and displays a referenciasLaborales entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja6_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciasLaborales')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja6_1 entity.');
+            throw $this->createNotFoundException('Unable to find referenciasLaborales entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja6_1:show.html.twig', array(
+        return $this->render('EstudioBundle:referenciasLaborales:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja6_1 entity.
+     * Displays a form to edit an existing referenciasLaborales entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja6_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciasLaborales')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja6_1 entity.');
+            throw $this->createNotFoundException('Unable to find referenciasLaborales entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja6_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:referenciasLaborales:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja6_1Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja6_1 entity.
+    * Creates a form to edit a referenciasLaborales entity.
     *
-    * @param Hoja6_1 $entity The entity
+    * @param referenciasLaborales $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja6_1 $entity)
+    private function createEditForm(referenciasLaborales $entity)
     {
-        $form = $this->createForm(new Hoja6_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja6_1_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new referenciasLaboralesType(), $entity, array(
+            'action' => $this->generateUrl('referenciasLaborales_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja6_1 entity.
+     * Edits an existing referenciasLaborales entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja6_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:referenciasLaborales')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja6_1 entity.');
+            throw $this->createNotFoundException('Unable to find referenciasLaborales entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja6_1Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja6_1_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('referenciasLaborales_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja6_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:referenciasLaborales:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja6_1 entity.
+     * Deletes a referenciasLaborales entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja6_1Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja6_1')->find($id);
+            $entity = $em->getRepository('EstudioBundle:referenciasLaborales')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja6_1 entity.');
+                throw $this->createNotFoundException('Unable to find referenciasLaborales entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja6_1'));
+        return $this->redirect($this->generateUrl('referenciasLaborales'));
     }
 
     /**
-     * Creates a form to delete a Hoja6_1 entity by id.
+     * Creates a form to delete a referenciasLaborales entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja6_1Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja6_1_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('referenciasLaborales_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

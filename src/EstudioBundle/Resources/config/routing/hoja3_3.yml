@@ -1,30 +1,30 @@
-hoja3_3:
+marcoFamiliar:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja3_3:index" }
+    defaults: { _controller: "EstudioBundle:marcoFamiliar:index" }
 
-hoja3_3_show:
+marcoFamiliar_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja3_3:show" }
+    defaults: { _controller: "EstudioBundle:marcoFamiliar:show" }
 
-hoja3_3_new:
+marcoFamiliar_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja3_3:new" }
+    defaults: { _controller: "EstudioBundle:marcoFamiliar:new" }
 
-hoja3_3_create:
+marcoFamiliar_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja3_3:create" }
+    defaults: { _controller: "EstudioBundle:marcoFamiliar:create" }
     methods:  POST
 
-hoja3_3_edit:
+marcoFamiliar_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja3_3:edit" }
+    defaults: { _controller: "EstudioBundle:marcoFamiliar:edit" }
 
-hoja3_3_update:
+marcoFamiliar_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja3_3:update" }
+    defaults: { _controller: "EstudioBundle:marcoFamiliar:update" }
     methods:  [POST, PUT]
 
-hoja3_3_delete:
+marcoFamiliar_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja3_3:delete" }
+    defaults: { _controller: "EstudioBundle:marcoFamiliar:delete" }
     methods:  [POST, DELETE]

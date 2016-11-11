@@ -1,0 +1,83 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>saludHigiene list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Estadosalud</th>
+                <th>Hospitalizaciones</th>
+                <th>Razon</th>
+                <th>Incapazidadesultimoempleo</th>
+                <th>Razonincapacidad</th>
+                <th>Enfermedadcontagiosa</th>
+                <th>Cual</th>
+                <th>Enfermedadesultimoano</th>
+                <th>Problemasvision</th>
+                <th>Cualproblemavision</th>
+                <th>Hipertension</th>
+                <th>Serviciomedico</th>
+                <th>Estadosaludfamilia</th>
+                <th>Consumedroga</th>
+                <th>Frecuenciadroga</th>
+                <th>Consumecigarros</th>
+                <th>Frecuenciacigarros</th>
+                <th>Ejercicio</th>
+                <th>Cualejercicio</th>
+                <th>Frecuenciaejercicio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('saludHigiene_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.estadoSalud }}</td>
+                <td>{{ entity.hospitalizaciones }}</td>
+                <td>{{ entity.razon }}</td>
+                <td>{{ entity.incapazidadesUltimoEmpleo }}</td>
+                <td>{{ entity.razonIncapacidad }}</td>
+                <td>{{ entity.enfermedadContagiosa }}</td>
+                <td>{{ entity.cual }}</td>
+                <td>{{ entity.enfermedadesUltimoAno }}</td>
+                <td>{{ entity.problemasVision }}</td>
+                <td>{{ entity.cualProblemaVision }}</td>
+                <td>{{ entity.hipertension }}</td>
+                <td>{{ entity.servicioMedico }}</td>
+                <td>{{ entity.estadoSaludFamilia }}</td>
+                <td>{{ entity.consumeDroga }}</td>
+                <td>{{ entity.frecuenciaDroga }}</td>
+                <td>{{ entity.consumeCigarros }}</td>
+                <td>{{ entity.frecuenciaCigarros }}</td>
+                <td>{{ entity.ejercicio }}</td>
+                <td>{{ entity.cualEjercicio }}</td>
+                <td>{{ entity.frecuenciaEjercicio }}</td>
+                <td>
+                <a  href="{{ path('saludHigiene_show', { 'id': entity.id }) }}" class="table-link">
+	<span class="fa-stack">
+	<i class="fa fa-square fa-stack-2x"></i>
+	<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
+                    <a href="{{ path('saludHigiene_edit', { 'id': entity.id }) }}" class="table-link">
+	<span class="fa-stack">
+	<i class="fa fa-square fa-stack-2x"></i>
+	<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
+                    </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('saludHigiene_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

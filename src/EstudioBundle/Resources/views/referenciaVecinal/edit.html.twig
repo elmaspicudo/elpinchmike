@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>referenciaVecinal edit</h1>
+
+    {{ form(edit_form) }}
+
+        <a  href="{{ path('referenciaVecinal') }}">
+            Back to the list
+        </a>
+    </li>
+    {{ form(delete_form) }}
+{% endblock %}

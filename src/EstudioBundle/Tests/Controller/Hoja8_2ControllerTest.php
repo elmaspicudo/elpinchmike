@@ -13,13 +13,13 @@ class Hoja8_2ControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/hoja8_2/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /hoja8_2/");
+        $crawler = $client->request('GET', '/Hoja8_2/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /Hoja8_2/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'estudiobundle_hoja8_2[field_name]'  => 'Test',
+            'estudiobundle_Hoja8_2[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class Hoja8_2ControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'estudiobundle_hoja8_2[field_name]'  => 'Foo',
+            'estudiobundle_Hoja8_2[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

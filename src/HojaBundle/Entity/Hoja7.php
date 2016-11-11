@@ -16,10 +16,10 @@ class Hoja7
      * @var string
      */
     private $observaciones;
-    private $hoja7_1;
-    private $hoja7_2;
-    private $hoja7_3;
-    private $hoja7_4;
+    private $referenciaFamiliar;
+    private $referenciaVecinal;
+    private $saludHigiene;
+    private $pasatiempos;
 
 
     /**
@@ -59,94 +59,94 @@ class Hoja7
 
 
     /**
-     * Set hoja7_1
+     * Set referenciaFamiliar
      *
-     * @param string $hoja7_1
+     * @param string $referenciaFamiliar
      *
      * @return Hoja71     */
-    public function setHoja71($hoja7_1)
+    public function setHoja71($referenciaFamiliar)
     {
-        $this->hoja7_1 = $hoja7_1;
+        $this->referenciaFamiliar = $referenciaFamiliar;
 
         return $this;
     }
 
     /**
-     * Get hoja7_1
+     * Get referenciaFamiliar
      *
      * @return string
      */
     public function getHoja71()
     {
-        return $this->hoja7_1;
+        return $this->referenciaFamiliar;
     }
     /**
-     * Set hoja7_2
+     * Set referenciaVecinal
      *
-     * @param string $hoja7_2
+     * @param string $referenciaVecinal
      *
      * @return Hoja72     */
-    public function setHoja72($hoja7_2)
+    public function setHoja72($referenciaVecinal)
     {
-        $this->hoja7_2 = $hoja7_2;
+        $this->referenciaVecinal = $referenciaVecinal;
 
         return $this;
     }
 
     /**
-     * Get hoja7_2
+     * Get referenciaVecinal
      *
      * @return string
      */
     public function getHoja72()
     {
-        return $this->hoja7_2;
+        return $this->referenciaVecinal;
     }
 
     /**
-     * Set hoja7_3
+     * Set saludHigiene
      *
-     * @param string $hoja7_3
+     * @param string $saludHigiene
      *
      * @return Hoja73     */
-    public function setHoja73($hoja7_3)
+    public function setHoja73($saludHigiene)
     {
-        $this->hoja7_3 = $hoja7_3;
+        $this->saludHigiene = $saludHigiene;
 
         return $this;
     }
 
     /**
-     * Get hoja7_3
+     * Get saludHigiene
      *
      * @return string
      */
     public function getHoja73()
     {
-        return $this->hoja7_3;
+        return $this->saludHigiene;
     }
 
     /**
-     * Set hoja7_4
+     * Set pasatiempos
      *
-     * @param string $hoja7_4
+     * @param string $pasatiempos
      *
      * @return Hoja74     */
-    public function setHoja74($hoja7_4)
+    public function setHoja74($pasatiempos)
     {
-        $this->hoja7_4 = $hoja7_4;
+        $this->pasatiempos = $pasatiempos;
 
         return $this;
     }
 
     /**
-     * Get hoja7_4
+     * Get pasatiempos
      *
      * @return string
      */
     public function getHoja74()
     {
-        return $this->hoja7_4;
+        return $this->pasatiempos;
     }
     /**
      * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud

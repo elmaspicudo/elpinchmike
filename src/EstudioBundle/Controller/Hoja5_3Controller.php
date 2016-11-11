@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja5_3;
-use EstudioBundle\Form\Hoja5_3Type;
+use EstudioBundle\Entity\tarjetaCredito;
+use EstudioBundle\Form\tarjetaCreditoType;
 
 /**
- * Hoja5_3 controller.
+ * tarjetaCredito controller.
  *
  */
-class Hoja5_3Controller extends Controller
+class tarjetaCreditoController extends Controller
 {
 
     /**
-     * Lists all Hoja5_3 entities.
+     * Lists all tarjetaCredito entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja5_3')->findAll();
+        $entities = $em->getRepository('EstudioBundle:tarjetaCredito')->findAll();
 
-        return $this->render('EstudioBundle:Hoja5_3:index.html.twig', array(
+        return $this->render('EstudioBundle:tarjetaCredito:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja5_3 entity.
+     * Creates a new tarjetaCredito entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja5_3();
+        $entity = new tarjetaCredito();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja5_3Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_3_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('tarjetaCredito_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja5_3:new.html.twig', array(
+        return $this->render('EstudioBundle:tarjetaCredito:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja5_3 entity.
+     * Creates a form to create a tarjetaCredito entity.
      *
-     * @param Hoja5_3 $entity The entity
+     * @param tarjetaCredito $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja5_3 $entity)
+    private function createCreateForm(tarjetaCredito $entity)
     {
-        $form = $this->createForm(new Hoja5_3Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_3_create'),
+        $form = $this->createForm(new tarjetaCreditoType(), $entity, array(
+            'action' => $this->generateUrl('tarjetaCredito_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja5_3Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja5_3 entity.
+     * Displays a form to create a new tarjetaCredito entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja5_3();
+        $entity = new tarjetaCredito();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja5_3:new.html.twig', array(
+        return $this->render('EstudioBundle:tarjetaCredito:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja5_3 entity.
+     * Finds and displays a tarjetaCredito entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:tarjetaCredito')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_3 entity.');
+            throw $this->createNotFoundException('Unable to find tarjetaCredito entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_3:show.html.twig', array(
+        return $this->render('EstudioBundle:tarjetaCredito:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja5_3 entity.
+     * Displays a form to edit an existing tarjetaCredito entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:tarjetaCredito')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_3 entity.');
+            throw $this->createNotFoundException('Unable to find tarjetaCredito entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_3:edit.html.twig', array(
+        return $this->render('EstudioBundle:tarjetaCredito:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja5_3Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja5_3 entity.
+    * Creates a form to edit a tarjetaCredito entity.
     *
-    * @param Hoja5_3 $entity The entity
+    * @param tarjetaCredito $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja5_3 $entity)
+    private function createEditForm(tarjetaCredito $entity)
     {
-        $form = $this->createForm(new Hoja5_3Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_3_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new tarjetaCreditoType(), $entity, array(
+            'action' => $this->generateUrl('tarjetaCredito_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja5_3 entity.
+     * Edits an existing tarjetaCredito entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:tarjetaCredito')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_3 entity.');
+            throw $this->createNotFoundException('Unable to find tarjetaCredito entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja5_3Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_3_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('tarjetaCredito_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja5_3:edit.html.twig', array(
+        return $this->render('EstudioBundle:tarjetaCredito:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja5_3 entity.
+     * Deletes a tarjetaCredito entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja5_3Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja5_3')->find($id);
+            $entity = $em->getRepository('EstudioBundle:tarjetaCredito')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja5_3 entity.');
+                throw $this->createNotFoundException('Unable to find tarjetaCredito entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja5_3'));
+        return $this->redirect($this->generateUrl('tarjetaCredito'));
     }
 
     /**
-     * Creates a form to delete a Hoja5_3 entity by id.
+     * Creates a form to delete a tarjetaCredito entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja5_3Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja5_3_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('tarjetaCredito_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

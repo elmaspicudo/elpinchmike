@@ -44,7 +44,7 @@ class Hoja8_2Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja8_2_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('Hoja8_2_show', array('id' => $entity->getId())));
         }
 
         return $this->render('EstudioBundle:Hoja8_2:new.html.twig', array(
@@ -63,7 +63,7 @@ class Hoja8_2Controller extends Controller
     private function createCreateForm(Hoja8_2 $entity)
     {
         $form = $this->createForm(new Hoja8_2Type(), $entity, array(
-            'action' => $this->generateUrl('hoja8_2_create'),
+            'action' => $this->generateUrl('Hoja8_2_create'),
             'method' => 'POST',
         ));
 
@@ -143,11 +143,11 @@ class Hoja8_2Controller extends Controller
     private function createEditForm(Hoja8_2 $entity)
     {
         $form = $this->createForm(new Hoja8_2Type(), $entity, array(
-            'action' => $this->generateUrl('hoja8_2_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('Hoja8_2_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
@@ -172,7 +172,7 @@ class Hoja8_2Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja8_2_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('Hoja8_2_edit', array('id' => $id)));
         }
 
         return $this->render('EstudioBundle:Hoja8_2:edit.html.twig', array(
@@ -202,7 +202,7 @@ class Hoja8_2Controller extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja8_2'));
+        return $this->redirect($this->generateUrl('Hoja8_2'));
     }
 
     /**
@@ -215,7 +215,7 @@ class Hoja8_2Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja8_2_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('Hoja8_2_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

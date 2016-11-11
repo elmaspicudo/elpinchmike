@@ -1,30 +1,30 @@
-hoja5_7:
+otrosServicios:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja5_7:index" }
+    defaults: { _controller: "EstudioBundle:otrosServicios:index" }
 
-hoja5_7_show:
+otrosServicios_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja5_7:show" }
+    defaults: { _controller: "EstudioBundle:otrosServicios:show" }
 
-hoja5_7_new:
+otrosServicios_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja5_7:new" }
+    defaults: { _controller: "EstudioBundle:otrosServicios:new" }
 
-hoja5_7_create:
+otrosServicios_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja5_7:create" }
+    defaults: { _controller: "EstudioBundle:otrosServicios:create" }
     methods:  POST
 
-hoja5_7_edit:
+otrosServicios_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja5_7:edit" }
+    defaults: { _controller: "EstudioBundle:otrosServicios:edit" }
 
-hoja5_7_update:
+otrosServicios_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja5_7:update" }
+    defaults: { _controller: "EstudioBundle:otrosServicios:update" }
     methods:  [POST, PUT]
 
-hoja5_7_delete:
+otrosServicios_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja5_7:delete" }
+    defaults: { _controller: "EstudioBundle:otrosServicios:delete" }
     methods:  [POST, DELETE]

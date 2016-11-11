@@ -4,7 +4,7 @@ namespace EstudioBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class Hoja5_2ControllerTest extends WebTestCase
+class egresosControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class Hoja5_2ControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/hoja5_2/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /hoja5_2/");
+        $crawler = $client->request('GET', '/egresos/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /egresos/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'estudiobundle_hoja5_2[field_name]'  => 'Test',
+            'estudiobundle_egresos[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class Hoja5_2ControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'estudiobundle_hoja5_2[field_name]'  => 'Foo',
+            'estudiobundle_egresos[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

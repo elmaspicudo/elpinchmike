@@ -12,7 +12,7 @@ class Hoja8
      */
     private $id;
     private $hoja8_1;
-    private $hoja8_2;
+    private $Hoja8_2;
 
 
     /**
@@ -40,26 +40,26 @@ class Hoja8
 
 
     /**
-     * Set hoja8_2
+     * Set Hoja8_2
      *
-     * @param string $hoja8_2
+     * @param string $Hoja8_2
      *
      * @return Hoja82     */
-    public function setHoja82($hoja8_2)
+    public function setHoja82($Hoja8_2)
     {
-        $this->hoja8_2 = $hoja8_2;
+        $this->Hoja8_2 = $Hoja8_2;
 
         return $this;
     }
 
     /**
-     * Get hoja8_2
+     * Get Hoja8_2
      *
      * @return string
      */
     public function getHoja82()
     {
-        return $this->hoja8_2;
+        return $this->Hoja8_2;
     }
 
 

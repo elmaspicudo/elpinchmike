@@ -1,30 +1,30 @@
-hoja7_3:
+saludHigiene:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja7_3:index" }
+    defaults: { _controller: "EstudioBundle:saludHigiene:index" }
 
-hoja7_3_show:
+saludHigiene_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja7_3:show" }
+    defaults: { _controller: "EstudioBundle:saludHigiene:show" }
 
-hoja7_3_new:
+saludHigiene_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja7_3:new" }
+    defaults: { _controller: "EstudioBundle:saludHigiene:new" }
 
-hoja7_3_create:
+saludHigiene_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja7_3:create" }
+    defaults: { _controller: "EstudioBundle:saludHigiene:create" }
     methods:  POST
 
-hoja7_3_edit:
+saludHigiene_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja7_3:edit" }
+    defaults: { _controller: "EstudioBundle:saludHigiene:edit" }
 
-hoja7_3_update:
+saludHigiene_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja7_3:update" }
+    defaults: { _controller: "EstudioBundle:saludHigiene:update" }
     methods:  [POST, PUT]
 
-hoja7_3_delete:
+saludHigiene_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja7_3:delete" }
+    defaults: { _controller: "EstudioBundle:saludHigiene:delete" }
     methods:  [POST, DELETE]

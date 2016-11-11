@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja7_4;
-use EstudioBundle\Form\Hoja7_4Type;
+use EstudioBundle\Entity\pasatiempos;
+use EstudioBundle\Form\pasatiemposType;
 
 /**
- * Hoja7_4 controller.
+ * pasatiempos controller.
  *
  */
-class Hoja7_4Controller extends Controller
+class pasatiemposController extends Controller
 {
 
     /**
-     * Lists all Hoja7_4 entities.
+     * Lists all pasatiempos entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja7_4')->findAll();
+        $entities = $em->getRepository('EstudioBundle:pasatiempos')->findAll();
 
-        return $this->render('EstudioBundle:Hoja7_4:index.html.twig', array(
+        return $this->render('EstudioBundle:pasatiempos:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja7_4 entity.
+     * Creates a new pasatiempos entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja7_4();
+        $entity = new pasatiempos();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja7_4Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_4_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('pasatiempos_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja7_4:new.html.twig', array(
+        return $this->render('EstudioBundle:pasatiempos:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja7_4 entity.
+     * Creates a form to create a pasatiempos entity.
      *
-     * @param Hoja7_4 $entity The entity
+     * @param pasatiempos $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja7_4 $entity)
+    private function createCreateForm(pasatiempos $entity)
     {
-        $form = $this->createForm(new Hoja7_4Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_4_create'),
+        $form = $this->createForm(new pasatiemposType(), $entity, array(
+            'action' => $this->generateUrl('pasatiempos_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja7_4Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja7_4 entity.
+     * Displays a form to create a new pasatiempos entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja7_4();
+        $entity = new pasatiempos();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja7_4:new.html.twig', array(
+        return $this->render('EstudioBundle:pasatiempos:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja7_4 entity.
+     * Finds and displays a pasatiempos entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:pasatiempos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_4 entity.');
+            throw $this->createNotFoundException('Unable to find pasatiempos entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_4:show.html.twig', array(
+        return $this->render('EstudioBundle:pasatiempos:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja7_4 entity.
+     * Displays a form to edit an existing pasatiempos entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:pasatiempos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_4 entity.');
+            throw $this->createNotFoundException('Unable to find pasatiempos entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_4:edit.html.twig', array(
+        return $this->render('EstudioBundle:pasatiempos:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja7_4Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja7_4 entity.
+    * Creates a form to edit a pasatiempos entity.
     *
-    * @param Hoja7_4 $entity The entity
+    * @param pasatiempos $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja7_4 $entity)
+    private function createEditForm(pasatiempos $entity)
     {
-        $form = $this->createForm(new Hoja7_4Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_4_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new pasatiemposType(), $entity, array(
+            'action' => $this->generateUrl('pasatiempos_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja7_4 entity.
+     * Edits an existing pasatiempos entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:pasatiempos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_4 entity.');
+            throw $this->createNotFoundException('Unable to find pasatiempos entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja7_4Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_4_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('pasatiempos_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja7_4:edit.html.twig', array(
+        return $this->render('EstudioBundle:pasatiempos:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja7_4 entity.
+     * Deletes a pasatiempos entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja7_4Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja7_4')->find($id);
+            $entity = $em->getRepository('EstudioBundle:pasatiempos')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja7_4 entity.');
+                throw $this->createNotFoundException('Unable to find pasatiempos entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja7_4'));
+        return $this->redirect($this->generateUrl('pasatiempos'));
     }
 
     /**
-     * Creates a form to delete a Hoja7_4 entity by id.
+     * Creates a form to delete a pasatiempos entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja7_4Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja7_4_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('pasatiempos_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

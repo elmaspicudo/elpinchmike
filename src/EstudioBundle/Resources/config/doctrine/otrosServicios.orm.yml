@@ -1,0 +1,38 @@
+EstudioBundle\Entity\otrosServicios:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cablemas:
+            type: string
+            length: '50'
+        mastv:
+            type: string
+            length: '50'
+        antenaParabolica:
+            type: string
+            length: '50'
+        sky:
+            type: string
+            length: '50'
+        otros:
+            type: string
+            length: '50'
+        domestico:
+            type: string
+            length: '50'
+        jardinero:
+            type: string
+            length: '50'
+        chofer:
+            type: string
+            length: '50'
+        vigilancia:
+            type: string
+            length: '50'
+    lifecycleCallbacks: {  }

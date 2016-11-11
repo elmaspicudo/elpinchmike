@@ -1,30 +1,30 @@
-hoja6_1:
+referenciasLaborales:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja6_1:index" }
+    defaults: { _controller: "EstudioBundle:referenciasLaborales:index" }
 
-hoja6_1_show:
+referenciasLaborales_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja6_1:show" }
+    defaults: { _controller: "EstudioBundle:referenciasLaborales:show" }
 
-hoja6_1_new:
+referenciasLaborales_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja6_1:new" }
+    defaults: { _controller: "EstudioBundle:referenciasLaborales:new" }
 
-hoja6_1_create:
+referenciasLaborales_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja6_1:create" }
+    defaults: { _controller: "EstudioBundle:referenciasLaborales:create" }
     methods:  POST
 
-hoja6_1_edit:
+referenciasLaborales_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja6_1:edit" }
+    defaults: { _controller: "EstudioBundle:referenciasLaborales:edit" }
 
-hoja6_1_update:
+referenciasLaborales_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja6_1:update" }
+    defaults: { _controller: "EstudioBundle:referenciasLaborales:update" }
     methods:  [POST, PUT]
 
-hoja6_1_delete:
+referenciasLaborales_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja6_1:delete" }
+    defaults: { _controller: "EstudioBundle:referenciasLaborales:delete" }
     methods:  [POST, DELETE]

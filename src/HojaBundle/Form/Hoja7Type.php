@@ -15,44 +15,44 @@ class Hoja7Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hoja7_1','collection',array(
-                    'type' =>  new \EstudioBundle\Form\Hoja7_1Type(),
+            ->add('referenciaFamiliar','collection',array(
+                    'type' =>  new \EstudioBundle\Form\referenciaFamiliarType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja7_1')
+                        'attr'      => array('class' => 'referenciaFamiliar')
                 )))
 
-            ->add('hoja7_2','collection',array(
-                    'type' =>  new \EstudioBundle\Form\Hoja7_2Type(),
+            ->add('referenciaVecinal','collection',array(
+                    'type' =>  new \EstudioBundle\Form\referenciaVecinalType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja7_2')
+                        'attr'      => array('class' => 'referenciaVecinal')
                 )))
 
-            ->add('hoja7_3','collection',array(
-                    'type' =>  new \EstudioBundle\Form\Hoja7_3Type(),
+            ->add('saludHigiene','collection',array(
+                    'type' =>  new \EstudioBundle\Form\saludHigieneType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja7_3')
+                        'attr'      => array('class' => 'saludHigiene')
                 )))
 
-            ->add('hoja7_4','collection',array(
-                    'type' =>  new \EstudioBundle\Form\Hoja7_4Type(),
+            ->add('pasatiempos','collection',array(
+                    'type' =>  new \EstudioBundle\Form\pasatiemposType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja7_4')
+                        'attr'      => array('class' => 'pasatiempos')
                 )))
             ->add('observaciones')
             ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))

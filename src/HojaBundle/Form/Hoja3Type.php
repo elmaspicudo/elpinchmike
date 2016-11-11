@@ -1,56 +1,55 @@
-<?php
+ <?php
 
 namespace HojaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use EstudioBundle\Form\Hoja3_1Type;
-use EstudioBundle\Form\Hoja3_2Type;
-use EstudioBundle\Form\Hoja3_3Type;
-use EstudioBundle\Form\Hoja3_4Type;
-class Hoja3Type extends AbstractType
+use EstudioBundle\Form\DependientesEconomicosType;
+use EstudioBundle\Form\personasDomicilioType;
+use EstudioBundle\Form\marcoFamiliarType;
+class MarcoFamiliarType extends AbstractType
 {
 
      public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
 
-            ->add('hoja3_1', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\Hoja3_1Type(),
+            ->add('DependientesEconomicos', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\DependientesEconomicosType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja3_1')
+                        'attr'      => array('class' => 'DependientesEconomicos')
                 )))
-             ->add('hoja3_2', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\Hoja3_2Type(),
+             ->add('personasDomicilio', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\personasDomicilioType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja3_2')
+                        'attr'      => array('class' => 'personasDomicilio')
                 )))
-             ->add('hoja3_3', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\Hoja3_3Type(),
+             ->add('personasDomicilio', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\marcoFamiliarType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja3_3')
+                        'attr'      => array('class' => 'marcoFamiliar')
                 )))
-             ->add('hoja3_4', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\Hoja3_4Type(),
+             ->add('DependientesEconomicos', 'collection',array(
+                    'type' =>new \EstudioBundle\Form\marcoFamiliarType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja3_4')
+                        'attr'      => array('class' => 'MarcoFamiliar_4')
                 )))
             ->add('observaciones')
             ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))
@@ -66,7 +65,7 @@ class Hoja3Type extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'HojaBundle\Entity\Hoja3'
+            'data_class' => 'HojaBundle\Entity\MarcoFamiliar'
         ));
     }
 
@@ -75,6 +74,6 @@ class Hoja3Type extends AbstractType
      */
     public function getName()
     {
-        return 'hojabundle_hoja3';
+        return 'hojabundle_MarcoFamiliar';
     }
 }

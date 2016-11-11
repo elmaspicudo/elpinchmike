@@ -15,14 +15,14 @@ class Hoja6Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('hoja6_1','collection',array(
-                    'type' => new \EstudioBundle\Form\Hoja6_1Type(),
+            ->add('referenciasLaborales','collection',array(
+                    'type' => new \EstudioBundle\Form\referenciasLaboralesType(),
                     'allow_add' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'hoja6_1')
+                        'attr'      => array('class' => 'referenciasLaborales')
                 )))
             ->add('observaciones')
             ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))

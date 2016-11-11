@@ -1,59 +1,69 @@
 {% extends '::base.html.twig' %}
+{% block placeholder -%}
+<div class="row">
+    <div class="col-lg-12">
+        
+        <div class="clearfix">
+            <h1 class="pull-left">Agregar cliente</h1>
+           
+        </div>
+    </div>
+</div>
+{% endblock -%}
 {% block body -%}
-<style>
-  .btn-primary{
-    width: 200px!important;
-}
-</style>
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
 <h1 class="text-center"><strong>Marco Familiar </strong></h1>
 
 {{ form_start(form) }}
 <div class="col-md-12 main-box no-header clearfix">
 
     <h4 class="col-md-12">ESPOSA (Y/O) HIJOS</h4>    
-    <ul  id="hoja3_2" data-prototype="{{ form_widget(form.hoja3_2.vars.prototype) | e }}">
-        {% for hoja32 in form.hoja3_2 %}
+    <ul  id="personasDomicilio" data-prototype="{{ form_widget(form.personasDomicilio.vars.prototype) | e }}">
+        {% for MarcoFamiliar2 in form.personasDomicilio %}
         <div class="col-md-12">
-            {{ form_errors(hoja32) }}
-            {{ form_widget(hoja32) }}
+            {{ form_errors(MarcoFamiliar2) }}
+            {{ form_widget(MarcoFamiliar2) }}
         </div> 
         {% endfor %}
     </ul>    
-    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja32">Agregar Hijos</a>
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-MarcoFamiliar2">Agregar Hijos</a>
 
     <h4 class="col-md-12">PERSONAS QUE VIVEN EN EL DOMICILIO</h4>
-    <ul  id="hoja3_3" data-prototype="{{ form_widget(form.hoja3_3.vars.prototype) | e }}">
-        {% for hoja33 in form.hoja3_3 %}
+    <ul  id="marcoFamiliar" data-prototype="{{ form_widget(form.marcoFamiliar.vars.prototype) | e }}">
+        {% for MarcoFamiliar3 in form.marcoFamiliar %}
         <div class="col-md-12">
-            {{ form_errors(hoja33) }}
-            {{ form_widget(hoja33) }}
+            {{ form_errors(MarcoFamiliar3) }}
+            {{ form_widget(MarcoFamiliar3) }}
         </div> 
         {% endfor %}
     </ul>    
-    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja33">Agregar Personas</a>
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-MarcoFamiliar3">Agregar Personas</a>
 
     <h4 class="col-md-12">DEPENDIENTES ECONOMICOS </h4>
-    <ul  id="hoja3_4" data-prototype="{{ form_widget(form.hoja3_4.vars.prototype) | e }}">
-        {% for hoja34 in form.hoja3_4 %}
+    <ul  id="MarcoFamiliar_4" data-prototype="{{ form_widget(form.MarcoFamiliar_4.vars.prototype) | e }}">
+        {% for MarcoFamiliar4 in form.MarcoFamiliar_4 %}
         <div class="col-md-12">
-            {{ form_errors(hoja34) }}
-            {{ form_widget(hoja34) }}
+            {{ form_errors(MarcoFamiliar4) }}
+            {{ form_widget(MarcoFamiliar4) }}
         </div> 
         {% endfor %}
     </ul> 
-    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja34">Agregar Dependientes</a>
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-MarcoFamiliar4">Agregar Dependientes</a>
 
     <h4 class="col-md-12">PADRES Y HERMANOS </h4>
-    <ul  id="hoja3_1" data-prototype="{{ form_widget(form.hoja3_1.vars.prototype) | e }}">
-        {% for hoja3 in form.hoja3_1 %}
+    <ul  id="DependientesEconomicos" data-prototype="{{ form_widget(form.DependientesEconomicos.vars.prototype) | e }}">
+        {% for MarcoFamiliar in form.DependientesEconomicos %}
         <div class="col-md-12">
-            {{ form_errors(hoja3) }}
-            {{ form_widget(hoja3) }}
+            {{ form_errors(MarcoFamiliar) }}
+            {{ form_widget(MarcoFamiliar) }}
         </div> 
         {% endfor %}
     </ul>    
 
-    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja3">Agregar Padres/Hermanos</a>
+    <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-MarcoFamiliar">Agregar Padres/Hermanos</a>
 
     <div class="col-md-12" form-group ="">
       <div class="input-group">
@@ -65,17 +75,10 @@
     <span class="help-block"><i class="icon-remove-sign"></i></span>
 </div>
 </div>
-
-
 {{ form_end(form) }}
-<!-- BOTONES ANTERIOR, SIGUIENTE -->
-<a href="{{path('hoja4')}}" class="btn btn-primary pull-right">
-    <i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
-</a>
-<a href="{{path('hoja2')}}" class="btn btn-primary pull-left">
-    <i class="fa fa-arrow-circle-right  fa-lg"></i> Anterior
-</a>
-
+ </div>
+</div>
+</div>
 {% endblock %}
 {% block js %}
 <script type="text/javascript">
@@ -84,14 +87,14 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
 $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(5)').hide()
 $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > div:nth-child(6)').hide()
     // realiza un seguimiento de cuántos campos de correo electrónico se han pintado
-    var emailCount = '{{ form.hoja3_1 | length }}';
-    var emailCount2 = '{{ form.hoja3_2 | length }}';
-    var emailCount3 = '{{ form.hoja3_3 | length }}';
-    var emailCount4 = '{{ form.hoja3_4 | length }}';
+    var emailCount = '{{ form.DependientesEconomicos | length }}';
+    var emailCount2 = '{{ form.personasDomicilio | length }}';
+    var emailCount3 = '{{ form.marcoFamiliar | length }}';
+    var emailCount4 = '{{ form.MarcoFamiliar_4 | length }}';
 
     jQuery(document).ready(function() {
-        jQuery('#add-hoja3').click(function() {
-            var emailList = jQuery('#hoja3_1');
+        jQuery('#add-MarcoFamiliar').click(function() {
+            var emailList = jQuery('#DependientesEconomicos');
 
             // graba la plantilla prototipo
             var newWidget = emailList.attr('data-prototype');
@@ -102,12 +105,12 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             emailCount++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi = jQuery('<div class="row"></div>').html(newWidget);
-            newLi.appendTo(jQuery('#hoja3_1'));
+            newLi.appendTo(jQuery('#DependientesEconomicos'));
 
             return false;
         });
-        jQuery('#add-hoja32').click(function() {
-            var emailList1 = jQuery('#hoja3_2');
+        jQuery('#add-MarcoFamiliar2').click(function() {
+            var emailList1 = jQuery('#personasDomicilio');
 
             // graba la plantilla prototipo
             var newWidget1 = emailList1.attr('data-prototype');
@@ -118,14 +121,14 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             emailCount2++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi1 = jQuery('<div class="row"></div>').html(newWidget1);
-            newLi1.appendTo(jQuery('#hoja3_2'));
+            newLi1.appendTo(jQuery('#personasDomicilio'));
 
             return false;
         });
 
 
-        jQuery('#add-hoja33').click(function() {
-            var emailList2 = jQuery('#hoja3_3');
+        jQuery('#add-MarcoFamiliar3').click(function() {
+            var emailList2 = jQuery('#marcoFamiliar');
 
             // graba la plantilla prototipo
             var newWidget2 = emailList2.attr('data-prototype');
@@ -136,13 +139,13 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             emailCount3++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi2 = jQuery('<div class="row"></div>').html(newWidget2);
-            newLi2.appendTo(jQuery('#hoja3_3'));
+            newLi2.appendTo(jQuery('#marcoFamiliar'));
 
             return false;
         });
 
-        jQuery('#add-hoja34').click(function() {
-            var emailList3 = jQuery('#hoja3_4');
+        jQuery('#add-MarcoFamiliar4').click(function() {
+            var emailList3 = jQuery('#MarcoFamiliar_4');
 
             // graba la plantilla prototipo
             var newWidget3 = emailList3.attr('data-prototype');
@@ -153,7 +156,7 @@ $('#content-wrapper > div:nth-child(1) > div:nth-child(1) > form:nth-child(4) > 
             emailCount4++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi3 = jQuery('<div class="row"></div>').html(newWidget3);
-            newLi3.appendTo(jQuery('#hoja3_4'));
+            newLi3.appendTo(jQuery('#MarcoFamiliar_4'));
 
             return false;
         });

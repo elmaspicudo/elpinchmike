@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>pasatiempos creation</h1>
+
+    {{ form(form) }}
+
+        <a  href="{{ path('pasatiempos') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

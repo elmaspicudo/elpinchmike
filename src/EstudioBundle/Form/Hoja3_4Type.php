@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class Hoja3_4Type extends AbstractType
+class MarcoFamiliarType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -31,7 +31,7 @@ class Hoja3_4Type extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'EstudioBundle\Entity\Hoja3_4'
+            'data_class' => 'EstudioBundle\Entity\MarcoFamiliar_4'
         ));
     }
 
@@ -40,6 +40,6 @@ class Hoja3_4Type extends AbstractType
      */
     public function getName()
     {
-        return 'estudiobundle_hoja3_4';
+        return 'estudiobundle_MarcoFamiliar_4';
     }
 }

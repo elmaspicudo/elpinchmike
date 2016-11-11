@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja5_4;
-use EstudioBundle\Form\Hoja5_4Type;
+use EstudioBundle\Entity\creditosPersonales;
+use EstudioBundle\Form\creditosPersonalesType;
 
 /**
- * Hoja5_4 controller.
+ * creditosPersonales controller.
  *
  */
-class Hoja5_4Controller extends Controller
+class creditosPersonalesController extends Controller
 {
 
     /**
-     * Lists all Hoja5_4 entities.
+     * Lists all creditosPersonales entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja5_4')->findAll();
+        $entities = $em->getRepository('EstudioBundle:creditosPersonales')->findAll();
 
-        return $this->render('EstudioBundle:Hoja5_4:index.html.twig', array(
+        return $this->render('EstudioBundle:creditosPersonales:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja5_4 entity.
+     * Creates a new creditosPersonales entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja5_4();
+        $entity = new creditosPersonales();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja5_4Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_4_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('creditosPersonales_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja5_4:new.html.twig', array(
+        return $this->render('EstudioBundle:creditosPersonales:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja5_4 entity.
+     * Creates a form to create a creditosPersonales entity.
      *
-     * @param Hoja5_4 $entity The entity
+     * @param creditosPersonales $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja5_4 $entity)
+    private function createCreateForm(creditosPersonales $entity)
     {
-        $form = $this->createForm(new Hoja5_4Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_4_create'),
+        $form = $this->createForm(new creditosPersonalesType(), $entity, array(
+            'action' => $this->generateUrl('creditosPersonales_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja5_4Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja5_4 entity.
+     * Displays a form to create a new creditosPersonales entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja5_4();
+        $entity = new creditosPersonales();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja5_4:new.html.twig', array(
+        return $this->render('EstudioBundle:creditosPersonales:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja5_4 entity.
+     * Finds and displays a creditosPersonales entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:creditosPersonales')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_4 entity.');
+            throw $this->createNotFoundException('Unable to find creditosPersonales entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_4:show.html.twig', array(
+        return $this->render('EstudioBundle:creditosPersonales:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja5_4 entity.
+     * Displays a form to edit an existing creditosPersonales entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:creditosPersonales')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_4 entity.');
+            throw $this->createNotFoundException('Unable to find creditosPersonales entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja5_4:edit.html.twig', array(
+        return $this->render('EstudioBundle:creditosPersonales:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja5_4Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja5_4 entity.
+    * Creates a form to edit a creditosPersonales entity.
     *
-    * @param Hoja5_4 $entity The entity
+    * @param creditosPersonales $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja5_4 $entity)
+    private function createEditForm(creditosPersonales $entity)
     {
-        $form = $this->createForm(new Hoja5_4Type(), $entity, array(
-            'action' => $this->generateUrl('hoja5_4_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new creditosPersonalesType(), $entity, array(
+            'action' => $this->generateUrl('creditosPersonales_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja5_4 entity.
+     * Edits an existing creditosPersonales entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja5_4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:creditosPersonales')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja5_4 entity.');
+            throw $this->createNotFoundException('Unable to find creditosPersonales entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja5_4Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja5_4_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('creditosPersonales_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja5_4:edit.html.twig', array(
+        return $this->render('EstudioBundle:creditosPersonales:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja5_4 entity.
+     * Deletes a creditosPersonales entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja5_4Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja5_4')->find($id);
+            $entity = $em->getRepository('EstudioBundle:creditosPersonales')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja5_4 entity.');
+                throw $this->createNotFoundException('Unable to find creditosPersonales entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja5_4'));
+        return $this->redirect($this->generateUrl('creditosPersonales'));
     }
 
     /**
-     * Creates a form to delete a Hoja5_4 entity by id.
+     * Creates a form to delete a creditosPersonales entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja5_4Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja5_4_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('creditosPersonales_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

@@ -1,0 +1,154 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>referenciasLaborales</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Empresa</th>
+                <td>{{ entity.empresa }}</td>
+            </tr>
+            <tr>
+                <th>Giro</th>
+                <td>{{ entity.giro }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Domicilio</th>
+                <td>{{ entity.domicilio }}</td>
+            </tr>
+            <tr>
+                <th>Ciudad</th>
+                <td>{{ entity.ciudad }}</td>
+            </tr>
+            <tr>
+                <th>Fechaingreso</th>
+                <td>{{ entity.fechaIngreso|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Fechasalida</th>
+                <td>{{ entity.fechasalida|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Puestoinicial</th>
+                <td>{{ entity.puestoInicial }}</td>
+            </tr>
+            <tr>
+                <th>Puestofinal</th>
+                <td>{{ entity.puestoFinal }}</td>
+            </tr>
+            <tr>
+                <th>Sueldoinicial</th>
+                <td>{{ entity.sueldoInicial }}</td>
+            </tr>
+            <tr>
+                <th>Sueldofinal</th>
+                <td>{{ entity.sueldoFinal }}</td>
+            </tr>
+            <tr>
+                <th>Jefeinmediato</th>
+                <td>{{ entity.jefeInmediato }}</td>
+            </tr>
+            <tr>
+                <th>Puesto</th>
+                <td>{{ entity.puesto }}</td>
+            </tr>
+            <tr>
+                <th>Asistencia</th>
+                <td>{{ entity.asistencia }}</td>
+            </tr>
+            <tr>
+                <th>Responsabilidad</th>
+                <td>{{ entity.responsabilidad }}</td>
+            </tr>
+            <tr>
+                <th>Colaboracion</th>
+                <td>{{ entity.colaboracion }}</td>
+            </tr>
+            <tr>
+                <th>Calidadtrabajo</th>
+                <td>{{ entity.calidadTrabajo }}</td>
+            </tr>
+            <tr>
+                <th>Actitudgeneral</th>
+                <td>{{ entity.actitudGeneral }}</td>
+            </tr>
+            <tr>
+                <th>Tomadesiciones</th>
+                <td>{{ entity.tomaDesiciones }}</td>
+            </tr>
+            <tr>
+                <th>Iniciativa</th>
+                <td>{{ entity.iniciativa }}</td>
+            </tr>
+            <tr>
+                <th>Honestidad</th>
+                <td>{{ entity.honestidad }}</td>
+            </tr>
+            <tr>
+                <th>Relacionjefes</th>
+                <td>{{ entity.relacionJefes }}</td>
+            </tr>
+            <tr>
+                <th>Relacioncompaneros</th>
+                <td>{{ entity.relacionCompaneros }}</td>
+            </tr>
+            <tr>
+                <th>Pertenecesindicato</th>
+                <td>{{ entity.perteneceSindicato }}</td>
+            </tr>
+            <tr>
+                <th>Cual</th>
+                <td>{{ entity.cual }}</td>
+            </tr>
+            <tr>
+                <th>Cargosindical</th>
+                <td>{{ entity.cargoSindical }}</td>
+            </tr>
+            <tr>
+                <th>Participacion</th>
+                <td>{{ entity.participacion }}</td>
+            </tr>
+            <tr>
+                <th>Problemalaboral</th>
+                <td>{{ entity.problemaLaboral }}</td>
+            </tr>
+            <tr>
+                <th>Motivoseparacion</th>
+                <td>{{ entity.motivoSeparacion }}</td>
+            </tr>
+            <tr>
+                <th>Personarecomendable</th>
+                <td>{{ entity.personaRecomendable }}</td>
+            </tr>
+            <tr>
+                <th>Porque</th>
+                <td>{{ entity.porque }}</td>
+            </tr>
+            <tr>
+                <th>Datosproporcionados</th>
+                <td>{{ entity.datosProporcionados }}</td>
+            </tr>
+            <tr>
+                <th>Puestoentrevistador</th>
+                <td>{{ entity.puestoEntrevistador }}</td>
+            </tr>
+            <tr>
+                <th>Fechaentravista</th>
+                <td>{{ entity.fechaEntravista|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <a  href="{{ path('referenciasLaborales') }}" class="btn btn-warning">Regresar</a>
+        <a href="{{ path('referenciasLaborales_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
+    {{ form(delete_form) }}
+{% endblock %}

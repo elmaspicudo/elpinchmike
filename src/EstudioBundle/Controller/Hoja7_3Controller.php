@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja7_3;
-use EstudioBundle\Form\Hoja7_3Type;
+use EstudioBundle\Entity\saludHigiene;
+use EstudioBundle\Form\saludHigieneType;
 
 /**
- * Hoja7_3 controller.
+ * saludHigiene controller.
  *
  */
-class Hoja7_3Controller extends Controller
+class saludHigieneController extends Controller
 {
 
     /**
-     * Lists all Hoja7_3 entities.
+     * Lists all saludHigiene entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja7_3')->findAll();
+        $entities = $em->getRepository('EstudioBundle:saludHigiene')->findAll();
 
-        return $this->render('EstudioBundle:Hoja7_3:index.html.twig', array(
+        return $this->render('EstudioBundle:saludHigiene:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja7_3 entity.
+     * Creates a new saludHigiene entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja7_3();
+        $entity = new saludHigiene();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja7_3Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_3_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('saludHigiene_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja7_3:new.html.twig', array(
+        return $this->render('EstudioBundle:saludHigiene:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja7_3 entity.
+     * Creates a form to create a saludHigiene entity.
      *
-     * @param Hoja7_3 $entity The entity
+     * @param saludHigiene $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja7_3 $entity)
+    private function createCreateForm(saludHigiene $entity)
     {
-        $form = $this->createForm(new Hoja7_3Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_3_create'),
+        $form = $this->createForm(new saludHigieneType(), $entity, array(
+            'action' => $this->generateUrl('saludHigiene_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja7_3Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja7_3 entity.
+     * Displays a form to create a new saludHigiene entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja7_3();
+        $entity = new saludHigiene();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja7_3:new.html.twig', array(
+        return $this->render('EstudioBundle:saludHigiene:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja7_3 entity.
+     * Finds and displays a saludHigiene entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:saludHigiene')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_3 entity.');
+            throw $this->createNotFoundException('Unable to find saludHigiene entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_3:show.html.twig', array(
+        return $this->render('EstudioBundle:saludHigiene:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja7_3 entity.
+     * Displays a form to edit an existing saludHigiene entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:saludHigiene')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_3 entity.');
+            throw $this->createNotFoundException('Unable to find saludHigiene entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja7_3:edit.html.twig', array(
+        return $this->render('EstudioBundle:saludHigiene:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja7_3Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja7_3 entity.
+    * Creates a form to edit a saludHigiene entity.
     *
-    * @param Hoja7_3 $entity The entity
+    * @param saludHigiene $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja7_3 $entity)
+    private function createEditForm(saludHigiene $entity)
     {
-        $form = $this->createForm(new Hoja7_3Type(), $entity, array(
-            'action' => $this->generateUrl('hoja7_3_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new saludHigieneType(), $entity, array(
+            'action' => $this->generateUrl('saludHigiene_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja7_3 entity.
+     * Edits an existing saludHigiene entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja7_3')->find($id);
+        $entity = $em->getRepository('EstudioBundle:saludHigiene')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja7_3 entity.');
+            throw $this->createNotFoundException('Unable to find saludHigiene entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja7_3Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja7_3_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('saludHigiene_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja7_3:edit.html.twig', array(
+        return $this->render('EstudioBundle:saludHigiene:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja7_3 entity.
+     * Deletes a saludHigiene entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja7_3Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja7_3')->find($id);
+            $entity = $em->getRepository('EstudioBundle:saludHigiene')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja7_3 entity.');
+                throw $this->createNotFoundException('Unable to find saludHigiene entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja7_3'));
+        return $this->redirect($this->generateUrl('saludHigiene'));
     }
 
     /**
-     * Creates a form to delete a Hoja7_3 entity by id.
+     * Creates a form to delete a saludHigiene entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja7_3Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja7_3_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('saludHigiene_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

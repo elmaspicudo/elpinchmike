@@ -226,3 +226,4 @@ class Familiares
         return $this->salario;
     }
 }
+

@@ -1,58 +1,58 @@
-estudio_hoja8_2:
-    resource: "@EstudioBundle/Resources/config/routing/hoja8_2.yml"
-    prefix:   /hoja8_2
+estudio_Hoja8_2:
+    resource: "@EstudioBundle/Resources/config/routing/Hoja8_2.yml"
+    prefix:   /Hoja8_2
 
 estudio_hoja8_1:
     resource: "@EstudioBundle/Resources/config/routing/hoja8_1.yml"
     prefix:   /hoja8_1
 
-estudio_hoja7_4:
-    resource: "@EstudioBundle/Resources/config/routing/hoja7_4.yml"
-    prefix:   /hoja7_4
+estudio_pasatiempos:
+    resource: "@EstudioBundle/Resources/config/routing/pasatiempos.yml"
+    prefix:   /pasatiempos
 
-estudio_hoja7_3:
-    resource: "@EstudioBundle/Resources/config/routing/hoja7_3.yml"
-    prefix:   /hoja7_3
+estudio_saludHigiene:
+    resource: "@EstudioBundle/Resources/config/routing/saludHigiene.yml"
+    prefix:   /saludHigiene
 
-estudio_hoja7_2:
-    resource: "@EstudioBundle/Resources/config/routing/hoja7_2.yml"
-    prefix:   /hoja7_2
+estudio_referenciaVecinal:
+    resource: "@EstudioBundle/Resources/config/routing/referenciaVecinal.yml"
+    prefix:   /referenciaVecinal
 
-estudio_hoja7_1:
-    resource: "@EstudioBundle/Resources/config/routing/hoja7_1.yml"
-    prefix:   /hoja7_1
+estudio_referenciaFamiliar:
+    resource: "@EstudioBundle/Resources/config/routing/referenciaFamiliar.yml"
+    prefix:   /referenciaFamiliar
 
-estudio_hoja6_1:
-    resource: "@EstudioBundle/Resources/config/routing/hoja6_1.yml"
-    prefix:   /hoja6_1
+estudio_referenciasLaborales:
+    resource: "@EstudioBundle/Resources/config/routing/referenciasLaborales.yml"
+    prefix:   /referenciasLaborales
 
-estudio_hoja5_7:
-    resource: "@EstudioBundle/Resources/config/routing/hoja5_7.yml"
-    prefix:   /hoja5_7
+estudio_otrosServicios:
+    resource: "@EstudioBundle/Resources/config/routing/otrosServicios.yml"
+    prefix:   /otrosServicios
 
-estudio_hoja5_5:
-    resource: "@EstudioBundle/Resources/config/routing/hoja5_5.yml"
-    prefix:   /hoja5_5
+estudio_creditoAutomotriz:
+    resource: "@EstudioBundle/Resources/config/routing/creditoAutomotriz.yml"
+    prefix:   /creditoAutomotriz
 
-estudio_hoja5_6:
-    resource: "@EstudioBundle/Resources/config/routing/hoja5_6.yml"
-    prefix:   /hoja5_6
+estudio_seguros:
+    resource: "@EstudioBundle/Resources/config/routing/seguros.yml"
+    prefix:   /seguros
 
-estudio_hoja5_4:
-    resource: "@EstudioBundle/Resources/config/routing/hoja5_4.yml"
-    prefix:   /hoja5_4
+estudio_creditosPersonales:
+    resource: "@EstudioBundle/Resources/config/routing/creditosPersonales.yml"
+    prefix:   /creditosPersonales
 
-estudio_hoja5_3:
-    resource: "@EstudioBundle/Resources/config/routing/hoja5_3.yml"
-    prefix:   /hoja5_3
+estudio_tarjetaCredito:
+    resource: "@EstudioBundle/Resources/config/routing/tarjetaCredito.yml"
+    prefix:   /tarjetaCredito
 
-estudio_hoja5_2:
-    resource: "@EstudioBundle/Resources/config/routing/hoja5_2.yml"
-    prefix:   /hoja5_2
+estudio_egresos:
+    resource: "@EstudioBundle/Resources/config/routing/egresos.yml"
+    prefix:   /egresos
 
-estudio_hoja5_1:
-    resource: "@EstudioBundle/Resources/config/routing/hoja5_1.yml"
-    prefix:   /hoja5_1
+estudio_ingresos:
+    resource: "@EstudioBundle/Resources/config/routing/ingresos.yml"
+    prefix:   /ingresos
 
 estudio_hoja4_2:
     resource: "@EstudioBundle/Resources/config/routing/hoja4_2.yml"
@@ -62,21 +62,21 @@ estudio_hoja4_1:
     resource: "@EstudioBundle/Resources/config/routing/hoja4_1.yml"
     prefix:   /hoja4_1
 
-estudio_hoja3_4:
-    resource: "@EstudioBundle/Resources/config/routing/hoja3_4.yml"
-    prefix:   /hoja3_4
+estudio_MarcoFamiliar_4:
+    resource: "@EstudioBundle/Resources/config/routing/MarcoFamiliar_4.yml"
+    prefix:   /MarcoFamiliar_4
 
-estudio_hoja3_3:
-    resource: "@EstudioBundle/Resources/config/routing/hoja3_3.yml"
-    prefix:   /hoja3_3
+estudio_marcoFamiliar:
+    resource: "@EstudioBundle/Resources/config/routing/marcoFamiliar.yml"
+    prefix:   /marcoFamiliar
 
-estudio_hoja3_2:
-    resource: "@EstudioBundle/Resources/config/routing/hoja3_2.yml"
-    prefix:   /hoja3_2
+estudio_personasDomicilio:
+    resource: "@EstudioBundle/Resources/config/routing/personasDomicilio.yml"
+    prefix:   /personasDomicilio
 
-estudio_hoja3_1:
-    resource: "@EstudioBundle/Resources/config/routing/hoja3_1.yml"
-    prefix:   /hoja3_1
+estudio_DependientesEconomicos:
+    resource: "@EstudioBundle/Resources/config/routing/DependientesEconomicos.yml"
+    prefix:   /DependientesEconomicos
 
 estudio_homepage:
     path:     /hello/{name}

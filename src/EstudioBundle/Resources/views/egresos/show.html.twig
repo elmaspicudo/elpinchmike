@@ -1,0 +1,70 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>egresos</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Renta</th>
+                <td>{{ entity.renta }}</td>
+            </tr>
+            <tr>
+                <th>Agua</th>
+                <td>{{ entity.agua }}</td>
+            </tr>
+            <tr>
+                <th>Luz</th>
+                <td>{{ entity.luz }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ entity.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Gas</th>
+                <td>{{ entity.gas }}</td>
+            </tr>
+            <tr>
+                <th>Transporte</th>
+                <td>{{ entity.transporte }}</td>
+            </tr>
+            <tr>
+                <th>Mantenimientoauto</th>
+                <td>{{ entity.mantenimientoAuto }}</td>
+            </tr>
+            <tr>
+                <th>Alimentacion</th>
+                <td>{{ entity.alimentacion }}</td>
+            </tr>
+            <tr>
+                <th>Educacion</th>
+                <td>{{ entity.educacion }}</td>
+            </tr>
+            <tr>
+                <th>Medicos</th>
+                <td>{{ entity.medicos }}</td>
+            </tr>
+            <tr>
+                <th>Diversiones</th>
+                <td>{{ entity.diversiones }}</td>
+            </tr>
+            <tr>
+                <th>Vestido</th>
+                <td>{{ entity.vestido }}</td>
+            </tr>
+            <tr>
+                <th>Otros</th>
+                <td>{{ entity.otros }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <a  href="{{ path('egresos') }}" class="btn btn-warning">Regresar</a>
+        <a href="{{ path('egresos_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
+    {{ form(delete_form) }}
+{% endblock %}

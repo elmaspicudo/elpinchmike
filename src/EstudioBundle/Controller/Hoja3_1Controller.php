@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja3_1;
-use EstudioBundle\Form\Hoja3_1Type;
+use EstudioBundle\Entity\DependientesEconomicos;
+use EstudioBundle\Form\DependientesEconomicosType;
 
 /**
- * Hoja3_1 controller.
+ * DependientesEconomicos controller.
  *
  */
-class Hoja3_1Controller extends Controller
+class DependientesEconomicosController extends Controller
 {
 
     /**
-     * Lists all Hoja3_1 entities.
+     * Lists all DependientesEconomicos entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja3_1')->findAll();
+        $entities = $em->getRepository('EstudioBundle:DependientesEconomicos')->findAll();
 
-        return $this->render('EstudioBundle:Hoja3_1:index.html.twig', array(
+        return $this->render('EstudioBundle:DependientesEconomicos:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja3_1 entity.
+     * Creates a new DependientesEconomicos entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja3_1();
+        $entity = new DependientesEconomicos();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja3_1Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja3_1_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('DependientesEconomicos_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja3_1:new.html.twig', array(
+        return $this->render('EstudioBundle:DependientesEconomicos:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja3_1 entity.
+     * Creates a form to create a DependientesEconomicos entity.
      *
-     * @param Hoja3_1 $entity The entity
+     * @param DependientesEconomicos $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja3_1 $entity)
+    private function createCreateForm(DependientesEconomicos $entity)
     {
-        $form = $this->createForm(new Hoja3_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja3_1_create'),
+        $form = $this->createForm(new DependientesEconomicosType(), $entity, array(
+            'action' => $this->generateUrl('DependientesEconomicos_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja3_1Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja3_1 entity.
+     * Displays a form to create a new DependientesEconomicos entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja3_1();
+        $entity = new DependientesEconomicos();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja3_1:new.html.twig', array(
+        return $this->render('EstudioBundle:DependientesEconomicos:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja3_1 entity.
+     * Finds and displays a DependientesEconomicos entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja3_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:DependientesEconomicos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja3_1 entity.');
+            throw $this->createNotFoundException('Unable to find DependientesEconomicos entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja3_1:show.html.twig', array(
+        return $this->render('EstudioBundle:DependientesEconomicos:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja3_1 entity.
+     * Displays a form to edit an existing DependientesEconomicos entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja3_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:DependientesEconomicos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja3_1 entity.');
+            throw $this->createNotFoundException('Unable to find DependientesEconomicos entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja3_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:DependientesEconomicos:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,35 +134,35 @@ class Hoja3_1Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja3_1 entity.
+    * Creates a form to edit a DependientesEconomicos entity.
     *
-    * @param Hoja3_1 $entity The entity
+    * @param DependientesEconomicos $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja3_1 $entity)
+    private function createEditForm(DependientesEconomicos $entity)
     {
-        $form = $this->createForm(new Hoja3_1Type(), $entity, array(
-            'action' => $this->generateUrl('hoja3_1_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new DependientesEconomicosType(), $entity, array(
+            'action' => $this->generateUrl('DependientesEconomicos_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        
 
         return $form;
     }
     /**
-     * Edits an existing Hoja3_1 entity.
+     * Edits an existing DependientesEconomicos entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja3_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:DependientesEconomicos')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja3_1 entity.');
+            throw $this->createNotFoundException('Unable to find DependientesEconomicos entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja3_1Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja3_1_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('DependientesEconomicos_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja3_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:DependientesEconomicos:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja3_1 entity.
+     * Deletes a DependientesEconomicos entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja3_1Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja3_1')->find($id);
+            $entity = $em->getRepository('EstudioBundle:DependientesEconomicos')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja3_1 entity.');
+                throw $this->createNotFoundException('Unable to find DependientesEconomicos entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja3_1'));
+        return $this->redirect($this->generateUrl('DependientesEconomicos'));
     }
 
     /**
-     * Creates a form to delete a Hoja3_1 entity by id.
+     * Creates a form to delete a DependientesEconomicos entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja3_1Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja3_1_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('DependientesEconomicos_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

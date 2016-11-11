@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>creditoAutomotriz</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Institucion</th>
+                <td>{{ entity.institucion }}</td>
+            </tr>
+            <tr>
+                <th>Monto</th>
+                <td>{{ entity.monto }}</td>
+            </tr>
+            <tr>
+                <th>Pagomensual</th>
+                <td>{{ entity.pagoMensual }}</td>
+            </tr>
+            <tr>
+                <th>Saldoactual</th>
+                <td>{{ entity.saldoActual }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <a  href="{{ path('creditoAutomotriz') }}" class="btn btn-warning">Regresar</a>
+        <a href="{{ path('creditoAutomotriz_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
+    {{ form(delete_form) }}
+{% endblock %}

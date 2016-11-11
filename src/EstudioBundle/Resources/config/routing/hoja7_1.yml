@@ -1,30 +1,30 @@
-hoja7_1:
+referenciaFamiliar:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja7_1:index" }
+    defaults: { _controller: "EstudioBundle:referenciaFamiliar:index" }
 
-hoja7_1_show:
+referenciaFamiliar_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja7_1:show" }
+    defaults: { _controller: "EstudioBundle:referenciaFamiliar:show" }
 
-hoja7_1_new:
+referenciaFamiliar_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja7_1:new" }
+    defaults: { _controller: "EstudioBundle:referenciaFamiliar:new" }
 
-hoja7_1_create:
+referenciaFamiliar_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja7_1:create" }
+    defaults: { _controller: "EstudioBundle:referenciaFamiliar:create" }
     methods:  POST
 
-hoja7_1_edit:
+referenciaFamiliar_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja7_1:edit" }
+    defaults: { _controller: "EstudioBundle:referenciaFamiliar:edit" }
 
-hoja7_1_update:
+referenciaFamiliar_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja7_1:update" }
+    defaults: { _controller: "EstudioBundle:referenciaFamiliar:update" }
     methods:  [POST, PUT]
 
-hoja7_1_delete:
+referenciaFamiliar_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja7_1:delete" }
+    defaults: { _controller: "EstudioBundle:referenciaFamiliar:delete" }
     methods:  [POST, DELETE]

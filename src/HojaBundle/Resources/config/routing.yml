@@ -25,23 +25,9 @@ hoja_hoja5:
 hoja_hoja4:
     resource: "@HojaBundle/Resources/config/routing/hoja4.yml"
     prefix:   /hoja4
-
-hoja_hoja3:
-    resource: "@HojaBundle/Resources/config/routing/hoja3.yml"
-    prefix:   /hoja3
-
 hoja_hoja2:
     resource: "@HojaBundle/Resources/config/routing/hoja2.yml"
     prefix:   /hoja2
-
 hoja_hoja1:
     resource: "@HojaBundle/Resources/config/routing/hoja1.yml"
     prefix:   /hoja1
-
-hoja_hoja1:
-    resource: "@HojaBundle/Resources/config/routing/hoja1.yml"
-    prefix:   /hoja1
-
-hoja_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: HojaBundle:Default:index }

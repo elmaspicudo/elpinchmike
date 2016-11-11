@@ -1,20 +1,28 @@
 {% extends '::base.html.twig' %}
-
+{% block placeholder -%}
+<div class="row">
+    <div class="col-lg-12">
+        
+        <div class="clearfix">
+            <h1 class="pull-left">Agregar cliente</h1>
+           
+        </div>
+    </div>
+</div>
+{% endblock -%}
 {% block body -%}
-<style>
-  .btn-primary{
-    width: 200px!important;
-  }
-</style>
-<div class="div col-md-12 main-box no-header clearfix">
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
 
     <h1 class="text-center"><strong>Referencias Personales </strong> </h1>
 
     {{ form_start(form) }}
 
     <div class="col-md-12">REFERENCIA FAMILIAR</div>
-    <ul  id="hoja7_1" data-prototype="{{ form_widget(form.hoja7_1.vars.prototype) | e }}">
-        {% for hoja71 in form.hoja7_1 %}
+    <ul  id="referenciaFamiliar" data-prototype="{{ form_widget(form.referenciaFamiliar.vars.prototype) | e }}">
+        {% for hoja71 in form.referenciaFamiliar %}
         <div class="col-md-12">
             {{ form_errors(hoja71) }}
             {{ form_widget(hoja71) }}
@@ -23,8 +31,8 @@
     </ul>    
     <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja71">Agregar Referencia Familiar</a>  
      <div class="col-md-12">REFERENCIA </div>
-    <ul  id="hoja7_2" data-prototype="{{ form_widget(form.hoja7_2.vars.prototype) | e }}">
-        {% for hoja72 in form.hoja7_2 %}
+    <ul  id="referenciaVecinal" data-prototype="{{ form_widget(form.referenciaVecinal.vars.prototype) | e }}">
+        {% for hoja72 in form.referenciaVecinal %}
         <div class="col-md-12">
             {{ form_errors(hoja72) }}
             {{ form_widget(hoja72) }}
@@ -33,8 +41,8 @@
     </ul>    
     <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja72">Agregar Referencia</a>  
     <div class="col-md-12">SALUD E HIGIENE</div>
-    <ul  id="hoja7_3" data-prototype="{{ form_widget(form.hoja7_3.vars.prototype) | e }}">
-        {% for hoja73 in form.hoja7_3 %}
+    <ul  id="saludHigiene" data-prototype="{{ form_widget(form.saludHigiene.vars.prototype) | e }}">
+        {% for hoja73 in form.saludHigiene %}
         <div class="col-md-12">
             {{ form_errors(hoja73) }}
             {{ form_widget(hoja73) }}
@@ -43,8 +51,8 @@
     </ul>    
     <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja73">Agregar Padecimientos</a>    
     <div class="col-md-12">DESARROLLO Y PASATIEMPOS</div>
-    <ul  id="hoja7_4" data-prototype="{{ form_widget(form.hoja7_4.vars.prototype) | e }}">
-        {% for hoja74 in form.hoja7_4 %}
+    <ul  id="pasatiempos" data-prototype="{{ form_widget(form.pasatiempos.vars.prototype) | e }}">
+        {% for hoja74 in form.pasatiempos %}
         <div class="col-md-12">
             {{ form_errors(hoja74) }}
             {{ form_widget(hoja74) }}
@@ -53,21 +61,15 @@
     </ul>    
     <a href="#" class="col-md-4 col-md-offset-4 btn btn-info pull-left" id="add-hoja74">Agregar Pasatiempo</a>
     {{ form_end(form) }}
+ </div>
 </div>
-	<div class="col-md-12">
-	<a href="{{path('hoja8')}}" class="btn btn-primary pull-right">
-	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
-	</a>
-	<a href="{{path('hoja6')}}" class="btn btn-primary pull-left">
-	<i class="fa fa-arrow-circle-left  fa-lg"></i> Anterior
-	</a>
-	</div>
+</div>
      <script>
 
-     var emailCount = '{{ form.hoja7_1 | length }}';
-     var emailCount1 = '{{ form.hoja7_2 | length }}';
-     var emailCount2 = '{{ form.hoja7_3 | length }}';
-     var emailCount3 = '{{ form.hoja7_4 | length }}';
+     var emailCount = '{{ form.referenciaFamiliar | length }}';
+     var emailCount1 = '{{ form.referenciaVecinal | length }}';
+     var emailCount2 = '{{ form.saludHigiene | length }}';
+     var emailCount3 = '{{ form.pasatiempos | length }}';
      $('div.col-lg-6:nth-child(13)').hide()
      $('div.col-lg-6:nth-child(14)').hide()
      $('div.col-lg-6:nth-child(15)').hide()
@@ -75,7 +77,7 @@
 
     jQuery(document).ready(function() {
         jQuery('#add-hoja71').click(function() {
-            var emailList = jQuery('#hoja7_1');
+            var emailList = jQuery('#referenciaFamiliar');
 
             // graba la plantilla prototipo
             var newWidget = emailList.attr('data-prototype');
@@ -86,14 +88,14 @@
             emailCount++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi = jQuery('<div></div>').html(newWidget);
-            newLi.appendTo(jQuery('#hoja7_1'));
+            newLi.appendTo(jQuery('#referenciaFamiliar'));
 
             return false;
         });
 
 
         jQuery('#add-hoja72').click(function() {
-            var emailList1 = jQuery('#hoja7_2');
+            var emailList1 = jQuery('#referenciaVecinal');
 
             // graba la plantilla prototipo
             var newWidget1 = emailList1.attr('data-prototype');
@@ -104,7 +106,7 @@
             emailCount1++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi1 = jQuery('<div></div>').html(newWidget1);
-            newLi1.appendTo(jQuery('#hoja7_2'));
+            newLi1.appendTo(jQuery('#referenciaVecinal'));
 
             return false;
         });
@@ -112,7 +114,7 @@
 
 
         jQuery('#add-hoja73').click(function() {
-            var emailList2 = jQuery('#hoja7_3');
+            var emailList2 = jQuery('#saludHigiene');
 
             // graba la plantilla prototipo
             var newWidget2 = emailList2.attr('data-prototype');
@@ -123,7 +125,7 @@
             emailCount2++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi2 = jQuery('<div></div>').html(newWidget2);
-            newLi2.appendTo(jQuery('#hoja7_3'));
+            newLi2.appendTo(jQuery('#saludHigiene'));
 
             return false;
         });
@@ -131,7 +133,7 @@
 
 
         jQuery('#add-hoja74').click(function() {
-            var emailList3 = jQuery('#hoja7_4');
+            var emailList3 = jQuery('#pasatiempos');
 
             // graba la plantilla prototipo
             var newWidget3 = emailList3.attr('data-prototype');
@@ -142,7 +144,7 @@
             emailCount3++;
             // crea un nuevo elemento lista y lo añade a la lista
             var newLi3 = jQuery('<div></div>').html(newWidget3);
-            newLi3.appendTo(jQuery('#hoja7_4'));
+            newLi3.appendTo(jQuery('#pasatiempos'));
 
             return false;
         });

@@ -1,30 +1,30 @@
-hoja5_2:
+egresos:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja5_2:index" }
+    defaults: { _controller: "EstudioBundle:egresos:index" }
 
-hoja5_2_show:
+egresos_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja5_2:show" }
+    defaults: { _controller: "EstudioBundle:egresos:show" }
 
-hoja5_2_new:
+egresos_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja5_2:new" }
+    defaults: { _controller: "EstudioBundle:egresos:new" }
 
-hoja5_2_create:
+egresos_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja5_2:create" }
+    defaults: { _controller: "EstudioBundle:egresos:create" }
     methods:  POST
 
-hoja5_2_edit:
+egresos_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja5_2:edit" }
+    defaults: { _controller: "EstudioBundle:egresos:edit" }
 
-hoja5_2_update:
+egresos_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja5_2:update" }
+    defaults: { _controller: "EstudioBundle:egresos:update" }
     methods:  [POST, PUT]
 
-hoja5_2_delete:
+egresos_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja5_2:delete" }
+    defaults: { _controller: "EstudioBundle:egresos:delete" }
     methods:  [POST, DELETE]

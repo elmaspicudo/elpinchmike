@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>tarjetaCredito list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Banco</th>
+                <th>Limitecredito</th>
+                <th>Antiguedad</th>
+                <th>Pagomensual</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('tarjetaCredito_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.banco }}</td>
+                <td>{{ entity.limiteCredito }}</td>
+                <td>{% if entity.antiguedad %}{{ entity.antiguedad|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.pagoMensual %}{{ entity.pagoMensual|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <a  href="{{ path('tarjetaCredito_show', { 'id': entity.id }) }}" class="table-link">
+	<span class="fa-stack">
+	<i class="fa fa-square fa-stack-2x"></i>
+	<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
+                    <a href="{{ path('tarjetaCredito_edit', { 'id': entity.id }) }}" class="table-link">
+	<span class="fa-stack">
+	<i class="fa fa-square fa-stack-2x"></i>
+	<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+	</span>
+</a>
+                    </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('tarjetaCredito_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

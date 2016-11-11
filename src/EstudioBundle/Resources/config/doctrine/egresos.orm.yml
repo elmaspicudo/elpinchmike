@@ -1,0 +1,37 @@
+EstudioBundle\Entity\egresos:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        renta:
+            type: float
+        agua:
+            type: float
+        luz:
+            type: float
+        telefono:
+            type: float
+        gas:
+            type: float
+        transporte:
+            type: float
+        mantenimientoAuto:
+            type: float
+        alimentacion:
+            type: float
+        educacion:
+            type: float
+        medicos:
+            type: float
+        diversiones:
+            type: float
+        vestido:
+            type: float
+        otros:
+            type: float
+    lifecycleCallbacks: {  }

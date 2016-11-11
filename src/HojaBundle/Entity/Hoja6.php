@@ -16,7 +16,7 @@ class Hoja6
      * @var string
      */
     private $observaciones;
-    private $hoja6_1;
+    private $referenciasLaborales;
 
 
 
@@ -56,26 +56,26 @@ class Hoja6
 
 
     /**
-     * Set hoja6_1
+     * Set referenciasLaborales
      *
-     * @param string $hoja6_1
+     * @param string $referenciasLaborales
      *
      * @return Hoja61     */
-    public function setHoja61($hoja6_1)
+    public function setHoja61($referenciasLaborales)
     {
-        $this->hoja6_1 = $hoja6_1;
+        $this->referenciasLaborales = $referenciasLaborales;
 
         return $this;
     }
 
     /**
-     * Get hoja6_1
+     * Get referenciasLaborales
      *
      * @return string
      */
     public function getHoja61()
     {
-        return $this->hoja6_1;
+        return $this->referenciasLaborales;
     }
     /**
      * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud

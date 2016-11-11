@@ -16,13 +16,13 @@ class Hoja5
      * @var string
      */
     private $observaciones;
-    private $hoja5_1;
-    private $hoja5_2;
-    private $hoja5_3;
-    private $hoja5_4;
-    private $hoja5_5;
-    private $hoja5_6;
-    private $hoja5_7;
+    private $ingresos;
+    private $egresos;
+    private $tarjetaCredito;
+    private $creditosPersonales;
+    private $creditoAutomotriz;
+    private $seguros;
+    private $otrosServicios;
 
     /**
      * Get id
@@ -58,173 +58,173 @@ class Hoja5
         return $this->observaciones;
     }
       /**
-     * Set hoja5_1
+     * Set ingresos
      *
-     * @param string $hoja5_1
+     * @param string $ingresos
      *
      * @return Hoja5
      */
-    public function setHoja51($hoja5_1)
+    public function setHoja51($ingresos)
     {
-        $this->hoja5_1 = $hoja5_1;
+        $this->ingresos = $ingresos;
 
         return $this;
     }
 
     /**
-     * Get hoja5_1
+     * Get ingresos
      *
      * @return string
      */
     public function getHoja51()
     {
-        return $this->hoja5_1;
+        return $this->ingresos;
     }
       /**
-     * Set hoja5_2
+     * Set egresos
      *
-     * @param string $hoja5_2
+     * @param string $egresos
      *
      * @return Hoja5
      */
-    public function setHoja52($hoja5_2)
+    public function setHoja52($egresos)
     {
-        $this->hoja5_2 = $hoja5_2;
+        $this->egresos = $egresos;
 
         return $this;
     }
 
     /**
-     * Get hoja5_2
+     * Get egresos
      *
      * @return string
      */
     public function getHoja52()
     {
-        return $this->hoja5_2;
+        return $this->egresos;
     }
 
 
 
       /**
-     * Set hoja5_3
+     * Set tarjetaCredito
      *
-     * @param string $hoja5_3
+     * @param string $tarjetaCredito
      *
      * @return Hoja5
      */
-    public function setHoja53($hoja5_3)
+    public function setHoja53($tarjetaCredito)
     {
-        $this->hoja5_3 = $hoja5_3;
+        $this->tarjetaCredito = $tarjetaCredito;
 
         return $this;
     }
 
     /**
-     * Get hoja5_3
+     * Get tarjetaCredito
      *
      * @return string
      */
     public function getHoja53()
     {
-        return $this->hoja5_3;
+        return $this->tarjetaCredito;
     }
 
      /**
-     * Set hoja5_4
+     * Set creditosPersonales
      *
-     * @param string $hoja5_4
+     * @param string $creditosPersonales
      *
      * @return Hoja5
      */
-    public function setHoja54($hoja5_4)
+    public function setHoja54($creditosPersonales)
     {
-        $this->hoja5_4 = $hoja5_4;
+        $this->creditosPersonales = $creditosPersonales;
 
         return $this;
     }
 
     /**
-     * Get hoja5_4
+     * Get creditosPersonales
      *
      * @return string
      */
     public function getHoja54()
     {
-        return $this->hoja5_4;
+        return $this->creditosPersonales;
     }
 
 
 
      /**
-     * Set hoja5_5
+     * Set creditoAutomotriz
      *
-     * @param string $hoja5_5
+     * @param string $creditoAutomotriz
      *
      * @return Hoja5
      */
-    public function setHoja55($hoja5_5)
+    public function setHoja55($creditoAutomotriz)
     {
-        $this->hoja5_5 = $hoja5_5;
+        $this->creditoAutomotriz = $creditoAutomotriz;
 
         return $this;
     }
 
     /**
-     * Get hoja5_5
+     * Get creditoAutomotriz
      *
      * @return string
      */
     public function getHoja55()
     {
-        return $this->hoja5_5;
+        return $this->creditoAutomotriz;
     }
 
      /**
-     * Set hoja5_6
+     * Set seguros
      *
-     * @param string $hoja5_6
+     * @param string $seguros
      *
      * @return Hoja5
      */
-    public function setHoja56($hoja5_6)
+    public function setHoja56($seguros)
     {
-        $this->hoja5_6 = $hoja5_6;
+        $this->seguros = $seguros;
 
         return $this;
     }
 
     /**
-     * Get hoja5_6
+     * Get seguros
      *
      * @return string
      */
     public function getHoja56()
     {
-        return $this->hoja5_6;
+        return $this->seguros;
     }
     /**
-     * Set hoja5_7
+     * Set otrosServicios
      *
-     * @param string $hoja5_7
+     * @param string $otrosServicios
      *
      * @return Hoja5
      */
-    public function setHoja57($hoja5_7)
+    public function setHoja57($otrosServicios)
     {
-        $this->hoja5_7 = $hoja5_7;
+        $this->otrosServicios = $otrosServicios;
 
         return $this;
     }
 
     /**
-     * Get hoja5_7
+     * Get otrosServicios
      *
      * @return string
      */
     public function getHoja57()
     {
-        return $this->hoja5_7;
+        return $this->otrosServicios;
     }
     /**
      * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud

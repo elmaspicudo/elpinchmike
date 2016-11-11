@@ -1,39 +1,42 @@
 {% extends '::base.html.twig' %}
-
+{% block placeholder -%}
+<div class="row">
+    <div class="col-lg-12">
+        
+        <div class="clearfix">
+            <h1 class="pull-left">Agregar cliente</h1>
+           
+        </div>
+    </div>
+</div>
+{% endblock -%}
 {% block body -%}
-<style>
-  .btn-primary{
-    width: 200px!important;
-  }
-</style>
-<div class="div col-md-12 main-box no-header clearfix">
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
 
     <h1 class="text-center"><strong>Deudas Actuales</strong>  </h1>
 
     {{ form_start(form) }}
     <div class="col-md-12">INGRESOS</div>
-            {{ form_widget(form.hoja5_1) }}
+            {{ form_widget(form.ingresos) }}
     <div class="col-md-12">EGRESOS</div>
-           {{ form_widget(form.hoja5_2) }}
+           {{ form_widget(form.egresos) }}
 	<div class="col-md-12">TARJETAS DE CREDITO O DEPARTAMENTAL</div>
-	       {{ form_widget(form.hoja5_3) }}
+	       {{ form_widget(form.tarjetaCredito) }}
 	<div class="col-md-12">CREDITOS PERSONALES</div>
-	       {{ form_widget(form.hoja5_4) }}
+	       {{ form_widget(form.creditosPersonales) }}
 	<div class="col-md-12">CREDITO AUTOMOTRIZ</div>
-	       {{ form_widget(form.hoja5_5) }}
+	       {{ form_widget(form.creditoAutomotriz) }}
 	<div class="col-md-12">SEGUROS</div>
-	       {{ form_widget(form.hoja5_6) }}
+	       {{ form_widget(form.seguros) }}
 	<div class="col-md-12">OTROS SERVICIOS</div>
-	       {{ form_widget(form.hoja5_7) }}
+	       {{ form_widget(form.otrosServicios) }}
 </div>
 
     {{ form_end(form) }}
-    <div class="col-md-12">
-	<a href="{{path('hoja6')}}" class="btn btn-primary pull-right">
-	<i class="fa fa-arrow-circle-right  fa-lg"></i> Siguiente
-	</a>
-	<a href="{{path('hoja4')}}" class="btn btn-primary pull-left">
-	<i class="fa fa-arrow-circle-left  fa-lg"></i> Anterior
-	</a>
-	</div>
+     </div>
+</div>
+</div>
 {% endblock %}
