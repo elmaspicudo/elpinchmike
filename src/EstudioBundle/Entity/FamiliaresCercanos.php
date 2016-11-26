@@ -42,6 +42,21 @@ class FamiliaresCercanos
      */
     private $ocupacion;
 
+    /**
+     * @var string
+     */
+    private $salario;
+
+    /**
+     * @var boolean
+     */
+    private $viveDomicilio;
+
+    /**
+     * @var boolean
+     */
+    private $dependiente;
+
 
     /**
      * Get id
@@ -195,6 +210,78 @@ class FamiliaresCercanos
     public function getOcupacion()
     {
         return $this->ocupacion;
+    }
+
+    /**
+     * Set salario
+     *
+     * @param string $salario
+     *
+     * @return FamiliaresCercanos
+     */
+    public function setSalario($salario)
+    {
+        $this->salario = $salario;
+
+        return $this;
+    }
+
+    /**
+     * Get salario
+     *
+     * @return string
+     */
+    public function getSalario()
+    {
+        return $this->salario;
+    }
+
+    /**
+     * Set viveDomicilio
+     *
+     * @param boolean $viveDomicilio
+     *
+     * @return FamiliaresCercanos
+     */
+    public function setViveDomicilio($viveDomicilio)
+    {
+        $this->viveDomicilio = $viveDomicilio;
+
+        return $this;
+    }
+
+    /**
+     * Get viveDomicilio
+     *
+     * @return boolean
+     */
+    public function getViveDomicilio()
+    {
+        return $this->viveDomicilio;
+    }
+
+    /**
+     * Set dependiente
+     *
+     * @param boolean $dependiente
+     *
+     * @return FamiliaresCercanos
+     */
+    public function setDependiente($dependiente)
+    {
+        $this->dependiente = $dependiente;
+
+        return $this;
+    }
+
+    /**
+     * Get dependiente
+     *
+     * @return boolean
+     */
+    public function getDependiente()
+    {
+        return $this->dependiente;
     }
 }
 

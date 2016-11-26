@@ -14,23 +14,7 @@ HojaBundle\Entity\MarcoFamiliar:
     manyToOne:
         solicitud:         
             targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
-    manyToMany:
-      Familiares:
-        targetEntity: EstudioBundle\Entity\Familiares
-        joinTable:
-          name: Familiares_investigado
-          joinColumns:
-            investigado_id:
-              referencedColumnName: id
-          inverseJoinColumns:
-            familiares_id:
-              referencedColumnName: id
-        cascade: ["persist","remove"]
-        onDelete: CASCADE
-        options:
-            cascade:
-            remove: true
-            persist: true 
+    manyToMany:      
       DependientesEconomicos:
         targetEntity: EstudioBundle\Entity\DependientesEconomicos
         joinTable:

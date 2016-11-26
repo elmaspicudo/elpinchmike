@@ -15,16 +15,7 @@ class MarcoFamiliarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('observaciones')
-            ->add('Familiares', 'collection',array(
-                    'type' =>new \EstudioBundle\Form\FamiliaresType(),
-                    'allow_add' => true,
-                    'prototype' => true,
-                    'by_reference' => false,
-                    'options'  => array(
-                        'required'  => false,
-                        'attr'      => array('class' => 'Familiares oculto')
-                )))
+            ->add('observaciones')           
             ->add('DependientesEconomicos', 'collection',array(
                     'type' =>new \EstudioBundle\Form\DependientesEconomicosType(),
                     'allow_add' => true,

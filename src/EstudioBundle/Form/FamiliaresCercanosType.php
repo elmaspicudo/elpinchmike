@@ -18,6 +18,9 @@ class FamiliaresCercanosType extends AbstractType
             ->add('estadoCivil','text')
             ->add('escolaridad','text')
             ->add('ocupacion','text')
+            ->add('salario','text')
+            ->add('viveDomicilio')
+            ->add('dependiente')
         ;
     }
     

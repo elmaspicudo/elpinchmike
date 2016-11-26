@@ -207,4 +207,3 @@ class MarcoFamiliar
         return $this->FamiliaresCercanos;
     }
 }
-

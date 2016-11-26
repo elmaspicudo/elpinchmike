@@ -25,4 +25,10 @@ EstudioBundle\Entity\FamiliaresCercanos:
         ocupacion:
             type: string
             length: '30'
+        salario:
+            type: decimal
+        viveDomicilio:
+            type: boolean
+        dependiente:
+            type: boolean
     lifecycleCallbacks: {  }

@@ -51,7 +51,6 @@ class SolicitudController extends Controller
         }
         $date=new \DateTime();
         $encaptura = $em->getRepository('ConfiguracionBundle:Solicitud')->findSolBy(array('fecha_termino'=>array('NULL','','IS'),'visitador_id'=>array($user->getId(),'and','=')));
-
         return $this->render('ConfiguracionBundle:Solicitud:index_inv.html.twig', array(
             'entities' => $encaptura,
         ));
