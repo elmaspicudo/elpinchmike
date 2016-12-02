@@ -1,0 +1,30 @@
+Bienes_autos:
+    path:     /
+    defaults: { _controller: "EstudioBundle:Bienes_autos:index" }
+
+Bienes_autos_show:
+    path:     /{id}/show
+    defaults: { _controller: "EstudioBundle:Bienes_autos:show" }
+
+Bienes_autos_new:
+    path:     /new
+    defaults: { _controller: "EstudioBundle:Bienes_autos:new" }
+
+Bienes_autos_create:
+    path:     /create
+    defaults: { _controller: "EstudioBundle:Bienes_autos:create" }
+    methods:  POST
+
+Bienes_autos_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EstudioBundle:Bienes_autos:edit" }
+
+Bienes_autos_update:
+    path:     /{id}/update
+    defaults: { _controller: "EstudioBundle:Bienes_autos:update" }
+    methods:  [POST, PUT]
+
+Bienes_autos_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EstudioBundle:Bienes_autos:delete" }
+    methods:  [POST, DELETE]

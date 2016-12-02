@@ -68,7 +68,11 @@
 	</div>
 </div>
 </div>
-<div class="oculto">{{form_rest(form)}}</div>
+	<div class="oculto">
+	{{ form_row(form.DependientesEconomicos) }}
+	{{ form_row(form.FamiliaresCercanos) }}		
+	</div>
+{{form_rest(form)}}
 {{ form_end(form) }}
  </div>
 </div>

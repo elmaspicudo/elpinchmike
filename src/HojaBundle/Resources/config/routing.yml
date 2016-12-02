@@ -22,9 +22,9 @@ hoja_hoja5:
     resource: "@HojaBundle/Resources/config/routing/hoja5.yml"
     prefix:   /hoja5
 
-hoja_hoja4:
-    resource: "@HojaBundle/Resources/config/routing/hoja4.yml"
-    prefix:   /hoja4
+hoja_Bienes:
+    resource: "@HojaBundle/Resources/config/routing/Bienes.yml"
+    prefix:   /Bienes
 hoja_hoja2:
     resource: "@HojaBundle/Resources/config/routing/hoja2.yml"
     prefix:   /hoja2

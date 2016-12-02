@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Hoja4 list</h1>
+    <h1>Bienes list</h1>
 
     <table class="records_list">
         <thead>
@@ -83,7 +83,7 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('hoja4_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('Bienes_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.urbana }}</td>
                 <td>{{ entity.centrica }}</td>
                 <td>{{ entity.periferia }}</td>
@@ -155,13 +155,13 @@
                 <td>{{ entity.extractorJugo }}</td>
                 <td>{{ entity.observaciones }}</td>
                 <td>
-                <a  href="{{ path('hoja4_show', { 'id': entity.id }) }}" class="table-link">
+                <a  href="{{ path('Bienes_show', { 'id': entity.id }) }}" class="table-link">
 	<span class="fa-stack">
 	<i class="fa fa-square fa-stack-2x"></i>
 	<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 	</span>
 </a>
-                    <a href="{{ path('hoja4_edit', { 'id': entity.id }) }}" class="table-link">
+                    <a href="{{ path('Bienes_edit', { 'id': entity.id }) }}" class="table-link">
 	<span class="fa-stack">
 	<i class="fa fa-square fa-stack-2x"></i>
 	<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
@@ -252,7 +252,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('hoja4_new') }}">
+            <a href="{{ path('Bienes_new') }}">
                 Create a new entry
             </a>
         </li>

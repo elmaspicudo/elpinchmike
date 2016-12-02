@@ -20,5 +20,7 @@ datos:
 hoja:
     resource: "@HojaBundle/Resources/config/routing.yml"
     prefix:   /formato
-
+Estudio:
+    resource: "@EstudioBundle/Resources/config/routing.yml"
+    prefix:   /es
 

@@ -1,0 +1,29 @@
+
+Bienes_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:Bienes:show" }
+
+Bienes:
+    path:     /
+    defaults: { _controller: "HojaBundle:Bienes:new" }
+
+Bienes_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:Bienes:create" }
+    methods:  POST
+
+Bienes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:Bienes:edit" }
+
+Bienes_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:Bienes:update" }
+    methods:  [POST, PUT]
+Bienes_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "HojaBundle:Bienes:showbysolicitud" }
+Bienes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:Bienes:delete" }
+    methods:  [POST, DELETE]

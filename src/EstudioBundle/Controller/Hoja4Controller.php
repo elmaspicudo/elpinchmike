@@ -5,41 +5,41 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja4;
-use EstudioBundle\Form\Hoja4Type;
+use EstudioBundle\Entity\Bienes;
+use EstudioBundle\Form\BienesType;
 
 /**
- * Hoja4 controller.
+ * Bienes controller.
  *
  */
-class Hoja4Controller extends Controller
+class BienesController extends Controller
 {
 
     /**
-     * Lists all Hoja4 entities.
+     * Lists all Bienes entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja4')->findAll();
+        $entities = $em->getRepository('EstudioBundle:Bienes')->findAll();
         $entitiesReferencia = $em->getRepository('EstudioBundle:ReferenciaPatrimonial')->findAll();
         $entitiesAutos = $em->getRepository('EstudioBundle:ReferenciaPatroimonialAutos')->findAll();
 
-        return $this->render('EstudioBundle:Hoja4:index.html.twig', array(
+        return $this->render('EstudioBundle:Bienes:index.html.twig', array(
             'entities' => $entities,
             'entitiesReferencia' => $entitiesReferencia,
             'entitiesAutos' => $entitiesAutos,
         ));
     }
     /**
-     * Creates a new Hoja4 entity.
+     * Creates a new Bienes entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja4();
+        $entity = new Bienes();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -48,26 +48,26 @@ class Hoja4Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja4_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('Bienes_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja4:new.html.twig', array(
+        return $this->render('EstudioBundle:Bienes:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja4 entity.
+     * Creates a form to create a Bienes entity.
      *
-     * @param Hoja4 $entity The entity
+     * @param Bienes $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja4 $entity)
+    private function createCreateForm(Bienes $entity)
     {
-        $form = $this->createForm(new Hoja4Type(), $entity, array(
-            'action' => $this->generateUrl('hoja4_create'),
+        $form = $this->createForm(new BienesType(), $entity, array(
+            'action' => $this->generateUrl('Bienes_create'),
             'method' => 'POST',
         ));
 
@@ -77,60 +77,60 @@ class Hoja4Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja4 entity.
+     * Displays a form to create a new Bienes entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja4();
+        $entity = new Bienes();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja4:new.html.twig', array(
+        return $this->render('EstudioBundle:Bienes:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja4 entity.
+     * Finds and displays a Bienes entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:Bienes')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja4 entity.');
+            throw $this->createNotFoundException('Unable to find Bienes entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja4:show.html.twig', array(
+        return $this->render('EstudioBundle:Bienes:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja4 entity.
+     * Displays a form to edit an existing Bienes entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:Bienes')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja4 entity.');
+            throw $this->createNotFoundException('Unable to find Bienes entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja4:edit.html.twig', array(
+        return $this->render('EstudioBundle:Bienes:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -138,16 +138,16 @@ class Hoja4Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja4 entity.
+    * Creates a form to edit a Bienes entity.
     *
-    * @param Hoja4 $entity The entity
+    * @param Bienes $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja4 $entity)
+    private function createEditForm(Bienes $entity)
     {
-        $form = $this->createForm(new Hoja4Type(), $entity, array(
-            'action' => $this->generateUrl('hoja4_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new BienesType(), $entity, array(
+            'action' => $this->generateUrl('Bienes_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -156,17 +156,17 @@ class Hoja4Controller extends Controller
         return $form;
     }
     /**
-     * Edits an existing Hoja4 entity.
+     * Edits an existing Bienes entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja4')->find($id);
+        $entity = $em->getRepository('EstudioBundle:Bienes')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja4 entity.');
+            throw $this->createNotFoundException('Unable to find Bienes entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -176,17 +176,17 @@ class Hoja4Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja4_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('Bienes_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja4:edit.html.twig', array(
+        return $this->render('EstudioBundle:Bienes:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja4 entity.
+     * Deletes a Bienes entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -196,21 +196,21 @@ class Hoja4Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja4')->find($id);
+            $entity = $em->getRepository('EstudioBundle:Bienes')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja4 entity.');
+                throw $this->createNotFoundException('Unable to find Bienes entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja4'));
+        return $this->redirect($this->generateUrl('Bienes'));
     }
 
     /**
-     * Creates a form to delete a Hoja4 entity by id.
+     * Creates a form to delete a Bienes entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -219,7 +219,7 @@ class Hoja4Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja4_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('Bienes_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

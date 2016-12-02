@@ -28,12 +28,15 @@ class MarcoFamiliarType extends AbstractType
             ->add('FamiliaresCercanos', 'collection',array(
                     'type' =>new \EstudioBundle\Form\FamiliaresCercanosType(),
                     'allow_add' => true,
+                    'allow_delete' => true,
                     'prototype' => true,
                     'by_reference' => false,
                     'options'  => array(
                         'required'  => false,
-                        'attr'      => array('class' => 'FamiliaresCercanos oculto')
+                        'attr'      => array('class' => 'FamiliaresCercanos')
                 )))
+            ->add('Anterior', 'submit', array('label' => 'Anterior','attr'=>array('class'=>'btn btn-warning')))
+            ->add('Siguiente', 'submit', array('label' => 'Siguiente','attr'=>array('class'=>'btn btn-success pull-right')))
         ;
     }
     

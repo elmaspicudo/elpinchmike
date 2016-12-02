@@ -197,4 +197,3 @@ class marcoFamiliar_h
         return $this->ocupacion;
     }
 }
-

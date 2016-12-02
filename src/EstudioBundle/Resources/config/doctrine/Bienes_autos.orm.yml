@@ -1,0 +1,25 @@
+EstudioBundle\Entity\Bienes_autos:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tipo:
+            type: string
+            length: 255
+            nullable: TRUE
+        domicilio:
+            type: string
+            length: 255
+            nullable: TRUE
+        valorEstimado:
+            type: float
+            nullable: TRUE
+        liquidado:
+            type: boolean
+            nullable: TRUE
+    lifecycleCallbacks: {  }

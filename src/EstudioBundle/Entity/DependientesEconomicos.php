@@ -110,4 +110,3 @@ class DependientesEconomicos
         return $this->parentesco;
     }
 }
-

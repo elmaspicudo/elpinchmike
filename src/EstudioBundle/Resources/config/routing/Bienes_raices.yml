@@ -1,0 +1,30 @@
+Bienes_raices:
+    path:     /
+    defaults: { _controller: "EstudioBundle:Bienes_raices:index" }
+
+Bienes_raices_show:
+    path:     /{id}/show
+    defaults: { _controller: "EstudioBundle:Bienes_raices:show" }
+
+Bienes_raices_new:
+    path:     /new
+    defaults: { _controller: "EstudioBundle:Bienes_raices:new" }
+
+Bienes_raices_create:
+    path:     /create
+    defaults: { _controller: "EstudioBundle:Bienes_raices:create" }
+    methods:  POST
+
+Bienes_raices_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EstudioBundle:Bienes_raices:edit" }
+
+Bienes_raices_update:
+    path:     /{id}/update
+    defaults: { _controller: "EstudioBundle:Bienes_raices:update" }
+    methods:  [POST, PUT]
+
+Bienes_raices_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EstudioBundle:Bienes_raices:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,69 @@
+{% extends '::base.html.twig' %}
+{% block placeholder -%}
+<div class="row">
+    <div class="col-lg-12">
+        
+        <div class="clearfix">
+            <h1 class="pull-left">Agregar cliente</h1>
+           
+        </div>
+    </div>
+</div>
+{% endblock -%}
+{% block body -%}
+<div class="row">
+<div class="col-lg-12">
+<div class="main-box no-header clearfix">
+<div class="main-box-body clearfix">
+    
+    <h1 class="text-center"><strong>Resumen Ejecutivo </strong></h1>
+    {{ form_start(form) }}
+        <div class="row">
+            <h4 >DESCRIPCIÓN DE LA ZONA</h4>         
+            {{ form_row(form.urbana,{'col': 'col-lg-4','class': 'form-group'}) }}  
+            {{ form_row(form.centrica,{'col': 'col-lg-4','class': 'form-group'}) }}  
+            {{ form_row(form.periferia,{'col': 'col-lg-4','class': 'form-group'}) }} 
+        </div>
+        <div class="row">
+            <h4 >Servicios Públicos</h4>         
+            {{ form_row(form.telefonoPublico,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}  
+            {{ form_row(form.agua,{'table':'1','col': 'col-lg-1','class': 'form-group'}) }}  
+            {{ form_row(form.alumbrado,{'table':'1','col': 'col-lg-1','class': 'form-group'}) }} 
+            {{ form_row(form.drenaje,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.pavimentacion,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.banqueta,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.transporte,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}
+        </div>
+        <div class="row">                     
+            {{ form_row(form.viasDeAcceso,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}  
+            {{ form_row(form.centrosComerciales,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}  
+            {{ form_row(form.mercados,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.escuelas,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.areasVerdes,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.deportivos,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+        </div> 
+        <div class="row">
+            <h4 >NIVEL SOCIOECONÓMICO DEL INMUEBLE</h4>         
+            {{ form_row(form.casa,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}  
+            {{ form_row(form.departamento,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}  
+            {{ form_row(form.condominio,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.unidadHabitacional,{'table':'1','col': 'col-lg-3','class': 'form-group'}) }} 
+            {{ form_row(form.viviendaPopular,{'table':'1','col': 'col-lg-3','class': 'form-group'}) }} 
+        </div>
+        <div class="row">                     
+            {{ form_row(form.viasDeAcceso,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}  
+            {{ form_row(form.centrosComerciales,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }}  
+            {{ form_row(form.mercados,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.escuelas,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.areasVerdes,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+            {{ form_row(form.deportivos,{'table':'1','col': 'col-lg-2','class': 'form-group'}) }} 
+        </div>
+    BIENES RAICES
+        {{ form_widget(form.Bienes_raices) }}
+    AUTOMOVILES
+        {{ form_widget(form.Bienes_autos) }}
+    {{ form_end(form) }}
+     </div>
+</div>
+</div>
+{% endblock %}

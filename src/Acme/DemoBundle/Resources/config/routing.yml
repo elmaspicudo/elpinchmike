@@ -1,5 +1,0 @@
-_welcome:
-    path:     /
-    defaults: { _controller: AcmeDemoBundle:Welcome:index }
-
-

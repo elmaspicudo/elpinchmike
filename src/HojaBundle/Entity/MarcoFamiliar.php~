@@ -105,40 +105,7 @@ class MarcoFamiliar
         return $this->solicitud;
     }
 
-    /**
-     * Add familiare
-     *
-     * @param \EstudioBundle\Entity\Familiares $familiare
-     *
-     * @return MarcoFamiliar
-     */
-    public function addFamiliare(\EstudioBundle\Entity\Familiares $familiare)
-    {
-        $this->Familiares[] = $familiare;
-
-        return $this;
-    }
-
-    /**
-     * Remove familiare
-     *
-     * @param \EstudioBundle\Entity\Familiares $familiare
-     */
-    public function removeFamiliare(\EstudioBundle\Entity\Familiares $familiare)
-    {
-        $this->Familiares->removeElement($familiare);
-    }
-
-    /**
-     * Get familiares
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getFamiliares()
-    {
-        return $this->Familiares;
-    }
-
+    
     /**
      * Add dependientesEconomico
      *
@@ -176,11 +143,11 @@ class MarcoFamiliar
     /**
      * Add familiaresCercano
      *
-     * @param \EstudioBundle\Entity\FCercanos $familiaresCercano
+     * @param \EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano
      *
      * @return MarcoFamiliar
      */
-    public function addFamiliaresCercano(\EstudioBundle\Entity\FCercanos $familiaresCercano)
+    public function addFamiliaresCercano(\EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano)
     {
         $this->FamiliaresCercanos[] = $familiaresCercano;
 
@@ -190,9 +157,9 @@ class MarcoFamiliar
     /**
      * Remove familiaresCercano
      *
-     * @param \EstudioBundle\Entity\FCercanos $familiaresCercano
+     * @param \EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano
      */
-    public function removeFamiliaresCercano(\EstudioBundle\Entity\FCercanos $familiaresCercano)
+    public function removeFamiliaresCercano(\EstudioBundle\Entity\FamiliaresCercanos $familiaresCercano)
     {
         $this->FamiliaresCercanos->removeElement($familiaresCercano);
     }

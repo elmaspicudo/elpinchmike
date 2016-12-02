@@ -226,4 +226,3 @@ class personasDomicilio
         return $this->salario;
     }
 }
-

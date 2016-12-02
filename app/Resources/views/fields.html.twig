@@ -1,18 +1,60 @@
+{%- block checkbox_widget -%}
+    <input type="checkbox"  {% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{%- endblock checkbox_widget -%}
+{%- block time_widget -%}
+    {%- if widget == 'single_text' -%}
+        {{ block('form_widget_simple') }}
+    {%- else -%}
+        {%- set vars = { 'attr': { 'class': 'form-control' }} -%}        
+            <div class="col-sm-3">{{ form_widget(form.hour, vars) }}</div>
+            {% if with_minutes %}<div class="separo">:</div><div class="col-sm-3">{{ form_widget(form.minute, vars) }}</div>{% endif %}
+            {% if with_seconds %}<div class="separo">:</div><div class="col-sm-3">{{ form_widget(form.second, vars) }}</div>{% endif %}
+        {%- endif -%}
+{%- endblock time_widget -%}
+
 {% block form_row %}
 {% spaceless %}
-    {% set class='form-group' %}
-    {% set col='col-lg-6' %}
-    
-	<div class="{{col}}" >
-	    <div {{class}} >
-	    	<div class="input-group">
-	    		<span class="input-group-btn">
-		        	{{ form_label(form, label|default(null), { 'label_attr': {'class': 'btn btn-primary'} }) }}
-		        </span>
-		        {{ form_widget(form,{'attr': {'class': 'form-control'}}) }}		        
-		    </div>
-		    <span class="help-block"><i class="icon-remove-sign"></i>{{ form_errors(form) }}</span>
-	    </div>
-	</div>
+	 {%- if class is defined %}
+
+	 {%- else -%}
+        {% set class='form-group' %}
+    	{% set col='col-sm-6' %}
+    {%- endif -%}
+    {%- if table is defined %}
+        <div class="{{col}}" >            
+            <span class="input-group-btn">
+                        {{ form_label(form, label|default(null), { 'label_attr': {'class': 'btn btn-primary completo'} }) }}
+            </span>
+                    {{ form_widget(form,{'attr': {'class': 'form-control'}}) }}             
+            <span class="help-block"><i class="icon-remove-sign"></i>{{ form_errors(form) }}</span>            
+        </div>
+    {%- else -%}
+    	<div class="{{col}}" >
+    	    <div {{class}} >
+    	    	<div class="input-group">
+    	    		<span class="input-group-btn">
+    		        	{{ form_label(form, label|default(null), { 'label_attr': {'class': 'btn btn-primary'} }) }}
+    		        </span>
+    		        {{ form_widget(form,{'attr': {'class': 'form-control'}}) }}		        
+    		    </div>
+    		    <span class="help-block"><i class="icon-remove-sign"></i>{{ form_errors(form) }}</span>
+    	    </div>
+    	</div>
+    {%- endif -%}
 {% endspaceless %}
 {% endblock form_row %}
+{%- block button_row -%}
+    {%- if label is empty -%}
+        {%- if label_format is not empty -%}
+            {% set label = label_format|replace({
+                '%name%': name,
+                '%id%': id,
+            }) %}
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {%- endif -%}
+    <div style="float: left; margin-top: 10px; margin-right: 20px">
+    	<button type="{{ type|default('submit') }}" {{ block('button_attributes') }}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</button>
+    </div>
+{%- endblock button_row -%}

@@ -284,4 +284,3 @@ class otrosServicios
         return $this->vigilancia;
     }
 }
-

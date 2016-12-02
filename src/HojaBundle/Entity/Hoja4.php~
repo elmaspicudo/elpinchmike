@@ -3,9 +3,9 @@
 namespace HojaBundle\Entity;
 
 /**
- * Hoja4
+ * Bienes
  */
-class Hoja4
+class Bienes
 {
     /**
      * @var integer
@@ -378,7 +378,7 @@ class Hoja4
      *
      * @param string $urbana
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setUrbana($urbana)
     {
@@ -402,7 +402,7 @@ class Hoja4
      *
      * @param string $centrica
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setCentrica($centrica)
     {
@@ -426,7 +426,7 @@ class Hoja4
      *
      * @param string $periferia
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setPeriferia($periferia)
     {
@@ -450,7 +450,7 @@ class Hoja4
      *
      * @param string $telefonoPublico
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setTelefonoPublico($telefonoPublico)
     {
@@ -474,7 +474,7 @@ class Hoja4
      *
      * @param string $viasDeAcceso
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setViasDeAcceso($viasDeAcceso)
     {
@@ -498,7 +498,7 @@ class Hoja4
      *
      * @param string $agua
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setAgua($agua)
     {
@@ -522,7 +522,7 @@ class Hoja4
      *
      * @param string $alumbrado
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setAlumbrado($alumbrado)
     {
@@ -546,7 +546,7 @@ class Hoja4
      *
      * @param string $centrosComerciales
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setCentrosComerciales($centrosComerciales)
     {
@@ -570,7 +570,7 @@ class Hoja4
      *
      * @param string $drenaje
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setDrenaje($drenaje)
     {
@@ -594,7 +594,7 @@ class Hoja4
      *
      * @param string $mercados
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setMercados($mercados)
     {
@@ -618,7 +618,7 @@ class Hoja4
      *
      * @param string $pavimentacion
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setPavimentacion($pavimentacion)
     {
@@ -642,7 +642,7 @@ class Hoja4
      *
      * @param string $escuelas
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setEscuelas($escuelas)
     {
@@ -666,7 +666,7 @@ class Hoja4
      *
      * @param string $banqueta
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setBanqueta($banqueta)
     {
@@ -690,7 +690,7 @@ class Hoja4
      *
      * @param string $areasVerdes
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setAreasVerdes($areasVerdes)
     {
@@ -714,7 +714,7 @@ class Hoja4
      *
      * @param string $transporte
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setTransporte($transporte)
     {
@@ -738,7 +738,7 @@ class Hoja4
      *
      * @param string $deportivos
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setDeportivos($deportivos)
     {
@@ -762,7 +762,7 @@ class Hoja4
      *
      * @param string $casa
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setCasa($casa)
     {
@@ -786,7 +786,7 @@ class Hoja4
      *
      * @param string $departamento
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setDepartamento($departamento)
     {
@@ -810,7 +810,7 @@ class Hoja4
      *
      * @param string $condominio
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setCondominio($condominio)
     {
@@ -834,7 +834,7 @@ class Hoja4
      *
      * @param string $unidadHabitacional
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setUnidadHabitacional($unidadHabitacional)
     {
@@ -858,7 +858,7 @@ class Hoja4
      *
      * @param string $viviendaPopular
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setViviendaPopular($viviendaPopular)
     {
@@ -882,7 +882,7 @@ class Hoja4
      *
      * @param string $propia
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setPropia($propia)
     {
@@ -906,7 +906,7 @@ class Hoja4
      *
      * @param string $familiares
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setFamiliares($familiares)
     {
@@ -930,7 +930,7 @@ class Hoja4
      *
      * @param string $hipotecada
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setHipotecada($hipotecada)
     {
@@ -954,7 +954,7 @@ class Hoja4
      *
      * @param string $prestada
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setPrestada($prestada)
     {
@@ -978,7 +978,7 @@ class Hoja4
      *
      * @param string $rentada
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setRentada($rentada)
     {
@@ -1002,7 +1002,7 @@ class Hoja4
      *
      * @param string $compartida
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setCompartida($compartida)
     {
@@ -1026,7 +1026,7 @@ class Hoja4
      *
      * @param string $buena
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setBuena($buena)
     {
@@ -1050,7 +1050,7 @@ class Hoja4
      *
      * @param string $regular
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setRegular($regular)
     {
@@ -1074,7 +1074,7 @@ class Hoja4
      *
      * @param string $mala
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setMala($mala)
     {
@@ -1098,7 +1098,7 @@ class Hoja4
      *
      * @param integer $valorDeCasa
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setValorDeCasa($valorDeCasa)
     {
@@ -1122,7 +1122,7 @@ class Hoja4
      *
      * @param string $sala
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setSala($sala)
     {
@@ -1146,7 +1146,7 @@ class Hoja4
      *
      * @param string $comedor
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setComedor($comedor)
     {
@@ -1170,7 +1170,7 @@ class Hoja4
      *
      * @param string $cocina
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setCocina($cocina)
     {
@@ -1194,7 +1194,7 @@ class Hoja4
      *
      * @param string $recamaras
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setRecamaras($recamaras)
     {
@@ -1218,7 +1218,7 @@ class Hoja4
      *
      * @param string $banos
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setBanos($banos)
     {
@@ -1242,7 +1242,7 @@ class Hoja4
      *
      * @param string $cuartoServicio
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setCuartoServicio($cuartoServicio)
     {
@@ -1266,7 +1266,7 @@ class Hoja4
      *
      * @param string $estudio
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setEstudio($estudio)
     {
@@ -1290,7 +1290,7 @@ class Hoja4
      *
      * @param string $biblioteca
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setBiblioteca($biblioteca)
     {
@@ -1314,7 +1314,7 @@ class Hoja4
      *
      * @param string $garaje
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setGaraje($garaje)
     {
@@ -1338,7 +1338,7 @@ class Hoja4
      *
      * @param string $jardin
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setJardin($jardin)
     {
@@ -1362,7 +1362,7 @@ class Hoja4
      *
      * @param string $mobiliario
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setMobiliario($mobiliario)
     {
@@ -1386,7 +1386,7 @@ class Hoja4
      *
      * @param string $imagen
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setImagen($imagen)
     {
@@ -1410,7 +1410,7 @@ class Hoja4
      *
      * @param string $aspecto
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setAspecto($aspecto)
     {
@@ -1434,7 +1434,7 @@ class Hoja4
      *
      * @param string $orden
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setOrden($orden)
     {
@@ -1458,7 +1458,7 @@ class Hoja4
      *
      * @param string $teatroEnCasa
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setTeatroEnCasa($teatroEnCasa)
     {
@@ -1482,7 +1482,7 @@ class Hoja4
      *
      * @param string $televisionColor
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setTelevisionColor($televisionColor)
     {
@@ -1506,7 +1506,7 @@ class Hoja4
      *
      * @param string $dvd
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setDvd($dvd)
     {
@@ -1530,7 +1530,7 @@ class Hoja4
      *
      * @param string $estereo
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setEstereo($estereo)
     {
@@ -1554,7 +1554,7 @@ class Hoja4
      *
      * @param string $radio
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setRadio($radio)
     {
@@ -1578,7 +1578,7 @@ class Hoja4
      *
      * @param string $computadora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setComputadora($computadora)
     {
@@ -1602,7 +1602,7 @@ class Hoja4
      *
      * @param string $impresora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setImpresora($impresora)
     {
@@ -1626,7 +1626,7 @@ class Hoja4
      *
      * @param string $otros
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setOtros($otros)
     {
@@ -1650,7 +1650,7 @@ class Hoja4
      *
      * @param string $refrigerador
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setRefrigerador($refrigerador)
     {
@@ -1674,7 +1674,7 @@ class Hoja4
      *
      * @param string $lavaVajilla
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setLavaVajilla($lavaVajilla)
     {
@@ -1698,7 +1698,7 @@ class Hoja4
      *
      * @param string $lavadora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setLavadora($lavadora)
     {
@@ -1722,7 +1722,7 @@ class Hoja4
      *
      * @param string $secadora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setSecadora($secadora)
     {
@@ -1746,7 +1746,7 @@ class Hoja4
      *
      * @param string $licuadora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setLicuadora($licuadora)
     {
@@ -1770,7 +1770,7 @@ class Hoja4
      *
      * @param string $freidora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setFreidora($freidora)
     {
@@ -1794,7 +1794,7 @@ class Hoja4
      *
      * @param string $horneador
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setHorneador($horneador)
     {
@@ -1818,7 +1818,7 @@ class Hoja4
      *
      * @param string $hornoMicroondas
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setHornoMicroondas($hornoMicroondas)
     {
@@ -1842,7 +1842,7 @@ class Hoja4
      *
      * @param string $aspiradora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setAspiradora($aspiradora)
     {
@@ -1866,7 +1866,7 @@ class Hoja4
      *
      * @param string $estufa
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setEstufa($estufa)
     {
@@ -1890,7 +1890,7 @@ class Hoja4
      *
      * @param string $pulidora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setPulidora($pulidora)
     {
@@ -1914,7 +1914,7 @@ class Hoja4
      *
      * @param string $batidora
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setBatidora($batidora)
     {
@@ -1938,7 +1938,7 @@ class Hoja4
      *
      * @param string $waflera
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setWaflera($waflera)
     {
@@ -1962,7 +1962,7 @@ class Hoja4
      *
      * @param string $tostador
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setTostador($tostador)
     {
@@ -1986,7 +1986,7 @@ class Hoja4
      *
      * @param string $sandwichera
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setSandwichera($sandwichera)
     {
@@ -2010,7 +2010,7 @@ class Hoja4
      *
      * @param string $extractorJugo
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setExtractorJugo($extractorJugo)
     {
@@ -2034,7 +2034,7 @@ class Hoja4
      *
      * @param string $observaciones
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setObservaciones($observaciones)
     {
@@ -2052,56 +2052,56 @@ class Hoja4
     {
         return $this->observaciones;
     }
-    private $hoja4_1;
-    private $hoja4_2;
+    private $Bienes_raices;
+    private $Bienes_autos;
 
    
     /**
-     * Set hoja4_1
+     * Set Bienes_raices
      *
-     * @param string $hoja4_1
+     * @param string $Bienes_raices
      *
-     * @return Hoja4
+     * @return Bienes
      */
-    public function setHoja41($hoja4_1)
+    public function setBienes1($Bienes_raices)
     {
-        $this->hoja4_1 = $hoja4_1;
+        $this->Bienes_raices = $Bienes_raices;
 
         return $this;
     }
 
     /**
-     * Get hoja4_1
+     * Get Bienes_raices
      *
      * @return string
      */
-    public function getHoja42()
+    public function getBienes2()
     {
-        return $this->hoja4_2;
+        return $this->Bienes_autos;
     }
 
      /**
-     * Set hoja4_2
+     * Set Bienes_autos
      *
-     * @param string $hoja4_2
+     * @param string $Bienes_autos
      *
-     * @return Hoja4
+     * @return Bienes
      */
-    public function setHoja42($hoja4_2)
+    public function setBienes2($Bienes_autos)
     {
-        $this->hoja4_2 = $hoja4_2;
+        $this->Bienes_autos = $Bienes_autos;
 
         return $this;
     }
 
     /**
-     * Get hoja4_2
+     * Get Bienes_autos
      *
      * @return string
      */
-    public function getHoja41()
+    public function getBienes1()
     {
-        return $this->hoja4_2;
+        return $this->Bienes_autos;
     }
 
     /**
@@ -2115,7 +2115,7 @@ class Hoja4
      *
      * @param string $conservacionCasa
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setConservacionCasa($conservacionCasa)
     {
@@ -2144,7 +2144,7 @@ class Hoja4
      *
      * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud
      *
-     * @return Hoja4
+     * @return Bienes
      */
     public function setSolicitud(\fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud = null)
     {

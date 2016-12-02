@@ -195,7 +195,7 @@ class Hoja5Controller extends Controller
             if ($editForm->get('Siguiente')->isClicked()) {
                  return $this->redirect($this->generateUrl('hoja6_solicitud', array('solicitud' => $entity->getSolicitud())));
             }
-            return $this->redirect($this->generateUrl('hoja4_solicitud', array('solicitud' => $entity->getSolicitud())));
+            return $this->redirect($this->generateUrl('Bienes_solicitud', array('solicitud' => $entity->getSolicitud())));
         }
 
         return $this->render('HojaBundle:Hoja5:edit.html.twig', array(

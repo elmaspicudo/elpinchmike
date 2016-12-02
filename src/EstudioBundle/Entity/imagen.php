@@ -81,4 +81,3 @@ class imagen
         return $this->url;
     }
 }
-
