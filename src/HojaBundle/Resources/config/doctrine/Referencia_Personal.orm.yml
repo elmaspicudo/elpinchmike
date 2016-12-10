@@ -1,0 +1,82 @@
+HojaBundle\Entity\Referencia_Personal:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        observaciones:
+            type: text
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+    manyToMany:      
+      referenciaFamiliar:
+        targetEntity: EstudioBundle\Entity\referenciaFamiliar
+        joinTable:
+          name: referenciaFamiliar_investigado
+          joinColumns:
+            investigado_id:
+              referencedColumnName: id
+          inverseJoinColumns:
+            dependientesEconomicos_id:
+              referencedColumnName: id
+        cascade: ["persist","remove"]
+        onDelete: CASCADE
+        options:
+            cascade:
+            remove: true
+            persist: true
+      referenciaVecinal:
+        targetEntity: EstudioBundle\Entity\referenciaVecinal
+        joinTable:
+          name: referenciaVecinal_investigado
+          joinColumns:
+            investigado_id:
+              referencedColumnName: id
+          inverseJoinColumns:
+            dependientesEconomicos_id:
+              referencedColumnName: id
+        cascade: ["persist","remove"]
+        onDelete: CASCADE
+        options:
+            cascade:
+            remove: true
+            persist: true     
+      saludHigiene:
+        targetEntity: EstudioBundle\Entity\saludHigiene
+        joinTable:
+          name: saludHigiene_investigado
+          joinColumns:
+            investigado_id:
+              referencedColumnName: id
+          inverseJoinColumns:
+            dependientesEconomicos_id:
+              referencedColumnName: id
+        cascade: ["persist","remove"]
+        onDelete: CASCADE
+        options:
+            cascade:
+            remove: true
+            persist: true
+      pasatiempos:
+        targetEntity: EstudioBundle\Entity\pasatiempos
+        joinTable:
+          name: pasatiempos_investigado
+          joinColumns:
+            investigado_id:
+              referencedColumnName: id
+          inverseJoinColumns:
+            dependientesEconomicos_id:
+              referencedColumnName: id
+        cascade: ["persist","remove"]
+        onDelete: CASCADE
+        options:
+            cascade:
+            remove: true
+            persist: true
+    lifecycleCallbacks: {  }

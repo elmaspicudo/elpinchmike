@@ -96,46 +96,51 @@ class SolicitudRepository extends EntityRepository
     {      
       if($timefinal > $timeinicio )
         {
-            $tiempoDia=24*60*60;
-            $tiempo=$tiempoDia-$horaSalida;
+            $tiempoDia=86400;//segundos de un dia
+            $tiempo=$tiempoDia-$horaSalida;            
             if($horaFinal < $horaSalida)
             {   
                 if($horaFinal > $horaSolicitud)    
                 {
                       $horatotal=$horaFinal-$horaSolicitud;                       
                       $timeinicio+=$horatotal;
-                      if($timeinicio >= $timefinal){  
-                          $_SESSION['cron']  =array('tiempo'=>$horatotal,'action'=>'play1','timer'=>$horaSalida);                    
-                          return ;
+                      if($timeinicio >= $timefinal){                           
+                          return array('tiempo'=>$horatotal,'action'=>'play1','timer'=>$horaSalida);                    
+                          
                       }else{
+                                                    
                           $horatotal=$horaSalida-$horaSolicitud; 
+                          $horatotal=$tiempoTotal+$horatotal;
                           $timeinicio+=$horatotal;
-                          $timeinicio+=$tiempo;                          
-                          $this->tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);
+                          $timeinicio+=$tiempo;   
+                                             
+                          return  $this->tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);
                       }
                       
                 }else{
                      if($timefinal > $timeinicio){
                           $horatotal=$horaSalida-$horaSolicitud; 
                           $timeinicio+=$horatotal;
-                          $timeinicio+=$tiempo;                          
-                          $this->tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);                          
+                          $timeinicio+=$tiempo;  
+                                            
+                          return  $this->tiempoActual($horaEntrada,$horaFinal,$horaEntrada,$horaSalida,$timefinal,$timeinicio,$horatotal);                          
                       }else{          
-                          $_SESSION['cron']  =  array('tiempo'=>0,'action'=>'stop2','timer'=>0);              
-                          return ;                          
+                          return  array('tiempo'=>0,'action'=>'stop2','timer'=>0);              
+                                                   
                       }                  
 
                 }
             }else{    
                 
-                $horatotal=$horaSalida-$horaSolicitud;  
-                $_SESSION['cron']  =   array('tiempo'=>$horatotal,'action'=>'stop3','timer'=>0);
-                return ;
+                $horatotal=$horaSalida-$horaSolicitud;             
+                return  array('tiempo'=>$horatotal,'action'=>'stop3','timer'=>0);
+             
             } 
         }else{
           //$res=array('tiempo'=>$tiempoTotal,'action'=>'stop','timer'=>0);
-          $_SESSION['cron']  =array('tiempo'=>$tiempoTotal,'action'=>'stop4','timer'=>0);
-            return ;
+          //echo $horatotal.'==5<br>';
+          return array('tiempo'=>$tiempoTotal,'action'=>'stop4','timer'=>0);
+            
         } 
     }
 /*

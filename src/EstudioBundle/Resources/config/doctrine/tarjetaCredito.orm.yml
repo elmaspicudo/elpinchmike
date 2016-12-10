@@ -11,10 +11,14 @@ EstudioBundle\Entity\tarjetaCredito:
         banco:
             type: string
             length: '100'
+            nullable: TRUE
         limiteCredito:
             type: float
+            nullable: TRUE
         antiguedad:
             type: date
+            nullable: TRUE
         pagoMensual:
             type: date
+            nullable: TRUE
     lifecycleCallbacks: {  }

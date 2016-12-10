@@ -1,0 +1,29 @@
+
+Finanzas_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:Finanzas:show" }
+
+Finanzas:
+    path:     /
+    defaults: { _controller: "HojaBundle:Finanzas:new" }
+
+Finanzas_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:Finanzas:create" }
+    methods:  POST
+
+Finanzas_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:Finanzas:edit" }
+
+Finanzas_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:Finanzas:update" }
+    methods:  [POST, PUT]
+Finanzas_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "HojaBundle:Finanzas:showbysolicitud" }
+Finanzas_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:Finanzas:delete" }
+    methods:  [POST, DELETE]

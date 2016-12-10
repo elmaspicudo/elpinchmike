@@ -1,26 +1,22 @@
 hoja_marcofamiliar:
     resource: "@HojaBundle/Resources/config/routing/marcofamiliar.yml"
     prefix:   /marcofamiliar
+    
+hoja_Imagenes:
+    resource: "@HojaBundle/Resources/config/routing/Imagenes.yml"
+    prefix:   /Imagenes
 
-hoja_hoja9:
-    resource: "@HojaBundle/Resources/config/routing/hoja9.yml"
-    prefix:   /hoja9
+hoja_Referencia_Personal:
+    resource: "@HojaBundle/Resources/config/routing/Referencia_Personal.yml"
+    prefix:   /Referencia_Personal
 
-hoja_hoja8:
-    resource: "@HojaBundle/Resources/config/routing/hoja8.yml"
-    prefix:   /hoja8
+hoja_Referencia_laboral:
+    resource: "@HojaBundle/Resources/config/routing/Referencia_laboral.yml"
+    prefix:   /Referencia_laboral
 
-hoja_hoja7:
-    resource: "@HojaBundle/Resources/config/routing/hoja7.yml"
-    prefix:   /hoja7
-
-hoja_hoja6:
-    resource: "@HojaBundle/Resources/config/routing/hoja6.yml"
-    prefix:   /hoja6
-
-hoja_hoja5:
-    resource: "@HojaBundle/Resources/config/routing/hoja5.yml"
-    prefix:   /hoja5
+hoja_Finanzas:
+    resource: "@HojaBundle/Resources/config/routing/Finanzas.yml"
+    prefix:   /Finanzas
 
 hoja_Bienes:
     resource: "@HojaBundle/Resources/config/routing/Bienes.yml"

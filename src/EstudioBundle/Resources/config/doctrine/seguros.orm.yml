@@ -11,11 +11,15 @@ EstudioBundle\Entity\seguros:
         aseguradora:
             type: string
             length: '10'
+            nullable: TRUE
         tipoSeguro:
             type: string
             length: '50'
+            nullable: TRUE
         mensualidad:
             type: float
+            nullable: TRUE
         vigencia:
             type: date
+            nullable: TRUE
     lifecycleCallbacks: {  }

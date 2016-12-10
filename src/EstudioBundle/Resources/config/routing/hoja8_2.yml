@@ -1,30 +1,30 @@
-Hoja8_2:
+Imagenes_2:
     path:     /
-    defaults: { _controller: "EstudioBundle:Hoja8_2:index" }
+    defaults: { _controller: "EstudioBundle:Imagenes_2:index" }
 
-Hoja8_2_show:
+Imagenes_2_show:
     path:     /{id}/show
-    defaults: { _controller: "EstudioBundle:Hoja8_2:show" }
+    defaults: { _controller: "EstudioBundle:Imagenes_2:show" }
 
-Hoja8_2_new:
+Imagenes_2_new:
     path:     /new
-    defaults: { _controller: "EstudioBundle:Hoja8_2:new" }
+    defaults: { _controller: "EstudioBundle:Imagenes_2:new" }
 
-Hoja8_2_create:
+Imagenes_2_create:
     path:     /create
-    defaults: { _controller: "EstudioBundle:Hoja8_2:create" }
+    defaults: { _controller: "EstudioBundle:Imagenes_2:create" }
     methods:  POST
 
-Hoja8_2_edit:
+Imagenes_2_edit:
     path:     /{id}/edit
-    defaults: { _controller: "EstudioBundle:Hoja8_2:edit" }
+    defaults: { _controller: "EstudioBundle:Imagenes_2:edit" }
 
-Hoja8_2_update:
+Imagenes_2_update:
     path:     /{id}/update
-    defaults: { _controller: "EstudioBundle:Hoja8_2:update" }
+    defaults: { _controller: "EstudioBundle:Imagenes_2:update" }
     methods:  [POST, PUT]
 
-Hoja8_2_delete:
+Imagenes_2_delete:
     path:     /{id}/delete
-    defaults: { _controller: "EstudioBundle:Hoja8_2:delete" }
+    defaults: { _controller: "EstudioBundle:Imagenes_2:delete" }
     methods:  [POST, DELETE]

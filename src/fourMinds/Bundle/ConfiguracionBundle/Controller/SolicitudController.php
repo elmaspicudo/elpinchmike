@@ -380,20 +380,24 @@ class SolicitudController extends Controller
         }
 
         $fechaSol=$entity->getFechaVisitador();
+        echo $fechaSol->format('Y-m-d H:i:s').'<br>';
         $fechaActual=new \DateTime();
+        echo $fechaActual->format('Y-m-d H:i:s').'<br>';
         $horaSolicitud=(($fechaSol->format('H')*60*60)+($fechaSol->format('i')*60)+($fechaSol->format('s')));
         $horaFinal=(($fechaActual->format('H')*60*60)+($fechaActual->format('i')*60)+($fechaActual->format('s'))); 
+        echo $horaSolicitud.'<br>';
+        echo $horaFinal.'<br>';
         $fechaEntrada=$entity->getVisitador()->getHorario()->getInicio();
         $fechaSalida=$entity->getVisitador()->getHorario()->getFin();
         $horaEntrada=(($fechaEntrada->format('H')*60*60)+($fechaEntrada->format('i')*60)+($fechaEntrada->format('s')));
         $horaSalida=(($fechaSalida->format('H')*60*60)+($fechaSalida->format('i')*60)+($fechaSalida->format('s')));         
         $date = $em->getRepository('ConfiguracionBundle:Solicitud')->tiempoActual($horaSolicitud,$horaFinal,$horaEntrada,$horaSalida,intval($fechaActual->getTimestamp()),intval($fechaSol->getTimestamp()),0);    
-        $cron=$this->conversorSegundosHoras($_SESSION['cron']['tiempo']);    
-       
+        $cron=$this->conversorSegundosHoras($date['tiempo']);    
+       //print_r($cron);
         return $this->render('ConfiguracionBundle:Solicitud:cronometro.html.twig', array(
             'cron'      => $cron,
-            'action'   => $_SESSION['cron']['action'],
-            'timer' => $_SESSION['cron']['timer'],
+            'action'   => $date['action'],
+            'timer' => $date['timer'],
         ));
 
     }

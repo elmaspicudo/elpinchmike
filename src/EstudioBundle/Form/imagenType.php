@@ -15,8 +15,9 @@ class imagen extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('url','file')
+            ->add('path')
+            ->add('imagen')
+            ->add('updated')
         ;
     }
     
@@ -26,7 +27,7 @@ class imagen extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'EstudioBundle\Entity\Hoja8_1'
+            'data_class' => 'EstudioBundle\Entity\Imagenes_1'
         ));
     }
 
@@ -35,6 +36,6 @@ class imagen extends AbstractType
      */
     public function getName()
     {
-        return 'estudiobundle_hoja8_1';
+        return 'estudiobundle_Imagenes_1';
     }
 }

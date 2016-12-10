@@ -400,3 +400,4 @@ class egresos
         return $this->otros;
     }
 }
+

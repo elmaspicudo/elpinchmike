@@ -139,3 +139,4 @@ class Bienes_autos
         return $this->liquidado;
     }
 }
+

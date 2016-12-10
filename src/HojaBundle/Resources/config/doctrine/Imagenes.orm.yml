@@ -1,0 +1,19 @@
+HojaBundle\Entity\Imagenes:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+        fotografia_interior:         
+            targetEntity: EstudioBundle\Entity\imagen
+        fotografia_exterior:         
+            targetEntity: EstudioBundle\Entity\imagen
+        fotografia_ubicacion:         
+            targetEntity: EstudioBundle\Entity\imagen
+    lifecycleCallbacks: {  }

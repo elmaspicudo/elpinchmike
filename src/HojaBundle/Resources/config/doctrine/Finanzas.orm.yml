@@ -1,0 +1,74 @@
+HojaBundle\Entity\Finanzas:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        observaciones:
+            type: text
+            nullable: TRUE
+    manyToOne:
+        solicitud:         
+            targetEntity: fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+        ingresos:         
+            targetEntity: EstudioBundle\Entity\ingresos
+            cascade: ["persist","remove"]
+            onDelete: CASCADE
+            options:
+              cascade:
+              remove: true
+              persist: true
+        egresos:         
+            targetEntity: EstudioBundle\Entity\egresos
+            cascade: ["persist","remove"]
+            onDelete: CASCADE
+            options:
+              cascade:
+              remove: true
+              persist: true
+        tarjetaCredito:         
+            targetEntity: EstudioBundle\Entity\tarjetaCredito
+            cascade: ["persist","remove"]
+            onDelete: CASCADE
+            options:
+              cascade:
+              remove: true
+              persist: true
+        creditosPersonales:         
+            targetEntity: EstudioBundle\Entity\creditosPersonales
+            cascade: ["persist","remove"]
+            onDelete: CASCADE
+            options:
+              cascade:
+              remove: true
+              persist: true
+        creditoAutomotriz:         
+            targetEntity: EstudioBundle\Entity\creditoAutomotriz
+            cascade: ["persist","remove"]
+            onDelete: CASCADE
+            options:
+              cascade:
+              remove: true
+              persist: true
+        seguros:         
+            targetEntity: EstudioBundle\Entity\seguros
+            cascade: ["persist","remove"]
+            onDelete: CASCADE
+            options:
+              cascade:
+              remove: true
+              persist: true
+        otrosServicios:         
+            targetEntity: EstudioBundle\Entity\otrosServicios
+            cascade: ["persist","remove"]
+            onDelete: CASCADE
+            options:
+              cascade:
+              remove: true
+              persist: true
+
+    lifecycleCallbacks: {  }

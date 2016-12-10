@@ -3,65 +3,19 @@
 namespace HojaBundle\Entity;
 
 /**
- * Hoja8
+ * Imagenes
  */
-class Hoja8
+class Imagenes
 {
     /**
      * @var integer
      */
     private $id;
-    private $hoja8_1;
-    private $Hoja8_2;
-
 
     /**
-     * Set hoja8_1
-     *
-     * @param string $hoja8_1
-     *
-     * @return Hoja81     */
-    public function setHoja81($hoja8_1)
-    {
-        $this->hoja8_1 = $hoja8_1;
-
-        return $this;
-    }
-
-    /**
-     * Get hoja8_1
-     *
-     * @return string
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
      */
-    public function getHoja81()
-    {
-        return $this->hoja8_1;
-    }
-
-
-    /**
-     * Set Hoja8_2
-     *
-     * @param string $Hoja8_2
-     *
-     * @return Hoja82     */
-    public function setHoja82($Hoja8_2)
-    {
-        $this->Hoja8_2 = $Hoja8_2;
-
-        return $this;
-    }
-
-    /**
-     * Get Hoja8_2
-     *
-     * @return string
-     */
-    public function getHoja82()
-    {
-        return $this->Hoja8_2;
-    }
-
+    private $solicitud;
 
 
     /**
@@ -73,18 +27,13 @@ class Hoja8
     {
         return $this->id;
     }
-    /**
-     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
-     */
-    private $solicitud;
-
 
     /**
      * Set solicitud
      *
      * @param \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud
      *
-     * @return Hoja8
+     * @return Imagenes
      */
     public function setSolicitud(\fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud $solicitud = null)
     {
@@ -103,3 +52,4 @@ class Hoja8
         return $this->solicitud;
     }
 }
+

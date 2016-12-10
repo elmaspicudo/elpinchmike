@@ -284,3 +284,4 @@ class FamiliaresCercanos
         return $this->dependiente;
     }
 }
+

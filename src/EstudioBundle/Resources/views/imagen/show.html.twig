@@ -1,7 +1,7 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Hoja8_1</h1>
+    <h1>Imagenes_1</h1>
 
     <table class="record_properties">
         <tbody>
@@ -20,7 +20,7 @@
         </tbody>
     </table>
 
-        <a  href="{{ path('hoja8_1') }}" class="btn btn-warning">Regresar</a>
-        <a href="{{ path('hoja8_1_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
+        <a  href="{{ path('Imagenes_1') }}" class="btn btn-warning">Regresar</a>
+        <a href="{{ path('Imagenes_1_edit', { 'id': entity.id }) }}" class="btn btn-success">Editar</a>
     {{ form(delete_form) }}
 {% endblock %}

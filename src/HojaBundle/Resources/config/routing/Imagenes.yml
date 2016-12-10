@@ -1,0 +1,29 @@
+
+Imagenes_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:Imagenes:show" }
+
+Imagenes:
+    path:     /
+    defaults: { _controller: "HojaBundle:Imagenes:new" }
+
+Imagenes_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:Imagenes:create" }
+    methods:  POST
+
+Imagenes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:Imagenes:edit" }
+
+Imagenes_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:Imagenes:update" }
+    methods:  [POST, PUT]
+Imagenes_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "HojaBundle:Imagenes:showbysolicitud" }
+Imagenes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:Imagenes:delete" }
+    methods:  [POST, DELETE]

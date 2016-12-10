@@ -5,37 +5,37 @@ namespace EstudioBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use EstudioBundle\Entity\Hoja8_1;
+use EstudioBundle\Entity\Imagenes_1;
 use EstudioBundle\Form\imagen;
 
 /**
- * Hoja8_1 controller.
+ * Imagenes_1 controller.
  *
  */
-class Hoja8_1Controller extends Controller
+class Imagenes_1Controller extends Controller
 {
 
     /**
-     * Lists all Hoja8_1 entities.
+     * Lists all Imagenes_1 entities.
      *
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('EstudioBundle:Hoja8_1')->findAll();
+        $entities = $em->getRepository('EstudioBundle:Imagenes_1')->findAll();
 
-        return $this->render('EstudioBundle:Hoja8_1:index.html.twig', array(
+        return $this->render('EstudioBundle:Imagenes_1:index.html.twig', array(
             'entities' => $entities,
         ));
     }
     /**
-     * Creates a new Hoja8_1 entity.
+     * Creates a new Imagenes_1 entity.
      *
      */
     public function createAction(Request $request)
     {
-        $entity = new Hoja8_1();
+        $entity = new Imagenes_1();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -44,26 +44,26 @@ class Hoja8_1Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja8_1_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('Imagenes_1_show', array('id' => $entity->getId())));
         }
 
-        return $this->render('EstudioBundle:Hoja8_1:new.html.twig', array(
+        return $this->render('EstudioBundle:Imagenes_1:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Creates a form to create a Hoja8_1 entity.
+     * Creates a form to create a Imagenes_1 entity.
      *
-     * @param Hoja8_1 $entity The entity
+     * @param Imagenes_1 $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Hoja8_1 $entity)
+    private function createCreateForm(Imagenes_1 $entity)
     {
         $form = $this->createForm(new imagen(), $entity, array(
-            'action' => $this->generateUrl('hoja8_1_create'),
+            'action' => $this->generateUrl('Imagenes_1_create'),
             'method' => 'POST',
         ));
 
@@ -73,60 +73,60 @@ class Hoja8_1Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Hoja8_1 entity.
+     * Displays a form to create a new Imagenes_1 entity.
      *
      */
     public function newAction()
     {
-        $entity = new Hoja8_1();
+        $entity = new Imagenes_1();
         $form   = $this->createCreateForm($entity);
 
-        return $this->render('EstudioBundle:Hoja8_1:new.html.twig', array(
+        return $this->render('EstudioBundle:Imagenes_1:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
         ));
     }
 
     /**
-     * Finds and displays a Hoja8_1 entity.
+     * Finds and displays a Imagenes_1 entity.
      *
      */
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja8_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:Imagenes_1')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja8_1 entity.');
+            throw $this->createNotFoundException('Unable to find Imagenes_1 entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja8_1:show.html.twig', array(
+        return $this->render('EstudioBundle:Imagenes_1:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-     * Displays a form to edit an existing Hoja8_1 entity.
+     * Displays a form to edit an existing Imagenes_1 entity.
      *
      */
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja8_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:Imagenes_1')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja8_1 entity.');
+            throw $this->createNotFoundException('Unable to find Imagenes_1 entity.');
         }
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return $this->render('EstudioBundle:Hoja8_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:Imagenes_1:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -134,16 +134,16 @@ class Hoja8_1Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Hoja8_1 entity.
+    * Creates a form to edit a Imagenes_1 entity.
     *
-    * @param Hoja8_1 $entity The entity
+    * @param Imagenes_1 $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Hoja8_1 $entity)
+    private function createEditForm(Imagenes_1 $entity)
     {
         $form = $this->createForm(new imagen(), $entity, array(
-            'action' => $this->generateUrl('hoja8_1_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('Imagenes_1_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -152,17 +152,17 @@ class Hoja8_1Controller extends Controller
         return $form;
     }
     /**
-     * Edits an existing Hoja8_1 entity.
+     * Edits an existing Imagenes_1 entity.
      *
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('EstudioBundle:Hoja8_1')->find($id);
+        $entity = $em->getRepository('EstudioBundle:Imagenes_1')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Hoja8_1 entity.');
+            throw $this->createNotFoundException('Unable to find Imagenes_1 entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -172,17 +172,17 @@ class Hoja8_1Controller extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('hoja8_1_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('Imagenes_1_edit', array('id' => $id)));
         }
 
-        return $this->render('EstudioBundle:Hoja8_1:edit.html.twig', array(
+        return $this->render('EstudioBundle:Imagenes_1:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
     /**
-     * Deletes a Hoja8_1 entity.
+     * Deletes a Imagenes_1 entity.
      *
      */
     public function deleteAction(Request $request, $id)
@@ -192,21 +192,21 @@ class Hoja8_1Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('EstudioBundle:Hoja8_1')->find($id);
+            $entity = $em->getRepository('EstudioBundle:Imagenes_1')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Hoja8_1 entity.');
+                throw $this->createNotFoundException('Unable to find Imagenes_1 entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('hoja8_1'));
+        return $this->redirect($this->generateUrl('Imagenes_1'));
     }
 
     /**
-     * Creates a form to delete a Hoja8_1 entity by id.
+     * Creates a form to delete a Imagenes_1 entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -215,7 +215,7 @@ class Hoja8_1Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('hoja8_1_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('Imagenes_1_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Eliminar','attr'=>array('class'=>'btn btn-danger')))
             ->getForm()

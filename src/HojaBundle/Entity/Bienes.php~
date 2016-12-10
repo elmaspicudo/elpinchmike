@@ -12,16 +12,6 @@ class Bienes
      */
     private $id;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
     /**
      * @var string
      */
@@ -130,47 +120,12 @@ class Bienes
     /**
      * @var string
      */
-    private $propia;
+    private $propiedadVivienda;
 
     /**
      * @var string
      */
-    private $familiares;
-
-    /**
-     * @var string
-     */
-    private $hipotecada;
-
-    /**
-     * @var string
-     */
-    private $prestada;
-
-    /**
-     * @var string
-     */
-    private $rentada;
-
-    /**
-     * @var string
-     */
-    private $compartida;
-
-    /**
-     * @var string
-     */
-    private $buena;
-
-    /**
-     * @var string
-     */
-    private $regular;
-
-    /**
-     * @var string
-     */
-    private $mala;
+    private $conservacionCasa;
 
     /**
      * @var integer
@@ -372,6 +327,31 @@ class Bienes
      */
     private $observaciones;
 
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    private $solicitud;
+
+    /**
+     * @var \EstudioBundle\Entity\Bienes_raices
+     */
+    private $Bienes_raices;
+
+    /**
+     * @var \EstudioBundle\Entity\Bienes_autos
+     */
+    private $Bienes_autos;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set urbana
@@ -878,219 +858,51 @@ class Bienes
     }
 
     /**
-     * Set propia
+     * Set propiedadVivienda
      *
-     * @param string $propia
+     * @param string $propiedadVivienda
      *
      * @return Bienes
      */
-    public function setPropia($propia)
+    public function setPropiedadVivienda($propiedadVivienda)
     {
-        $this->propia = $propia;
+        $this->propiedadVivienda = $propiedadVivienda;
 
         return $this;
     }
 
     /**
-     * Get propia
+     * Get propiedadVivienda
      *
      * @return string
      */
-    public function getPropia()
+    public function getPropiedadVivienda()
     {
-        return $this->propia;
+        return $this->propiedadVivienda;
     }
 
     /**
-     * Set familiares
+     * Set conservacionCasa
      *
-     * @param string $familiares
+     * @param string $conservacionCasa
      *
      * @return Bienes
      */
-    public function setFamiliares($familiares)
+    public function setConservacionCasa($conservacionCasa)
     {
-        $this->familiares = $familiares;
+        $this->conservacionCasa = $conservacionCasa;
 
         return $this;
     }
 
     /**
-     * Get familiares
+     * Get conservacionCasa
      *
      * @return string
      */
-    public function getFamiliares()
+    public function getConservacionCasa()
     {
-        return $this->familiares;
-    }
-
-    /**
-     * Set hipotecada
-     *
-     * @param string $hipotecada
-     *
-     * @return Bienes
-     */
-    public function setHipotecada($hipotecada)
-    {
-        $this->hipotecada = $hipotecada;
-
-        return $this;
-    }
-
-    /**
-     * Get hipotecada
-     *
-     * @return string
-     */
-    public function getHipotecada()
-    {
-        return $this->hipotecada;
-    }
-
-    /**
-     * Set prestada
-     *
-     * @param string $prestada
-     *
-     * @return Bienes
-     */
-    public function setPrestada($prestada)
-    {
-        $this->prestada = $prestada;
-
-        return $this;
-    }
-
-    /**
-     * Get prestada
-     *
-     * @return string
-     */
-    public function getPrestada()
-    {
-        return $this->prestada;
-    }
-
-    /**
-     * Set rentada
-     *
-     * @param string $rentada
-     *
-     * @return Bienes
-     */
-    public function setRentada($rentada)
-    {
-        $this->rentada = $rentada;
-
-        return $this;
-    }
-
-    /**
-     * Get rentada
-     *
-     * @return string
-     */
-    public function getRentada()
-    {
-        return $this->rentada;
-    }
-
-    /**
-     * Set compartida
-     *
-     * @param string $compartida
-     *
-     * @return Bienes
-     */
-    public function setCompartida($compartida)
-    {
-        $this->compartida = $compartida;
-
-        return $this;
-    }
-
-    /**
-     * Get compartida
-     *
-     * @return string
-     */
-    public function getCompartida()
-    {
-        return $this->compartida;
-    }
-
-    /**
-     * Set buena
-     *
-     * @param string $buena
-     *
-     * @return Bienes
-     */
-    public function setBuena($buena)
-    {
-        $this->buena = $buena;
-
-        return $this;
-    }
-
-    /**
-     * Get buena
-     *
-     * @return string
-     */
-    public function getBuena()
-    {
-        return $this->buena;
-    }
-
-    /**
-     * Set regular
-     *
-     * @param string $regular
-     *
-     * @return Bienes
-     */
-    public function setRegular($regular)
-    {
-        $this->regular = $regular;
-
-        return $this;
-    }
-
-    /**
-     * Get regular
-     *
-     * @return string
-     */
-    public function getRegular()
-    {
-        return $this->regular;
-    }
-
-    /**
-     * Set mala
-     *
-     * @param string $mala
-     *
-     * @return Bienes
-     */
-    public function setMala($mala)
-    {
-        $this->mala = $mala;
-
-        return $this;
-    }
-
-    /**
-     * Get mala
-     *
-     * @return string
-     */
-    public function getMala()
-    {
-        return $this->mala;
+        return $this->conservacionCasa;
     }
 
     /**
@@ -2052,92 +1864,6 @@ class Bienes
     {
         return $this->observaciones;
     }
-    private $Bienes_raices;
-    private $Bienes_autos;
-
-   
-    /**
-     * Set Bienes_raices
-     *
-     * @param string $Bienes_raices
-     *
-     * @return Bienes
-     */
-    public function setBienes1($Bienes_raices)
-    {
-        $this->Bienes_raices = $Bienes_raices;
-
-        return $this;
-    }
-
-    /**
-     * Get Bienes_raices
-     *
-     * @return string
-     */
-    public function getBienes2()
-    {
-        return $this->Bienes_autos;
-    }
-
-     /**
-     * Set Bienes_autos
-     *
-     * @param string $Bienes_autos
-     *
-     * @return Bienes
-     */
-    public function setBienes2($Bienes_autos)
-    {
-        $this->Bienes_autos = $Bienes_autos;
-
-        return $this;
-    }
-
-    /**
-     * Get Bienes_autos
-     *
-     * @return string
-     */
-    public function getBienes1()
-    {
-        return $this->Bienes_autos;
-    }
-
-    /**
-     * @var string
-     */
-    private $conservacionCasa;
-
-
-    /**
-     * Set conservacionCasa
-     *
-     * @param string $conservacionCasa
-     *
-     * @return Bienes
-     */
-    public function setConservacionCasa($conservacionCasa)
-    {
-        $this->conservacionCasa = $conservacionCasa;
-
-        return $this;
-    }
-
-    /**
-     * Get conservacionCasa
-     *
-     * @return string
-     */
-    public function getConservacionCasa()
-    {
-        return $this->conservacionCasa;
-    }
-    /**
-     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
-     */
-    private $solicitud;
-
 
     /**
      * Set solicitud
@@ -2162,35 +1888,6 @@ class Bienes
     {
         return $this->solicitud;
     }
-    /**
-     * @var string
-     */
-    private $propiedadVivienda;
-
-
-    /**
-     * Set propiedadVivienda
-     *
-     * @param string $propiedadVivienda
-     *
-     * @return Bienes
-     */
-    public function setPropiedadVivienda($propiedadVivienda)
-    {
-        $this->propiedadVivienda = $propiedadVivienda;
-
-        return $this;
-    }
-
-    /**
-     * Get propiedadVivienda
-     *
-     * @return string
-     */
-    public function getPropiedadVivienda()
-    {
-        return $this->propiedadVivienda;
-    }
 
     /**
      * Set bienesRaices
@@ -2214,5 +1911,29 @@ class Bienes
     public function getBienesRaices()
     {
         return $this->Bienes_raices;
+    }
+
+    /**
+     * Set bienesAutos
+     *
+     * @param \EstudioBundle\Entity\Bienes_autos $bienesAutos
+     *
+     * @return Bienes
+     */
+    public function setBienesAutos(\EstudioBundle\Entity\Bienes_autos $bienesAutos = null)
+    {
+        $this->Bienes_autos = $bienesAutos;
+
+        return $this;
+    }
+
+    /**
+     * Get bienesAutos
+     *
+     * @return \EstudioBundle\Entity\Bienes_autos
+     */
+    public function getBienesAutos()
+    {
+        return $this->Bienes_autos;
     }
 }

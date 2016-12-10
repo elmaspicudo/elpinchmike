@@ -25,17 +25,7 @@ class Hoja1
     /**
      * @var string
      */
-    private $nombre;
-
-    /**
-     * @var string
-     */
-    private $apPaterno;
-
-    /**
-     * @var string
-     */
-    private $apMaterno;
+    private $nombreCompleto;
 
     /**
      * @var string
@@ -70,7 +60,7 @@ class Hoja1
     /**
      * @var string
      */
-    
+    private $desempeno;
 
     /**
      * @var string
@@ -81,6 +71,11 @@ class Hoja1
      * @var string
      */
     private $observaciones;
+
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    private $solicitud;
 
 
     /**
@@ -142,75 +137,27 @@ class Hoja1
     }
 
     /**
-     * Set nombre
+     * Set nombreCompleto
      *
-     * @param string $nombre
+     * @param string $nombreCompleto
      *
      * @return Hoja1
      */
-    public function setNombre($nombre)
+    public function setNombreCompleto($nombreCompleto)
     {
-        $this->nombre = $nombre;
+        $this->nombreCompleto = $nombreCompleto;
 
         return $this;
     }
 
     /**
-     * Get nombre
+     * Get nombreCompleto
      *
      * @return string
      */
-    public function getNombre()
+    public function getNombreCompleto()
     {
-        return $this->nombre;
-    }
-
-    /**
-     * Set apPaterno
-     *
-     * @param string $apPaterno
-     *
-     * @return Hoja1
-     */
-    public function setApPaterno($apPaterno)
-    {
-        $this->apPaterno = $apPaterno;
-
-        return $this;
-    }
-
-    /**
-     * Get apPaterno
-     *
-     * @return string
-     */
-    public function getApPaterno()
-    {
-        return $this->apPaterno;
-    }
-
-    /**
-     * Set apMaterno
-     *
-     * @param string $apMaterno
-     *
-     * @return Hoja1
-     */
-    public function setApMaterno($apMaterno)
-    {
-        $this->apMaterno = $apMaterno;
-
-        return $this;
-    }
-
-    /**
-     * Get apMaterno
-     *
-     * @return string
-     */
-    public function getApMaterno()
-    {
-        return $this->apMaterno;
+        return $this->nombreCompleto;
     }
 
     /**
@@ -357,7 +304,29 @@ class Hoja1
         return $this->laboral;
     }
 
-  
+    /**
+     * Set desempeno
+     *
+     * @param string $desempeno
+     *
+     * @return Hoja1
+     */
+    public function setDesempeno($desempeno)
+    {
+        $this->desempeno = $desempeno;
+
+        return $this;
+    }
+
+    /**
+     * Get desempeno
+     *
+     * @return string
+     */
+    public function getDesempeno()
+    {
+        return $this->desempeno;
+    }
 
     /**
      * Set estabilidadLaboral
@@ -406,69 +375,6 @@ class Hoja1
     {
         return $this->observaciones;
     }
-    /**
-     * @var string
-     */
-    private $desempeno;
-
-
-    /**
-     * Set desempeno
-     *
-     * @param string $desempeno
-     *
-     * @return Hoja1
-     */
-    public function setDesempeno($desempeno)
-    {
-        $this->desempeno = $desempeno;
-
-        return $this;
-    }
-
-    /**
-     * Get desempeno
-     *
-     * @return string
-     */
-    public function getDesempeno()
-    {
-        return $this->desempeno;
-    }
-    /**
-     * @var string
-     */
-    private $nombreCompleto;
-
-
-    /**
-     * Set nombreCompleto
-     *
-     * @param string $nombreCompleto
-     *
-     * @return Hoja1
-     */
-    public function setNombreCompleto($nombreCompleto)
-    {
-        $this->nombreCompleto = $nombreCompleto;
-
-        return $this;
-    }
-
-    /**
-     * Get nombreCompleto
-     *
-     * @return string
-     */
-    public function getNombreCompleto()
-    {
-        return $this->nombreCompleto;
-    }
-    /**
-     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
-     */
-    private $solicitud;
-
 
     /**
      * Set solicitud

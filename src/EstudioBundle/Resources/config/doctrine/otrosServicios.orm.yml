@@ -11,28 +11,37 @@ EstudioBundle\Entity\otrosServicios:
         cablemas:
             type: string
             length: '50'
+            nullable: TRUE
         mastv:
             type: string
             length: '50'
+            nullable: TRUE
         antenaParabolica:
             type: string
             length: '50'
+            nullable: TRUE
         sky:
             type: string
             length: '50'
+            nullable: TRUE
         otros:
             type: string
             length: '50'
+            nullable: TRUE
         domestico:
             type: string
             length: '50'
+            nullable: TRUE
         jardinero:
             type: string
             length: '50'
+            nullable: TRUE
         chofer:
             type: string
             length: '50'
+            nullable: TRUE
         vigilancia:
             type: string
             length: '50'
+            nullable: TRUE
     lifecycleCallbacks: {  }

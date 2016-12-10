@@ -371,3 +371,4 @@ class pasatiempos
         return $this->tipoReuniones;
     }
 }
+

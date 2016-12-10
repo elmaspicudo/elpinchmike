@@ -7,10 +7,18 @@ EstudioBundle\Entity\imagen:
             id: true
             generator:
                 strategy: AUTO
-    fields:
-        nombre:
+    fields:        
+        path:
             type: string
-            length: 255
-        url:
-            type: text
-    lifecycleCallbacks: {  }
+            length: '120'
+            nullable:     true
+        imagen:
+            type: string
+            length: '120'
+            nullable:     true
+        updated:       
+            type:         datetime
+            nullable:     true
+    lifecycleCallbacks: 
+        prePersist:   [ lifecycleFileUpload ]
+        preUpdate:    [ lifecycleFileUpload ]

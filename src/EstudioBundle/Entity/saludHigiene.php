@@ -603,3 +603,4 @@ class saludHigiene
         return $this->frecuenciaEjercicio;
     }
 }
+

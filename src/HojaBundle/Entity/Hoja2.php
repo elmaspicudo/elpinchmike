@@ -17,40 +17,6 @@ class Hoja2
      */
     private $domicilio;
 
-
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set domicilio
-     *
-     * @param string $domicilio
-     *
-     * @return Hoja2
-     */
-    public function setDomicilio($domicilio)
-    {
-        $this->domicilio = $domicilio;
-
-        return $this;
-    }
-
-    /**
-     * Get domicilio
-     *
-     * @return string
-     */
-    public function getDomicilio()
-    {
-        return $this->domicilio;
-    }
     /**
      * @var string
      */
@@ -316,6 +282,45 @@ class Hoja2
      */
     private $observaciones;
 
+    /**
+     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
+     */
+    private $solicitud;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set domicilio
+     *
+     * @param string $domicilio
+     *
+     * @return Hoja2
+     */
+    public function setDomicilio($domicilio)
+    {
+        $this->domicilio = $domicilio;
+
+        return $this;
+    }
+
+    /**
+     * Get domicilio
+     *
+     * @return string
+     */
+    public function getDomicilio()
+    {
+        return $this->domicilio;
+    }
 
     /**
      * Set colonia
@@ -1588,11 +1593,6 @@ class Hoja2
     {
         return $this->observaciones;
     }
-    /**
-     * @var \fourMinds\Bundle\ConfiguracionBundle\Entity\Solicitud
-     */
-    private $solicitud;
-
 
     /**
      * Set solicitud

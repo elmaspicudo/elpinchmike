@@ -11,29 +11,41 @@ EstudioBundle\Entity\creditosPersonales:
         institucion:
             type: string
             length: '10'
+            nullable: TRUE
         montoCredito:
             type: float
+            nullable: TRUE
         pagoMensual:
             type: float
+            nullable: TRUE
         fonacot:
             type: string
             length: '10'
+            nullable: TRUE
         montoFonacot:
             type: float
+            nullable: TRUE
         pagoFonacot:
             type: float
+            nullable: TRUE
         infonavit:
             type: string
             length: '10'
+            nullable: TRUE
         montoInfonavit:
             type: float
+            nullable: TRUE
         pagoInfonavit:
             type: float
+            nullable: TRUE
         otros:
             type: string
             length: '10'
+            nullable: TRUE
         montoOotros:
             type: float
+            nullable: TRUE
         pagoOtros:
             type: float
+            nullable: TRUE
     lifecycleCallbacks: {  }

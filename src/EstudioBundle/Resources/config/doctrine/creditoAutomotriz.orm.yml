@@ -11,10 +11,14 @@ EstudioBundle\Entity\creditoAutomotriz:
         institucion:
             type: string
             length: '10'
+            nullable: TRUE
         monto:
             type: float
+            nullable: TRUE
         pagoMensual:
             type: float
+            nullable: TRUE
         saldoActual:
             type: float
+            nullable: TRUE
     lifecycleCallbacks: {  }

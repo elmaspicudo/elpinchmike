@@ -139,3 +139,4 @@ class seguros
         return $this->vigencia;
     }
 }
+

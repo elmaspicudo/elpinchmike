@@ -139,3 +139,4 @@ class Bienes_raices
         return $this->liquidado;
     }
 }
+

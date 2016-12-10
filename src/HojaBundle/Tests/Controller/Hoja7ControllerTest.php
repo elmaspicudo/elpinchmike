@@ -4,7 +4,7 @@ namespace HojaBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class Hoja7ControllerTest extends WebTestCase
+class Referencia_PersonalControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class Hoja7ControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/hoja7/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /hoja7/");
+        $crawler = $client->request('GET', '/Referencia_Personal/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /Referencia_Personal/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'hojabundle_hoja7[field_name]'  => 'Test',
+            'hojabundle_Referencia_Personal[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class Hoja7ControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'hojabundle_hoja7[field_name]'  => 'Foo',
+            'hojabundle_Referencia_Personal[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

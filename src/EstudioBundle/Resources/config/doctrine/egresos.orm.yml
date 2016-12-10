@@ -10,28 +10,41 @@ EstudioBundle\Entity\egresos:
     fields:
         renta:
             type: float
+            nullable: TRUE
         agua:
             type: float
+            nullable: TRUE
         luz:
             type: float
+            nullable: TRUE
         telefono:
             type: float
+            nullable: TRUE
         gas:
             type: float
+            nullable: TRUE
         transporte:
             type: float
+            nullable: TRUE
         mantenimientoAuto:
             type: float
+            nullable: TRUE
         alimentacion:
             type: float
+            nullable: TRUE
         educacion:
             type: float
+            nullable: TRUE
         medicos:
             type: float
+            nullable: TRUE
         diversiones:
             type: float
+            nullable: TRUE
         vestido:
             type: float
+            nullable: TRUE
         otros:
             type: float
+            nullable: TRUE
     lifecycleCallbacks: {  }

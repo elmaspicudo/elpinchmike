@@ -1,0 +1,29 @@
+
+Referencia_Personal_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:Referencia_Personal:show" }
+
+Referencia_Personal:
+    path:     /
+    defaults: { _controller: "HojaBundle:Referencia_Personal:new" }
+
+Referencia_Personal_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:Referencia_Personal:create" }
+    methods:  POST
+
+Referencia_Personal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:Referencia_Personal:edit" }
+
+Referencia_Personal_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:Referencia_Personal:update" }
+    methods:  [POST, PUT]
+Referencia_Personal_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "HojaBundle:Referencia_Personal:showbysolicitud" }
+Referencia_Personal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:Referencia_Personal:delete" }
+    methods:  [POST, DELETE]

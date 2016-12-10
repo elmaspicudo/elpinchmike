@@ -371,3 +371,4 @@ class creditosPersonales
         return $this->pagoOtros;
     }
 }
+

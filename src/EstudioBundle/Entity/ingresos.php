@@ -168,3 +168,4 @@ class ingresos
         return $this->otros;
     }
 }
+

@@ -22,7 +22,7 @@ class segurosType extends AbstractType
                         )))
             ->add('tipoSeguro')
             ->add('mensualidad')
-            ->add('vigencia','text')
+            ->add('vigencia')
         ;
     }
     

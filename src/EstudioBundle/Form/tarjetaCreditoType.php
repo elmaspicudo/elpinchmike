@@ -17,8 +17,8 @@ class tarjetaCreditoType extends AbstractType
         $builder
             ->add('banco')
             ->add('limiteCredito')
-            ->add('antiguedad','text')
-            ->add('pagoMensual','text')
+            ->add('antiguedad')
+            ->add('pagoMensual')
         ;
     }
     

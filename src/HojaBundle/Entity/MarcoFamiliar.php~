@@ -25,11 +25,6 @@ class MarcoFamiliar
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $Familiares;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
     private $DependientesEconomicos;
 
     /**
@@ -42,7 +37,6 @@ class MarcoFamiliar
      */
     public function __construct()
     {
-        $this->Familiares = new \Doctrine\Common\Collections\ArrayCollection();
         $this->DependientesEconomicos = new \Doctrine\Common\Collections\ArrayCollection();
         $this->FamiliaresCercanos = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -105,7 +99,6 @@ class MarcoFamiliar
         return $this->solicitud;
     }
 
-    
     /**
      * Add dependientesEconomico
      *

@@ -1,0 +1,29 @@
+
+Referencia_laboral_show:
+    path:     /{id}/show
+    defaults: { _controller: "HojaBundle:Referencia_laboral:show" }
+
+Referencia_laboral:
+    path:     /
+    defaults: { _controller: "HojaBundle:Referencia_laboral:new" }
+
+Referencia_laboral_create:
+    path:     /create
+    defaults: { _controller: "HojaBundle:Referencia_laboral:create" }
+    methods:  POST
+
+Referencia_laboral_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HojaBundle:Referencia_laboral:edit" }
+
+Referencia_laboral_update:
+    path:     /{id}/update
+    defaults: { _controller: "HojaBundle:Referencia_laboral:update" }
+    methods:  [POST, PUT]
+Referencia_laboral_solicitud:
+    path:     /{solicitud}/solicitud
+    defaults: { _controller: "HojaBundle:Referencia_laboral:showbysolicitud" }
+Referencia_laboral_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HojaBundle:Referencia_laboral:delete" }
+    methods:  [POST, DELETE]

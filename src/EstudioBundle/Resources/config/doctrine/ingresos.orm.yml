@@ -10,12 +10,17 @@ EstudioBundle\Entity\ingresos:
     fields:
         investigado:
             type: float
+            nullable: TRUE
         conyuge:
             type: float
+            nullable: TRUE
         padres:
             type: float
+            nullable: TRUE
         hermanos:
             type: float
+            nullable: TRUE
         otros:
             type: float
+            nullable: TRUE
     lifecycleCallbacks: {  }
